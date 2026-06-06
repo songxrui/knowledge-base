@@ -1,0 +1,20 @@
+﻿# knowledge-base skill
+name: knowledge-base
+description: 个人知识库搭建与维护 — PARA + Zettelkasten + AI-native + GitHub + 飞书 CLI
+author: songxrui
+version: 1.1.0
+trigger_phrases:
+  - 知识库
+  - knowledge base
+  - 笔记模板
+  - weekly review
+  - 周回顾
+  - zettel
+  - PARA
+  - 搭建知识库
+  - 同步到飞书
+  - 推送GitHub
+  - 飞书知识库
+  - 协作同步
+  - 创建笔记
+  - 提炼想法

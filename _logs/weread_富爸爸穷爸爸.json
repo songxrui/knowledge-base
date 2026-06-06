@@ -1,0 +1,177 @@
+﻿{
+    "synckey":  0,
+    "updated":  [
+
+                ],
+    "removed":  [
+
+                ],
+    "chapters":  [
+
+                 ],
+    "book":  {
+                 "bookId":  "3300019337",
+                 "version":  909896545,
+                 "format":  "epub",
+                 "soldout":  1,
+                 "bookStatus":  1,
+                 "cover":  "https://cdn.weread.qq.com/weread/cover/37/3300019337/s_3300019337.jpg",
+                 "title":  "艾美奖得主萨菲尔幻想小说系列（套装共5册）",
+                 "author":  "大卫·萨菲尔",
+                 "coverBoxInfo":  {
+                                      "blurhash":  "KRED3TNa0K0|s:-pBSi_v~",
+                                      "colors":  [
+                                                     {
+                                                         "key":  "1/4",
+                                                         "hex":  "#00222d"
+                                                     },
+                                                     {
+                                                         "key":  "1/6",
+                                                         "hex":  "#002535"
+                                                     },
+                                                     {
+                                                         "key":  "1/8",
+                                                         "hex":  "#00273e"
+                                                     },
+                                                     {
+                                                         "key":  "2/4",
+                                                         "hex":  "#003740"
+                                                     },
+                                                     {
+                                                         "key":  "2/6",
+                                                         "hex":  "#003a48"
+                                                     },
+                                                     {
+                                                         "key":  "2/8",
+                                                         "hex":  "#003c50"
+                                                     },
+                                                     {
+                                                         "key":  "3/4",
+                                                         "hex":  "#0d4f58"
+                                                     },
+                                                     {
+                                                         "key":  "3/6",
+                                                         "hex":  "#005260"
+                                                     },
+                                                     {
+                                                         "key":  "3/8",
+                                                         "hex":  "#005568"
+                                                     },
+                                                     {
+                                                         "key":  "3/12",
+                                                         "hex":  "#005a76"
+                                                     },
+                                                     {
+                                                         "key":  "4/6",
+                                                         "hex":  "#006c78"
+                                                     },
+                                                     {
+                                                         "key":  "4/10",
+                                                         "hex":  "#007289"
+                                                     },
+                                                     {
+                                                         "key":  "4/4",
+                                                         "hex":  "#2e6870"
+                                                     },
+                                                     {
+                                                         "key":  "5/10",
+                                                         "hex":  "#008da1"
+                                                     },
+                                                     {
+                                                         "key":  "5/4",
+                                                         "hex":  "#4b8288"
+                                                     },
+                                                     {
+                                                         "key":  "5/8",
+                                                         "hex":  "#008999"
+                                                     },
+                                                     {
+                                                         "key":  "6/4",
+                                                         "hex":  "#649da2"
+                                                     },
+                                                     {
+                                                         "key":  "6/6",
+                                                         "hex":  "#3da1aa"
+                                                     },
+                                                     {
+                                                         "key":  "6/8",
+                                                         "hex":  "#00a4b1"
+                                                     },
+                                                     {
+                                                         "key":  "6/12",
+                                                         "hex":  "#00abc1"
+                                                     },
+                                                     {
+                                                         "key":  "7/8",
+                                                         "hex":  "#21bfca"
+                                                     },
+                                                     {
+                                                         "key":  "7/10",
+                                                         "hex":  "#00c3d2"
+                                                     },
+                                                     {
+                                                         "key":  "7/12",
+                                                         "hex":  "#00c7da"
+                                                     },
+                                                     {
+                                                         "key":  "8/4",
+                                                         "hex":  "#96d3d5"
+                                                     },
+                                                     {
+                                                         "key":  "8/6",
+                                                         "hex":  "#75d7dd"
+                                                     },
+                                                     {
+                                                         "key":  "8/12",
+                                                         "hex":  "#00e4f3"
+                                                     },
+                                                     {
+                                                         "key":  "9/2",
+                                                         "hex":  "#cbe9e9"
+                                                     },
+                                                     {
+                                                         "key":  "9/12",
+                                                         "hex":  "#00ffff"
+                                                     },
+                                                     {
+                                                         "key":  "1/100",
+                                                         "hex":  "#00a4b1"
+                                                     },
+                                                     {
+                                                         "key":  "2/100",
+                                                         "hex":  "#21bfca"
+                                                     },
+                                                     {
+                                                         "key":  "3/100",
+                                                         "hex":  "#ffffff"
+                                                     },
+                                                     {
+                                                         "key":  "4/100",
+                                                         "hex":  "#E5F2F3"
+                                                     },
+                                                     {
+                                                         "key":  "5/100",
+                                                         "hex":  "#E5F2F3"
+                                                     },
+                                                     {
+                                                         "key":  "6/100",
+                                                         "hex":  "#002722"
+                                                     }
+                                                 ],
+                                      "dominate_color":  {
+                                                             "hex":  "#2a484d",
+                                                             "hsv":  [
+                                                                         189.0857172374417,
+                                                                         44.679046985631348,
+                                                                         30.09613972371174
+                                                                     ]
+                                                         },
+                                      "custom_cover":  "https://weread-1258476243.file.myqcloud.com/bookalphacover/337/3300019337/s_3300019337.jpg",
+                                      "custom_rec_cover":  "https://weread-1258476243.file.myqcloud.com/bookreccover/337/3300019337/s_3300019337.jpg",
+                                      "colorsPure":  [
+                                                         "#00abc1",
+                                                         "#00c7da"
+                                                     ]
+                                  }
+             }
+}
