@@ -26,3 +26,22 @@
 | HKRR公式·潘天鸿/影视飓风 | HKR→HKRR补全 |
 | Pareto分布·Clauset 2009·SIAM Review | 80/20法则数学验证 |
 | Virality·ScienceDirect 2026 | 注意力经济学·情感传染 |
+
+## R3: LEDGER扩展+飞书同步
+
+| 轮次 | LEDGER | 可验证率 | 新增领域 | 飞书 |
+|------|--------|---------|---------|:--:|
+| R3 | 16篇·42断言 | 93% | health+relationship | ✅ 3报告 |
+
+### 最终状态
+
+| 指标 | 数值 |
+|------|------|
+| LEDGER覆盖 | 16/128 (12.5%) |
+| 断言可验证率 | 93% |
+| 禁用词 | 0 |
+| 三段式 | 0 |
+| weread API验证 | 5本书·真实高亮 |
+| exa-search来源 | 4个 |
+| 飞书同步 | 7份报告(D:\_alchemist 4 + D:\KnowledgeBase 3) |
+| GitHub commits | 8次(total) |
