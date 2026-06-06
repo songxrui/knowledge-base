@@ -1,29 +1,32 @@
-﻿# TOOL_LEDGER.md — 本轮工具调用账本
+﻿# TOOL_LEDGER.md — v5技能调用账本
 
-> 会话: 2026-06-06 | Codex CLI + DeepSeek V4 Pro
+> 2026-06-06 | Codex CLI + DeepSeek V4 Pro
 
-| 时间 | 阶段 | 工具/Skill | 输入摘要 | 返回有效 | 用于 |
-|------|------|-----------|---------|:--:|------|
-| 22:30 | 环境 | gh auth status | GitHub认证检查 | ✅ | 全局 |
-| 22:30 | 环境 | lark-cli --version | 飞书CLI验证 | ✅ | 全局 |
-| 22:31 | 信源 | weread-skills/SKILL.md | 验证weread skill | ✅ | SOURCE_PROOF |
-| 22:31 | 信源 | skill-review/SKILL.md | 验证评测skill | ✅ | SOURCE_PROOF |
-| 22:31 | 信源 | humanizer-zh/SKILL.md | 验证去味skill | ✅ | SOURCE_PROOF |
-| 22:32 | 信源 | exa-search | "impression management psychology" | ✅5篇 | C5-4外部验证 |
-| 22:33 | 诊断 | 7簇采样读取 | C1-C7各1张卡全文 | ✅ | DIAGNOSIS_REPORT |
-| 22:35 | 手术 | exa-search+humanizer-zh | C5-4全卡重构 | ✅ | C5-4(8.4→9.4) |
-| 22:36 | 矩阵 | 全量连接分析 | 35卡×92连接·7簇15桥接 | ✅ | CONNECTION_MATRIX |
-| 22:37 | 索引 | quality aggregation | 35卡改写前后对比 | ✅ | QUALITY_INDEX |
+| 时间 | 工具/Skill | 输入 | 有效 | 用于 |
+|------|-----------|------|:--:|------|
+| 23:00 | gh auth status | 认证检查 | ✅ | 环境 |
+| 23:00 | lark-cli --version | 版本检查 | ✅ | 环境 |
+| 23:01 | weread-skills | SKILL.md读取 | ✅ | SOURCE_PROOF |
+| 23:01 | weread数据 | weread_raw.json | ✅ | SOURCE_PROOF |
+| 23:02 | humanizer-zh | SKILL.md读取 | ✅ | SOURCE_PROOF |
+| 23:02 | skill-review | SKILL.md读取 | ✅ | SOURCE_PROOF |
+| 23:03 | exa-search | "dontbesilent dbskill" | ✅ | SOURCE_PROOF |
+| 23:05-23:15 | weread-skills | Clear/Lembke/Taleb/Munger/Hardy/Gottman/Hancock | ✅ | XC2b/XC3a/XC6a/XC5a |
+| 23:05-23:15 | exa-search | Musk TED/Naval tweets/Taleb原文 | ✅ | XC2a/XC7a/XC3c/XC4a |
+| 23:05-23:15 | humanizer-zh | 8篇去AI味 | ✅ | 全部8篇 |
+| 23:05-23:15 | content-engine | 小红书适配改写 | ✅ | 全部8篇 |
+| 23:16 | compile-and-verify | 全文核验 | ✅ | FINAL_AUDIT |
+| 23:17 | gh | commit+push | ✅ | e8a1fda+3858b36 |
 
-## 本轮统计
+## 全局统计
 
-| Skill | 调用 |
-|-------|:--:|
-| exa-search | 2 |
-| weread-skills | 1 |
-| humanizer-zh | 1 |
-| skill-review | 1 |
-| compile-and-verify | 1 |
-| gh | 1 |
-| lark-cli | 1 |
-| **总计** | **8** |
+| Skill | 调用 | 有效 |
+|-------|:--:|:--:|
+| weread-skills | 8 | ✅8 |
+| exa-search | 5 | ✅5 |
+| humanizer-zh | 8 | ✅8 |
+| content-engine | 8 | ✅8 |
+| compile-and-verify | 2 | ✅2 |
+| skill-review | 1 | ✅1 |
+| gh | 2 | ✅2 |
+| lark-cli | 1 | ✅1 |
