@@ -30,7 +30,7 @@ Counter-consensus: Munger had world-class ideas but nobody knew him until Buffet
 5/10
 The best content isn''t "well-written." It''s "worth forwarding, worth arguing about, worth saving."
 
-Data from Chinese platform Xiaohongshu CES scoring: Like = 1 point. Save = 1 point. Comment = 4 points. Forward = 4 points. Follow = 8 points. The content that gets discussed and shared is 4-8x more valuable than content that just gets liked.
+Data from Chinese platform Xiaohongshu CES scoring: Like=1, Save=1, Comment=4, Forward=4, Follow=8 (third-party estimate·not official Xiaohongshu data). The content that gets discussed and shared is 4-8x more valuable than content that just gets liked.
 
 Write things people want to argue with or send to a friend.
 
@@ -58,3 +58,4 @@ Don''t ask "what should I sell?" Write for 90 days first. When someone DMs you "
 
 10/10
 At 22, you don''t need to be the best. You need to be the most specific. AI makes generic content worthless. Your weird combination of experiences — Changsha + esports rankings + trading losses + Notion systems — is your un-copyable advantage. The game isn''t "write better." The game is "write what only you can write."
+

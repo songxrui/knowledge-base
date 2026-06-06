@@ -22,7 +22,7 @@ Days with >2h screen entertainment → average motivation 3.1/10
 That's not "laziness." That's a hijacked dopamine system making normal life feel unrewarding.
 
 4/12
-Fix #1: Cold water exposure. 30 seconds of cold water to the face upon waking. Dopamine increases 2.5x, sustained for 2-3 hours. Cost: $0. ROI: infinite.
+Fix #1: Cold water exposure. 30 seconds of cold water to the face upon waking. Dopamine increases ~2.5x, sustained 2-3 hours [secondary source·original study pending verification]. Cost: $0. ROI: infinite.
 
 Replaces the "anticipation circuit" — instead of craving evening gaming, you crave morning cold exposure.
 
@@ -67,3 +67,4 @@ The upstream variable of everything: health.
 Career. Relationships. Creativity. Decision quality. All downstream of dopamine baseline, sleep quality, and metabolic flexibility. Fix the engine, and the car drives itself. Ignore the engine, and no amount of "productivity hacks" will save you.
 
 Start tomorrow: 7am wake + 10min sunlight + 30s cold water. One day. Then another.
+
