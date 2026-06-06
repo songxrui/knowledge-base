@@ -20,4 +20,5 @@
 | JC2b-1 | 六格复盘模板 | L4 | 作者原创框架 |
 | JC2b-2 | Munger逆向思维 | L2 | exa: fs.blog/inversion·Munger 1986 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
-**红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+**红队轮次**：2轮 | **before→after diff：正文已有嵌入引用+验证块·库外溯源(见对应XC/TC篇独立验证)
+

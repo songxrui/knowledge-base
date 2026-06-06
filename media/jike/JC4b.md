@@ -20,4 +20,5 @@
 | JC4b-1 | 小红书CES评分 | L2w | weread《流量的本质》bookId:CB_2Z66Yq6YE |
 | JC4b-2 | AI时代护城河="只有你能写" | L4 | 作者核心洞察 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
-**红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+**红队轮次**：2轮 | **before→after diff：正文已有嵌入引用+验证块·库外溯源(见对应XC/TC篇独立验证)
+

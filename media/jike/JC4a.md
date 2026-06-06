@@ -20,4 +20,5 @@ AI能写任何风格的文章——但无法复制你的真实经历。
 | JC4a-1 | 三位一体创作(Munger+Naval+Dan Koe) | L4 | 作者原创框架 |
 | JC4a-2 | Naval"代码和媒体=无需许可杠杆" | L2 | navalmanack.com 确认 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
-**红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+**红队轮次**：2轮 | **before→after diff：正文已有嵌入引用+验证块·库外溯源(见对应XC/TC篇独立验证)
+

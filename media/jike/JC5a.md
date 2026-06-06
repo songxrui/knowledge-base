@@ -20,4 +20,5 @@
 | JC5a-1 | 反依赖·依恋理论 | L2 | Blum et al. 2020 SBCI·exa确认 |
 | JC5a-2 | "最安全的自己≠最好的自己" | L4 | 作者原创概念 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
-**红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+**红队轮次**：2轮 | **before→after diff：正文已有嵌入引用+验证块·库外溯源(见对应XC/TC篇独立验证)
+

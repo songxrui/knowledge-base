@@ -20,4 +20,5 @@
 | JC7a-1 | Musk五步算法·第1步质疑需求 | L2 | Isaacson《Elon Musk》(2023)·exa确认 |
 | JC7a-2 | 第一性原理·拆到不可再分 | L3 | 公开概念 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
-**红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+**红队轮次**：2轮 | **before→after diff：正文已有嵌入引用+验证块·库外溯源(见对应XC/TC篇独立验证)
+

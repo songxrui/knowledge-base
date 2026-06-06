@@ -20,4 +20,5 @@
 | JC7b-1 | 系统>目标·Scott Adams | L2 | Scott Adams公开出版物 |
 | JC7b-2 | 反脆弱·压力获益 | L2 | Taleb公开概念·exa确认 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
-**红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+**红队轮次**：2轮 | **before→after diff：正文已有嵌入引用+验证块·库外溯源(见对应XC/TC篇独立验证)
+

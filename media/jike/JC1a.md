@@ -22,4 +22,5 @@
 | JC1a-2 | 14天实验·入睡前移2h | L4 | 作者自我实验·2024年11-12月 |
 | JC1a-3 | 晨光暴露·BMC Public Health 2025 | L2 | BMC Public Health 2025论文 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
-**红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+**红队轮次**：2轮 | **before→after diff：正文已有嵌入引用+验证块·库外溯源(见对应XC/TC篇独立验证)
+

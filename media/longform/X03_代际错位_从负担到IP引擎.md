@@ -91,3 +91,14 @@
 
 **Skill调用**：article-writing + content-engine
 
+
+---
+
+## 【E1-E4 库外四证据验证·v5批次9】
+
+| ID | 论断 | L级 | 库外溯源 |
+|----|------|:--:|---------|
+| X03-1 | 89.35%北京年轻女性认同经济独立 | L2 | hrmars.com/25772/·2024·407份问卷 |
+| X03-2 | 孝道从服从向互相支持演变 | L2 | Sun 2017 ethnography |
+| X03-3 | 董辉代际冲突叙事·住父母家 | L4 | 本地实际经历 |
+**【Skill】** article-writing→humanizer-zh

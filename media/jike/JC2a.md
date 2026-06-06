@@ -25,4 +25,5 @@
 | JC2a-2 | Taleb"脆弱性可度量·风险不可" | L2 | exa: fooledbyrandomness.com 原文确认 |
 | JC2a-3 | 30秒毁灭检查三问 | L4 | 作者原创框架 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
-**红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+**红队轮次**：2轮 | **before→after diff：正文已有嵌入引用+验证块·库外溯源(见对应XC/TC篇独立验证)
+
