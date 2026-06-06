@@ -12,3 +12,6 @@ Thumbs.db
 
 # Historical workspace archive (separate git repo)
 _alchemist/
+
+# Large archive files (use local backup)
+*.zip
