@@ -46,3 +46,20 @@ Munger有顶级思想但没人认识他（直到巴菲特推他）；Naval有顶
 🎯 **一句话**：不是准备好了再写——是写的过程中，你变成了那个"准备好的人"。你的三位一体不是三个你崇拜的人——是三个被你内化的思维方式，在你体内发生的化学反应。
 
 🏷️ #内容创作 #个人IP #Munger #Naval #创作框架 #22岁
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R16】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| XC4a-1 | Naval"财富是你在睡觉时也能为你创造价值的东西" | L2 | navalmanack.com: "Wealth is assets that earn while you sleep"·nav.al/rich 原文确认 |
+| XC4a-2 | Munger格栅模型·多学科交叉 | L2w | weread bookId:837932《穷查理宝典》·"latticework of mental models" |
+| XC4a-3 | Dan Koe一人企业·内容=24小时销售员 | L2 | thedankoe.com/letters: "productize it so it can sell in your sleep"·one-person business model |
+| XC4a-4 | 三位一体创作引擎 | L4 | 作者原创框架·Munger×Naval×Dan Koe |
+| XC4a-5 | "传播本身就是内容的一部分" | L4 | 作者核心论点·基于Dan Koe推导 |
+| XC4a-6 | 钩子在前+论点在中+行动在后 | L4 | 作者原创结构方法论 |
+
+**验证来源类型：库外(exa-search navalmanack.com + thedankoe.com + weread) | 零交叉引用**
+**红队轮次**：2轮 (R16-1: 论断拆解+溯源; R16-2: 三位一体框架可替代性追问)
+**before→after diff**：新增6条LEDGER断言 + L级标注

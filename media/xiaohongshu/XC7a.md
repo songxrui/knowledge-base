@@ -46,3 +46,20 @@
 🏷️ #第一性原理 #五步算法 #认知模型 #马斯克 #22岁
 
 
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R16】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| XC7a-1 | Musk五步算法·第1步"质疑需求" | L2 | Isaacson《Elon Musk》(2023)·exa: elonmuskbook.org/the-algorithm "Step 1: Question the requirements. Make them less dumb." |
+| XC7a-2 | 第一性原理·拆到不可再分 | L3 | 公开概念·Aristotle→Musk·物理学基本方法 |
+| XC7a-3 | "未经验证的知识=负债" | L4 | 作者Life OS v2.0核心公理 |
+| XC7a-4 | "7天不处理→删除" | L4 | 作者Inbox清理规则 |
+| XC7a-5 | 22岁<1万本金不该花时间交易 | L4 | 作者个人结论·基于Musk Step 1推导 |
+| XC7a-6 | 优化vs质疑的认知成本差异 | L4 | 作者原创洞察 |
+
+**验证来源类型：库外(exa Isaacson传记 + 公开概念) | 零交叉引用**
+**红队轮次**：2轮 (R16-1: 论断拆解+溯源; R16-2: 五步算法适用性边界追问)
+**before→after diff**：新增6条LEDGER断言 + L级标注

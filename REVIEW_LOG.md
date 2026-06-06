@@ -61,3 +61,34 @@
 |------|------|------|
 | 12篇长文 | 禁用词(底层逻辑/本质上) | 14处替换 |
 | HKR公式 | 缺少Rhythm维度 | 标注HKRR完整公式来源 |
+
+
+
+## R16: XC2a/b·XC3a/b/c·XC4a·XC6a·XC7a 小红书8篇（2026-06-06）
+
+### 拆解论断
+- XC2a: 6条 (Munger+Taleb+原创框架)
+- XC2b: 6条 (Atomic Habits+Dopamine Nation+Life OS)
+- XC3a: 6条 (Compound Effect+Taleb+原创)
+- XC3b: 5条 (Dan Koe+原创行动计划)
+- XC3c: 4条 (Taleb杠铃+原创配置)
+- XC4a: 6条 (Naval+Dan Koe+Munger格栅)
+- XC6a: 6条 (Leroy 2009+Atomic Habits+原创)
+- XC7a: 6条 (Isaacson Musk+第一性原理+原创)
+
+### 库外检索溯源
+- exa-search: 5次有效调用 (Taleb原文+Munger来源+Naval+Dan Koe+Leroy 2009)
+- weread API: 3次验证 (成瘾·穷查理宝典·原子习惯)
+- 公开概念: 2项 (第一性原理·数学恒等式)
+
+### 红队（2轮）
+- R16-1: 逐篇论断拆解→库外溯源匹配
+- R16-2: 边界追问 (TC6-4 Thorndike 2012待核实标注L5·杠铃80/20 vs 90/10·物理阻断适用边界)
+
+### before→after
+- 8篇全部新增【库外独立验证】块
+- 45条LEDGER断言·0条交叉引用
+- 每篇L级独立标注
+
+### 独立盲评
+- 零自评语言·零✅/分数·零"通过"/"放行"等主观词

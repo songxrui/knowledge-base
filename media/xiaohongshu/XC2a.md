@@ -44,3 +44,20 @@
 🎯 **一句话**：赢之前先保证不下牌桌——能重复下注比一次大赢重要一万倍。22岁你最大的资产不是钱，是"还能再押100次"的权利。
 
 🏷️ #决策原则 #先避毁灭 #22岁投资教训 #认知重启 #个人成长
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R16】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| XC2a-1 | 芒格"如果我知道我会死在哪里我就不去" | L2 | Munger 1986 Harvard演讲·Poor Charlie's Almanack·exa: fs.blog/inversion + time.com/6340573 确认·源自Jacobi "invert always invert" |
+| XC2a-2 | Taleb"脆弱性可度量·风险不可度量" | L2 | Taleb《Antifragile》Prologue·exa: fooledbyrandomness.com/prologue.pdf 原文确认"Fragility can be measured; risk is not measurable" |
+| XC2a-3 | 5300元亏损·母亲信任 | L4 | 作者自述·历时记录·KB C2-1交叉验证 |
+| XC2a-4 | 毁灭检查三问 | L4 | 作者原创决策框架·Notion Decision Checklist |
+| XC2a-5 | 22岁保证10年后还在牌桌上 | L4 | 作者推论·基于Munger+Taleb推导 |
+| XC2a-6 | 不可逆资产保护清单 | L4 | 作者原创框架 |
+
+**验证来源类型：库外(exa-search Taleb+Munger原文) | 零交叉引用**
+**红队轮次**：2轮 (R16-1: 论断拆解+溯源; R16-2: "不可修复"边界追问)
+**before→after diff**：新增6条LEDGER断言 + L级标注
