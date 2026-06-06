@@ -4,17 +4,17 @@
 > **取材卡**：C2簇综述 | **平台**：X/Twitter | **条数**：10条
 
 1/10
-I have 538 notes in my reading app. A Notion Models library filled with draft frameworks. And for most of 22, my life didn''t change at all.
+I have 538 notes in my reading app [self-reported; weread API confirms 70 books, 3073 total highlights]. A Notion Models library filled with draft frameworks. And for most of 22, my life didn''t change at all.
 
 Here''s why: unverified knowledge = debt. And I was deep in cognitive overdraft.
 
 2/10
-The mechanism: learning gives you a dopamine hit. "Understanding something new" feels like progress. So you keep reading, keep taking notes, keep "researching" — and never actually do the experiment.
+The mechanism: learning gives you a dopamine hit [Dopamine Nation, 161 highlights, L2w verified]. "Understanding something new" feels like progress. So you keep reading, keep taking notes, keep "researching" — and never actually do the experiment.
 
 Your brain is satisfied with the illusion of progress. Reality disagrees.
 
 3/10
-My worst ratio: 358 dietary notes from 4 books. Zero dietary experiments. Knowledge:Experiment = 358:0.
+My worst ratio: 358 dietary notes from 4 books. Zero dietary experiments [estimated from memory, not precisely tracked]. Knowledge:Experiment = 358:0.
 
 That''s not learning. That''s intellectual hoarding. Like collecting gym equipment and never working out.
 
