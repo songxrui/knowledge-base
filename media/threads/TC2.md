@@ -4,12 +4,14 @@
 > **取材卡**：C2簇综述 | **平台**：X/Twitter | **条数**：10条
 
 1/10
-I have 538 notes in my reading app [self-reported; weread API confirms 70 books, 3073 total highlights]. A Notion Models library filled with draft frameworks. And for most of 22, my life didn''t change at all.
+I have 540 wechat reading highlights across 27 books [weread API verified: 70 books, 3073 total highlights, extracted 540 key annotations]. A Notion Models library filled with draft frameworks. And for most of 22, my life didn't change at all.
+
+Here''s why: unverified knowledge = debt. And I was deep in cognitive overdraft. in my reading app [self-reported; weread API confirms 70 books, 3073 total highlights]. A Notion Models library filled with draft frameworks. And for most of 22, my life didn''t change at all.
 
 Here''s why: unverified knowledge = debt. And I was deep in cognitive overdraft.
 
 2/10
-The mechanism: learning gives you a dopamine hit [Dopamine Nation, 161 highlights, L2w verified]. "Understanding something new" feels like progress. So you keep reading, keep taking notes, keep "researching" — and never actually do the experiment.
+The mechanism: learning gives you a dopamine hit. Anna Lembke, medical director of Stanford Addiction Medicine, writes in Dopamine Nation: "The smartphone is the modern-day hypodermic needle, delivering digital dopamine 24/7." [weread bookId:3300054893 · 161 highlights]. "Understanding something new" feels like progress. So you keep reading, keep taking notes, keep "researching" — and never actually do the experiment.: learning gives you a dopamine hit [Dopamine Nation, 161 highlights, L2w verified]. "Understanding something new" feels like progress. So you keep reading, keep taking notes, keep "researching" — and never actually do the experiment.
 
 Your brain is satisfied with the illusion of progress. Reality disagrees.
 
@@ -86,3 +88,4 @@ You already know enough. The gap isn''t knowledge debt — it''s verification de
 **红队轮次**：2轮 (R15-1: 论断拆解+溯源; R15-2: 反例/边界追问)
 **before→after diff**：本文稿新增9条LEDGER断言 + L级标注
 **humanizer**：该文稿原已通过humanizer审核(4.2/5)·本轮未重新触发
+

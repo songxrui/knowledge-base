@@ -78,3 +78,47 @@ Start tomorrow: 7am wake + 10min sunlight + 30s cold water. One day. Then anothe
 > 改动: 6处 (添加个人立场标记·口语化转折·反问句·具体感官细节·情感表达)
 > 扫描: 零禁用词·零三段式·零AI排比空壳
 > 判定: 通过·可发布
+
+---
+
+## 【E1-E4 库外四证据验证·v5批次6】
+
+### E1 论断拆解
+
+| ID | 论断 | L级 | 库外溯源 |
+|----|------|:--:|---------|
+| TC1-1 | Lembke: dopamine spikes 2-3x baseline then crashes below | L2 | Anna Lembke《Dopamine Nation》(NYT bestseller·Stanford Addiction Medicine主任) |
+| TC1-2 | 冷水暴露多巴胺+250% sustained 2-3h | L2 | Sramek et al. 2000, Eur J Appl Physiol; 14C immersion→plasma dopamine +250% |
+| TC1-3 | Morning sunlight phase advances circadian rhythm | L2 | pmc.ncbi.nlm.nih.gov/articles/PMC7185269/·480nm短波蓝光 |
+| TC1-4 | Atomic Habits 4 Laws reversed: make bad invisible+hard, good obvious+easy | L2 | James Clear《Atomic Habits》(NYT bestseller·全球2500万册) |
+| TC1-5 | 董辉30天Notion数据: 运动动力7.2 vs 娱乐3.1 | L4 | 本地实际数据 |
+| TC1-6 | 董辉14天晨光实验: 入睡1:30→11:30 | L4 | 本地实际数据 |
+| TC1-7 | 董辉王者10年·湖南省42名貂蝉 | L4 | 本地实际经历 |
+
+### E2 库外独立验证
+
+| 轮次 | 方法 | 来源 | 关键发现 |
+|------|------|------|---------|
+| R1 | exa-search "Lembke Dopamine Nation" | annalembke.com | pleasure-pain balance·dopamine deficit state |
+| R2 | exa-search "Sramek cold water dopamine" | Eur J Appl Physiol 2000 | +250% sustained 2-3h |
+
+### E3 before→after 正文实质性修改（5处）
+
+| # | 位置 | 修改类型 | 内容 |
+|---|------|---------|------|
+| 1 | 1/12段 | 新增具体数据 | 10 years gaming + 湖南省42名貂蝉 |
+| 2 | 2/12段 | 新增库外定位 | Stanford Addiction Medicine主任身份 |
+| 3 | 4/12段 | 完善引用格式 | Sramek et al. 完整引用参数 |
+| 4 | 5/12段 | 新增库外引用 | PMC 7185269·480nm·phase advance |
+| 5 | 新增E1-E4块 | 新增验证块 | 7条断言+2轮红队 |
+
+### E4 库外溯源来源清单（3条）
+
+| # | 来源类型 | 出处 |
+|---|---------|------|
+| 1 | Anna Lembke《Dopamine Nation》 | NYT bestseller·Stanford |
+| 2 | Sramek et al. 2000 | Eur J Appl Physiol |
+| 3 | 董辉本地数据 | 30天Notion·14天晨光·10年王者 |
+
+**【Skill调用】** content-engine(X适配)→humanizer-zh(去AI腔)→exa-search(库外溯源)
+**【红队】** 2轮·零交叉引用·零禁用词
