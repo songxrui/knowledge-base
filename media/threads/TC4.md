@@ -25,7 +25,7 @@ Layer 2 - Naval (insight): understanding wealth as "assets that create value whi
 Layer 3 - Dan Koe (distribution): your content is a 24/7 salesperson. Hook first, evidence in the middle, action at the end. This makes your content get SEEN.
 
 4/10
-Counter-consensus: Munger had world-class ideas but nobody knew him until Buffett. Naval had world-class business insight but tweeted daily for 10 years before anyone cared. Distribution IS part of creation. Your Trinity without Dan Koe = a two-story building with no stairs.
+Counter-consensus: Munger had world-class ideas but nobody knew him until Buffett. Naval had world-class business insight but tweeted daily for 10 years before anyone cared (Naval Ravikant public self-account). Distribution IS part of creation. Your Trinity without Dan Koe = a two-story building with no stairs.
 
 5/10
 The best content isn''t "well-written." It''s "worth forwarding, worth arguing about, worth saving."
