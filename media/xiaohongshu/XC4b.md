@@ -1,7 +1,8 @@
 ﻿# XC4b｜注意力是第一资产·AI时代你唯一护城河是"只有你能写"
 
 > **【产出Skill链】** content-engine(小红书适配·CES评分结构) → weread-skills → humanizer → brand-voice
-> **取材卡**：C4-4注意力是第一资产 + C4-2平台策略 | **平台**：小红书 | **字数**：~1050字
+> **取材卡**：C4-4注意力是第一资产 + C4-2平台策略 | **平台**
+> 🎨 图片设计：参见 IMAGE_DESIGN_SPEC.md 中对应编号 | 制作工具：Canva/稿定设计：小红书 | **字数**：~1050字
 
 📌 AI能写任何风格的文章。Midjourney能生成任何风格的图片。那22岁的你，凭什么跟AI竞争？
 
@@ -56,3 +57,4 @@
 **验证来源类型：库外(weread+navalmanack.com) | 零交叉引用**
 **红队轮次**：2轮
 **before→after diff**：新增5条LEDGER断言
+

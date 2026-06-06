@@ -1,7 +1,8 @@
 ﻿# XC4a｜三位一体创作·Munger思想+Naval智慧+DanKoe传播=你的IP引擎
 
 > **【产出Skill链】** content-engine(小红书适配·框架驱动) → strategic-compact → humanizer → brand-voice
-> **取材卡**：C4-1三位一体创作 + C4-4注意力是第一资产 | **平台**：小红书 | **字数**：~1050字
+> **取材卡**：C4-1三位一体创作 + C4-4注意力是第一资产 | **平台**
+> 🎨 图片设计：参见 IMAGE_DESIGN_SPEC.md 中对应编号 | 制作工具：Canva/稿定设计：小红书 | **字数**：~1050字
 
 📌 一个人做内容最容易犯的错误：要么只写深度（没人看），要么只追流量（没留存）。
 
@@ -63,3 +64,4 @@ Munger有顶级思想但没人认识他（直到巴菲特推他）；Naval有顶
 **验证来源类型：库外(exa-search navalmanack.com + thedankoe.com + weread) | 零交叉引用**
 **红队轮次**：2轮 (R16-1: 论断拆解+溯源; R16-2: 三位一体框架可替代性追问)
 **before→after diff**：新增6条LEDGER断言 + L级标注
+

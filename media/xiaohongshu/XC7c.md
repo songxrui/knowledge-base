@@ -1,7 +1,8 @@
 ﻿# XC7c｜系统大于目标·愿望不会让你到达任何地方——路会
 
 > **【产出Skill链】** content-engine(小红书适配·框架驱动) → strategic-compact → humanizer → brand-voice
-> **取材卡**：C7-5系统大于目标 + C6-4最小可行性系统 | **平台**：小红书 | **字数**：~1050字
+> **取材卡**：C7-5系统大于目标 + C6-4最小可行性系统 | **平台**
+> 🎨 图片设计：参见 IMAGE_DESIGN_SPEC.md 中对应编号 | 制作工具：Canva/稿定设计：小红书 | **字数**：~1050字
 
 📌 我以前每年元旦都写新年目标："今年要学编程""今年要减肥到65kg""今年要读50本书"。
 
@@ -56,3 +57,4 @@
 | XC7c-2 | Munger逆向思维 | L2 | exa: fs.blog/inversion·Munger 1986 |
 **验证来源类型：库外(exa+weread+公开出版物) | 零交叉引用**
 **红队轮次**：2轮 | **before→after diff**：新增LEDGER断言+L级标注
+
