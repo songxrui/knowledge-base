@@ -210,4 +210,4 @@
 ---
 
 > 本报告可作为内容质量审查的入口文档。从"审查路线"中选择一条，按序阅读对应文件。
-> 产出位置：D:\_alchemist\output\ | GitHub: songxrui/knowledge-base | 飞书: jcn1crrvstv9
+> 产出位置：D:\KnowledgeBase\_alchemist\output\ | GitHub: songxrui/knowledge-base | 飞书: jcn1crrvstv9

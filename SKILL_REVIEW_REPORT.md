@@ -1,7 +1,7 @@
 ﻿# 知识库深度卡片·10维评测报告
 
 > 评测工具：skill-review 10维框架（适配知识库卡片）
-> 评测范围：D:\_alchemist\output\cards\ 全部35张深度卡
+> 评测范围：D:\KnowledgeBase\_alchemist\output\cards\ 全部35张深度卡
 > 评测日期：2026-06-06
 
 ---

@@ -1,6 +1,6 @@
 ﻿# MEDIA_PLAN.md — Skill流水线媒体文稿工厂·排程表
 
-> 生成：2026-06-06 | 工作目录：D:\_alchemist\output\ | 68篇矩阵全排程
+> 生成：2026-06-06 | 工作目录：D:\KnowledgeBase\_alchemist\output\ | 68篇矩阵全排程
 
 ## 段1：编排（已完成）
 

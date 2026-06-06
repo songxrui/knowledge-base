@@ -21,8 +21,8 @@
 
 | 产出文件 | 位置 | 内容 |
 |------|------|------|
-| DBS_INTEGRATION_PIPELINE.md | D:\_alchemist\output\ | 21 skill → 内容创作全周期映射表 |
-| DBS_INTEGRATION_REPORT.md | D:\_alchemist\output\ | Dan Koe × dbs 交叉融合框架 + 逐平台实战 |
+| DBS_INTEGRATION_PIPELINE.md | D:\KnowledgeBase\_alchemist\output\ | 21 skill → 内容创作全周期映射表 |
+| DBS_INTEGRATION_REPORT.md | D:\KnowledgeBase\_alchemist\output\ | Dan Koe × dbs 交叉融合框架 + 逐平台实战 |
 | DBS_SCRIPT_AUDIT.md | D:\KnowledgeBase\media\ | 7脚本AI检测 + 钩子优化 + 口播转换 |
 
 ### 1.3 Dan Koe 2026 消化

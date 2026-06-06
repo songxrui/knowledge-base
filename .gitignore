@@ -9,3 +9,6 @@ Thumbs.db
 # Temp
 *.tmp
 ~$*
+
+# Historical workspace archive (separate git repo)
+_alchemist/

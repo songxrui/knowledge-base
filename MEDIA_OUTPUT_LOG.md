@@ -1,6 +1,6 @@
 ﻿# MEDIA_OUTPUT_LOG — Skill流水线媒体文稿工厂·产出日志
 
-> 生成时间：2026-06-06 | 工作目录：D:\_alchemist\output\ | GitHub：songxrui/knowledge-base
+> 生成时间：2026-06-06 | 工作目录：D:\KnowledgeBase\_alchemist\output\ | GitHub：songxrui/knowledge-base
 
 ## 内容矩阵统计
 
