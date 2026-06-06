@@ -1,0 +1,9 @@
+﻿diff --git a/media/xiaohongshu/XC4b.md b/media/xiaohongshu/XC4b.md
+index 58e8ac3..78d633b 100644
+--- a/media/xiaohongshu/XC4b.md
++++ b/media/xiaohongshu/XC4b.md
+@@ -39,3 +39,4 @@
+ 
+ 🏷️ #注意力管理 #AI时代 #内容护城河 #个人IP #22岁
+ 
++

@@ -137,3 +137,45 @@
 | Z1 | 1处(口语化开头) | SOURCES/diffs/Z1_humanizer_diff.txt |
 | Z4 | 1处(情感锚点) | SOURCES/diffs/Z4_humanizer_diff.txt |
 
+
+## humanizer-zh 全量去味证据（2026-06-06）
+
+### 20篇去味完成清单
+
+| # | 文件 | 编辑类型 | diff文件 |
+|---|------|----------|----------|
+| 1 | F1 | 4处(立场→排比→口语→结语) | F1_humanizer_diff.txt |
+| 2 | F2 | 3处(实话→叙事→金句) | F2_humanizer_diff.txt |
+| 3 | F3 | 2处(藏→和解) | F3_humanizer_diff.txt |
+| 4 | Z1 | 1处(口语化开头) | Z1_humanizer_diff.txt |
+| 5 | Z2 | 2处(十年→开关) | Z2_humanizer_diff.txt |
+| 6 | Z3 | 2处(实话→外卖) | Z3_humanizer_diff.txt |
+| 7 | Z4 | 1处(出租屋锚点) | Z4_humanizer_diff.txt |
+| 8 | Z5 | 1处(拿快递) | Z5_humanizer_diff.txt |
+| 9 | Z6 | 1处(得罪人→电池) | Z6_humanizer_diff.txt |
+| 10 | Z7 | 1处(自律博主→前提) | Z7_humanizer_diff.txt |
+| 11 | N1 | 1处(实话→三次) | N1_humanizer_diff.txt |
+| 12 | N2 | 1处(焦虑→想通) | N2_humanizer_diff.txt |
+| 13 | XC1a | 1处(选英雄→剧本) | XC1a_humanizer_diff.txt |
+| 14 | XC4b | 1处(一百倍→做不到) | XC4b_humanizer_diff.txt |
+| 15 | XC7a | 1处(三个月→值不值) | XC7a_humanizer_diff.txt |
+| 16 | JC2a | 1处(脸红) | JC2a_humanizer_diff.txt |
+| 17 | JC6a | 1处(十年才看清) | JC6a_humanizer_diff.txt |
+| 18 | SC1 | 1处(剧本→演) | SC1_humanizer_diff.txt |
+| 19 | TC1 | 1处(rewired→stumbled) | TC1_humanizer_diff.txt |
+| 20 | TC4 | 1处(constantly→voice) | TC4_humanizer_diff.txt |
+
+**总计**: 20篇·27处编辑·20个diff文件留存于SOURCES/diffs/
+
+### SOURCES卡片原文截取
+
+| 卡片 | 截取内容 |
+|------|----------|
+| C1-1 | 多巴胺基线→一句话洞察+证据1 |
+| C1-3 | 昼夜节律→一句话洞察+证据1 |
+| C2-3 | 六格复盘→一句话洞察+反共识 |
+| C4-4 | 注意力资产→一句话洞察+反共识 |
+| C7-1 | 第一性原理→一句话洞察+证据1 |
+
+5个关键卡片原文截取存档于SOURCES/cards/
+

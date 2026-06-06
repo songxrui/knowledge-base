@@ -1,0 +1,18 @@
+﻿diff --git a/media/threads/TC1.md b/media/threads/TC1.md
+index 24d39f3..843fd0a 100644
+--- a/media/threads/TC1.md
++++ b/media/threads/TC1.md
+@@ -4,7 +4,7 @@
+ > **取材卡**：C1簇综述 | **平台**：X/Twitter | **条数**：12条
+ 
+ 1/12
+-At 22, I realized something that rewired my entire self-improvement approach:
++At 22, I stumbled onto something that made me rethink everything I thought I knew about self-improvement:
+ 
+ Your dopamine system isn't a "pleasure center." It's a motivation engine. And I'd been running mine into the ground for 10 years.
+ 
+@@ -68,3 +68,4 @@ Career. Relationships. Creativity. Decision quality. All downstream of dopamine
+ 
+ Start tomorrow: 7am wake + 10min sunlight + 30s cold water. One day. Then another.
+ 
++

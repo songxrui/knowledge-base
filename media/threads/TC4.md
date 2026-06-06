@@ -59,3 +59,4 @@ Don''t ask "what should I sell?" Write for 90 days first. When someone DMs you "
 10/10
 At 22, you don''t need to be the best. You need to be the most specific. AI makes generic content worthless. Your weird combination of experiences — Changsha + esports rankings + trading losses + Notion systems — is your un-copyable advantage. The game isn''t "write better." The game is "write what only you can write."
 
+

@@ -4,7 +4,7 @@
 > **取材卡**：C1簇综述 | **平台**：X/Twitter | **条数**：12条
 
 1/12
-At 22, I realized something that rewired my entire self-improvement approach:
+At 22, I stumbled onto something that made me rethink everything I thought I knew about self-improvement:
 
 Your dopamine system isn't a "pleasure center." It's a motivation engine. And I'd been running mine into the ground for 10 years.
 
@@ -67,4 +67,5 @@ The upstream variable of everything: health.
 Career. Relationships. Creativity. Decision quality. All downstream of dopamine baseline, sleep quality, and metabolic flexibility. Fix the engine, and the car drives itself. Ignore the engine, and no amount of "productivity hacks" will save you.
 
 Start tomorrow: 7am wake + 10min sunlight + 30s cold water. One day. Then another.
+
 
