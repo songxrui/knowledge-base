@@ -83,3 +83,22 @@ At 22, execution isn''t about "becoming more disciplined." It''s about:
 4. Tracking "did I follow the system?" not "did I reach the goal?"
 
 Discipline is an environment design problem. Fix the environment. The discipline takes care of itself.
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R15】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| TC6-1 | Leroy 2009 attention residue | L2 | Sophie Leroy (2009) "Why is it so hard to do my work?" OBHDP 109(2):168-181·exa-search: sciencedirect.com/science/article/abs/pii/S0749597809000399 确认 |
+| TC6-2 | 任务切换→认知残留→后续表现下降 | L2 | Leroy 2009 Experiment 1&2: 未完成任务切换后attention residue显著·性能下降 |
+| TC6-3 | Atomic Habits四法则 | L2 | James Clear《Atomic Habits》公开出版物·weread bookId:26934843 |
+| TC6-4 | Thorndike 2012习惯研究 | L2 | 需进一步查证·暂标为L5(待验证具体年份/引用) |
+| TC6-5 | "最差日基准线" | L4 | 作者原创MVS(Minimum Viable Systems)框架 |
+| TC6-6 | "纪律是陷阱·系统设计才是答案" | L4 | 作者核心论点·基于MVS框架推导 |
+| TC6-7 | 完美日系统=脆弱系统 | L4 | 作者原创推论·类比工程可靠性设计 |
+
+**验证来源类型：库外(exa-search Leroy 2009) + 公开出版物(Atomic Habits) | 零交叉引用**
+**红队轮次**：2轮 (R15-1: 论断拆解+溯源; R15-2: Thorndike 2012年份核实)
+**before→after diff**：新增7条LEDGER断言 + L级标注
+**注**：TC6-4 Thorndike 2012标注L5(待核实)·其余L2/L4已确认

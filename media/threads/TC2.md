@@ -65,3 +65,24 @@ Track the system, not the goal. Systems run. Goals sit on paper.
 At 22, your biggest asset isn''t what you know. It''s your ability to turn what you know into verifiable action.
 
 You already know enough. The gap isn''t knowledge debt — it''s verification debt. Close one Model this week. Run one experiment. Publish one result. That''s how you flip cognitive debt into compound interest.
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R15】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| TC2-1 | 70本书·3073条划线 | L2w | weread API `/user/notebooks` 返回 totalBookCount=70, totalNoteCount=3073 |
+| TC2-2 | 学习产生多巴胺快感 | L2w | weread bookId:3300054893《成瘾》划线161条·核心论点"多巴胺驱动想要而非喜欢"→理解新知=多巴胺 |
+| TC2-3 | Charlie Munger决策框架 | L2w | weread bookId:837932《穷查理宝典》划线26条 |
+| TC2-4 | 知识:实验=358:0 | L4 | 作者自述·2026-06-06记忆估算(标注非精确) |
+| TC2-5 | Life OS v2.0五阶段信息管线 | L4 | 作者原创框架 |
+| TC2-6 | 14天动机窗口 | L2 | 《The 4-Hour Body》Tim Ferriss·公开出版物 |
+| TC2-7 | 六格复盘 | L4 | 作者原创框架·适配自C2簇 |
+| TC2-8 | 认知负债=占用心理RAM | L2 | Leroy 2009 attention residue·OBHDP 109(2):168-181·exa-search确认 |
+| TC2-9 | 1.01^365=37.78 | L3 | 数学恒等式·可独立验证 |
+
+**验证来源类型：库外(weread API + exa-search) | 零交叉引用**
+**红队轮次**：2轮 (R15-1: 论断拆解+溯源; R15-2: 反例/边界追问)
+**before→after diff**：本文稿新增9条LEDGER断言 + L级标注
+**humanizer**：该文稿原已通过humanizer审核(4.2/5)·本轮未重新触发

@@ -49,3 +49,23 @@
 
 🏷️ #反依赖 #亲密关系 #依恋理论 #22岁 #自我成长
 
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R15】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| XC5a-1 | 反依赖(依恋理论) | L2 | Blum et al. 2020 "Counterdependency" SBCI量表·exa-search: lawrenceblum.com 确认·counterdependency=对依赖需求的防御性抵抗 |
+| XC5a-2 | 依恋回避=恐惧依赖与亲密 | L2 | Brennan, Clark & Shaver 1998 ECR-R量表·attachment avoidance定义·exa-search via Springer Nature |
+| XC5a-3 | Bowlby依恋理论: "cradle to grave" | L2 | Bowlby 1988 "A Secure Base"·依赖接受→更多独立(非更少)·exa-search学术论文确认 |
+| XC5a-4 | "最安全的自己≠最好的自己" | L4 | 作者原创概念框架·基于反依赖推导 |
+| XC5a-5 | 关系六格复盘 | L4 | 作者原创分析框架·适配自C5族 |
+| XC5a-6 | "低风险脆弱"练习 | L4 | 作者原创干预方法·基于依恋理论推导 |
+| XC5a-7 | 莎兰·汉考克反依赖·47划线+12想法 | L2w | weread bookId:3300076054《反依赖》noteCount=59(47+12) |
+| XC5a-8 | 面具维持成本指数增长→崩盘 | L4 | 作者推论·类比技术债务·无独立验证 |
+
+**验证来源类型：库外(exa-search Blum 2020 + weread API + Bowlby公开理论) | 零交叉引用**
+**红队轮次**：2轮 (R15-1: 论断拆解+溯源; R15-2: 临床适用性边界追问)
+**before→after diff**：新增8条LEDGER断言 + L级标注
+**humanizer 终审**：该文稿原已通过humanizer审核(4.2/5)·本轮未重新触发

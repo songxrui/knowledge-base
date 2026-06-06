@@ -73,3 +73,22 @@ At 22, your portfolio has 3 positions:
 3. Content (the 24/7 salesperson)
 
 Allocate accordingly. Everything else — trading, side hustles, optimization — comes after the foundation is solid. Build the base first. The rest compounds on top.
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R15】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| TC3-1 | 1.01^365=37.78 | L3 | 数学恒等式·1.01^365≈37.7834·可独立验证 |
+| TC3-2 | The Compound Effect (Darren Hardy) | L2 | exa-search: darrenhardy.com/products/the-compound-effect 确认出版·1%日常改善=复利效应核心原理 |
+| TC3-3 | 复利效应·56条划线 | L2w | weread bookId:3300165479《复利效应》noteCount=56 |
+| TC3-4 | 2h/天×8年·复利技能 | L4 | 作者外推模型·"编码/写作/健身/研究"为作者自定义技能集 |
+| TC3-5 | 杠铃策略(Taleb改编) | L2 | Taleb《Antifragile》杠铃策略公开概念·"90%极安全+10%极高风险"为22岁适配版 |
+| TC3-6 | 资产时间 vs 负债时间 | L4 | 作者原创概念框架 |
+| TC3-7 | 5300 RMB亏损·母亲信任 | L1 | 与KB C2-1+C3-1交叉验证·历时记录 |
+| TC3-8 | 22岁最大资产=接下来8年 | L4 | 作者推论·基于复利数学+年龄变量 |
+
+**验证来源类型：库外(exa-search + weread API + 数学验证) | 零交叉引用(仅TC3-7为库内历史事实)**
+**红队轮次**：2轮 (R15-1: 论断拆解+溯源; R15-2: 杠铃策略边界追问)
+**before→after diff**：新增8条LEDGER断言 + L级标注

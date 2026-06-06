@@ -82,3 +82,20 @@ The meta-lesson after 2 years of building thinking models:
 At 22, you don''t need more mental models. You need to apply the ones you already understand to ONE area of your life until you see measurable change. One model, one experiment, one result. Then the next. The gap isn''t "knowledge of models." It''s "models applied to real problems with real data."
 
 Start with one. Question the requirement. Delete the noise. Build the system. Run it. Break it. Rebuild. Repeat.
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R15】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| TC7-1 | Musk 5-Step Algorithm | L2 | Walter Isaacson《Elon Musk》(2023)·exa-search: elonmuskbook.org/the-book-of-elon-musk-free-online-version/the-algorithm 确认五步: 1)Question requirements 2)Delete 3)Simplify/optimize 4)Accelerate 5)Automate |
+| TC7-2 | "最聪明的工程师优化不该存在的东西" | L2 | Isaacson转述Musk原话·"most common error of smart engineers is to optimize a thing that should not exist" |
+| TC7-3 | 第一性原理·拆解到不可再分 | L3 | 公开概念·Aristotle→Musk·物理学/工程学基本方法 |
+| TC7-4 | "未验证的知识=负债" | L4 | 作者核心论点·Life OS v2.0原创 |
+| TC7-5 | "7天未处理→自动删除" | L4 | 作者Life OS v2.0 inbox规则 |
+| TC7-6 | 22岁<10k资本不应交易 | L4 | 作者个人结论·基于Musk Step 1"质疑需求"推导 |
+
+**验证来源类型：库外(exa-search Isaacson传记 + 公开概念) | 零交叉引用**
+**红队轮次**：2轮 (R15-1: 论断拆解+溯源; R15-2: Musk算法适用性边界追问)
+**before→after diff**：新增6条LEDGER断言 + L级标注

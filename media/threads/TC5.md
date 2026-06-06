@@ -64,3 +64,21 @@ After every interaction: "Did I show my real self? (0-10)" + "How did they respo
 
 11/11
 Summary: the best relationship isn''t "finding the perfect person." It''s "two people brave enough to be imperfect in front of each other." Your image isn''t a mask — it''s a preview of your future self. Your generational story isn''t a handicap — it''s your most unique content anchor. Start there.
+
+---
+
+## 【库外独立验证·2026-06-06 地基修复R15】
+
+| ID | 论断 | 等级 | 库外验证路径 |
+|----|------|:--:|-------------|
+| TC5-1 | 反依赖(依恋理论) | L2 | Blum et al. 2020 "Counterdependency"·SBCI量表·exa-search: lawrenceblum.com/uploads/3/4/0/9/34091849/blum_et_al_counterdependency___ppd__psapsych2020.pdf |
+| TC5-2 | 依恋回避=恐惧依赖与亲密 | L2 | ECR-R量表·Brennan, Clark & Shaver 1998·attachment avoidance定义·exa-search确认 |
+| TC5-3 | "健康独立 vs 反依赖"区分 | L4 | 作者原创二分类框架·基于依恋理论推导 |
+| TC5-4 | "最安全的自己≠最好的自己" | L4 | 作者原创概念·基于反依赖推导 |
+| TC5-5 | 面具维持成本指数增长→崩盘 | L4 | 作者推论·类比技术债务但应用于人际关系 |
+| TC5-6 | 反依赖=恐惧被拒装扮为自足 | L2 | Bowlby依恋理论+Blum 2020 SBCI·exa-search确认counterdependency定义 |
+| TC5-7 | 反依赖·47划线+12想法 | L2w | weread bookId:3300076054《反依赖》noteCount=59(47+12) |
+
+**验证来源类型：库外(exa-search + weread API) | 零交叉引用**
+**红队轮次**：2轮 (R15-1: 论断拆解+溯源; R15-2: 临床边界追问)
+**before→after diff**：新增7条LEDGER断言 + L级标注
