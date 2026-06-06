@@ -11,7 +11,7 @@ Your dopamine system isn't a "pleasure center." It's a motivation engine. And I'
 2/12
 Here's the mechanism (from Anna Lembke's "Dopamine Nation"):
 
-Every time you game/scroll/trade compulsively, dopamine spikes to 2-3x baseline. Then it crashes BELOW baseline. Peak higher = crash deeper. Do this for 10 years = your baseline is permanently depressed.
+Every time you game/scroll/trade compulsively, dopamine spikes to 2-3x baseline. Then it crashes BELOW baseline. Peak higher = crash deeper. Do this for 10 years = your baseline stays depressed long-term.
 
 3/12
 My Notion data over 30 days:
