@@ -367,3 +367,43 @@
 | SC7-3 | 过程vs结果指标 | L3 | 管理学常识·OKR/Deming |
 | SC7-4 | 个人系统翻译(50行/30min/15g) | L4 | 作者个人阈值 |
 | SC7-5 | 月度系统审计·80%阈值 | L4 | 作者6个月实验数据 |
+
+---
+
+## R12 扩展：TC3/TC5/TC6/TC7（exa-search扩源·2026-06-06）
+
+### TC3 财富·不对称赌注
+| ID | 论断 | 等级 | 验证路径 |
+|----|------|------|----------|
+| TC3-1 | 1% better→37.78x (The Compound Effect) | L2 | Darren Hardy 2010·1.01^365复利数学公式 |
+| TC3-2 | Barbell·asymmetric bets | L2 | Antifragile·Taleb(SC3-2交叉引用) |
+| TC3-3 | Dan Koe·10 pieces>business plan | L2w | Dan Koe公开模型(TC2交叉引用) |
+| TC3-4 | 5000×10% vs 2000×12=48x | L4 | 概念示例·自验证数学 |
+| TC3-5 | hourly rate optimization first | L4 | 作者个人框架 |
+
+### TC5 关系·反依赖
+| ID | 论断 | 等级 | 验证路径 |
+|----|------|------|----------|
+| TC5-1 | 依恋理论·anti-dependency | L2 | 心理学公开概念(C5-1交叉引用) |
+| TC5-2 | 代际错位·3x readership | L4 | 作者自估·SC5交叉引用 |
+| TC5-3 | Consistency>brilliance | L3 | 损失厌恶·行为经济学·作者经验法则 |
+| TC5-4 | 形象管理3层 | L4 | 作者自建框架(C5-2交叉引用) |
+
+### TC6 执行·自律陷阱
+| ID | 论断 | 等级 | 验证路径 |
+|----|------|------|----------|
+| TC6-1 | Minimum Viable Systems·3层 | L4 | 作者自建(SC6交叉引用) |
+| TC6-2 | Atomic Habits 4 Laws reversed | L2 | Atomic Habits·James Clear(SC6交叉引用) |
+| TC6-3 | attention residue·30-40% | L2 | Leroy 2009·Org Behavior & Human Decision Processes·Gloria Mark UC Irvine |
+| TC6-4 | Negative flywheel | L4 | 作者自建(C6-1交叉引用) |
+| TC6-5 | P0 Single Thread | L4 | 作者自建(C2-3交叉引用) |
+
+### TC7 思维模型
+| ID | 论断 | 等级 | 验证路径 |
+|----|------|------|----------|
+| TC7-1 | Musk 5-Step Algorithm | L2 | Isaacson 2023 Elon Musk传记·2021 Everyday Astronaut采访 |
+| TC7-2 | First Principles | L2 | Musk公开论述(C7-1交叉引用) |
+| TC7-3 | Antifragility | L2 | Taleb·Antifragile(SC3交叉引用) |
+| TC7-4 | Systems>Goals | L2 | Scott Adams·How to Fail(SC7交叉引用) |
+| TC7-5 | 六格复盘 | L4 | 作者自建(C2-3交叉引用) |
+| TC7-6 | Crash Recovery Protocol | L4 | 作者自建SOP |

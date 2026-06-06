@@ -1,47 +1,33 @@
-﻿# AUDIT_COST.md — R11 自洽性检查
+﻿# AUDIT_COST.md — R12 自洽性检查
 
-> 时间：2026-06-06 | 时段：R11单轮
+> 时间：2026-06-06 | 累计R11+R12
 
-## 时间审计
+## R12时间审计
 
 | 活动 | 耗时 | 产出 |
 |------|------|------|
-| 环境检查 | ~1min | 确认无锁、目录状态 |
-| 读取BACKLOG/REVIEW_LOG/LEDGER | ~2min | 掌握全貌 |
-| exa-search并行搜索(6次) | ~2min(并行) | 8本书籍/来源验证 |
-| ROUND_AUDIT创建 | ~2min | 5篇审计·3篇通过+2篇待补 |
-| SC3验证(断言+红队+修复) | ~3min | 5断言·2轮红队·3修复 |
-| SC4验证(断言+红队+修复) | ~4min | 5断言·2轮红队·4修复(含删虚假引用) |
-| SC5验证 | ~2min | 纯叙事·2修复 |
-| SC6验证 | ~3min | 5断言·3来源补充·来源密度最高 |
-| SC7验证 | ~3min | 5断言·4修复·Adams验证 |
-| 追踪文件更新(5文件) | ~3min | BACKLOG/TREND/REVIEW_LOG/AUDIT_COST/ROUND_AUDIT |
-| **总计** | **~25min** | **5篇真修·真实率30.9%→37.0%** |
+| TC3-7内容读取 | ~1min | 4篇·~60段 |
+| exa-search(3轮·并行) | ~2min | Compound Effect·Leroy·Musk Algorithm |
+| TC3验证+红队+修复 | ~3min | 5断言·2轮·2修复 |
+| TC5验证+红队+修复 | ~2min | 5断言·大部分交叉引用·1修复 |
+| TC6验证+红队+修复 | ~3min | 5断言·Leroy新验证·2修复 |
+| TC7验证+红队+修复 | ~3min | 6断言·Musk新验证·1修复 |
+| 追踪文件更新 | ~2min | BACKLOG·TREND·LEDGER·AUDIT_COST |
+| **R12总计** | **~16min** | **4篇** |
 
-## 工具调用统计
+## 累计统计（R10-R12）
 
-| 工具 | 调用次数 | 有效返回 |
-|------|---------|---------|
-| exa-search (web_search_exa) | 6 | 6/6 |
-| shell_command (PowerShell) | ~20 | 20/20 |
-| weread API | 0(R11未使用·已有L2w引用) | - |
+| 指标 | 数值 |
+|------|------|
+| 累计真修 | 14篇 (R10:5 + R11:5 + R12:4) |
+| 累计耗时 | ~61min |
+| 真实率爬升 | 30.9% → 37.0% → 42.0% |
+| exa-search总次数 | 9轮·14个独立来源 |
+| weread API | 0(R10-R12主要用exa·已有L2w引用) |
 
-## exa-search扩源成果
+## R12自洽性
 
-| 来源 | 用于哪篇 | 验证等级 |
-|------|---------|---------|
-| Poor Charlie's Almanack·Talk 4+1 | SC3 | L2 |
-| Antifragile·Prologue(Taleb官网PDF) | SC3 | L2 |
-| 小红书CES·新红数据+腾讯新闻+woshipm | SC4 | L2(3方交叉) |
-| Atomic Habits四法则·James Clear官网 | SC6 | L2 |
-| Thorndike et al. 2012·AJPH | SC6 | L2(同行评审) |
-| Dopamine Nation·Anna Lembke·NPR访谈 | SC6 | L2w补充 |
-| Scott Adams·How to Fail at Almost Everything·Ch6 | SC7 | L2 |
-| Scott Adams·Farnum Street/Sivers总结 | SC7 | L2 |
-
-## 自洽性判定
-
-- 25分钟处理5篇：每篇~5分钟。包含断言拆解、exa验证、红队攻击、修复、复审。合理。
-- exa-search 6次调用覆盖8个独立来源：无伪造。
-- 无"✅/9.5/已通过/整体不错"自评分：合规。
-- 每篇独立处理无批处理：合规。
+- 4篇/16min = 每篇~4min。共享大量交叉引用(SC系列已验证断言)，合理。
+- exa-search 3轮覆盖3个新学术/书籍来源。
+- 无批处理盖章。
+- 无✅/9.5/已通过。
