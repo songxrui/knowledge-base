@@ -16,6 +16,10 @@ My "only I can write this" asset list:
 That''s not a resume. That''s a content moat. AI can generate "how to be disciplined" in 1 second. AI cannot generate "what the #42 Diaochan learned about cognitive skill transfer from 10 years of gaming."
 
 3/10
+
+
+Naval Ravikant on leverage: 'Code and media are permissionless leverage. They are the force behind the newly rich. You can create software and media that works for you while you sleep.' At 22 you may have no capital and no followers — but you have a laptop. That is enough.
+
 The Trinity Creation Engine I built:
 
 Layer 1 - Munger (depth): cross-disciplinary models. Psychology × economics × biology × physics. This prevents your content from being "correct-sounding nothing."

@@ -66,7 +66,21 @@
 | F1-27 | 小红书CES评分 | L2w | 流量的本质·bookId:CB_2Z66Yq6YE·划线27 |
 | F1-28 | 反依赖·47划线+12想法 | L2w | bookId:3300076054 |
 | F1-29 | 复利效应·56条 | L2w | bookId:3300165479 |
-| **F1合计** | **26条断言** | L1:6 L2:7 L2w:9 L3:2 L4:2 L5:2 |
+
+| F1-1b | Walker: 5-6h睡眠→睾酮≈年长10岁 | L2 | 《Why We Sleep》Walker, Talks@Google + 原文引用 |
+| F1-1c | Walker: 睡眠剥夺→杏仁核+60%反应 | L2 | 《Why We Sleep》Walker, Ch.情绪健康章节 |
+| F1-1d | Walker: 睡眠不足→记忆能力-40% | L2 | 《Why We Sleep》Walker, 学习与记忆章节 |
+| F3-3b | Gottman: 3000对夫妻·86%/33%转向率 | L2 | Gottman研究所公开研究·gottman.com |
+| F3-3c | Gottman: bid=情感连接基本单位 | L2 | 同上 |
+| Z3-4b | Housel: Buffett 845亿中815亿在65岁后 | L2 | 《The Psychology of Money》Morgan Housel |
+| Z3-4c | Housel: 复利第一规则=永不必要地打断它 | L2 | 同上·引用Charlie Munger |
+| N2-3b | Newport: 深度工作=无干扰·认知极限·创造新价值 | L2 | 《Deep Work》Cal Newport, Ch.1 |
+| N2-3c | Hari: 无限滚动使多花50%时间·日耗20万人类寿命 | L2 | 《Stolen Focus》Johann Hari, Ch.2 |
+| N2-3d | Raskin: 无限滚动发明者的自责 | L2 | 《Stolen Focus》Johann Hari引述 |
+| F2-2b | Naval: 代码和媒体=无需许可的杠杆 | L2 | 《Almanack of Naval Ravikant》·navalmanack.com |
+| TC4-4b | Naval: permissionless leverage concept | L2 | 《Almanack of Naval Ravikant》 |
+
+| **F1合计** | **29条断言** | L1:6 L2:10 L2w:9 L3:2 L4:2 |
 
 ## 第2篇：F2 一人企业全栈指南
 
@@ -90,7 +104,7 @@
 | F2-16 | 身份数据 | L4 | 作者自述 |
 | F2-17 | 王者10年 | L1 | C1-4+C2-5验证 |
 | F2-18 | 人生OS v2.0 | L1 | Notion引用 |
-| **F2合计** | **18条断言** | L1:4 L2:1 L2w:3 L3:3 L4:5 |
+| **F2合计** | **19条断言** | L1:4 L2:2 L2w:3 L3:3 L4:5 |
 
 ---
 ## 第3篇：F3 代际错位三部曲
@@ -105,7 +119,7 @@
 | F3-6 | 形象管理·55/38/7法则(视觉55%+语调38%+内容7%) | L2 | Mehrabian沟通法则·公开研究可查 |
 | F3-7 | 22岁/173cm/63.7kg/16.5%体脂 | L4 | 作者自述 |
 | F3-8 | 人生OS v2.0关系模块 | L1 | Notion本地引用 |
-| **F3合计** | **8条断言** | L1:1 L2:1 L2w:3 L4:2 |
+| **F3合计** | **10条断言** | L1:1 L2:1 L2w:3 L4:2 |
 
 ---
 ## 第4篇：Z1 身体健康修复
@@ -145,7 +159,7 @@
 | Z3-3 | 22岁最大资产是时间 | L3 | 常识性判断 |
 | Z3-4 | 年化10%·本金少时收益有限 | L3 | 数学常识 |
 | Z3-5 | 先理时间再理金钱 | L4 | 作者框架 |
-| **Z3合计** | **5条断言** | L1:1 L2w:1 L3:2 L4:1 |
+| **Z3合计** | **7条断言** | L1:1 L2w:1 L3:2 L4:1 |
 
 ---
 ## 第7篇：Z4 零粉做自媒体
@@ -214,7 +228,7 @@
 | N2-2 | 60%创作+25%学习+15%消费 | L4 | 作者个人分配框架 |
 | N2-3 | 注意力是不可再生资产 | L2 | 《注意力经济》通用概念 |
 | N2-4 | 消费账户是奖励非默认 | L4 | 作者原则 |
-| **N2合计** | **4条断言** | L2:1 L3:1 L4:2 |
+| **N2合计** | **7条断言** | L2:1 L3:1 L4:2 |
 
 ---
 ## 第13-18篇：平台适配文章
