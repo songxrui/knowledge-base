@@ -108,3 +108,4 @@ Start with one. Question the requirement. Delete the noise. Build the system. Ru
 > 改动: 6处 (添加个人立场标记·口语化转折·反问句·具体感官细节·情感表达)
 > 扫描: 零禁用词·零三段式·零AI排比空壳
 > 判定: 通过·可发布
+
