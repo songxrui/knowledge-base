@@ -80,3 +80,5 @@
 18:14:53 | 决策-瘫痪破解 | dbs-content-system | C2-4+C6-2深度 | 有效
 
 18:15:55 | 创作者-SOP | dbs-content-system | C4-1+C6-4深度 | 有效
+
+18:17:26 | 拖延-三种类型 | dbs-content-system | C6-1+C1-1深度 | 有效
