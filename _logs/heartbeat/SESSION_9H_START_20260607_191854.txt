@@ -1,0 +1,5 @@
+﻿SESSION_9H_START = 2026-06-07 19:18:54
+SESSION_9H_STOP  = 2026-06-08 04:18:54
+BASELINE: 132 articles | 37 >= 3000CN (28%) | 95 < 3000CN (72%)
+DBS-SKILLS: dbs-content-system OK | dbs-content OK
+WORKDIR: D:\KnowledgeBase\
