@@ -70,3 +70,5 @@
 18:07:31 | 信息-饮食方案 | dbs-content-system | C2-2+C4-4深度 | 有效
 
 18:09:54 | 思维-第一性原理实操 | dbs-content-system | C7-1深度+案例 | 有效
+
+18:12:03 | 反脆弱-22岁实战 | dbs-content-system | C7-3深度+年度计划 | 有效
