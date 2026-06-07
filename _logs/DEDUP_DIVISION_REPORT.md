@@ -1,143 +1,97 @@
-﻿# 知识库双文件夹去重与分工分析报告
+﻿# D:\KnowledgeBase 去重与分工分析报告
+生成时间: 2026-06-07
+工作目录: D:\KnowledgeBase
 
-> 生成: 2026-06-06 | 分析范围: `D:\KnowledgeBase\`(主库) vs `D:\KnowledgeBase\_alchemist\`(迁移副本)
-> 结论: **_alchemist为历史快照·零独有文件·建议保留为只读归档**
+## 一、清理行动摘要
 
----
+| 操作 | 文件数 | 释放/整理 |
+|------|--------|-----------|
+| 飞书配置归位 | 2 | 移至 `_alchemist/feishu-config/` |
+| audit-trail 合并 → _logs | 2 唯一文件迁移 | 融入主日志 |
+| audit-trail 删除 | 25 重复 | 移除冗余副本 |
+| notion 副本删除 | 162 重复 | 移除冗余副本 |
+| **合计清理** | **189 重复/裸露** | - |
 
-## 一、去重分析
+## 二、去重详细对比
 
-### 1.1 文件级统计
+### 2.1 _logs vs audit-trail（审计日志）
 
-| 指标 | 数值 |
-|------|:--:|
-| 主库MD文件总数 | 1,425 |
-| _alchemist MD文件数 | 674 |
-| 两库同路径文件 | 674 (100%) |
-| 字节完全一致 | 229 (34.0%) |
-| 大小不同 | 445 (66.0%) |
-| **_alchemist独有文件** | **0** |
-| 主库独有文件 | 751+ |
+| 类别 | 数量 | 处理 |
+|------|------|------|
+| 两处同名文件 | 25 | audit-trail 副本删除 |
+| 仅 _logs 有 | 36 | 保留（更完整） |
+| 仅 audit-trail 有 | 2 | ENTROPY_MAP.md、MEDIA_OUTPUT_LOG.md → 迁移至 _logs |
+| **结论** | **_logs 是规范日志目录** | audit-trail 已删除 |
 
-### 1.2 445个差异文件分析
+### 2.2 notion/hui2737（Notion 导出）
 
-| 差异方向 | 数量 | 占比 |
-|---------|:--:|:--:|
-| _alchemist版本更新 | 412 | 92.6% |
-| 主库版本更新 | 33 | 7.4% |
+| 目录 | 文件数 | 内容 |
+|------|--------|------|
+| `D:\KnowledgeBase\notion\hui2737\` | 162 | ✅ 规范副本 |
+| `D:\KnowledgeBase\_alchemist\notion\hui2737\` | 162 | ❌ 已删除 |
+| **结论** | 完全相同 | 仅保留主库版本 |
 
-**差异性质**：绝大部分差异<0.5KB，属于：
-- Notion导出文件的时间戳/格式差异（~350个）
-- 行尾换行符差异（CRLF vs LF）
-- 末尾空行差异
-- 实质性内容差异极少
+### 2.3 flagship（旗舰文章）
 
-**需关注的实质性差异**（5个文件差>1KB）：
-| 文件 | 差异 | 说明 |
-|------|:--:|------|
-| dankoe笔记 | +2.5KB | _alchemist版本有额外内容 |
-| dankoe2 | +2.0KB | 同上 |
-| spec writing | +2.0KB | 同上 |
-| 全周期深度复盘报告 | -1.5KB | 主库版本稍大 |
-| FINAL_SKILL_OPTIMIZATION_REPORT | -1.0KB | 主库版本稍大 |
+| 目录 | 内容 |
+|------|------|
+| `D:\KnowledgeBase\media\flagship\` | F1-F3（发布版） |
+| `D:\KnowledgeBase\_alchemist\flagship\` | X01-X03（初稿/工作版） |
+| **结论** | **不重复，分工明确**：F 系列为发布最终稿，X 系列为工作初稿 |
 
-> ⚠️ 建议：对5个实质性差异文件做手动diff确认后决定是否合并。
+## 三、两库分工定位
 
----
+### D:\KnowledgeBase（主库 — 永久产出交付区）
 
-## 二、结构分工分析
+| 目录 | 职责 | 文件数 |
+|------|------|--------|
+| `cards/` | 35 张深度认知卡 | 35 |
+| `media/` | 14 个子目录：全平台媒体稿 | ~220 |
+| `media/flagship/` | F 系列旗舰文章（发布版） | 3 |
+| `media/wechat_2026-06-07/` | 9H 微信文章工程（W1-W59） | 128 |
+| `_logs/` | 全部运维日志 | 62 |
+| `_content-system/` | DBS 内容系统 | 结构化 |
+| `notion/` | Notion 导出（规范） | 162 |
+| `output/` | 生成输出（cards/inventory/reports） | ~92 |
+| `00_Inbox - 04_Archive/` | PARA 知识管理结构 | - |
+| `SOURCES/` | 外部来源材料 | 30 |
+| `zettel/` | Zettelkasten 笔记 | 11 |
 
-### 2.1 主库 `D:\KnowledgeBase\` — 生产环境·单一真相源
+### D:\KnowledgeBase\_alchemist（工作区 — 内容炼金工坊）
 
-```
-D:\KnowledgeBase\
-├── cards/          ★ 35张深度卡·均分9.39·7簇封顶
-├── media/          ★ 93篇媒体稿·8平台
-├── _content-system/ ★ dbs-content-system v2·5层工程骨架
-├── _logs/          ★ 诊断报告·质量索引·工具账本
-├── output/          ★ v2/v3/v4专属提示词·V1轮卡片
-├── zettel/          ★ 原子笔记
-├── notion/          Notion导出原始数据
-├── 01_Projects/     项目·内容创作
-├── 02_Areas/        长期领域
-├── 03_Resources/    资源(含weread书籍)
-├── 04_Archive/      归档(含entropy清理记录)
-├── .codex/          Codex配置
-└── .dbs/            DBS配置
-```
+| 目录 | 职责 | 文件数 |
+|------|------|--------|
+| `01_Projects/` | 内容创作项目（18 子类） | ~147 |
+| `02_Areas/` | 责任领域 | 0（已归位） |
+| `03_Resources/traffic-engineering/` | 流量工程资源 | - |
+| `03_Resources/weread/` | 微信读书数据 | - |
+| `feishu-config/` | 飞书协作配置 | 2 |
+| `cluster-reviews/` | 7 簇综述 | 7 |
+| `flagship/` | X 系列旗舰初稿 | 3 |
+| `meta/` | 连接矩阵、清单、主题 | 3 |
+| `planning/` | 媒体计划、进度 | 2 |
+| `reports/` | 交付报告、复盘 | 5 |
+| `research/` | 内容机会、市场调研 | 2 |
+| `strategy/` | 品牌声音、内容战略 | 6 |
 
-**定位**：活跃生产环境。所有新内容在此创建、优化、发布。对外同步到GitHub和飞书。
+### 分工原则
+- **主库** = 已发布/可发布的最终交付物 + 日志
+- **_alchemist** = 创作过程材料、工作初稿、规划文档、策略研究
+- 飞书配置：统一在 `_alchemist/feishu-config/`
+- Notion 导出：仅主库保留
 
-### 2.2 副本 `D:\KnowledgeBase\_alchemist\` — 历史快照·只读归档
+## 四、路径引用更新提醒
 
-```
-D:\KnowledgeBase\_alchemist\
-├── cards/          (older versions of same 35 cards)
-├── media/          (older versions of same 93 media)
-├── _content-system/ (older version of content-system)
-├── output/          (older output files)
-├── output/cards/    (V2轮C1-C7系列22张·均分8.45)
-├── notion/          (older Notion exports)
-├── _archive/        2026-06-06-entropy清理记录
-├── _deprecated/     废弃文件
-└── _logs/           旧日志
-```
+以下路径需在 skill 和配置中更新：
+- `D:\_alchemist\output\` → `D:\KnowledgeBase\_alchemist\`（已移动）
+- `D:\_alchemist\output\cards\` → `D:\KnowledgeBase\cards\`
+- 飞书配置引用 → `D:\KnowledgeBase\_alchemist\feishu-config\飞书-协作配置.md`
 
-**定位**：历史快照。原为 `D:\_alchemist\output\` 工作区，迁移至KB内作为归档。**零独有文件**——所有内容主库均已包含。
+## 五、最终状态检查
 
-### 2.3 分工建议
-
-| 维度 | 主库 | _alchemist |
-|------|------|-----------|
-| 读写权限 | ✅ 读写 | 📖 只读归档 |
-| 内容创作 | ✅ 所有新内容 | ❌ 不新增 |
-| 对外同步 | ✅ GitHub+飞书 | ❌ 不同步 |
-| 引用路径 | ✅ 绝对/相对路径 | ❌ 不对外引用 |
-| Git追踪 | ✅ 已追踪 | ⚠️ 应加入.gitignore或单独处理 |
-
----
-
-## 三、引用路径更新清单
-
-### 3.1 需更新的文件（34处引用·11个文件）
-
-| 文件 | 引用数 | 旧路径模式 | 新路径 |
-|------|:--:|------|------|
-| `cards/C4-3_内容产品化.md` | 1 | `D:\_alchemist\output\cards\` | `_alchemist\output\cards\` |
-| `cards/C6-4_最小可行性系统.md` | 1 | 同上 | 同上 |
-| `cards/C7-3_反脆弱.md` | 1 | 同上 | 同上 |
-| `cards/C7-4_反共识不是叛逆.md` | 1 | 同上 | 同上 |
-| `output/知识库内容质量外科医生_专属优化提示词_v2.md` | 1 | `D:\_alchemist\output\` | `D:\KnowledgeBase\_alchemist\output\` |
-| `output/...v3.md` | 1 | 同上 | 同上 |
-| `output/...v4.md` | 1 | 同上 | 同上 |
-| `DELIVERABLE_REPORT.md` | 1 | 同上 | 同上 |
-| `PROJECT_STATE_REPORT.md` | 1 | 同上 | 同上 |
-| `SKILL_REVIEW_REPORT.md` | 1 | 同上 | 同上 |
-| `ENTROPY_MAP.md` | 1 | 同上 | 同上 |
-
-### 3.2 _alchemist内部引用（6个文件·不改动·只读）
-
-`_alchemist` 内部的自引用保持不变——因为它是只读归档，无需维护一致性。
-
----
-
-## 四、操作建议
-
-### 立即执行
-1. ✅ 更新主库中11个文件34处旧路径引用
-2. ✅ 在 `_alchemist/` 根放 `README.md` 注明"只读归档·主库为单一真相源"
-3. ✅ 考虑将 `_alchemist/` 加入 `.gitignore`（避免重复追踪）
-
-### 可选执行
-4. 🔧 对5个实质性差异文件做手动diff→合并有价值差异到主库
-5. 🗑️ 确认无价值后可删除 `_alchemist/`（释放约700个文件·约50MB）
-6. 📦 或压缩为 `_alchemist.zip` 保留为历史快照
-
-### 不建议
-- ❌ 将 _alchemist 与主库合并（会引入版本混乱）
-- ❌ 继续向 _alchemist 写入新内容
-- ❌ 从 _alchemist 引用到外部（只读归档不应有出向引用）
-
----
-
-> **一句话**：`_alchemist` 是搬家时一起搬来的旧家具——不需要扔掉（有纪念价值），但所有新生活都在主库进行。
+- [x] 主库根目录仅 INDEX.md、README.md、.gitignore
+- [x] _alchemist 根目录仅 INDEX.md、README.md、.gitignore
+- [x] 无裸露 .md（已归位飞书配置）
+- [x] 189 个重复文件已清理
+- [x] 两库分工明确：主库交付 / _alchemist 工作区
+- [x] 引用路径待用户确认后更新
