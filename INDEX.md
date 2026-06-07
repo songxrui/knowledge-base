@@ -1,6 +1,6 @@
 ﻿# 董辉知识库体系 · 全量总索引 v4.0
 
-> 最后更新: 2026-06-06 23:00
+> 最后更新: 2026-06-07 16:00
 > 仓库: github.com/songxrui/knowledge-base
 > 规则: D:\KnowledgeBase\ 为永久唯一产出交付区·根目录零裸文件
 
@@ -124,6 +124,14 @@
 
 ---
 
+
+## 📂 八、本轮产出 (2026-06-07)
+
+| 路径 | 说明 |
+|------|------|
+| output/skill-reports/SKILL_REVIEW_CONTENT_2026-06-07.md | 14核心内容skill·10维评测·S级2/A级2/B级6 |
+| _logs/EVIDENCE_VERIFICATION_LOG.md | 库外独立验证报告·exa-search溯源·HRMARS/Walker/Dweck |
+| _logs/TOOL_LEDGER.md | v6技能调用账本·exa-search×4·humanizer-zh·content-truth-lock |
 ## 📂 七、工具与脚本
 
 | 路径 | 说明 |
@@ -146,5 +154,5 @@
 | Skill可用 | 83+ |
 | 微信读书书籍 | 70本 |
 | Notion笔记 | 162文件 |
-| GitHub提交 | 33次 |
+| GitHub提交 | 35次+ |
 | 根目录裸文件 | 3(.gitignore·INDEX·README) |
