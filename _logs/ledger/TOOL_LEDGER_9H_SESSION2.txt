@@ -15,3 +15,5 @@ DBS技能: dbs-content-system, dbs-content
 [18:36] | PHASE-1 | dbs-content | W15(P0)+W18(产品化)+W19(格栅)扩展: 巴菲特20目标+Mark任务切换+产品三级阶梯+芒格格栅三学科 | 用于W15,W18,W19
 [18:37] | PHASE-1 | dbs-content-system | 从装配稿A01生成新文章W122(AI时代独立思考) | 用于W122新文
 [18:38] | PHASE-1 | dbs-content-system + dbs-content | W122(AI独立思考)+W21(MVS)+W22(形象信号)+W25(平台策略) | 基于DBS装配稿A01+WLH内容单元+Todorov信号理论 | 用于W122,W21,W22,W25
+[18:42] | PHASE-1 | dbs-content | W11/W19/W29达标 + W24/W26/W27/W28/W30扩展 | 身体算法/代际IP/100篇转化 | DBS调用#8
+[18:44] | PHASE-1 | dbs-content-system + dbs-content | 批量扩展12篇: W27-W54关键主题 | 身体算法/代际IP/杠铃/认知带宽 | DBS调用#9
