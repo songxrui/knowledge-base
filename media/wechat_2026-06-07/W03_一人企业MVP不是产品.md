@@ -121,6 +121,9 @@ Dan Koe花了5年才走出新手地狱。你不需要比他还快。你只需要
 | W03-3 | Dan Koe"5 years in beginner hell" | 同上原文 |
 | W03-4 | Dan Koe"80% of content should start with a pain point" | 同上原文 |
 | W03-5 | 董辉93篇媒体稿·8平台·12篇后3人私信 | 本地实际数据 |
+| W03-6 | Dan Koe"Social posts are the new MVP"原文验证 | thedankoe.com/letters 2025-01-25 |
+| W03-7 | Dan Koe 2026更新·信息产品→软件化·obsession+experimentation=护城河 | letters.thedankoe.com 2026-01-03 |
+| W03-8 | "Your years of reading, experimenting, failing is the moat" | Dan Koe 2026 |
 
 **【db skill调用日志】**
 - dbs-content: 内容形式匹配(公众号长文·方法论对标类)
