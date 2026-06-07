@@ -68,3 +68,5 @@
 18:05:58 | 环境-暴政与工程 | dbs-content-system | C6-5+C6-1深度 | 有效
 
 18:07:31 | 信息-饮食方案 | dbs-content-system | C2-2+C4-4深度 | 有效
+
+18:09:54 | 思维-第一性原理实操 | dbs-content-system | C7-1深度+案例 | 有效
