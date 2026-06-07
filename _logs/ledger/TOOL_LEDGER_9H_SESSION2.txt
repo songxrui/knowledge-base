@@ -22,3 +22,5 @@ DBS技能: dbs-content-system, dbs-content
 [18:50] | PHASE-2 | dbs-content | W15/W24/W26/W30/W31/W55/W60推过3000线 + W100-W108扩展 | DBS调用#13
 [18:52] | PHASE-2 | dbs-content-system | W125(认知Bug+W126(MVS习惯)新文生成 | DBS调用#14
 [18:54] | PHASE-2 | dbs-content-system | W127新文(四根命脉)+W36-W40扩展 | DBS调用#15
+[18:56] | PHASE-2 | dbs-content | W47-W57扩展+W127补强 | 飞轮/灵感/反脆弱/认知带宽 | DBS调用#16
+[18:57] | PHASE-2 | dbs-content-system | W128新文(HKR流量公式)+W58/W59/W61扩展 | DBS调用#17
