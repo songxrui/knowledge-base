@@ -185,6 +185,17 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 
 
 
+
+## R10新增信源 (CH01增强)
+
+| # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
+|---|------|----------|---------|---------|
+| E-C01-1 | Deep Work: Rules for Focused Success in a Distracted World | Cal Newport | exa-fetch 2016 | CH01 §6 |
+| E-C01-2 | Attention residue: Why is it so hard to do my work? | Sophie Leroy, Organization Science | exa-fetch 2009 | CH01 §6 |
+| E-C01-3 | Blocking mobile internet improves sustained attention, mental health, SWB | Castelo et al., PNAS | exa-fetch 2025 | CH01 §6 |
+| E-C01-4 | Addictive Motivational Scaffolds theory | Cognitive Science | exa-fetch 2024-2025 | CH01 §6 |
+| E-C01-5 | Dr. Cal Newport: How to Enhance Focus and Improve Productivity | Huberman Lab | exa-fetch 2024 | CH01 §6 |
+
 ## R10新增信源 (CH05增强)
 
 | # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
@@ -194,4 +205,4 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | E-C05-3 | Social compensation or social enhancement? Dating apps | Yang et al. | exa-fetch 2024 | CH05 §6 |
 | E-C05-4 | Problematic Online Dating: Systematic Review | JMIR | exa-fetch 2025 | CH05 §6 |
 
-全书总计: weread 60 + exa 59 = ~101本去重
+全书总计: weread 60 + exa 63 = ~105本去重
