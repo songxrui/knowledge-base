@@ -183,4 +183,15 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | E-C07-1 | Fairy: Robust, Observable, and Evolvable Agentic Systems Engineering | arxiv 2509.20729 | exa-fetch 2025 | CH07 §8 |
 | E-C07-2 | CODESIM: Multi-Agent Code Generation with Simulation-Guided Planning and Debugging | EMNLP 2024 | exa-fetch 2024 | CH07 §8 |
 
-全书总计: weread 60 + exa 57 = ~99本去重
+
+
+## R10新增信源 (CH05增强)
+
+| # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
+|---|------|----------|---------|---------|
+| E-C05-1 | The social brain hypothesis – thirty years on | Dunbar, Annals of Human Biology | exa-fetch 2024 | CH05 §6 |
+| E-C05-2 | Do online social media cut through the constraints? | Dunbar et al., Royal Society Open Science | exa-fetch 2016 | CH05 §6 |
+| E-C05-3 | Social compensation or social enhancement? Dating apps | Yang et al. | exa-fetch 2024 | CH05 §6 |
+| E-C05-4 | Problematic Online Dating: Systematic Review | JMIR | exa-fetch 2025 | CH05 §6 |
+
+全书总计: weread 60 + exa 59 = ~101本去重
