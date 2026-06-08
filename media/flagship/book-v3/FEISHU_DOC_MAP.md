@@ -23,3 +23,6 @@
   URL: https://jcn1crrvstv9.feishu.cn/docx/Z1dBdrhFToAGJ0xrxBocpzS3nQf
 - CH08 第一性模型: SRR5dvUKzoKVSUx70qict72znOc
   URL: https://jcn1crrvstv9.feishu.cn/docx/SRR5dvUKzoKVSUx70qict72znOc
+
+- 跨章索引: SJmUdwXRdozl0Wx4Tncc8Qbrnsc
+  URL: https://jcn1crrvstv9.feishu.cn/docx/SJmUdwXRdozl0Wx4Tncc8Qbrnsc
