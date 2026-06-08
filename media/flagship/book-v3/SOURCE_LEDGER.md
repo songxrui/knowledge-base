@@ -187,6 +187,16 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 
 
 
+
+## R11新增信源 (CH04增强)
+
+| # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
+|---|------|----------|---------|---------|
+| E-C04-1 | Fuel for the F.I.R.E.: Updating the 4% rule | Costa/Pakula/Clarke, Vanguard Research | exa-fetch 2021 | CH04 §10 |
+| E-C04-2 | Trinity Study (safe withdrawal rates) | Cooley/Hubbard/Walz, Trinity University | exa-fetch 1998 | CH04 §10 |
+| E-C04-3 | First offer anchoring effect in negotiations | Galinsky & Mussweiler, JPSP | exa-fetch 2001 | CH04 §10 |
+| E-C04-4 | Antifragile (barbell strategy) | Nassim Nicholas Taleb | exa-fetch 2012 | CH04 §10 |
+
 ## R11新增信源 (CH03增强)
 
 | # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
@@ -216,4 +226,4 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | E-C05-3 | Social compensation or social enhancement? Dating apps | Yang et al. | exa-fetch 2024 | CH05 §6 |
 | E-C05-4 | Problematic Online Dating: Systematic Review | JMIR | exa-fetch 2025 | CH05 §6 |
 
-全书总计: weread 60 + exa 68 = ~109本去重
+全书总计: weread 60 + exa 73 = ~113本去重

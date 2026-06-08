@@ -4,7 +4,7 @@
 > **字数**: 104,690 chars (~105K中文)
 > **名著**: ~97本去重 (weread 60 + exa 52)
 > **commits**: 27
-> **内容DoD**: 15/15 ? | **git时间: ~2.2h/10h (跨session累积中, R10-11 CH05/CH01/CH03增强) |
+> **内容DoD**: 15/15 ? | **git时间: ~2.2h/10h (跨session累积中, R10-11 CH05/CH01/CH03/CH04增强) |
 
 ---
 
@@ -15,7 +15,7 @@
 | 1 | [元能力](CH01_meta-abilities.md) | **16K** | 16 | 检索/间隔/交叉/刻意+注意力经济(新增) |
 | 2 | [反脆弱心理](CH02_mental-health.md) | **15K** | 17+ | Adler九柱+Frankl意义治疗+ACT+斯多葛 |
 | 3 | [身体健康](CH03_physical-health.md) | **18K** | 13 | 阿提亚+Shanahan+Clear+睡眠神经科学(新增) |
-| 4 | [财富商业](CH04_wealth-business.md) | 13K | 16 | Naval+Housel+AI堆栈 三层财富金字塔 |
+| 4 | [财富商业](CH04_wealth-business.md) | **16K** | 18 | Naval+Housel+AI堆栈+FIRE数学(新增) |
 | 5 | [人际两性](CH05_relationships.md) | **15K** | 16 | Gottman+Bowen+Dunbar社交网络(新增) |
 | 6 | [顶级人类](CH06_top-humans.md) | 14K | 18 | Musk+Buffett+Naval 中国场景适配 |
 | 7 | [问题解决](CH07_problem-solving.md) | **15K** | 13 | Polya+Grant+Tetlock+Agent工程(新增) |
