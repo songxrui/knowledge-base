@@ -186,6 +186,17 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 
 
 
+
+## R11新增信源 (CH03增强)
+
+| # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
+|---|------|----------|---------|---------|
+| E-C03-1 | Sleep reduces CSF beta-amyloid and tau (RCT) | Springer Nature, Fluids and Barriers of the CNS | exa-fetch 2025 | CH03 §8 |
+| E-C03-2 | Norepinephrine-mediated slow vasomotion drives glymphatic clearance | Hauglund et al., Cell | exa-fetch 2025 | CH03 §8 |
+| E-C03-3 | Noradrenergic modulation of glymphatic clearance | Zhu et al., Molecular Psychiatry | exa-fetch 2025 | CH03 §8 |
+| E-C03-4 | Impact of sleep restriction on memory formation (meta-analysis) | Neuroscience & Biobehavioral Reviews | exa-fetch 2024 | CH03 §8 |
+| E-C03-5 | One night of sleep restriction on sleepiness and cognition (meta-analysis) | Sleep Medicine Reviews | exa-fetch 2024 | CH03 §8 |
+
 ## R10新增信源 (CH01增强)
 
 | # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
@@ -205,4 +216,4 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | E-C05-3 | Social compensation or social enhancement? Dating apps | Yang et al. | exa-fetch 2024 | CH05 §6 |
 | E-C05-4 | Problematic Online Dating: Systematic Review | JMIR | exa-fetch 2025 | CH05 §6 |
 
-全书总计: weread 60 + exa 63 = ~105本去重
+全书总计: weread 60 + exa 68 = ~109本去重
