@@ -4,7 +4,7 @@
 > **字数**: 104,690 chars (~105K中文)
 > **名著**: ~97本去重 (weread 60 + exa 52)
 > **commits**: 27
-> **内容DoD**: 15/15 ? | **git时间: ~2.2h/10h (跨session累积中, R10-11 CH05/CH01/CH03/CH04增强) |
+> **内容DoD**: 15/15 ? | **git时间: ~3.2h/10h (跨session累积, R12 CH06+CH08增强, 全8章深度增强完成) |
 
 ---
 
@@ -19,7 +19,7 @@
 | 5 | [人际两性](CH05_relationships.md) | **15K** | 16 | Gottman+Bowen+Dunbar社交网络(新增) |
 | 6 | [顶级人类](CH06_top-humans.md) | **18K** | 18 | Musk五步+Munger清单+混合框架(新增) |
 | 7 | [问题解决](CH07_problem-solving.md) | **15K** | 13 | Polya+Grant+Tetlock+Agent工程(新增) |
-| 8 | [跨学科模型](CH08_first-principles.md) | **13K** | 15 | 9模型决策矩阵 含Meadows系统动力学 |
+| 8 | [跨学科模型](CH08_first-principles.md) | **17K** | 14 | 9模型矩阵+贝叶斯+二阶思维(新增) |
 
 ## 附录
 
