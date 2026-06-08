@@ -17,7 +17,7 @@
 | 3 | [身体健康](CH03_physical-health.md) | **18K** | 13 | 阿提亚+Shanahan+Clear+睡眠神经科学(新增) |
 | 4 | [财富商业](CH04_wealth-business.md) | **16K** | 18 | Naval+Housel+AI堆栈+FIRE数学(新增) |
 | 5 | [人际两性](CH05_relationships.md) | **15K** | 16 | Gottman+Bowen+Dunbar社交网络(新增) |
-| 6 | [顶级人类](CH06_top-humans.md) | 14K | 18 | Musk+Buffett+Naval 中国场景适配 |
+| 6 | [顶级人类](CH06_top-humans.md) | **18K** | 18 | Musk五步+Munger清单+混合框架(新增) |
 | 7 | [问题解决](CH07_problem-solving.md) | **15K** | 13 | Polya+Grant+Tetlock+Agent工程(新增) |
 | 8 | [跨学科模型](CH08_first-principles.md) | **13K** | 15 | 9模型决策矩阵 含Meadows系统动力学 |
 
