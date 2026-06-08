@@ -263,3 +263,45 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (����֤)
 
 
 ȫ���ܼ�: weread 60 + exa 80 = ~117��ȥ��
+
+## R20新增信源 (CH02+CH04+CH05增强, 2026-06-09 01:51-01:53)
+
+| # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
+|---|------|----------|---------|---------|
+| R20-01 | Effects of ACT on negative emotions (13 RCTs/1362 patients meta-analysis) | BMC Psychiatry | exa-fetch 2025 | CH02 §7 |
+| R20-02 | Workplace ACT: uncovering masked effects on psychological flexibility subprocesses | JCBS | exa-fetch 2025 | CH02 §7 |
+| R20-03 | Posttraumatic Growth longitudinal systematic review (22 studies) | J Loss and Trauma | exa-fetch 2025 | CH02 §7 |
+| R20-04 | PTG trajectories from person-centered analyses | ScienceDirect | exa-fetch 2025 | CH02 §7 |
+| R20-05 | Positive Psychology Interventions systematic mapping (63 studies+11 meta-analyses) | — | exa-fetch 2025 | CH02 §7 |
+| R20-06 | Adult attachment and intimate relationship satisfaction (chain mediation: appreciation→giving) | Frontiers in Psychiatry | exa-fetch 2026 | CH05 §10 |
+| R20-07 | Attachment styles and dating app use (PRISMA systematic review, 8 studies) | European Psychologist | exa-fetch 2026 | CH05 §10 |
+| R20-08 | Predicting matchmaking success: self-esteem and attachment | SSHO (Elsevier) | exa-fetch 2026 | CH05 §10 |
+| R20-09 | Do Personality Traits Shape Gottman's Four Horsemen? | Gottman Institute | exa-fetch 2026.3.20 | CH05 §10 |
+| R20-10 | Is your partner experiencing cognitive overload? | Gottman Institute | exa-fetch 2026.3.25 | CH05 §10 |
+| R20-11 | Emotional Intelligence can be learned | Gottman Institute | exa-fetch 2026.6.3 | CH05 §10 |
+| R20-12 | Solopreneur statistics 2026 | 500k.io | exa-fetch 2026.5 | CH04 §11 |
+| R20-13 | US Census Nonemployer Statistics (29.8M firms, $1.7T) | US Census | exa-fetch 2025 | CH04 §11 |
+| R20-14 | Stanford HAI AI Index 2025 (80% token price collapse) | Stanford HAI | exa-fetch 2025 | CH04 §11 |
+
+## R21新增信源 (CH01+CH03+CH06+CH07+CH08增强, 2026-06-09 01:55-02:03)
+
+| # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
+|---|------|----------|---------|---------|
+| R21-01 | Retrieval-Based Learning: comprehensive review | Karpicke, Purdue | exa-fetch 2025 | CH01 §7 |
+| R21-02 | Spacing and Retrieval Practice for Mathematics Learning (meta-analysis) | Murray, Horner & Göbel, Ed Psych Review | exa-fetch 2025 | CH01 §7 |
+| R21-03 | Spaced Repetition in Medical Education (14 studies/21,415 learners, SMD=0.78) | Maye et al., The Clinical Teacher | exa-fetch 2026 | CH01 §7 |
+| R21-04 | Exercise training and mitochondrial content (353 studies/5,973 participants) | Bishop et al., Sports Medicine | exa-fetch 2025 | CH03 §9 |
+| R21-05 | Much Ado About Zone 2: Narrative Review | ResearchGate | exa-fetch 2025.7 | CH03 §9 |
+| R21-06 | HIIT for cardiorespiratory fitness in middle-aged/older women (meta-analysis, 646 participants) | — | exa-fetch 2026 | CH03 §9 |
+| R21-07 | Time to Form a Habit: Systematic Review and Meta-Analysis (20 studies/2,601 participants, SMD=0.69) | Healthcare (MDPI) | exa-fetch 2024 | CH06 §13 |
+| R21-08 | Mitigating Cognitive Bias: Integrative Review (100 studies/62 articles) | Fasolo, Heard & Scopelliti, JOM | exa-fetch 2025 | CH06 §13, CH07 §9 |
+| R21-09 | Technological Debiasing Strategies Scoping Review (100 strategies/80 studies) | — | exa-fetch 2025 | CH06 §13, CH07 §9 |
+| R21-10 | Debiasing training+feedback interactive game (3-month sustained effect) | Morewedge et al. | exa-fetch 2015 | CH07 §9 |
+| R21-11 | Mental Models: ~100 Models Explained | Farnam Street | exa-fetch | CH08 §12 |
+| R21-12 | Concise Introduction to Systems Thinking | Van Assche, Verschraegen & Gruezmacher (Elgar) | exa-fetch 2026 | CH08 §12 |
+
+---
+
+> R20-R21合计新增: 26篇exa实搜信源 (R20: 14篇 + R21: 12篇)
+> 全书累计: weread ~66本 + exa ~106篇 = ~130本/篇去重
+
