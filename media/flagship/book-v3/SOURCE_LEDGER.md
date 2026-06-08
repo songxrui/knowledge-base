@@ -252,4 +252,14 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | E-C05-3 | Social compensation or social enhancement? Dating apps | Yang et al. | exa-fetch 2024 | CH05 §6 |
 | E-C05-4 | Problematic Online Dating: Systematic Review | JMIR | exa-fetch 2025 | CH05 §6 |
 
+
+## R13新增 (全书收尾)
+
+| # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
+|---|------|----------|---------|---------|
+| R13-1 | PREFACE.md (序言) | 本书著书引擎 | 原创 | 全书 |
+| R13-2 | EPILOGUE.md (后记) | 本书著书引擎 | 原创 | 全书 |
+| R13-3 | 黑名单终扫 | 全书8章扫描 | 自查 | 全书 — 零黑名单/零AI三段式 |
+
+
 全书总计: weread 60 + exa 80 = ~117本去重
