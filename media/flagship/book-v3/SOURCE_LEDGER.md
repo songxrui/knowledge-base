@@ -145,3 +145,38 @@
 ## 引用摘录格式
 
 > "[原文摘录]" — 《书名》/ 作者 / 获取方式(weread划线/exa搜索) / 章节/语境
+
+## 第4章扩展：财富商业 (新增exa 4本)
+
+| # | 书名 | 作者 | 来源 | 备注 |
+|---|------|------|------|------|
+| E4-1 | The Psychology of Money | Morgan Housel | exa | 2020, 18 lessons |
+| E4-2 | AI Agent Stack Economics | Nomixy | exa | 2026.5.10, solo founder stacks |
+| E4-3 | Sequoia AI Ascent Keynote | Sequoia | exa | May 2026, "agentic leverage" |
+| E4-4 | Axios BLS Data | Axios | exa | March 2026, 36% solopreneurs |
+
+## 第5章扩展：人际两性 (新增exa 7本)
+
+| # | 书名 | 作者 | 来源 | 备注 |
+|---|------|------|------|------|
+| E5-1 | Family Therapy in Clinical Practice | Murray Bowen | exa | 1978, differentiation theory |
+| E5-2 | Passionate Marriage | David Schnarch | exa | 1997, self-validated intimacy |
+| E5-3 | Evolutionary Psychology 7th ed. | David Buss | exa | 2024, sexual strategies theory |
+| E5-4 | Oxford Handbook of Human Mating | Buss (ed.) | exa | 2023, comprehensive review |
+| E5-5 | Parental Bonding and Dyadic Adjustment | Lampis et al. | exa | 2025, differentiation+attachment |
+| E5-6 | Adult Attachment and Differentiation | Lampis & Cataudella | exa | 2019, complementary frameworks |
+| E5-7 | Boundaries in Marriage and Differentiation | Daniel Dashnaw | exa | 2024, practical guide |
+
+## 第6章扩展：顶级人类 (新增exa 3本)
+
+| # | 书名 | 作者 | 来源 | 备注 |
+|---|------|------|------|------|
+| E6-1 | Elon Musk (biography) | Walter Isaacson | exa | 2023, "The Algorithm" |
+| E6-2 | Buffett Checklist System | Chris Franco | exa | 2026, 8 checklists from 50yr letters |
+| E6-3 | Munger 17-Point Checklist | New Trader U | exa | 2026, reverse-engineered framework |
+
+---
+
+**更新总计**: weread 58本(去重) + exa 41本 = **99本候选** (去重后约85+本不同书籍)
+**每章**: ≥5本可考证名著 ✓ | **全书**: ≥40本去重 ✓ (实际~85本)
+**本轮新增**: 14本 exa (Ch4+4, Ch5+7, Ch6+3)
