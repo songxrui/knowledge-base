@@ -66,6 +66,15 @@
 这正是依恋理论和课题分离的交汇点:当你们发现"原来你和我不一样"(自我界限恢复)→焦虑型的人会恐慌地试图重新融合(控制/纠缠)→回避型的人会用距离来保护自己(冷暴力/逃避)→冲突升级。破解路径:承认差异是真实的,不是失败——然后通过"共同课题"的框架来协商差异,而不是通过"谁对谁错"的框架来对抗差异。
 
 
+**Gottman的魔法比率——每天100次微投票**
+
+John Gottman(华盛顿大学,40年婚姻研究)发现: 观察一对夫妻讨论冲突15分钟后,他能以超过90%的准确率预测他们5年内是否会离婚。
+
+> "In stable marriages, partners made bids for connection an average of 100 times in ten minutes; the couples who stayed together responded to 86% of those bids. Those who divorced responded to only 33%."
+> — John Gottman, The Seven Principles for Making Marriage Work
+
+Bid=任何一方试图引起对方注意的微小举动。每次面对bid: 转身面对(存款)/转身离开(取款)/转身对抗(攻击)。稳定婚姻正面:负面比=5:1。四骑士(按致命性): 批评→蔑视→防御→筑墙。
+
 John Bowlby的**依恋理论**(Attachment Theory)把成年人的亲密关系模式分为三种:
 - **安全型**(~55%): "我值得被爱,别人也值得信赖。" 来自童年有稳定、可回应照护者的经历。
 - **焦虑型**(~20%): "我怕被抛弃,所以我必须紧紧抓住。" 来自童年照护者有时回应有时不回应(不一致)的经历。
@@ -139,4 +148,3 @@ Mark Mark Granovetter在1973年发表的论文《The Strength of Weak Ties》改
 **反驳3**: 社交媒体上流行的"弱连接>强连接"叙事(来自Granovetter)被过度简化了。Granovetter的原始研究发现:在"找工作"这一个特定领域,弱连接更有效。但在"情感支持/深度合作/信任依赖"这些领域——弱连接完全无法替代强连接。不是弱连接比强连接"更好"——是在信息获取领域弱连接有优势,在情感支持领域强连接有优势。
 
 **回应**: 精确。Granovetter论文的标题是"The Strength of Weak Ties",不是"The Superiority of Weak Ties"。强连接提供的是"厚度"(频繁的深度互动+信任+情感安全),弱连接提供的是"广度"(异质信息+新机会)。你需要两者,比例取决于你现在需要什么:找工作/探索新方向时多激活弱连接;经历创伤/需要支持时多依赖强连接。
-
