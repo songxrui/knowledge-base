@@ -105,6 +105,19 @@
 
 ---
 
+
+斯多葛主义的源头——爱比克泰德(公元55-135年,一个曾经是奴隶的哲学家)——在《手册》(Enchiridion)的第一句话里就给出了整个斯多葛哲学的操作系统:
+
+> "Some things are in our control and others not. Things in our control are opinion, pursuit, desire, aversion, and, in a word, whatever are our own actions. Things not in our control are body, property, reputation, command, and, in one word, whatever are not our own actions. The things in our control are by nature free, unrestrained, unhindered; but those not in our control are weak, slavish, restrained, belonging to others."
+> — Epictetus, Enchiridion, Chapter 1
+
+爱比克泰德在1900年前就给出了最精确的二分控制法定义。注意他的分类: 在你的控制内="你的判断/你的欲望/你的回避"(即你的内心活动);不在你的控制内="你的身体/你的财产/你的声誉/你的职位"(即所有外部事物)。他接着说了一句残酷的实话: "如果你以为那些奴性的东西是自由的,以为别人的东西是你自己的——你将被阻碍、哀叹、扰乱,你会责怪神和人。"
+
+把这句话用到第2.2节(课题分离)上: 课题分离=爱比克泰德的二分控制法的现代心理学翻译。岸见一郎的"他者课题"=不在你的控制内。你的"自身课题"=在你的控制内。阿德勒和岸见一郎站在爱比克泰德的肩膀上——但爱比克泰德比他们早了1900年。
+
+爱比克泰德还给了我们一个"每日自检"工具——他说: "对每一个让你痛苦的表象说: '你只是一个表象,绝不是你表现出来的那个样子。'然后问: 这个表象是关于我能控制的事,还是关于我不能控制的事?如果是后者,准备对自己说: '这不关我的事。'"
+
+
 ## 8.6 哲学: 斯多葛/存在主义/维特根斯坦语言哲学
 
 **斯多葛主义**(Stoicism): 核心=**二分控制法**(Dichotomy of Control)。Epictetus: "有些事在我们的控制之内,有些事不在。我们的意见、冲动、欲望、厌恶——在我们的控制内。我们的身体、财产、声誉、职位——不在我们的控制内。" 这不是"躺平"——是把你的努力精准导向"你能改变的东西",把焦虑从"你改变不了的东西"上解放出来。
