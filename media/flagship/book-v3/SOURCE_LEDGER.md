@@ -53,7 +53,7 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | E4 | A Guide to the Good Life | Irvine | exa | — | exa |
 | E5 | ACT临床文献 | multiple | exa | — | exa |
 
-## 第3章：身体健康 (weread 4 + exa 2 = 6本* ?? 低于5本门槛)
+## 第3章：身体健康 (weread 7 + exa 5 = 12本) ✅
 
 | # | 书名 | 作者 | 来源 | weread ID | 验证 |
 |---|------|------|------|-----------|------|
@@ -346,3 +346,4 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | W-20 | 游戏改变人生 | — | 33条+3想法 | CH03 §12 |
 
 > R23-R29: 20本weread书籍融入8章(~1,300条划线)
+
