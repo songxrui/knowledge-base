@@ -164,3 +164,14 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 |------|------|------|
 | weread健康类 | 6本 | ✅ ≥5本 |
 | 用户笔记数 | 7条(深度营养) | ✅ 可用于引文 |
+
+## R8新增信源
+
+| # | 书名 | 作者 | 来源 | 被引章节 |
+|---|------|------|------|---------|
+| E-C02-1 | StatPearls: Adlerian Therapy | NCBI | exa 2024 | CH02 §8 |
+| E-C02-2 | VeryWell Mind: Logotherapy | — | exa 2024 | CH02 §9 |
+| E-C02-3 | Healthline: Logotherapy | — | exa 2024 | CH02 §9 |
+| E-C08-1 | Thinking in Systems (原文PDF) | Meadows | exa 2008 | CH08 §9 |
+
+全书总计: weread 60 + exa 55 = ~97本去重
