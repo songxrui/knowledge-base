@@ -347,5 +347,8 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | W-20 | 游戏改变人生 | — | 33条+3想法 | CH03 §12 |
 
 > R23-R29: 20本weread书籍融入8章(~1,300条划线)
+| W-21 | 思考，快与慢(第二版) | Kahneman | 1条 | CH07 §11 |
+
+
 
 
