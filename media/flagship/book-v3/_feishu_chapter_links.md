@@ -14,3 +14,6 @@
 
 > 信源: weread 66本 ~1,300条真实划线 + exa 26篇期刊 (Bishop 353/JOM去偏误100等)
 > 自评: 37.3/40 (A级) | 零黑名单词 | GitHub: songxrui/knowledge-base
+
+## R38 Feishu Sync (2026-06-09 02:47 CST)
+- CH08 第一性模型: SRR5dvUKzoKVSUx70qict72znOc → revision 17 (overwrite, 275K chars, §1-§14)
