@@ -14,7 +14,7 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 
 ---
 
-## 第1章：元能力 (weread 9 + exa 3 = 12本) ?
+## 第1章：元能力 (weread 10 + exa 3 = 13本) ?
 
 | # | 书名 | 作者 | 来源 | weread ID | 验证状态 |
 |---|------|------|------|-----------|---------|
@@ -30,6 +30,7 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | E1 | Make It Stick | Brown | exa | — | exa 2026-06 |
 | E2 | Peak | Ericsson | exa | — | exa 2026-06 |
 | E3 | Ultralearning | Young | exa | — | exa 2026-06 |
+| 10 | 认知觉醒(青少年学习版) | 周岭 | weread | 3300034560 | ✅ 45条划线 |
 
 ## 第2章：反脆弱与心理健康 (weread 12 + exa 5 = 17本) ?
 
@@ -346,4 +347,5 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | W-20 | 游戏改变人生 | — | 33条+3想法 | CH03 §12 |
 
 > R23-R29: 20本weread书籍融入8章(~1,300条划线)
+
 
