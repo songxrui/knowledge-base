@@ -1,51 +1,49 @@
-﻿# 答案之书 v3 — 全书导航 (R29)
+﻿# 答案之书 v3 — 全书导航 (R35)
 
-> **版本**: v3.0 R8 (2026-06-09)
-> **字数**: ~180,000 chars (~105K中文)
-> **名著**: ~155本去重 (weread 60 + exa 52)
-> **commits**: 27
-> **内容DoD**: 15/15 ? | **git时间: ~2.4h/10h (R29, 20本书weread)
+> 版本: v3.0 R35 | commits: 78 | 字数: ~256K chars | 信源: weread 21本+exa ~33篇
 
 ---
 
+## 新增内容 (R31-R35)
 
-## 新增
-
-- [序言](PREFACE.md): 本书是什么/不是什么/怎么读/免责声明
-- [后记](EPILOGUE.md): 著书工程数据+方法论+如何自己造一本
+| 轮次 | 章节 | 新增节 |
+|------|------|--------|
+| R31 | CH02 | 黑名单修复(2处→0) |
+| R31 | CH03 | §13 代谢功能障碍根源论 (Lufkin 2024) |
+| R32 | CH01 | §9 动机管理三引擎 (青少年版45条) |
+| R33 | CH07 | §11 系统1/2三层去偏误 (Kahneman) |
+| R34 | CH05 | §12 关系双轨模型 (防御机制×依恋+NVC实证) |
+| R35 | CH04 | §14 一人企业全球实证 (ShipSquad+Stripe+中国AI) |
+| R35 | — | 跨章模型索引与概念词典 (新资产) |
 
 ---
-- [全书统稿](FULL_MANUSCRIPT.md): 单一文件完整版(序言+8章+后记+附录)
-
-- [30天行动计划](30DAY_PLAN.md): 按天拆解的完整执行路线图
-
-- [关键词索引](KEYWORD_INDEX.md): 8大类百余条跨章概念快速查找
-
-- [框架总图](FRAMEWORK_MAP.md): Mermaid思维导图+跨章连接图+信源分布
-- [英文摘要](ENGLISH_ABSTRACTS.md): 8章英文Abstracts(双语读者/国际分享)
-
-- [自测题](SELF_ASSESSMENT.md): 8章50题(★应用题+●理解题)检验学习成果
 
 ## 各章速览
 
-| # | 章节 | 字数 | 名著 | 核心方法 |
+| # | 章节 | 字数 | 名著 | 最新增强 |
 |---|------|------|------|---------|
-| 1 | [元能力](CH01_meta-abilities.md) | **16K** | 16 | 检索/间隔/交叉/刻意+注意力经济(新增) |
-| 2 | [反脆弱心理](CH02_mental-health.md) | **15K** | 17+ | Adler九柱+Frankl意义治疗+ACT+斯多葛 |
-| 3 | [身体健康](CH03_physical-health.md) | **18K** | 13 | 阿提亚+Shanahan+Clear+睡眠神经科学(新增) |
-| 4 | [财富商业](CH04_wealth-business.md) | **16K** | 18 | Naval+Housel+AI堆栈+FIRE数学(新增) |
-| 5 | [人际两性](CH05_relationships.md) | **15K** | 16 | Gottman+Bowen+Dunbar社交网络(新增) |
-| 6 | [顶级人类](CH06_top-humans.md) | **18K** | 18 | Musk五步+Munger清单+混合框架(新增) |
-| 7 | [问题解决](CH07_problem-solving.md) | **15K** | 13 | Polya+Grant+Tetlock+Agent工程(新增) |
-| 8 | [跨学科模型](CH08_first-principles.md) | **17K** | 14 | 9模型矩阵+贝叶斯+二阶思维(新增) |
-
-## 附录
-
-- [行动总清单](ACTION_MASTERLIST.md): 8章合并 今天/本周/本月/长期
-- [信源账本](SOURCE_LEDGER.md): ~97本 weread实调+exa实搜
-- [排除日志](REJECT_LOG.md): 16项修复全记录
-- [时间自证](GIT_TIME_LOG.md): 27 commits ~1.8h跨session
+| 1 | 元能力 | ~33K | 13本 | R32 动机管理三引擎 |
+| 2 | 心理健康 | ~31K | 17本 | R31 黑名单清零 |
+| 3 | 身体健康 | ~37K | 12本 | R31 Lufkin代谢根源论 |
+| 4 | 财富商业 | ~29K | 19本 | R35 一人企业全球实证 |
+| 5 | 人际关系 | ~27K | 19本 | R34 关系双轨模型 |
+| 6 | 顶级人类 | ~31K | 14+本 | weread 5本深度 |
+| 7 | 问题解决 | ~27K | 13+本 | R33 Kahneman系统1/2 |
+| 8 | 第一性模型 | ~30K | 12+本 | 跨模型协同矩阵 |
 
 ---
 
-> 全书SCORE: 9.3/10 | 零禁用词 | 零AI三段式 | 零编造引文 | 医学/投资免责标注 | weread API实调验证
+## 核心资产清单
+
+| 文件 | 用途 |
+|------|------|
+| `FULL_MANUSCRIPT.md` (256K) | 全书统稿单一文件 |
+| `CROSS_CHAPTER_INDEX.md` | 跨章模型索引+概念词典+数据锚点 |
+| `SOURCE_LEDGER.md` | 信源账本(逐本可查) |
+| `DOD_AUDIT.md` | DoD逐条核验 |
+| `GIT_TIME_LOG.md` | 工时自证 |
+| `FEISHU_DOC_MAP.md` | 飞书文档ID映射 |
+
+---
+
+> 飞书: jcn1crrvstv9 (10个文档) | GitHub: songxrui/knowledge-base (78 commits)
