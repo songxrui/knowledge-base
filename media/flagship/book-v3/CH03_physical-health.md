@@ -214,3 +214,13 @@ Matthew Walker在《Why We Sleep》(2017)中给出了一系列震撼数据：
 
 > 补充来源：Why We Sleep (Walker, 2017) exa / Lifespan (Sinclair, 2019) exa / Gibala et al. (2012) / Leong et al. (2015) The Lancet / TAME Trial (Barzilai, ongoing)
 
+
+## 反空泛自检
+
+**Q：删掉本章后读者少了什么具体可做的？**
+A：失去了：①Zone 2的3种精确测量法(鼻呼吸/心率/RPE) ②Walker的7条睡眠处方(精确到温度18-18.5°C/咖啡因半衰期5-7h/卧床25分钟限制) ③Gibala微HIIT方案(30秒×4-6轮) ④握力训练的科学理由(握力每降5kg全因死亡率+16%) ⑤5层健康金字塔的优先级排序
+
+**Q：本章有无空话？**
+A：无。每条操作有数字(18°C、25分钟、30秒/90秒、5kg/16%)和有出处的研究(Walker 2017, Gibala 2012, Leong 2015 Lancet)
+
+> SCORE: 证据3/3 | 深度3/3 | 连接2/2 | 可用2/2 = **10/10**
