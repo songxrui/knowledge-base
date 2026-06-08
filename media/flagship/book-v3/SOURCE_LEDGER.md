@@ -350,9 +350,13 @@ Token: wrk-yC_PeQeCQBWIBD7_uFhTwwAA (已验证)
 | W-21 | 思考，快与慢(第二版) | Kahneman | 1条 | CH07 §11 |
 
 
+## R38新增 exa信源 (CH08 搂14 不确定性决策, 2026-06-09)
 
+| # | 来源 | 作者/机构 | 来源类型 | 被引章节 |
+|---|------|----------|---------|---------|
+| R38-01 | Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts | Annie Duke (Penguin Random House) | exa-fetch 2026 | CH08 搂14 |
+| R38-02 | Identifying and Cultivating Superforecasters as a Method of Improving Probabilistic Predictions | Tetlock, Mellers et al. (Wharton/UC Berkeley) | exa-fetch 2015 | CH08 搂14 |
+| R38-03 | Decisions: A Practical Guide to Making Better Choices with Incomplete Information | cloudstreet-dev (CC0, GitHub, 2025) | exa-fetch 2026 | CH08 搂14 |
+| R38-04 | Mental Models: ~100 Models Explained (Probabilistic Thinking, Inversion, Second-Order) | Farnam Street (fs.blog) | exa-fetch 2026 | CH08 搂14 |
 
-
-
-
-
+> R38: 4篇exa信源 · CH08搂14新增 · Annie Duke结果场化/预验尸/决策日志 + Tetlock Brier score训练实证 + cloudstreet-dev 17章框架

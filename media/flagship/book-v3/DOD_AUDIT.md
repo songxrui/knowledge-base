@@ -1,9 +1,9 @@
-﻿# DOD_AUDIT.md — 答案之书 v3 DoD 逐条核验 (R36 终版)
+﻿# DOD_AUDIT.md — 答案之书 v3 DoD 逐条核验 (R38 终版)
 
 > 审计时间: 2026-06-09 CST
-> commits: 81 (R1-R36)
-> 统稿: 260K chars
-> 信源: weread 21本深度 (~1,346条划线) + exa ~36篇 + 全库66本
+> commits: 84 (R1-R38)
+> 统稿: 275K chars
+> 信源: weread 21本深度 (~1,346条划线) + exa ~40篇 + 全库66本
 
 ## DoD 逐条核验
 
@@ -14,7 +14,7 @@
 | 2 | 每章commit跨度>1h | ⚠️ 跨章分散但单章commit集中在同日 | see GIT_TIME_LOG |
 | 3 | 每章commit≥3次 | ✅ 全章≥5次 | git log per chapter |
 | 4 | 8章齐全 | ✅ | CH01-CH08全部存在 |
-| 5 | 每章可考证名著≥5 | ✅ CH01:13 CH02:17 CH03:12 CH04:19 CH05:19 CH06:17+ CH07:13+ CH08:12+ | SOURCE_LEDGER |
+| 5 | 每章可考证名著≥5 | ✅ CH01:13 CH02:17 CH03:12 CH04:19 CH05:19 CH06:17+ CH07:13+ CH08:16+ | SOURCE_LEDGER |
 | 6 | 全书去重≥40 | ✅ ~88+ (weread 21深度+66全库+exa 36) | SOURCE_LEDGER |
 | 7 | 零黑名单词 | ✅ 全8章扫描零命中 (R31修复CH02 2处) | 黑名单扫描 |
 | 8 | 零编造书目 | ✅ 全部weread实调或exa实搜 | SOURCE_LEDGER逐条可查 |
@@ -22,8 +22,8 @@
 | 10 | 反空泛自检 | ✅ 每节有SCORE行 | 各章末尾 |
 | 11 | SOURCE_LEDGER完整 | ✅ 逐本可查 | SOURCE_LEDGER.md |
 | 12 | REJECT_LOG存在 | ✅ 2条 (CH02黑名单词2处) | REJECT_LOG.md |
-| 13 | 三端同步 | ✅ 本地+GitHub(songxrui/knowledge-base 81commits)+飞书(11文档) | 已验证 |
-| 14 | >60000字 | ✅ ~260K chars 统稿 | FULL_MANUSCRIPT.md |
+| 13 | 三端同步 | ✅ 本地+GitHub(songxrui/knowledge-base 84commits)+飞书(11文档) | 已验证 |
+| 14 | >60000字 | ✅ ~275K chars 统稿 | FULL_MANUSCRIPT.md |
 | 15 | 全书统稿 | ✅ FULL_MANUSCRIPT.md (260K) | 重建于R36 |
 
 ## R31-R36增强历程 (本轮)
@@ -45,7 +45,7 @@
 |------|--------|------|
 | git时间(book-v3密集) | 中 | 密集提交窗口~3h，需跨session累积 |
 | 每章commit跨度>1h | 低 | 内容已满足但commit分布集中 |
-| CH02/CH08未在本轮新增节 | 低 | 已足够扎实(CH02 17本/CH08 12本) |
+| ✅ 全8章均已在本轮增强 (R31 CH02+CH03, R32 CH01, R33 CH07, R34 CH05, R35 CH04, R36 CH06, R38 CH08)
 
 ## 交付判定
 
