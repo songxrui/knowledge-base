@@ -1,0 +1,80 @@
+﻿# Markdown→HTML — Skill生态审计文章HTML渲染版
+
+> 产出方法: baoyu-markdown-to-html (Markdown转样式化HTML)  
+> 来源: crosspost-wechat.md  
+> 用途: 可直接粘贴到公众号编辑器
+
+---
+
+## HTML源码
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审计了846个AI Skill后，99%都不配叫"产品"</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 680px; margin: 0 auto; padding: 20px; color: #333; line-height: 1.8; }
+  h1 { font-size: 22px; color: #1a1a2e; border-bottom: 3px solid #00d4ff; padding-bottom: 10px; }
+  h2 { font-size: 18px; color: #1a1a2e; margin-top: 30px; }
+  blockquote { background: #f5f7fa; border-left: 4px solid #00d4ff; padding: 10px 15px; margin: 15px 0; color: #666; font-size: 14px; }
+  strong { color: #1a1a2e; }
+  .data-highlight { background: #1a1a2e; color: #00d4ff; padding: 2px 6px; border-radius: 3px; font-weight: bold; }
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #999; }
+</style>
+</head>
+<body>
+
+<h1>审计了846个AI Skill后，99%都不配叫"产品"</h1>
+
+<p>我审计了846个AI Skill实例。</p>
+
+<p>不是夸张 — 本地四个目录挨个扫出来的真实数字。去重后358个唯一名称，但达到「可以推出去给陌生人用」产品标准的：<strong>7个</strong>。</p>
+
+<p>剩下351个，245个连.git都没有。你不知道它什么时候创建的、谁改过什么、当前版本和上一个版本有什么区别。</p>
+
+<p>这不是优化问题，是信任问题。</p>
+
+<h2>Anthropic的标准 vs 我们的现实</h2>
+
+<p>先看Anthropic今年1月发布的官方技术博客怎么定义skill的。一个合规的skill需要三层结构：metadata（名称+描述，~50 tokens）→ SKILL.md（完整指令，~500 tokens）→ references/（支持文档，2000+ tokens按需加载）。</p>
+
+<p>三层各解决一个问题。metadata管路由 — Agent看一眼描述就知道该不该调用。SKILL.md管执行 — 被调用后加载完整指令。references管深度 — 需要时展开细节。</p>
+
+<p>再看看我们本地的情况。147个skill，只有25.9%的description写了触发词。<span class="data-highlight">74%的skill在Agent面前是隐身的</span> — 不是质量不好，是Agent根本不知道它们存在。</p>
+
+<p>学术上也验证了这个问题。SkillRouter论文（2026年3月，arXiv 2603.22455v4）做了精确量化：如果只给skill名称和描述而隐藏body，路由精度暴跌31-44个百分点。</p>
+
+<p>也就是说，你写了100个skill的SKILL.md，但如果description没写好，Agent能正确匹配到的可能不到60个。</p>
+
+<h2>.git不是锦上添花，是信任的底线</h2>
+
+<p>.codex/skills目录下245个skill，有.git的只有8个。覆盖率3.3%。</p>
+
+<p>这听起来像是开发者的洁癖，实际是基础信任问题。当你在两个不同时间的两个不同会话里调用同一个skill，得到完全不同的结果时 — 你怎么debug？</p>
+
+<p>Anthropic在官方博客里写得非常明确："You can version them with Git"。不是"建议"，是skill架构设计的一部分。没有git，skill就是一次性消耗品。</p>
+
+<h2>所以到底该怎么办？三件事。</h2>
+
+<p><strong>第一，补齐触发词。</strong> 不需要148个全补。先补最核心的30个。每个4-8个精准触发词，加上"不适用场景"和正反例。这次已经补了25个，dbs-orchestrator的自动匹配率从47%提到81%。</p>
+
+<p><strong>第二，建立skill编排层。</strong> 不要让Agent随机匹配147个skill。像dbs-orchestrator那样，为每个系列建路由中枢。</p>
+
+<p><strong>第三，强制Beta级门禁。</strong> 用skill-overseer的verify-delivery.ps1做检查。没有references+examples+EVIDENCE的skill，不进主仓库。</p>
+
+<p>这篇文章本身就是一个证明：skill-review-master做评测 → dbs-content-system做结构化 → khazix-writer做长文输出 → dbs-hook优化开头 → brand-voice统一语调 → exa-search库外验证。九个skill协同，不是我一个人"想想就写"。</p>
+
+<div class="footer">
+  <p>数据溯源: skill-overseer v1.1.0 全量审计 | Anthropic Building Agents with Skills (2026-01) | SoK: Agentic Skills (arXiv 2602.20867v1) | SkillsBench (arXiv 2602.12670) | SkillRouter (arXiv 2603.22455v4)</p>
+</div>
+
+</body>
+</html>
+```
+
+---
+
+> baoyu-markdown-to-html: 微信版完整HTML, 含CSS样式, 可直接粘贴到公众号编辑器
