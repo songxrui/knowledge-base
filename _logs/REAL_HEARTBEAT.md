@@ -158,3 +158,13 @@
 - **Files changed (last commit)**: 1
 - **Diff stat**:  1 file changed, 60 insertions(+)
 - **Total files in repo**: 1693 (270.71 MB)
+
+## [2026-06-08 12:55:47] | 
+- **System time**: 2026-06-08 12:55:47 (auto-captured, NOT hand-written)
+- **Last commit**: b4e9dda0bafb645395aa7d1d9c040b1f07d243c8
+- **Commit time**: 2026-06-08 12:55:18 +0800
+- **Message**: DATA_APPENDIX: 5表完整数据集 — 质量分布/目录分布/触发词/外部验证/产出统计, 可复现
+- **Total commits in repo**: 571
+- **Files changed (last commit)**: 1
+- **Diff stat**:  1 file changed, 60 insertions(+)
+- **Total files in repo**: 1697 (270.72 MB)
