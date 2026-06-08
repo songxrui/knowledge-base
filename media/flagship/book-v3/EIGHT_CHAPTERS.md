@@ -4,7 +4,7 @@
 > **字数**: 104,690 chars (~105K中文)
 > **名著**: ~97本去重 (weread 60 + exa 52)
 > **commits**: 27
-> **内容DoD**: 15/15 ? | **git时间: ~5.4h/10h (跨session累积, R17 框架总图+统稿更新+英文摘要) |
+> **内容DoD**: 15/15 ? | **git时间: ~5.8h/10h (跨session累积, R18 自测题) |
 
 ---
 
@@ -23,6 +23,8 @@
 
 - [框架总图](FRAMEWORK_MAP.md): Mermaid思维导图+跨章连接图+信源分布
 - [英文摘要](ENGLISH_ABSTRACTS.md): 8章英文Abstracts(双语读者/国际分享)
+
+- [自测题](SELF_ASSESSMENT.md): 8章50题(★应用题+●理解题)检验学习成果
 
 ## 各章速览
 
