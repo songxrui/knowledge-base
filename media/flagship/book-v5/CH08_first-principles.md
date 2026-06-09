@@ -1,4 +1,4 @@
-# 第8章：各学科最重要的第一性模型及其跨域应用
+﻿# 第8章：各学科最重要的第一性模型及其跨域应用
 
 > 核心问题：物理学/生物学/经济学/心理学的核心模型，如何迁移到个人决策？
 
@@ -225,9 +225,9 @@ Meadows的12层杠杆点虽然概念强大，但有一个实际问题：**越强
 4. 关联检查→每个行动应关联到至少1个核心模型/学派
 
 
-1. Thinking in Systems (Donella Meadows, 2008) — exa实搜
-2. Sapiens (Yuval Noah Harari) — exa实搜
-3. Principles (Ray Dalio) — exa实搜
+1. Thinking in Systems (Donella Meadows, 2008)
+2. Sapiens (Yuval Noah Harari)
+3. Principles (Ray Dalio)
 4. 《枪炮、病菌与钢铁》(戴蒙德) — weread ID:42766048
 5. 《乌合之众》(勒庞) — weread ID:3300127322
 6. 《工作、消费主义和新穷人》(鲍曼) — weread ID:CB_Dk88et4xeDSU4oP71aAmN17n
