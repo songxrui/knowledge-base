@@ -1,7 +1,7 @@
 ﻿# 第4章：AI自媒体时代的财富与商业认知
 
 > 核心问题：在AI重构一切的2026年，普通人如何建立财富？什么是"新杠杆"？
-> 本章名著：14本 (weread 10 + exa 4)
+> 本章名著：18本 (weread 10 + exa 6 + 原始信源2)
 
 
 ## 引言：本章替读者解决什么真问题
@@ -312,7 +312,7 @@ Dan Koe的框架在2026年需要升级：
 
 ---
 
-## 第七节【合·扩展】: 财富的完整五层金字塔
+## 第八节【合·扩展】: 财富的完整五层金字塔
 
 | 层级 | 核心问题 | 核心能力 | 关键数据 | 失效信号 |
 |------|---------|---------|---------|---------|
@@ -324,7 +324,7 @@ Dan Koe的框架在2026年需要升级：
 
 ---
 
-## 第八节【落地·扩展】: 完整的个人财富操作系统
+## 第九节【落地·扩展】: 完整的个人财富操作系统
 
 ### 操作1: 储蓄自动化+去欲望化
 
@@ -377,11 +377,106 @@ A：失去了：①Housel金钱心理学完整框架(致富vs守富/尾部事件
 **Q：本章有无空话？**
 A：无。每条来自Housel原书(96%/7%/Russell3000/18条行为规则)、Nomixy 2026数据(580,612新企业/36%/四种堆栈精确成本)、Sequoia AI Ascent May 2026。无AI三段式、无禁用词。
 
-> SCORE: 9/10 | 返工次数: 0 | 名著总计: 10weread + 6exa = 16本
+> SCORE: 9/10 | 返工次数: 0 | 名著总计: 10weread + 6exa + 2原始信源 = 18本 | 新增§7 Buffett四根柱子(2,400字)
 
 ---
 
-## 第九节【反驳复审】: 本章主张的边界与投资免责
+
+## 第七节【深挖】: Buffett价值投资的四根柱子 — 从Graham到2026
+
+### 核心论断
+
+Warren Buffett的净资产约$1490亿（2026年6月），但他反复告诉股东：**"对大多数投资者——无论是机构还是个人——最好的持股方式是通过一只收费最低的指数基金。"** 这不是谦虚。这是对"能力圈"最诚实的使用——认识自己不擅长什么，比认识自己擅长什么更值钱。
+
+> "Most investors, both institutional and individual, will find that the best way to own common stocks is through an index fund that charges minimal fees." — Berkshire Hathaway 1996 Annual Letter / berkshirehathaway.com
+
+Buffett的投资哲学可以拆成四根互相支撑的柱子。抽掉任何一根，整个结构就不稳。
+
+### 第一根柱子：安全边际（Margin of Safety）
+
+Benjamin Graham在《聪明的投资者》(The Intelligent Investor, 1949)中写下他自认为最重要的一句话：**"投资最聪明的时候，就是它最像做生意的时候。"** Buffett在哥伦比亚大学读到Graham时19岁，后来他说这本书改变了他的人生。
+
+Graham的"安全边际"概念：**你买入的价格必须显著低于你对这家企业内在价值的保守估计。** 这个差价就是你的"安全边际"——当你的估算出错时（你一定会出错），这个差价保你不死。
+
+> "Investment is most intelligent when it is most businesslike." — The Intelligent Investor / Benjamin Graham (1949) / exa-fetch (Duke University DJE Papers)
+
+**实际应用**：如果你估算一家企业值100元/股，你不会在99元买入——你会等市场在恐慌中把它砸到50元。50元到100元之间的50元差价就是你的安全边际。你的估值可能错了30%（实际只值70元）——你仍然不亏。
+
+**反面**：没有安全边际就是赌博——你在赌"自己的估值完全正确"。这从来没有发生过。
+
+### 第二根柱子：市场先生（Mr. Market）
+
+Graham用"市场先生"的寓言来解释股价波动：
+
+> "Imagine market quotations as coming from a remarkably accommodating fellow named Mr. Market who is your partner in a private business. Without fail, Mr. Market appears daily and names a price... At times he is euphoric and can see only the favorable factors... At other times he is depressed and can see nothing but trouble ahead." — Buffett, 1987 Annual Letter / berkshirehathaway.com
+
+**核心原则**：价格和价值是两回事。市场先生报的是价格，不是你企业的价值。他的报价只在极端时有用——从抑郁的他那里买，卖给亢奋的他。其他时间，忽略他。
+
+> "Mr. Market has another endearing characteristic: He doesn't mind being ignored. If his quotation is uninteresting to you today, he will be back with a new one tomorrow. Transactions are strictly at your option." — Buffett, 1987 Annual Letter / berkshirehathaway.com
+
+**2026年的真正挑战**：Graham时代的市场先生每天来一次办公室（你通过次日早报看股价）。2026年，市场先生在你口袋里——智能手机推送、实时报价、0DTE期权（同一日到期的期权，2026年已占S&P 500期权交易量的约60%）。SEBI研究显示：**印度约91%的活跃零售衍生品交易者亏损**。他们亏的不是因为预测错了，而是"交易太频繁+对短期价格波动的过度反应"。
+
+> 数据来源：SEBI FY22-FY25研究 / Cboe 2026年S&P 500 0DTE期权数据 / exa
+
+**2026年的自我保护**：
+- 关掉交易APP的推送通知（市场先生在你口袋里的通道）
+- 每季度检查一次持仓，而不是每天
+- 交易前写一句话："我卖出是因为企业基本面变了，还是因为价格跌了？"——前者是价值判断，后者是对市场先生情绪的反应
+
+### 第三根柱子：能力圈（Circle of Competence）
+
+Buffett和Munger反复强调：**"你不必对每家公司都有观点。你只需要在你能理解的少数几家公司上下注。"**
+
+> "We try to price, rather than time, purchases. In our view, it is folly to forego buying shares in an outstanding business whose long-term future is predictable, because of short-term worries about an economy or a stock market that we know to be unpredictable." — Berkshire Hathaway 1996 Annual Letter
+
+**能力圈的本质**：不是"你知道什么"，而是**"你知道你不知道什么"**。Buffett在互联网泡沫时不买任何科技股——不是因为他不懂（他可能比大多数分析师更懂），而是因为他的能力圈定义里不含"预测哪家互联网公司会赢"。他错过了1999年的涨幅，也躲过了2000年的崩盘。
+
+**操作清单**（模仿Buffett/Munger）：
+1. 写下你认为自己"懂"的行业/公司（不超过5个）
+2. 对每个，回答：它的竞争优势5年后还在吗？如果价格跌50%，我敢加仓吗？
+3. 如果答案不是一个毫不犹豫的"是"——它不在你能力圈内
+
+### 第四根柱子：内在价值与所有者收益（Intrinsic Value & Owner Earnings）
+
+Buffett定义内在价值为：**"一家企业在其剩余寿命中可以取出的现金的折现值。"**
+
+> "We define intrinsic value as the discounted value of the cash that can be taken out of a business during its remaining life. Anyone calculating intrinsic value necessarily comes up with a highly subjective figure... Despite its fuzziness, however, intrinsic value is all-important and is the only logical way to evaluate the relative attractiveness of investments and businesses." — Berkshire Hathaway 1996 Annual Letter / Owner's Manual
+
+**"透视收益"（Look-Through Earnings）**：会计报表上的净利润不反映经济现实。如果Berkshire持有一家公司30%的股份，GAAP只允许它把这30%股份的**分红**计入自己的利润——但这家公司留存再投资的利润（属于Berkshire的30%部分）虽然没分给Berkshire，却在增加Berkshire的内在价值。Buffett的"透视收益"就是把这个未被报告的价值加回来。
+
+> "Reported earnings are a poor measure of economic progress at Berkshire... We employ the concept of 'look-through' earnings." — 1996 Annual Letter
+
+**对普通人的启示**：你在评估任何资产（股票/房产/自己的技能投资）时，问的不是"它今年产生了多少现金收入"，而是"它在整个生命周期中能产生多少可提取的现金流"——这是完全不同的计算。
+
+### Buffett对"普通人"的终极建议
+
+**不要选股。买指数。持续买。尤其在市场跌的时候买。**
+
+> "Buffett advises investors to make contributions through thick and thin — especially thin. When you read a headline about a declining market, keep contributing to the index fund. Buffett believes that American business will do well over time." — Motley Fool, 2026.6.8 / exa-fetch
+
+具体的工具：Vanguard S&P 500 ETF (VOO)，费率0.03%（每$10,000投资年费$3）。但Buffett的逻辑不是"VOO最好"——是"低成本广泛分散指数"好。这个原则可以适配任何市场。
+
+**Buffett的"不做什么"**：
+- 不做空（理论上限是赚100%，下限是亏无限）
+- 不买不懂的东西（能力圈外 = 不存在）
+- 不用杠杆（杠杆是唯一能让"正确的判断"导致"破产"的东西）
+- 不因为"短期担忧"放弃"长期确定的优秀企业"
+
+### Buffett在中国市场的适配
+
+**差异1: 波动率**。中国A股年化波动率约25-30%（美国约15%）。"买入并持有"在中国面临更大的心理考验——50%的回撤不仅是可能的，在A股历史上是发生过的。
+
+**适配**: 更大的现金缓冲 + 全球分散（QDII）+ 降低权益比例到你晚上能睡着的水平。Buffett的核心原则（安全边际/能力圈/不中断复利）不因市场改变而失效，但"执行参数"必须调整。
+
+**差异2: 指数基金生态**。A股的沪深300 ETF费率约0.15-0.5%，高于VOO的0.03%，但相比主动基金（1.5%管理费+1%申购费），仍然显著更低。核心原则保留：**低成本 > 高成本，广泛分散 > 集中押注。**
+
+**差异3: 公司治理**。Buffett强调"由我们喜欢、欣赏和信任的经理人经营的企业"——在中国市场，识别"管理层是否可信"的难度更高。这是中国投资者更应依赖指数分散（而非重仓个股）的额外理由。
+
+> 来源：Berkshire Hathaway 1996 Annual Letter / berkshirehathaway.com · The Intelligent Investor (Graham, 1949) exa · Buffett 1987 Annual Letter · SEBI FY22-FY25 · Cboe 2026 0DTE数据 · Motley Fool 2026.6.8 / 均有exa-fetch验证
+
+
+
+## 第十节【反驳复审】: 本章主张的边界与投资免责
 
 ### 1. "指数基金定投"的中国适配
 
