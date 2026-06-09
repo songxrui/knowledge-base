@@ -1,4 +1,4 @@
-\# 第1章：元能力 — 人必须优先掌握的七种底层能力
+﻿\# 第1章：元能力 — 人必须优先掌握的七种底层能力
 
 > 核心问题：如果只学7种能力就能提升所有其他能力，它们是什么？从0到接近终极怎么练？
 > 每种元能力从核心原理到落地练习，均标注出处。
@@ -22,7 +22,10 @@
 
 > "Rereading text and massed practice are by far the preferred study strategies of learners of all stripes, but they're also among the least productive. Retrieval practice—recalling facts or concepts from memory—is a more effective learning strategy." — Make It Stick / Brown, Roediger, McDaniel (2014) / exa
 
-**2025年定量证据**：Karpicke在Purdue大学的综合回顾（2025）显示，检索练习效应量g=0.50，优于81%的对照条件。间隔重复与检索练习联合使用时效应量升至g=0.60。在医学教育领域，Maye（2026）对14项研究、21,415名学习者的元分析得出间隔重复的标准化均数差SMD=0.78。
+**定量证据**：
+- **[S1]** 检索练习效应量g=0.50，优于81%的对照条件。来源::Rowland, C.A. (2014). `Psychological Bulletin`. 159项研究的元分析. g=0.50. DOI: 10.1037/a0037559. 注: v3误标为"Karpicke 2025", 实际元分析为Rowland 2014, Karpicke 2025为综述引用。见 EVIDENCE_LEDGER.md S1
+- **[S2]** 间隔+检索联合效应量g=0.60。来源::同上Rowland 2014元分析; Agarwal et al. (2021)课堂元综述提供间隔效应额外证据。见 EVIDENCE_LEDGER.md S2
+- **[S3]** 医学教育领域间隔重复SMD=0.78。来源::Maye, J. et al. (2026). `The Clinical Teacher`. 14项研究, 21,415名学习者, SMD=0.78 (95% CI 0.56-0.99, p<0.0001). DOI: 10.1111/tct.70353. ★外部独立验证通过. 见 EVIDENCE_LEDGER.md S3
 
 ### 2\. 间隔重复（Spaced Repetition）— 遗忘是你的朋友
 
