@@ -141,7 +141,7 @@ Grant区分了三种职业心态：
 
 > "Thinking like a scientist means being actively open-minded. It requires searching for reasons why you might be wrong, not for reasons why you must be right." — Think Again / Adam Grant / exa
 
-### Tetlock的"超级预测者"四原则
+来源::Tetlock, P.E. & Gardner, D. (2015). `Superforecasting: The Art and Science of Prediction`. IARPA ACE tournament (2011-2015): 20,000+ forecasters, top 2% = "superforecasters". ISBN: 978-0804136693. ★外部独立验证通过(20,000+/IARPA/top 2%精确匹配). 见EVIDENCE_LEDGER.md A6. `n`n### Tetlock的"超级预测者"四原则
 
 Philip Tetlock(2015)Superforecasting IARPA竞赛中通过20,000+预测者的大规模研究，识别出了"超级预测者"（预测准确度持续在top 2%的人）的四个特征：
 

@@ -274,7 +274,7 @@ Housel最反直觉的论断："Building wealth has little to do with your income
 | SaaS创始人 | ~$518 | 初级开发($6K)+客服($2.4K)+DevOps($1.4K) | 18.9x |
 | 全栈运营者 | ~$643 | 市场($6.5K)+销售($5.5K)+客服($3.5K)+运营($4.5K) | 31.1x |
 
-> "Start at $200 and grow — almost every successful solo I know began under $300/month and added agents as revenue cleared the bar." — Nomixy 2026 / exa
+来源::Nomixy (2026.5.10). "AI Agent Stack Economics". 注: EVIDENCE_LEDGER B4 — 引用太泛，需补充具体exa搜索URL. 降级待定. `n`n> "Start at $200 and grow — almost every successful solo I know began under $300/month and added agents as revenue cleared the bar." — Nomixy 2026 / exa
 
 ### 关键约束：AI堆栈能做什么、不能做什么
 
