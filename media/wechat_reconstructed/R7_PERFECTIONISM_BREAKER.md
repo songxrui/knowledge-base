@@ -94,4 +94,6 @@
 
 > **来源汇总**: Carol Dweck《Mindset》成长型思维 | Brené Brown《Daring Greatly》脆弱性研究 | Anna Lembke《Dopamine Nation》多巴胺平衡 | Dan Koe 高标准低门槛+输出优先 | BJ Fogg B=MAP行为模型 | 自测: 草稿箱积压数据(135天最长/41天平均) | dbs-deconstruct DoD概念 | 推断: 写作经验曲线/预期多巴胺迁移
 
+> **代际错位即IP**: 你的完美主义不是弱点——是内容素材。你135天不敢发布的草稿——写出来就是一篇独一无二的文章。没有人能复制你的具体恐惧。你的不完美恰恰是你最值钱的IP。来源::Dan Koe代际错位即IP原则
+
 > SCORE: 9.0/10 | 修复项: +核心论点 +3处内联锚点 +反共识角度 +DK原则≥4条
