@@ -1,17 +1,15 @@
 ﻿---
 name: knowledge-base
 description: "个人知识库搭建与维护+内容创作全管线。PARA+Zettelkasten+AI-native+飞书门面。dbs方法论内置：选题压缩(3核心选题)、内容单元化(QST/CON/OPI/CAS/SOL)、R系列重构、质量门禁链。触发：知识库、vault、zettel、PARA、笔记模板、weekly review、周回顾、同步飞书、推送GitHub、知识库协作、创建笔记、提炼想法、文件分类、知识库结构、笔记组织、写文章、公众号长文、内容优化、选题压缩。反触发：纯代码仓库管理→github-ops、项目管理工具配置、数据库设计。"
-version: "4.0.0 | 2026-06-08 | dbs-content-system+3选题+R系列+新skill集成"
+version: "4.1.0 | 2026-06-09 | Vault分析工具+MOC系统+证据验真管线+流量skill+Headroom"
 ---
 
-# 知识库 Skill v4 — dbs方法论内置版
+# 知识库 Skill v4.1 — dbs方法论+Obsidian导航+验真管线
 
 **三端**：本地md+git=AI大脑 / GitHub=版本仓库 / 飞书=门面协作。
 
-> 原则与反模式 → `references/principles.md`
-> GitHub/飞书协作配置 → `references/collaboration.md`
-> 文件分类推荐体系 → `references/file-classification.md`
-> CodeWhale技能同步 → `references/codewhale-sync.md`
+> 原则与反模式 → `references/principles.md` | GitHub/飞书协作 → `references/collaboration.md`
+> 文件分类 → `references/file-classification.md` | CodeWhale同步 → `references/codewhale-sync.md`
 
 ---
 
@@ -20,8 +18,35 @@ version: "4.0.0 | 2026-06-08 | dbs-content-system+3选题+R系列+新skill集成
 1. **来源标注**：每条事实/观点标注出处。`[来源: <工具/书籍/URL>]`
 2. **置信度标记**：不确定标注 `[推断]` `[待验证]` `[个人经验]`
 3. **禁止编造**：不得伪造书名、URL、数据、引用。无来源标注 `[来源缺失]`
-4. **平台幻觉防御**：提及任何平台前先查 `选题管理/00-选题记录.md` 和 `media/` 目录确认真实平台。**绝对禁止编造平台名**（如"即刻"——仅当选题记录明确出现时才可用）
+4. **平台幻觉防御**：提及任何平台前先查 `选题管理/00-选题记录.md` 和 `media/` 目录确认真实平台。已验证真实平台：公众号(微信)/小红书/知乎/Threads/Newsletter/Twitter(X)/B站/抖音（来自 `media/` 目录文件结构+选题记录）。**绝对禁止编造平台名**。
 5. **核查提醒**：医学/法律/投资/统计 → `[⚠ 核查: 请核对原始来源]`
+6. **库外独立验证**：验证证据必须来自语料库之外（weread高亮/exa一手来源/公开研究/实验日志）。库内文章互相引用/自引/同语料转引一律不算验证。
+
+---
+
+## Vault 导航系统（Obsidian 式 MOC）
+
+`D:\KnowledgeBase\` 已建立 Obsidian 式链接导航：
+
+| 文件 | 用途 | 覆盖范围 |
+|------|------|---------|
+| `HOME.md` | 主入口/仪表盘 | 全库导航 |
+| `_MOC_Cards.md` | 深度卡索引 | 77张卡（35主体+42主题） |
+| `_MOC_Content.md` | 内容产出索引 | 15个分类所有长文 |
+| `_MOC_Flagship.md` | 旗舰作品索引 | book-v2→v6+book-of-life-answers |
+| `INDEX.md` | 全量文件列表 | 1874篇.md全量 |
+
+### Vault 分析工具
+
+```powershell
+# 全量分析（断链/孤点/Hub节点）
+powershell -ExecutionPolicy Bypass -File "D:\KnowledgeBase\scripts\analyze_vault_v3.ps1"
+
+# 重建MOC索引
+powershell -ExecutionPolicy Bypass -File "D:\KnowledgeBase\scripts\rebuild_mocs.ps1"
+```
+
+当前状态（2026-06-09）：**断链0**，Wiki链接392条，被引用节点280个。
 
 ---
 
@@ -40,6 +65,8 @@ version: "4.0.0 | 2026-06-08 | dbs-content-system+3选题+R系列+新skill集成
 ├─ 开头/hook优化 → dbs-hook (3类开头公式：数据冲击/反共识/痛点直击)
 ├─ 去AI味 → humanizer-zh (5指纹扫描+替换)
 ├─ 终检 → compile-and-verify (禁用词+证据密度+质量分)
+├─ 验真审计 → content-truth-lock (库外独立验证+4证据+红队+盲评)
+├─ 流量优化 → flow-skill (平台规则+注意力第一性+发布前自检)
 └─ 元评测 → skill-review (路径:D:\_ai\skills\skill-review\)
 ```
 
@@ -54,7 +81,7 @@ version: "4.0.0 | 2026-06-08 | dbs-content-system+3选题+R系列+新skill集成
 
 ## 3核心选题框架（压缩自17主题）
 
-所有内容产出必须归入以下3选题之一。db本人只有这3个选题。
+所有内容产出必须归入以下3选题之一。
 
 ### 选题1: 执行系统
 **核心问题**: 意志力不可靠，系统如何替代意志力？
@@ -81,6 +108,60 @@ version: "4.0.0 | 2026-06-08 | dbs-content-system+3选题+R系列+新skill集成
 
 ---
 
+## 答案之书质量管线（旗舰作品 v2→v6→natural）
+
+`D:\KnowledgeBase\media\flagship\` 下维护完整版本演进链：
+
+| 版本 | 状态 | 核心改进 |
+|------|------|---------|
+| book-v2 | 基线 | 8章初稿 |
+| book-v3 | 存在性审计通过 | S/A/B/C证据标记+11反共识+8章行动系统 |
+| book-v4 | 验真完成 | 证据坐实+贯通验真+原创标注 |
+| book-v5 | 拆脚手架 | 去模板化+自然行文+接缝隐形 |
+| book-v6 | 自然协调 | 节奏变奏+场景补全+言行一致 |
+| book-of-life-answers | 英文版 | 9章完整版 |
+
+### 质量升级五杠杆
+1. **证据坐实** → `EVIDENCE_LEDGER.md`（论点→等级→锚点→验证状态）
+2. **贯通验真** → `CONCEPT_MAP.md`（概念引用图，0死链）
+3. **行动可验证** → 每章自测有明确通过/失败判据
+4. **反共识立论** → 四件套：流行错误|为什么错|反例|适用边界
+5. **原创坐实+敢删** → `ORIGINALITY_LOG.md` + `CUT_LOG.md`
+
+### DoD 审计（反盖章版）
+- 自动层：每条[S]/[A]带锚点标记 | EVIDENCE_LEDGER/CONCEPT_MAP存在 | 死链=0 | 黑名单零命中
+- 人工层：随机抽5条锚点逐条判断真/存疑/伪 | 抽3个反共识判断反例是否成立
+
+---
+
+## 流量工程 skill（《流量的本质与暴力》+平台规则）
+
+已构建流量底层skill，位于 `D:\KnowledgeBase\03_Resources\traffic-engineering\`：
+
+### 平台第一性规则
+| 平台 | 核心算法偏好 | 内容形态 | 传播机制 |
+|------|------------|---------|---------|
+| 公众号 | 订阅+社交裂变 | 长文(1500-3000字) | 转发>在看>算法推荐 |
+| 小红书 | CES评分(点赞1/收藏1/评论4/关注8) | 图文(800-1200字)+封面 | 搜索长尾+推荐流双引擎 |
+| 抖音 | 完播率>互动率>转粉率 | 短视频(15-60s)/图文 | 赛马机制+流量池递进 |
+| B站 | 三连+完播+弹幕密度 | 中长视频(3-15min) | 分区推荐+搜索沉淀 |
+| Twitter(X) | 回复>引用>点赞>书签 | 短线程(5-10条) | 纯算法推荐+quote扩散 |
+
+### 注意力第一性原理
+1. 注意力是不可再生资源 — 争夺的不是时间，是认知带宽
+2. 认知劫持公式：封面(0.3秒信号)×标题(1秒决策)×开头(hook)×节奏(keep)
+3. 平台依赖症：内容在别人的管道里流动，你在为人家的管道打工
+4. 内容产品化：每篇内容必须指向一个产品/付费/认知转化
+
+### 发布前自检清单
+- [ ] 封面/标题能0.3秒传达核心冲突？
+- [ ] 开头有hook（数据冲击/反共识/痛点直击）？
+- [ ] 每300字一个信息增量点？
+- [ ] 结尾有清晰CTA（行动召唤）？
+- [ ] 平台适配版已准备（公众号长文/小红书图文/Twitter线程）？
+
+---
+
 ## dbs-content-system 内容单元化（从素材到文章的完整链路）
 
 ### 5类内容单元（不可再分）
@@ -88,65 +169,50 @@ version: "4.0.0 | 2026-06-08 | dbs-content-system+3选题+R系列+新skill集成
 |------|------|------|------|
 | **QST** | Question | 一个问题或痛点 | "为什么坚持不了写作？" |
 | **CON** | Concept | 一个概念或定义 | "信息差=你知道但别人不知道且能变现的知识" |
-| **OPI** | Opinion | 一个有立场的观点 | "先有产品再做内容，不然就是在自嗨" |
-| **CAS** | Case | 一个案例或故事 | "省42名LOL→快速决策能力证明" |
-| **SOL** | Solution | 一个可执行的方案 | "每天发1条，坚持100天，前30天别管质量" |
+| **OPI** | Opinion | 一个有立场的观点 | "先有产品再做内容，不然就是免费写日记" |
+| **CAS** | Case | 一个案例或故事 | "db从13000条推文中提取出1419个内容单元" |
+| **SOL** | Solution | 一个可执行方案或步骤 | "14天实验SOP：荒谬最小化+基线记录+瓶颈变量" |
 
-### 4种关系
-- **回应**: CON回应QST — "信息差(CON)解释了为什么赚钱难(QST)"
-- **解释**: CAS证明OPI — "李亚鹏案例(CAS)证明了人脉≠赚钱(OPI)"
-- **证明**: SOL证明OPI — "100天写作计划(SOL)证明坚持>天赋(OPI)"
-- **冲突**: OPI vs OPI — "先有产品 vs 先有流量"的冲突
+### 5层工程架构
+1. **规则层** → 命名规范/字段格式/关联方式
+2. **状态层** → 已处理/跳过/待复核
+3. **内容单元库** → QST/CON/OPI/CAS/SOL存储
+4. **主题地图** → 相关节点组织成内容面
+5. **选题装配稿** → 可发布内容骨架（受众+问题+素材结构）
 
-### 扩散树
-1条推文→1张知识卡→1篇公众号→1个产品模块。扩散比约**1:40**。
-
----
-
-## 公众号长文重构流程（R系列标准）
-
-当需要从旧稿产出新文章时，走以下流程：
-
-1. **dbs-content-system**: 从W系列+D系列素材中提取QST/CON/OPI/CAS/SOL单元
-2. **3选题归并**: 按选题框架归类单元，确定文章归属
-3. **dbs-deconstruct/slowisfast/benchmark**: 深度拆解+慢方法审计+对标过滤
-4. **成稿**: 按R系列标准结构（hook认知劫持→信息-案例-观点交替→金句+行动号召）
-5. **dbs-hook**: 开头优化（3选1）
-6. **humanizer-zh**: 去AI味（5指纹扫描）
-7. **compile-and-verify**: 终检（禁用词+证据密度≥2条+质量分≥9.0）
-
-**R系列标准字段**：产出skill链 | 取材卡号 | 归并自(W/D系列) | 目标平台 | 禁用词检查 | SCORE
-
-**存量参考**: `D:\KnowledgeBase\media\wechat_reconstructed\W_TO_R_MAP.md`
+本地结构化工程: `D:\KnowledgeBase\_content-system\`
 
 ---
 
-## 内容审计管线（发布前必须走完）
+## 关联 Skill 生态（按需调用）
 
-```
-dbs-content(5维诊断) → humanizer-zh(去AI味) → compile-and-verify(禁用词+评分) → content-auditor(发布前审计)
-```
-
-任一环节不通过 → 返回源头重做。不许带病入库。
-
----
-
-## 集成的外部Skill（内容创作增强）
-
-| Skill | 用途 | 调用时机 |
+| Skill | 功能 | 调用时机 |
 |-------|------|---------|
-| agent-reach | 13+平台信息搜集（小红书/公众号/Twitter等） | 需要外部信源验证/补充时 |
-| browser-act | 浏览器自动化研究 | 需要深度浏览微信文章/网页时 |
-| geju (格局) | 认知格局提升+视角升华 | 文章收尾需要拉高维度时 |
-| understand-anything | 代码库/内容库知识图谱分析 | 分析知识库结构/关联时 |
-| weread-exporter | 微信读书全本导出 | 需要完整书籍内容时 |
+| agent-reach | 13+平台信息搜集 | 需要外部信源验证/补充时 |
 | weread-skills | 微信读书划线/想法提取 | 需要引用划线证据时 |
+| weread-exporter | 微信读书全本导出 | 需要完整书籍内容时 |
 | ljg-think | 纵向深钻（从断言到元事实） | 观点需要推到不可再分的底层时 |
 | ljg-plain | 白话重写（去复杂化） | 概念需要通俗化时 |
 | baoyu-diagram | 专业深色SVG图表 | 需要架构图/流程图时 |
 | crosspost | 多平台适配 | 发布前做平台适配时 |
 | brand-voice | 统一语调 | 多篇需要统一声音时 |
-| optimize-network | 网络/内容分发优化 | 发布策略需要优化时 |
+| humanizer-zh | 中文化去AI味 | 所有对外内容必经 |
+| compile-and-verify | 任务编译+交付质检 | 终检门禁（禁用词+证据密度） |
+| skill-review | 元Skill评测 | 引入/升级/审计任何skill时 |
+| content-truth-lock | 证据验真+库外独立验证 | 发布前证据最终审计 |
+| flow-skill | 流量平台优化+注意力第一性 | 多平台分发前适配优化 |
+| understand-anything | 代码库/内容库知识图谱分析 | 分析知识库结构/关联时 |
+| exa-search | 神经搜索（web/code/companies） | 补充一手研究来源 |
+
+---
+
+## 微信读书集成
+
+**Token**: `wrk-yC_PeQeCQBWIBD7_uFhTwwAA`（已配置环境变量）
+**推荐书单**: 50本推荐阅读书单（用于充实答案之书内容）
+**skill**: `weread-skills`（划线/想法提取）、`weread-exporter`（全本导出）
+
+调用优先级：先 `weread-skills` 提取相关划线 → 不足时调用 `weread-exporter` → 仍不足用 `exa-search`。
 
 ---
 
@@ -167,10 +233,10 @@ cd $vault; git init; git remote add origin https://github.com/songxrui/knowledge
 1. 核心结论（陈述句，标题即结论）
 2. 使用 `assets/note-template.md` → title/tags/status/source/四段式
 3. 按 `references/file-classification.md` 决定存放位置：概念性→`zettel/`；领域知识→`02_Areas/<domain>/`；项目产出→`01_Projects/<project>/`
-4. 加1-2条 `[[HOME]]（Obsidian双链示例）`
+4. 加1-2条 `[[HOME]]`（Obsidian双链，链接到首页或相关MOC）
 5. 标注来源和置信度
 
-**验证**: 标题陈述句？可独立链接？有双链？`rg "\[来源" zettel/` 有标注？
+**验证**: 标题陈述句？可独立链接？有双链？`rg "\[来源[:：]" zettel/` 有标注？
 
 ---
 
@@ -191,14 +257,20 @@ cd D:\KnowledgeBase; git add -A; git commit -m "描述"; git push
 ```
 Token: `$env:GH_TOKEN` 已配置。远程: `songxrui/knowledge-base`
 
-### 飞书（lark-cli）
+### 飞书（lark-cli v1.0.49）
 ```bash
-lark-cli wiki +node-list --space-id jcn1crrvstv9 --as user
-lark-cli wiki +node-create --space-id jcn1crrvstv9 --title "标题" --as user
+lark-cli wiki +node-list --space-id 7647454140578335680 --as user
+lark-cli wiki +node-create --space-id 7647454140578335680 --title "标题" --as user
 ```
-飞书空间: `jcn1crrvstv9`，dontbesilent社群: `https://j8v8p5qtm3.feishu.cn/drive/folder/VjGpf9aSBlMVAedXq0wcaP9mnic` 密码`9P28882`
+飞书空间: `jcn1crrvstv9`，dbs社群笔记: `https://j8v8p5qtm3.feishu.cn/drive/folder/VjGpf9aSBlMVAedXq0wcaP9mnic` 密码`9P28882`
 
 **同步策略**: 本地写→AI润色→`lark-cli wiki +node-create` 发布精选。不自动全量同步。只同步R系列（公众号长文）和压缩选题。
+
+### Vault 分析（定期健康检查）
+```powershell
+powershell -ExecutionPolicy Bypass -File "D:\KnowledgeBase\scripts\analyze_vault_v3.ps1"
+# 期望输出：断链=0，Wiki链接≥392，被引用节点≥280
+```
 
 ---
 
@@ -211,7 +283,9 @@ lark-cli wiki +node-create --space-id jcn1crrvstv9 --title "标题" --as user
 | Inbox堆积>7天 | 直接删或归档，不逐条处理 |
 | zettel孤岛 | `rg "^## 关联" zettel/` 检查空链接 |
 | 笔记无来源 | `rg "\[来源[:：]" zettel/` 审计合规 |
-| 平台幻觉 | 查`选题管理/00-选题记录.md`+`media/`目录确认真实平台 |
+| 平台幻觉 | 查`选题管理/00-选题记录.md`+`media/`目录。已验证平台：公众号/小红书/知乎/Threads/Newsletter/Twitter/B站/抖音 |
+| Vault断链>0 | 运行 `analyze_vault_v3.ps1` 定位，用 `rebuild_mocs.ps1` 重建索引 |
+| MOC中文乱码 | 文件编码必须是 UTF-8 with BOM，用 `rebuild_mocs.ps1` 重建 |
 
 ---
 
@@ -219,11 +293,12 @@ lark-cli wiki +node-create --space-id jcn1crrvstv9 --title "标题" --as user
 
 | 组件 | 状态 | 凭据 |
 |------|------|------|
-| GitHub | ✅ | `gh auth login` / `$env:GH_TOKEN` |
-| 飞书(lark-cli) | ✅ 已安装 | OAuth登录 |
-| 微信读书CLI | ✅ weread-skills | token: `wrk-yC_PeQeCQBWIBD7_uFhTwwAA` |
-| Exa搜索 | ✅ exa-search | `c2549c02-e87f-40d3-a7d0-100bed139eb5` |
-| vault路径 | ✅ | `D:\KnowledgeBase` |
+| GitHub | ✅ | `gh auth login` / PAT已配置 |
+| 飞书(lark-cli) | ✅ v1.0.49 | OAuth登录, Space: `jcn1crrvstv9` |
+| 微信读书 | ✅ weread-skills | token: `wrk-yC_PeQeCQBWIBD7_uFhTwwAA` |
+| Exa搜索 | ✅ exa-search | token: `c2549c02-e87f-40d3-a7d0-100bed139eb5` |
+| Headroom | ✅ MCP已配置 | CLI: `headroom` v0.20.15, MCP tool: `headroom_compress` |
+| vault路径 | ✅ | `D:\KnowledgeBase` (1874 .md文件) |
 
 ---
 
@@ -235,20 +310,26 @@ lark-cli wiki +node-create --space-id jcn1crrvstv9 --title "标题" --as user
 | 3压缩选题 | `D:\KnowledgeBase\选题管理\compressed\` |
 | R系列重构文章 | `D:\KnowledgeBase\media\wechat_reconstructed\` |
 | W→R映射 | `D:\KnowledgeBase\media\wechat_reconstructed\W_TO_R_MAP.md` |
-| 原则/反模式/工具对照 | `references/principles.md` |
-| GitHub/飞书链接/CLI细节 | `references/collaboration.md` |
-| 文件分类推荐体系 | `references/file-classification.md` |
-| CodeWhale技能同步 | `references/codewhale-sync.md` |
+| 答案之书全部版本 | `D:\KnowledgeBase\media\flagship\book-v*` |
+| Vault导航入口 | `D:\KnowledgeBase\HOME.md` |
+| Vault分析报告 | `D:\KnowledgeBase\_logs\VAULT_ANALYSIS_*.md` |
+| 流量工程 | `D:\KnowledgeBase\03_Resources\traffic-engineering\` |
+| 内容单元库 | `D:\KnowledgeBase\_content-system\` |
+| 原则/反模式 | `references/principles.md` |
+| GitHub/飞书配置 | `references/collaboration.md` |
+| 文件分类推荐 | `references/file-classification.md` |
+| CodeWhale同步 | `references/codewhale-sync.md` |
+| MOC索引 | `HOME.md` / `_MOC_Cards.md` / `_MOC_Content.md` / `_MOC_Flagship.md` |
 | 笔记模板 | `assets/note-template.md` |
-| 飞书发布格式模板 | `assets/feishu-template.md` |
-| 周回顾脚本 | `scripts/weekly-review.ps1` |
+| 飞书模板 | `assets/feishu-template.md` |
+| 脚本 | `scripts/weekly-review.ps1` / `scripts/analyze_vault_v3.ps1` / `scripts/rebuild_mocs.ps1` |
 
 ---
 
 ## 边界
 
-**做**: 本地PARA+Zettelkasten管理、笔记创建/检索/提炼、GitHub版本同步、飞书精选发布、CodeWhale跨平台同步、dbs方法论内容创作、R系列公众号长文重构、3选题压缩、内容审计管线。
+**做**: 本地PARA+Zettelkasten管理、笔记创建/检索/提炼、GitHub版本同步、飞书精选发布、CodeWhale跨平台同步、dbs方法论内容创作、R系列公众号长文重构、3选题压缩、内容审计管线、Vault健康检查（断链/孤点/Hub分析）、答案之书版本演进管理、流量平台优化。
 
 **不做**: Notion API集成、飞书自动全量推送、Obsidian插件配置。
 
-> 反幻觉红线: 提及任何平台前先验证。不得编造平台名（如"即刻"——仅当实际存在才可用）。真实平台=公众号(微信)/小红书/知乎/Threads/Newsletter（来自`media/`目录+选题记录）。
+> 反幻觉红线: 提及任何平台前先验证。已验证真实平台=公众号(微信)/小红书/知乎/Threads/Newsletter/Twitter(X)/B站/抖音（来自`media/`目录+选题记录）。不得编造平台名。
