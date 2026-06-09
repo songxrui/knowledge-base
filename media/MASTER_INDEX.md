@@ -1,4 +1,4 @@
-﻿# 知识库统一索引 — D:\KnowledgeBase 全量导航
+# 知识库统一索引 — D:\KnowledgeBase 全量导航
 
 > 产出方法: INDEX更新 (合并INDEX_COMPLETE + FINAL_CHECKLIST_v2)  
 > 覆盖: 全仓库所有产出目录

@@ -167,7 +167,7 @@ cd $vault; git init; git remote add origin https://github.com/songxrui/knowledge
 1. 核心结论（陈述句，标题即结论）
 2. 使用 `assets/note-template.md` → title/tags/status/source/四段式
 3. 按 `references/file-classification.md` 决定存放位置：概念性→`zettel/`；领域知识→`02_Areas/<domain>/`；项目产出→`01_Projects/<project>/`
-4. 加1-2条 `[[双链]]`
+4. 加1-2条 `[[HOME]]（Obsidian双链示例）`
 5. 标注来源和置信度
 
 **验证**: 标题陈述句？可独立链接？有双链？`rg "\[来源" zettel/` 有标注？
