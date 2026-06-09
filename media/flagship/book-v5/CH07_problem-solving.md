@@ -84,7 +84,7 @@ Grant提出的替代模式：
 > "Research shows that premortems reduce teams' overconfidence significantly more than other critiquing and risk-analysis methods do." — McKinsey, Bias Busters / exa-fetch
 
 
-## 单一方法论的局限 — 什么时候一套方法不够用
+Polya的四步法非常强大——但它主要适用于"温驯问题"：定义明确、有明确解决方案、可以通过分析来达成的问题。现实中的大多数重要问题是"恶劣问题"——问题本身没有被明确定义，没有明确的正确或错误答案，每个解决方案都可能引发新问题。对于恶劣问题，需要先把Polya升级：先花一到三次迭代定义清楚问题，再进入解题流程。
 
 ### 1. Polya框架的"恶劣问题"盲区
 
