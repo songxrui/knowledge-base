@@ -24,7 +24,7 @@
 
 1. **劳动力杠杆**（最古老）：雇人工作。管理难度高。
 2. **资本杠杆**（最知名）：用钱生钱。需要起始资本。
-3. **代码与媒体杠杆**（新杠杆，2026年最重要）：**写一次，无限复制，零边际成本**。这是AI时代普通人唯一触手可及的杠杆。
+3. **代码与媒体杠杆（新杠杆，2026年最重要）：写一次，无限复制，零边际成本**。这是AI时代普通人唯一触手可及的杠杆。
 
 > "Code and media are permissionless leverage. They are the leverage behind the newly rich. You can create software and content that works for you while you sleep." — Navalmanack / exa
 
