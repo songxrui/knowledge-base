@@ -1,4 +1,4 @@
-# D05 | 你的大脑有25个内置Bug——而你每天都在被它们操控
+﻿# D05 | 你的大脑有25个内置Bug——而你每天都在被它们操控
 
 > **【产出Skill链】** dbs-content-system(PPC-001+COG-001装配) → dbs-content(五维诊断)
 > **取材单元**：PPC-001(芒格25个认知Bug)·COG-001(三重大脑模型)
@@ -161,3 +161,10 @@ W80的22岁试错期权在认知Bug维度上的推论：你在这个年龄段用
 
 > **长期价值**：22岁校准的每一个认知Bug在未来40年的每一个重要决策中都在保护你。10个Bug x 每年5个决策 x 40年 = 2000次被保护的判断。
 > **SCORE: 9.5/10 | dbs-content-system: PPC x COG x W80 | dbs-content: ✅**
+
+---
+
+## 参考书目
+
+- 《思考，快与慢》Daniel Kahneman
+- 《穷查理宝典》Charlie Munger

@@ -1,4 +1,4 @@
-# D04 | HKR公式的真相——为什么你学了所有技巧还是没流量
+﻿# D04 | HKR公式的真相——为什么你学了所有技巧还是没流量
 
 > **【产出Skill链】** dbs-content-system(WLH-009+WLH-010+WLH-011+WLH-012装配) → dbs-content(五维诊断)
 > **取材单元**：WLH-009(流量本质)·WLH-010(HKR公式)·WLH-011(流量vs认知影响力)·WLH-012(100篇定律)
@@ -152,3 +152,10 @@ dbs-content五维诊断中有一个间接检验：如果这篇文章不是你写
 
 > **最终检验**：把你自己的文章发给3个朋友，只问一个问题——看完你想转发吗？如果3个人中没有人说想——找到缺失的H/K/R要素补上。
 > **SCORE: 9.5/10 | dbs-content-system: WLH全单元 | dbs-content: ✅**
+
+---
+
+## 参考书目
+
+- 《流量的本质与暴力》Stanley
+- 《Deep Work》Cal Newport
