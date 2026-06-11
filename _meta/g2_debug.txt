@@ -1,0 +1,2 @@
+planning-with-files: size=24440 trigger=True boundary=True file=C:\Users\董辉\.codex\skills\planning-with-files\SKILL.md
+browser-act: size=4819 trigger=True boundary=False file=C:\Users\董辉\.agents\skills\browser-act\SKILL.md
