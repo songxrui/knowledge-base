@@ -1,0 +1,58 @@
+[20:37:54] Auth OK, token: t-g1046bkzT5D26S3ANY...
+[20:37:54] 
+Processing PREFACE.md...
+[20:37:54]   Read 3807 chars
+[20:37:56]   Clear: deleted 10 blocks
+[20:38:00]   SYNCED: 54 blocks
+[20:38:01] 
+Processing CH01_meta-abilities.md...
+[20:38:01]   Read 21640 chars
+[20:38:03]   Clear: deleted 302 blocks
+[20:38:13]   SYNCED: 288 blocks
+[20:38:14] 
+Processing CH02_mental-health.md...
+[20:38:14]   Read 13720 chars
+[20:38:16]   Clear: deleted 378 blocks
+[20:38:21]   SYNCED: 149 blocks
+[20:38:22] 
+Processing CH03_physical-health.md...
+[20:38:22]   Read 15713 chars
+[20:38:25]   Clear: deleted 410 blocks
+[20:38:35]   SYNCED: 261 blocks
+[20:38:36] 
+Processing CH04_wealth-business.md...
+[20:38:36]   Read 18796 chars
+[20:38:38]   Clear: deleted 340 blocks
+[20:38:47]   SYNCED: 291 blocks
+[20:38:48] 
+Processing CH05_relationships.md...
+[20:38:48]   Read 15831 chars
+[20:38:50]   Clear: deleted 302 blocks
+[20:39:00]   SYNCED: 263 blocks
+[20:39:01] 
+Processing CH06_top-humans.md...
+[20:39:01]   Read 17133 chars
+[20:39:03]   Clear: deleted 431 blocks
+[20:39:15]   SYNCED: 319 blocks
+[20:39:16] 
+Processing CH07_problem-solving.md...
+[20:39:16]   Read 15096 chars
+[20:39:18]   Clear: deleted 371 blocks
+[20:39:28]   SYNCED: 271 blocks
+[20:39:29] 
+Processing CH08_first-principles.md...
+[20:39:29]   Read 15212 chars
+[20:39:31]   Clear: deleted 494 blocks
+[20:39:41]   SYNCED: 299 blocks
+[20:39:42] 
+=== SYNC SUMMARY ===
+[20:39:42] SYNCED: PREFACE.md - 54 blocks (3807 chars)
+[20:39:42] SYNCED: CH01_meta-abilities.md - 288 blocks (21640 chars)
+[20:39:42] SYNCED: CH02_mental-health.md - 149 blocks (13720 chars)
+[20:39:42] SYNCED: CH03_physical-health.md - 261 blocks (15713 chars)
+[20:39:42] SYNCED: CH04_wealth-business.md - 291 blocks (18796 chars)
+[20:39:42] SYNCED: CH05_relationships.md - 263 blocks (15831 chars)
+[20:39:42] SYNCED: CH06_top-humans.md - 319 blocks (17133 chars)
+[20:39:42] SYNCED: CH07_problem-solving.md - 271 blocks (15096 chars)
+[20:39:42] SYNCED: CH08_first-principles.md - 299 blocks (15212 chars)
+[20:39:42] Total: 9/9 docs synced
