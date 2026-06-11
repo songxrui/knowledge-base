@@ -12,6 +12,7 @@ Thumbs.db
 
 # Historical workspace archive (separate git repo)
 _alchemist/
+!_alchemist/output/
 
 # Large archive files (use local backup)
 *.zip
