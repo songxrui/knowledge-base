@@ -1,0 +1,182 @@
+﻿model = "deepseek-v4-pro"
+#:schema https://developers.openai.com/codex/config-schema.json
+
+# Model selection (primary: CodexPlusPlus local proxy to DeepSeek)
+model_provider = "CodexPlusPlus"
+
+[model_providers.CodexPlusPlus]
+name = "CodexPlusPlus"
+wire_api = "responses"
+requires_openai_auth = true
+base_url = "http://127.0.0.1:57321/v1"
+
+# Alternative provider: direct DeepSeek API (from CodeWhale)
+[model_providers.deepseek]
+name = "DeepSeek"
+api_key = "sk-fa4b9be28d05422682022c5fd178c3db"
+base_url = "https://api.deepseek.com/v1"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = false
+request_max_retries = 3
+
+# Runtime settings (from CodeWhale)
+approval_policy = "on-request"
+sandbox_mode = "danger-full-access"
+web_search = "live"
+
+auto_allow = [
+    "git status", "git diff", "git log", "git show", "git blame",
+    "cargo check", "cargo test", "cargo build", "cargo fmt", "cargo clippy",
+    "npm test", "npm run",
+    "go test", "go build", "go vet",
+    "python -m",
+]
+
+persistent_instructions = "DS v4 Pro mode: 1)Decompose complex tasks into numbered steps. 2)Verify each tool output before acting. 3)Use skills/MCPs instead of free-form generation. 4)When uncertain, search with exa/context7 first. 5)Label assumptions [推断] and incomplete info [待核实]. Follow AGENTS.md DS profile."
+
+# Profiles (from CodeWhale)
+[profiles.strict]
+approval_policy = "on-request"
+sandbox_mode = "read-only"
+web_search = "cached"
+
+[profiles.yolo]
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+web_search = "live"
+
+# Multi-agent configuration (from CodeWhale)
+[agents]
+max_threads = 6
+max_depth = 1
+
+[agents.explorer]
+description = "Read-only codebase explorer for gathering evidence before changes are proposed."
+config_file = "agents/explorer.toml"
+
+[agents.reviewer]
+description = "PR reviewer focused on correctness, security, and missing tests."
+config_file = "agents/reviewer.toml"
+
+[agents.docs_researcher]
+description = "Documentation specialist that verifies APIs, framework behavior, and release notes."
+config_file = "agents/docs-researcher.toml"
+
+# MCP servers
+[mcp_servers.sequential-thinking]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+
+# Logging (from CodeWhale)
+[logging]
+level = "info"
+
+# Network restrictions (from CodeWhale)
+[network]
+default = "allow"
+allow = ["api.deepseek.com", "github.com", ".githubusercontent.com", "raw.githubusercontent.com"]
+deny = ["localhost:11434", "127.0.0.1:11434", "0.0.0.0:11434"]
+
+# Retry policy (from CodeWhale)
+[retry]
+enabled = true
+max_retries = 3
+initial_delay = 0.5
+max_delay = 60.0
+exponential_base = 2.0
+
+
+# Trusted projects
+[projects.'d:\aaa']
+trust_level = "trusted"
+
+[projects.'d:\github']
+trust_level = "trusted"
+
+[projects.'d:\']
+trust_level = "trusted"
+
+[projects.'c:\users\董辉\.codex']
+trust_level = "trusted"
+
+# Plugins
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-06-02T06:40:24Z"
+source_type = "local"
+source = '\\?\C:\Users\董辉\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+# Notify
+notify = [
+  "terminal-notifier",
+  "-title",
+  "Codex ECC",
+  "-message",
+  "Task completed!",
+  "-sound",
+  "default"
+]
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."linear@openai-curated"]
+enabled = true
+
+[features]
+multi_agent = true
+
+[hooks.state]
+
+[hooks.state.'C:\Users\董辉\.codex\hooks.json:session_start:0:0']
+trusted_hash = "sha256:3ff268dcb132a3a69ba72318a160908166ba7e3dc82639ea308cfa08064389e8"
+
+[windows]
+sandbox = "unelevated"
+
+
+# ai-memory MCP (long-term memory for AI coding agents)
+[mcp_servers.ai-memory]
+command = "cmd"
+args = ["/c", "curl", "-s", "-N", "-X", "POST", "http://127.0.0.1:49374/mcp", "-H", "Content-Type: application/json", "-H", "Accept: text/event-stream"]
+
+
+# Exa MCP — deep search for sources
+[mcp_servers.exa]
+url = "https://mcp.exa.ai/mcp"
+api_key = "c2549c02-e87f-40d3-a7d0-100bed139eb5"
+
+
+# Windows sandbox
+
+# === ECC v2.0.0-rc.1 MCP servers (merged 2026-06-08) ===
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+[mcp_servers.codescene]
+command = "npx"
+args = ["-y", "@codescene/codescene-cli", "mcp"]
+
+[mcp_servers.firecrawl]
+command = "npx"
+args = ["-y", "firecrawl-mcp"]
+
+[mcp_servers.token-optimizer]
+command = "npx"
+args = ["-y", "@token-optimizer/mcp"]
+
+# === Headroom MCP (context compression) ===
+[mcp_servers.headroom]
+command = "headroom"
+args = ["mcp", "serve"]
