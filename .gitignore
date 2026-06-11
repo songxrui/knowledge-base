@@ -15,3 +15,4 @@ _alchemist/
 
 # Large archive files (use local backup)
 *.zip
+.git-rewrite/
