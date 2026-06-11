@@ -1,0 +1,787 @@
+﻿{
+    "mp":  {
+               "show":  1,
+               "book":  {
+                            "bookId":  "mpbook",
+                            "title":  "文章收藏",
+                            "cover":  "https://weread-1258476243.file.myqcloud.com/app/assets/bookcover/book_cover_app_favorite_articles.png",
+                            "secret":  1,
+                            "payType":  32,
+                            "paid":  0,
+                            "updateTime":  0,
+                            "readUpdateTime":  0,
+                            "isTop":  false
+                        }
+           },
+    "albums":  [
+
+               ],
+    "archive":  [
+                    {
+                        "bookIds":  [
+                                        "29963750",
+                                        "853116",
+                                        "3300047430",
+                                        "3300135453",
+                                        "522205",
+                                        "3300142516",
+                                        "856023",
+                                        "26713355",
+                                        "3300137925",
+                                        "35551088"
+                                    ],
+                        "name":  "存着",
+                        "albumIds":  [
+
+                                     ]
+                    },
+                    {
+                        "bookIds":  [
+                                        "3300060305",
+                                        "216212",
+                                        "230107",
+                                        "25409294"
+                                    ],
+                        "name":  "读完",
+                        "albumIds":  [
+
+                                     ]
+                    }
+                ],
+    "books":  [
+                  {
+                      "bookId":  "35551088",
+                      "title":  "蛤蟆先生去看心理医生",
+                      "author":  "罗伯特·戴博德",
+                      "updateTime":  1731295463,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/81/YueWen_35551088/t6_YueWen_35551088.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1749899172,
+                      "secret":  0,
+                      "category":  "心理-心理学应用"
+                  },
+                  {
+                      "bookId":  "3300137925",
+                      "title":  "隐秘的真相",
+                      "author":  "漾真",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/27/cpplatform_giz9jbn7paqb7aeeiwriaf/t6_cpplatform_giz9jbn7paqb7aeeiwriaf1742294166.jpg",
+                      "category":  "精品小说-悬疑推理",
+                      "finishReading":  0,
+                      "readUpdateTime":  1749964770,
+                      "secret":  0,
+                      "updateTime":  1742295122
+                  },
+                  {
+                      "bookId":  "856023",
+                      "title":  "奇风岁月",
+                      "author":  "[美]罗伯特·麦卡蒙",
+                      "updateTime":  1780894542,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/23/856023/t6_856023.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1761204748,
+                      "secret":  0,
+                      "category":  "精品小说-悬疑推理"
+                  },
+                  {
+                      "bookId":  "26713355",
+                      "title":  "你当像鸟飞往你的山",
+                      "author":  "[美]塔拉·韦斯特弗",
+                      "updateTime":  1760178056,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/22/YueWen_26713355/t6_YueWen_26713355.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1761204631,
+                      "secret":  1,
+                      "category":  "文学-散文杂著"
+                  },
+                  {
+                      "bookId":  "3300142516",
+                      "title":  "凡事发生必有利于我",
+                      "author":  "老杨的猫头鹰",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/94/cpplatform_nr2v4q9t1fvtnee81lnqgg/t6_cpplatform_nr2v4q9t1fvtnee81lnqgg1745489586.jpg",
+                      "category":  "个人成长-人生哲学",
+                      "finishReading":  0,
+                      "readUpdateTime":  1761059272,
+                      "secret":  0,
+                      "updateTime":  1745490542
+                  },
+                  {
+                      "bookId":  "522205",
+                      "title":  "人性的弱点（果麦经典）",
+                      "author":  "卡耐基",
+                      "updateTime":  1716286983,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/94/YueWen_522205/t6_YueWen_522205.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1749834265,
+                      "secret":  0,
+                      "category":  "个人成长-沟通表达"
+                  },
+                  {
+                      "bookId":  "3300047430",
+                      "title":  "像阿德勒一样思考和生活",
+                      "author":  "岸见一郎",
+                      "updateTime":  1714117749,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/51/cpplatform_iaxs23bkczcrhj1qnzlbkp/t6_cpplatform_iaxs23bkczcrhj1qnzlbkp1675308767.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1778473740,
+                      "secret":  1,
+                      "category":  "心理-社会心理学"
+                  },
+                  {
+                      "bookId":  "853116",
+                      "title":  "杀死一只知更鸟（同名电影原著）",
+                      "author":  "哈珀·李",
+                      "updateTime":  1760175989,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/32/YueWen_853116/t6_YueWen_853116.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1761204729,
+                      "secret":  0,
+                      "category":  "精品小说-治愈小说"
+                  },
+                  {
+                      "bookId":  "29963750",
+                      "title":  "自卑与超越（完整全译本）",
+                      "author":  "阿尔弗雷德·阿德勒",
+                      "updateTime":  1760177077,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/750/29963750/t6_29963750.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1768743476,
+                      "secret":  0,
+                      "category":  "心理-心理学研究"
+                  },
+                  {
+                      "bookId":  "3300135453",
+                      "title":  "我们内心的冲突",
+                      "author":  "[美]卡伦·霍妮",
+                      "updateTime":  1741933295,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/20/cpplatform_xvtdvekzr4zarbx4zxdxdr/t6_cpplatform_xvtdvekzr4zarbx4zxdxdr1740647474.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1753269685,
+                      "secret":  0,
+                      "category":  "心理-心理学应用"
+                  },
+                  {
+                      "bookId":  "624762",
+                      "title":  "思考致富：拿破仑·希尔成功圣经",
+                      "author":  "拿破仑·希尔",
+                      "updateTime":  1760177451,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/51/YueWen_624762/t6_YueWen_624762.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780984974,
+                      "secret":  0,
+                      "category":  "个人成长-人生哲学"
+                  },
+                  {
+                      "bookId":  "3300099925",
+                      "title":  "超越百岁：长寿的科学与艺术",
+                      "author":  "[美]彼得·阿提亚",
+                      "updateTime":  1760176047,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/78/cpplatform_vatzg6zhjfcgbcvy3pqbon/t6_cpplatform_vatzg6zhjfcgbcvy3pqbon1715677930.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780734361,
+                      "secret":  0,
+                      "category":  "医学健康-健康"
+                  },
+                  {
+                      "bookId":  "CB_2Z66Yq6YEFzU74C75A9DdAFJ",
+                      "title":  "流量的本质与暴力_Stanley.社群内部版.pdf",
+                      "author":  "",
+                      "cover":  "https://res.weread.qq.com/wrepub/CB_7nKFzCG2o8qN72t71WGra7Eg_parsecover",
+                      "updateTime":  1780507272,
+                      "secret":  1,
+                      "finishReading":  0,
+                      "readUpdateTime":  1780543756
+                  },
+                  {
+                      "bookId":  "3300118868",
+                      "title":  "价值心法",
+                      "author":  "姜胡说",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/80/cpplatform_uzhighrxbdm7kxvaddq2lg/t6_cpplatform_uzhighrxbdm7kxvaddq2lg1729765520.jpg",
+                      "category":  "经济理财-管理",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780592255,
+                      "secret":  0,
+                      "updateTime":  1730201598
+                  },
+                  {
+                      "bookId":  "CB_905EnJEqECrB73x75AEaH63U",
+                      "title":  "马斯克原理 A5",
+                      "author":  "",
+                      "cover":  "https://res.weread.qq.com/wrepub/CB_7l8AgoAhI4jR73x75XFGCEkH_parsecover",
+                      "updateTime":  1779555882,
+                      "secret":  1,
+                      "finishReading":  0,
+                      "readUpdateTime":  1780404277
+                  },
+                  {
+                      "bookId":  "921791",
+                      "title":  "随机漫步的傻瓜",
+                      "author":  "纳西姆·尼古拉斯·塔勒布",
+                      "updateTime":  1708526284,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/31/YueWen_921791/t6_YueWen_921791.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1779296530,
+                      "secret":  0,
+                      "category":  "经济理财-财经"
+                  },
+                  {
+                      "bookId":  "24918942",
+                      "title":  "海边的卡夫卡",
+                      "author":  "[日]村上春树",
+                      "updateTime":  1745476374,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/942/24918942/t6_24918942.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1749834591,
+                      "secret":  0,
+                      "category":  "文学-外国文学"
+                  },
+                  {
+                      "bookId":  "25615385",
+                      "title":  "被讨厌的勇气：“自我启发之父”阿德勒的哲学课",
+                      "author":  "岸见一郎 古贺史健",
+                      "updateTime":  1760166846,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/385/25615385/t6_25615385.jpg",
+                      "finishReading":  1,
+                      "readUpdateTime":  1761234122,
+                      "secret":  1,
+                      "category":  "心理-积极心理学"
+                  },
+                  {
+                      "bookId":  "41147996",
+                      "title":  "福格行为模型",
+                      "author":  "B.J.福格",
+                      "updateTime":  1769154704,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/39/YueWen_41147996/t6_YueWen_41147996.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780734309,
+                      "secret":  0,
+                      "category":  "心理-心理学研究"
+                  },
+                  {
+                      "bookId":  "815728",
+                      "title":  "硅谷钢铁侠：埃隆·马斯克的冒险人生",
+                      "author":  "阿什利·万斯",
+                      "updateTime":  1724165119,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/728/815728/t6_815728.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1777122668,
+                      "secret":  0,
+                      "category":  "经济理财-商业"
+                  },
+                  {
+                      "bookId":  "848673",
+                      "title":  "当下的力量（白金版）",
+                      "author":  "埃克哈特·托利",
+                      "updateTime":  1708526066,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/2/YueWen_848673/t6_YueWen_848673.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1764267112,
+                      "secret":  0,
+                      "category":  "个人成长-励志成长"
+                  },
+                  {
+                      "bookId":  "813166",
+                      "title":  "傲慢与偏见",
+                      "author":  "简·奥斯丁",
+                      "updateTime":  1760176250,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/51/YueWen_813166/t6_YueWen_813166.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1750135656,
+                      "secret":  1,
+                      "category":  "文学-外国文学"
+                  },
+                  {
+                      "bookId":  "33628204",
+                      "title":  "认知觉醒：开启自我改变的原动力",
+                      "author":  "周岭",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/86/YueWen_33628204/t6_YueWen_33628204.jpg",
+                      "updateTime":  1760170439,
+                      "category":  "心理-认知与行为",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780480878,
+                      "secret":  0,
+                      "isTop":  true
+                  },
+                  {
+                      "bookId":  "32486647",
+                      "title":  "幸福的勇气：“自我启发之父”阿德勒的哲学课2",
+                      "author":  "岸见一郎 古贺史健",
+                      "updateTime":  1760166861,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/647/32486647/t6_32486647.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1764503831,
+                      "secret":  0,
+                      "category":  "个人成长-人生哲学"
+                  },
+                  {
+                      "bookId":  "3300061199",
+                      "title":  "挪威的森林（2023修订版）",
+                      "author":  "[日]村上春树",
+                      "updateTime":  1717057714,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/15/cpplatform_mhkuusf5fivqteswxbuuxi/t6_cpplatform_mhkuusf5fivqteswxbuuxi1686221024.jpg",
+                      "finishReading":  1,
+                      "readUpdateTime":  1751301162,
+                      "secret":  0,
+                      "category":  "文学-外国文学"
+                  },
+                  {
+                      "bookId":  "3300123039",
+                      "title":  "奥尔特曼传",
+                      "author":  "周恒星",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/98/cpplatform_86a2r2jmttnqkmuarqu9s4/t6_cpplatform_86a2r2jmttnqkmuarqu9s41732784160.jpg",
+                      "category":  "经济理财-商业",
+                      "finishReading":  0,
+                      "readUpdateTime":  1777102508,
+                      "secret":  0,
+                      "updateTime":  1780894542
+                  },
+                  {
+                      "bookId":  "26797118",
+                      "title":  "沉思录",
+                      "author":  "[古罗马]奥勒留",
+                      "updateTime":  1760176480,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/118/26797118/t6_26797118.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1774364842,
+                      "secret":  0,
+                      "category":  "哲学宗教-西方哲学"
+                  },
+                  {
+                      "bookId":  "3300177660",
+                      "title":  "专注的真相",
+                      "author":  "李笑来",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/4/cpplatform_v6rotsdw578bplfggz32pk/t6_cpplatform_v6rotsdw578bplfggz32pk1763434329.jpg",
+                      "category":  "个人成长-励志成长",
+                      "finishReading":  0,
+                      "readUpdateTime":  1779091620,
+                      "secret":  0,
+                      "updateTime":  1763435282
+                  },
+                  {
+                      "bookId":  "3300069022",
+                      "title":  "把时间当作朋友（第4版）",
+                      "author":  "李笑来",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/19/cpplatform_5tq5brurtshbdyuvh3q6hy/t6_cpplatform_5tq5brurtshbdyuvh3q6hy1692944233.jpg",
+                      "category":  "个人成长-人生哲学",
+                      "finishReading":  0,
+                      "readUpdateTime":  1762489768,
+                      "secret":  0,
+                      "updateTime":  1692945181
+                  },
+                  {
+                      "bookId":  "CB_Dk88et4xeDSU4oP71aAmN17n",
+                      "title":  "工作、消费主义和新穷人",
+                      "author":  "齐格蒙特·鲍曼",
+                      "cover":  "https://res.weread.qq.com/wrepub/CB_3GD08907NCCW70S71a3lxBsC_parsecover",
+                      "updateTime":  1766148615,
+                      "secret":  1,
+                      "finishReading":  0,
+                      "readUpdateTime":  1776354470
+                  },
+                  {
+                      "bookId":  "35905883",
+                      "title":  "你是你吃出来的2",
+                      "author":  "夏萌",
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/883/35905883/t6_35905883.jpg",
+                      "category":  "医学健康-健康",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780482963,
+                      "secret":  0,
+                      "updateTime":  1711617161
+                  },
+                  {
+                      "bookId":  "3300141074",
+                      "title":  "阅读是安静的自我觉醒（果麦经典）",
+                      "author":  "[德]赫尔曼·黑塞",
+                      "updateTime":  1744787401,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/39/cpplatform_2tqwvc6pfyx5qahrsixezb/t6_cpplatform_2tqwvc6pfyx5qahrsixezb1744786437.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1759075901,
+                      "secret":  0,
+                      "category":  "文学-散文杂著"
+                  },
+                  {
+                      "bookId":  "CB_CoY69e69MC4z6x36wwG5g2SS",
+                      "title":  "7册 青铜馆的葬礼.pdf",
+                      "author":  "",
+                      "cover":  "https://res.weread.qq.com/wrepub/CB_BUb8Qf8PC8PM6oG6pDCgf6O6_parsecover",
+                      "updateTime":  1751473262,
+                      "secret":  1,
+                      "finishReading":  1,
+                      "readUpdateTime":  1751972426
+                  },
+                  {
+                      "bookId":  "40666976",
+                      "title":  "批判性思维与说服性写作：独立思考者的精进技巧",
+                      "author":  "路易丝·卡茨",
+                      "updateTime":  1760172345,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/26/YueWen_40666976/t6_YueWen_40666976.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1778387090,
+                      "secret":  0,
+                      "category":  "个人成长-认知思维"
+                  },
+                  {
+                      "bookId":  "3300143092",
+                      "title":  "思考，快与慢（第二版）",
+                      "author":  "[美]丹尼尔·卡尼曼",
+                      "updateTime":  1774510793,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/33/cpplatform_wr55yrqcgu1th4myjwezqj/t6_cpplatform_wr55yrqcgu1th4myjwezqj1745822239.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780557392,
+                      "secret":  0,
+                      "category":  "个人成长-认知思维"
+                  },
+                  {
+                      "bookId":  "CB_4eh5zH5wv3O673C7157tN7pQ",
+                      "title":  "《THE ART OFFOCUS 专注的艺术》",
+                      "author":  "",
+                      "cover":  "https://res.weread.qq.com/wrepub/CB_4eh5zH5wv3O673C7157tN7pQ_parsecover",
+                      "updateTime":  1776441936,
+                      "secret":  1,
+                      "finishReading":  0,
+                      "readUpdateTime":  1780483156
+                  },
+                  {
+                      "bookId":  "3300108679",
+                      "title":  "亲密关系（第8版）",
+                      "author":  "[美]罗兰·米勒",
+                      "updateTime":  1768294169,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/29/cpplatform_fajupe6tastyjcbfydk4sx/t6_cpplatform_fajupe6tastyjcbfydk4sx1722240377.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1754189304,
+                      "secret":  0,
+                      "category":  "心理-亲密关系"
+                  },
+                  {
+                      "bookId":  "3300075248",
+                      "title":  "存在主义心理治疗",
+                      "author":  "[美]亚隆",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/2/cpplatform_9rufaccz9buidx8zqvwxgf/t6_cpplatform_9rufaccz9buidx8zqvwxgf1698128783.jpg",
+                      "category":  "心理-心理学研究",
+                      "finishReading":  0,
+                      "readUpdateTime":  1762251780,
+                      "secret":  0,
+                      "updateTime":  1765788388
+                  },
+                  {
+                      "bookId":  "3300018494",
+                      "title":  "不完美的勇气2：“自我启发之父”阿德勒的成长课",
+                      "author":  "小仓广",
+                      "updateTime":  1760166907,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/94/3300018494/t6_3300018494.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1778128783,
+                      "secret":  0,
+                      "category":  "心理-心理学研究"
+                  },
+                  {
+                      "bookId":  "41504771",
+                      "title":  "影响力（全新升级版）",
+                      "author":  "罗伯特·西奥迪尼",
+                      "updateTime":  1769154703,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/41/YueWen_41504771/t6_YueWen_41504771.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780663197,
+                      "secret":  0,
+                      "category":  "心理-社会心理学"
+                  },
+                  {
+                      "bookId":  "3300054893",
+                      "title":  "成瘾：在放纵中寻找平衡",
+                      "author":  "安娜·伦布克",
+                      "updateTime":  1760171995,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/48/cpplatform_2snyvh3uqxd5ppjq1txyyk/t6_cpplatform_2snyvh3uqxd5ppjq1txyyk1681110456.jpg",
+                      "finishReading":  1,
+                      "readUpdateTime":  1780161672,
+                      "secret":  0,
+                      "category":  "科学技术-科学科普"
+                  },
+                  {
+                      "bookId":  "3300176617",
+                      "title":  "学习觉醒：给大家的人生“开挂”指南",
+                      "author":  "綦哲达",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/95/cpplatform_bzt8zq4v85isk28mcugnfu/t6_cpplatform_bzt8zq4v85isk28mcugnfu1762763906.jpg",
+                      "category":  "个人成长-认知思维",
+                      "finishReading":  0,
+                      "readUpdateTime":  1779091610,
+                      "secret":  0,
+                      "updateTime":  1763947074
+                  },
+                  {
+                      "bookId":  "27416208",
+                      "title":  "象与骑象人",
+                      "author":  "乔纳森·海特 ",
+                      "updateTime":  1765188112,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/58/YueWen_27416208/t6_YueWen_27416208.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1761061900,
+                      "secret":  0,
+                      "category":  "心理-心理学研究"
+                  },
+                  {
+                      "bookId":  "837932",
+                      "title":  "穷查理宝典：查理·芒格智慧箴言录（全新增订本）",
+                      "author":  "彼得·考夫曼",
+                      "updateTime":  1708526029,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/48/YueWen_837932/t6_YueWen_837932.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1777812493,
+                      "secret":  0,
+                      "category":  "个人成长-励志成长"
+                  },
+                  {
+                      "bookId":  "573975",
+                      "title":  "思考，快与慢",
+                      "author":  "丹尼尔·卡尼曼",
+                      "updateTime":  1778660882,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/86/YueWen_573975/t6_YueWen_573975.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1778486857,
+                      "secret":  0,
+                      "category":  "个人成长-认知思维"
+                  },
+                  {
+                      "bookId":  "921826",
+                      "title":  "心流：最优体验心理学",
+                      "author":  "米哈里·契克森米哈赖",
+                      "updateTime":  1708526134,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/826/921826/t6_921826.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1750328944,
+                      "secret":  0,
+                      "category":  "心理-心理学应用"
+                  },
+                  {
+                      "bookId":  "42766048",
+                      "title":  "枪炮、病菌与钢铁",
+                      "author":  "贾雷德·戴蒙德",
+                      "updateTime":  1708525794,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/99/YueWen_42766048/t6_YueWen_42766048.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1768743596,
+                      "secret":  0,
+                      "category":  "社会文化-社科"
+                  },
+                  {
+                      "bookId":  "22415608",
+                      "title":  "游戏改变人生",
+                      "author":  "简·麦戈尼格尔",
+                      "updateTime":  1765188075,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/608/22415608/t6_22415608.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1778083284,
+                      "secret":  0,
+                      "category":  "个人成长-人生哲学"
+                  },
+                  {
+                      "bookId":  "33800862",
+                      "title":  "少有人走的路：心智成熟的旅程",
+                      "author":  "M.斯科特·派克",
+                      "updateTime":  1760177423,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/862/33800862/t6_33800862.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1777812355,
+                      "secret":  0,
+                      "category":  "个人成长-人生哲学"
+                  },
+                  {
+                      "bookId":  "3300127322",
+                      "title":  "乌合之众",
+                      "author":  "[法]古斯塔夫·勒庞",
+                      "updateTime":  1779245277,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/40/cpplatform_spxfde1hbwdbgctjxvcjxl/t6_cpplatform_spxfde1hbwdbgctjxvcjxl1734949570.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1767199989,
+                      "secret":  0,
+                      "category":  "心理-心理学研究"
+                  },
+                  {
+                      "bookId":  "26934843",
+                      "title":  "掌控习惯：如何养成好习惯并戒除坏习惯（《原子习惯》中文版）（新版）",
+                      "author":  "詹姆斯·克利尔",
+                      "updateTime":  1760176433,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/25/yuewen_26934843/t6_yuewen_269348431702464198.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1759073182,
+                      "secret":  0,
+                      "category":  "个人成长-认知思维"
+                  },
+                  {
+                      "bookId":  "3300169943",
+                      "title":  "做个皮实的人：穿越人生的顺境逆境",
+                      "author":  "何思平",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/72/cpplatform_if91beeolneyzt9y3ts2cb/t6_cpplatform_if91beeolneyzt9y3ts2cb1760595880.jpg",
+                      "category":  "个人成长-人生哲学",
+                      "finishReading":  0,
+                      "readUpdateTime":  1763661515,
+                      "secret":  0,
+                      "updateTime":  1762135541
+                  },
+                  {
+                      "bookId":  "3300159706",
+                      "title":  "以日为鉴：衰退时代生存指南（微信读书特别版）",
+                      "author":  "分析师Boden",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/4/cpplatform_c51jhaugkycsgy414tbhz2/t6_cpplatform_c51jhaugkycsgy414tbhz21755763748.jpg",
+                      "category":  "经济理财-财经",
+                      "finishReading":  0,
+                      "readUpdateTime":  1766853898,
+                      "secret":  0,
+                      "updateTime":  1780561667
+                  },
+                  {
+                      "bookId":  "3300158418",
+                      "title":  "低碳水",
+                      "author":  "夏萌",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/12/cpplatform_rwvpqu6zjzxmqujydy9yer/t6_cpplatform_rwvpqu6zjzxmqujydy9yer1755240741.jpg",
+                      "category":  "医学健康-健康",
+                      "finishReading":  0,
+                      "readUpdateTime":  1770995048,
+                      "secret":  0,
+                      "updateTime":  1755241682
+                  },
+                  {
+                      "bookId":  "CB_Civ68969M3O673C7159ey0vY",
+                      "title":  "Purpose-Profit-27598435116908236387.pdf",
+                      "author":  "",
+                      "cover":  "https://res.weread.qq.com/wrepub/CB_Dje80Y7zl3UZ71P71HF9WDkj_parsecover",
+                      "secret":  1,
+                      "updateTime":  1780311852,
+                      "isTop":  true,
+                      "finishReading":  0,
+                      "readUpdateTime":  1780319543
+                  },
+                  {
+                      "bookId":  "33800830",
+                      "title":  "给内心的小孩找个家：几乎能解决所有心理问题的钥匙",
+                      "author":  "斯蒂芬妮·斯蒂尔",
+                      "updateTime":  1669082918,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/830/33800830/t6_33800830.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1751872597,
+                      "secret":  0,
+                      "category":  "心理-心理学研究"
+                  },
+                  {
+                      "bookId":  "3300116836",
+                      "title":  "复利：全球顶尖投资者的31节认知与决策思维课",
+                      "author":  "[美]高塔姆·拜德",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/59/cpplatform_knz4s3h4cmh2rtb3j3bppu/t6_cpplatform_knz4s3h4cmh2rtb3j3bppu1728370050.jpg",
+                      "category":  "经济理财-理财",
+                      "finishReading":  0,
+                      "readUpdateTime":  1779991595,
+                      "secret":  0,
+                      "updateTime":  1760175786
+                  },
+                  {
+                      "bookId":  "3300129526",
+                      "title":  "简单致富：实现财务自由与富足人生的路线图",
+                      "author":  "[美]J.L. 柯林斯",
+                      "updateTime":  1774839488,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/46/cpplatform_vqcegcdissgyqguzg3kfun/t6_cpplatform_vqcegcdissgyqguzg3kfun1736159005.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1778387083,
+                      "secret":  0,
+                      "category":  "经济理财-财经"
+                  },
+                  {
+                      "bookId":  "CB_22i9W67MUBsY6Fr71H08bESm",
+                      "title":  "每周工作4小时",
+                      "author":  "（美）费里斯",
+                      "cover":  "https://res.weread.qq.com/wrepub/CB_GRv3873BPAVM6ds6cL66F8VY_parsecover",
+                      "updateTime":  1777299178,
+                      "secret":  1,
+                      "finishReading":  0,
+                      "readUpdateTime":  1780499142
+                  },
+                  {
+                      "bookId":  "3300014694",
+                      "title":  "有限与无限的游戏：一个哲学家眼中的竞技世界",
+                      "author":  "[美]詹姆斯·卡斯",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/94/3300014694/t6_3300014694.jpg",
+                      "category":  "哲学宗教-哲学读物",
+                      "finishReading":  0,
+                      "readUpdateTime":  1777902566,
+                      "secret":  0,
+                      "updateTime":  1716312901
+                  },
+                  {
+                      "bookId":  "40649986",
+                      "title":  "认知驱动：做成一件对他人很有用的事",
+                      "author":  "周岭",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/88/YueWen_40649986/t6_YueWen_40649986.jpg",
+                      "updateTime":  1760170271,
+                      "category":  "心理-认知与行为",
+                      "finishReading":  0,
+                      "readUpdateTime":  1778213915,
+                      "secret":  1,
+                      "isTop":  true
+                  },
+                  {
+                      "bookId":  "3300034560",
+                      "title":  "认知觉醒：伴随一生的学习方法论（青少年学习版）",
+                      "author":  "周岭",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/11/cpPlatform_qMtupvfKw4TaYNi3BZfcVX/t6_cpPlatform_qMtupvfKw4TaYNi3BZfcVX.jpg",
+                      "updateTime":  1760169700,
+                      "category":  "个人成长-认知思维",
+                      "finishReading":  0,
+                      "readUpdateTime":  1780120011,
+                      "secret":  0,
+                      "isTop":  true
+                  },
+                  {
+                      "bookId":  "31486560",
+                      "title":  "即兴表达",
+                      "author":  "王达峰",
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/47/YueWen_31486560/t6_YueWen_31486560.jpg",
+                      "category":  "个人成长-沟通表达",
+                      "finishReading":  0,
+                      "readUpdateTime":  1764236934,
+                      "secret":  0,
+                      "updateTime":  1760175368
+                  },
+                  {
+                      "bookId":  "25409294",
+                      "title":  "钢铁是怎样炼成的（世界文学名著名译典藏）",
+                      "author":  "[苏]奥斯特洛夫斯基",
+                      "updateTime":  1762243182,
+                      "cover":  "https://wfqqreader-1252317822.image.myqcloud.com/cover/294/25409294/t6_25409294.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1751972446,
+                      "secret":  1,
+                      "category":  "文学-外国文学"
+                  },
+                  {
+                      "bookId":  "230107",
+                      "title":  "白夜行",
+                      "author":  "东野圭吾",
+                      "updateTime":  1760178082,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/1/yuewen_230107/t6_yuewen_2301071682244014.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1750606138,
+                      "secret":  0,
+                      "category":  "精品小说-悬疑推理"
+                  },
+                  {
+                      "bookId":  "216212",
+                      "title":  "小王子",
+                      "author":  "[法]安托万·德·圣埃克苏佩里著",
+                      "updateTime":  1745476393,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/40/yuewen_216212/t6_yuewen_2162121686560140.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1751972443,
+                      "secret":  1,
+                      "category":  "精品小说-治愈小说"
+                  },
+                  {
+                      "bookId":  "3300060305",
+                      "title":  "非暴力沟通（修订版）",
+                      "author":  "马歇尔·卢森堡",
+                      "updateTime":  1693206831,
+                      "cover":  "https://cdn.weread.qq.com/weread/cover/88/cpplatform_9iwmvppcbjd1kqabdkbe1e/t6_cpplatform_9iwmvppcbjd1kqabdkbe1e1685513342.jpg",
+                      "finishReading":  0,
+                      "readUpdateTime":  1754101625,
+                      "secret":  0,
+                      "category":  "心理-心理学应用"
+                  }
+              ]
+}
