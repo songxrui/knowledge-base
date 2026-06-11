@@ -1,4 +1,8 @@
-model = "deepseek-v4-pro"
+﻿model = "deepseek-v4-pro"
+# DS v4 Pro optimization parameters
+model_context_window = 1000000
+model_auto_compact_token_limit = 64000
+model_reasoning_effort = "high"
 #:schema https://developers.openai.com/codex/config-schema.json
 
 # Model selection (primary: CodexPlusPlus local proxy to DeepSeek)
