@@ -197,7 +197,7 @@ AI能替代的是专家（specialist），替代不了的是深度通才（deep 
 | Dan Koe 框架 | 你的状态 |
 |------|------|
 | Identity & POV | ✅ 有（22岁·长沙·独立开发·游戏10年·健康修复） |
-| Brand → Content → Product → Distribution 闭环 | ⚠️ Product 缺失 |
+| Brand → Content → Product → Distribution 完整循环 | ⚠️ Product 缺失 |
 | AI 杠杆 | ✅ 在用但方向偏（分析自己·未对外输出） |
 | Life Design（清晰度>自由>注意力>能量） | ✅ 在路上 |
 | Micro SaaS | ❌ 未尝试 |

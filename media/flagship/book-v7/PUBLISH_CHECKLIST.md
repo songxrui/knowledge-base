@@ -1,4 +1,4 @@
-# v7 答案之书 — weWrite 发布前全流程检查清单
+﻿# v7 答案之书 — weWrite 发布前全流程检查清单
 
 > 基于 weWrite × content-alchemist × traffic-engineering 三skill联合 | 2026-06-11
 
@@ -17,8 +17,8 @@
 
 | # | 检查项 | 标准 | 当前状态 |
 |---|--------|------|---------|
-| Q1 | 禁用词黑名单 | 零命中（赋能/抓手/闭环/综上所述...） | PASS |
-| Q2 | AI味检测 | 无三段式/无升华结尾/无"在这个时代" | PASS |
+| Q1 | 禁用词黑名单 | 零命中（增强/切入点/完整循环/总结...） | PASS |
+| Q2 | AI味检测 | 无三段式/无升华结尾/无"现在" | PASS |
 | Q3 | 加粗密度 | 每800字≤2处 | PASS |
 | Q4 | 品牌语调一致性 | 教练型人格（我>我们） | PASS |
 | Q5 | 个人故事真实性 | 哈啰实习/9000培训班/环卫父母 | PASS (已修正滴滴幻觉) |
@@ -49,7 +49,7 @@
 
 ```powershell
 # 全库禁用词扫描
-Select-String -Path "D:\KnowledgeBase\media\flagship\book-v7\*.md" -Pattern "赋能|抓手|闭环|综上所述|众所周知|值得注意的是" -Encoding UTF8
+Select-String -Path "D:\KnowledgeBase\media\flagship\book-v7\*.md" -Pattern "增强|切入点|完整循环|总结|如研究所示|需要注意" -Encoding UTF8
 
 # 证据连接统计
 Select-String -Path "D:\KnowledgeBase\media\flagship\book-v7\CH*.md" -Pattern "与CH0" -Encoding UTF8

@@ -47,7 +47,7 @@
 | SkillsBench | 你的审计验证了SkillsBench的核心发现(self-gen -1.3pp), 提供了补充性实证 |
 | OpenSkillEval | 你的"选错skill<不用skill"发现与OpenSkillEval一致, 是在不同环境下的独立验证 |
 | SkillRouter | 你的"74%无触发词"为SkillRouter的路由精度讨论提供了真实世界的数据点 |
-| Anthropic官方 | 你的GA标准本质上是Anthropic标准的操作化版本 |
+| Anthropic官方 | 你的GA标准核心在于是Anthropic标准的操作化版本 |
 
 **独特贡献**: 不是benchmark(不引入新任务), 而是**audit**(审计真实部署的skill质量)。这是benchmark论文的补充视角。
 
