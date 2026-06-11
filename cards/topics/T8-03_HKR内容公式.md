@@ -1,4 +1,4 @@
-# T8-03 HKR公式——好内容=Happy+Knowledge+Resonance
+﻿# T8-03 HKR公式——好内容=Happy+Knowledge+Resonance
 
 **母题**: T8 自媒体与一人企业 | **来源**: S027 S028
 
@@ -24,3 +24,9 @@
 
 ---
 *卡片: 2026-06-05 02:30 | S027 S028*
+
+---
+
+## 参考与延伸
+
+- Stanley《流量的本质与暴力》：「HKR公式——Happy（有趣）+ Knowledge（有信息量）+ Resonance（有共鸣）」——HKR不是公式，是用户用0.5秒对你做的三个判断。有趣吸引注意力→有信息量提供价值→有共鸣驱动转发。
