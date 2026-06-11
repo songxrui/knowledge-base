@@ -1344,3 +1344,149 @@ skills/
 > 数据来源: C:\Users\董辉\.codex\skills\ (355 Skill) + D:\_ai\skills\skill-review\ + 15 轮实战
 > 元 Skill 采样: skill-review-master(8.6KB) + skill-stocktake + skill-distiller + content-pipeline-orchestrator(2.2KB) + quality-gatekeeper(2.1KB)
 > 理论来源: SkillOpt (Microsoft) + ECC AGENTS.md
+
+
+## 十五、Skill 组织模式：工具集生态 vs 嵌套诊断系统
+
+> 来源：baoyu-* 系列(22个) + dbs-* 系列(22个) — 两个各含 22 个 Skill 的生态系统，代表了两种完全不同的组织哲学
+
+### 模式 I：工具集生态（baoyu-* Toolkit Ecosystem）
+
+**定义**：同一品牌前缀下的一组单用途 Skill，共享基础设施、配置系统和质量标准，但彼此独立触发。
+
+**baoyu-* 系列统计**（22 个 Skill）：
+| 类别 | Skill | 数量 |
+|------|-------|------|
+| 图像处理 | compress-image, image-gen, image-cards, cover-image, infographic, comic, xhs-images, article-illustrator, imagine | 9 |
+| 格式转换 | format-markdown, markdown-to-html, url-to-markdown, danger-x-to-markdown, youtube-transcript | 5 |
+| 发布分发 | post-to-wechat, post-to-weibo, post-to-x | 3 |
+| 图表图形 | diagram, slide-deck | 2 |
+| 其他 | translate, danger-gemini-web, wechat-summary | 3 |
+
+**共享基础设施**：
+```
+所有 baoyu-* Skill 共享：
+1. 脚本运行时解析：${BUN_X} = bun > npx -y bun > 提示安装
+2. 路径变量：{baseDir} = SKILL.md 所在目录
+3. 用户配置：EXTEND.md 3级优先级 (.baoyu-skills/ > XDG > HOME)
+4. 元数据格式：openclaw.homepage + requires
+5. G1-G6 自评：每个 Skill 独立包含
+```
+
+**EXTEND.md 三级优先级**（baoyu-* 独有机制）：
+```
+| 优先级 | 路径 | 作用域 |
+|--------|------|--------|
+| 1 | .baoyu-skills/<skill-name>/EXTEND.md | 项目级覆盖 |
+| 2 | $XDG_CONFIG_HOME/baoyu-skills/<skill-name>/EXTEND.md | 用户全局配置 |
+| 3 | $HOME/.baoyu-skills/<skill-name>/EXTEND.md | 用户兜底 |
+```
+用户可通过 EXTEND.md 覆盖默认参数（如压缩质量、输出格式），无需修改 SKILL.md。
+
+**这种模式的核心优势**：
+- **低认知负荷**：每个 Skill 只做一件事，触发条件精确
+- **独立演进**：改 baoyu-compress-image 不影响 baoyu-post-to-wechat
+- **共享信任**：用户熟悉一个 baoyu-* Skill 就信任所有 baoyu-* Skill
+- **配置一致性**：EXTEND.md 机制让所有 Skill 的配置方式统一
+
+**这种模式的风险**：
+- 品牌膨胀：22 个 Skill 占据大量 description 列表空间
+- 维护负担：G1-G6、BUN_X 解析逻辑需要在每个 Skill 中保持一致
+- 边界模糊：baoyu-image-gen vs baoyu-imagine vs baoyu-image-cards 容易语义重叠
+
+**何时采用工具集生态模式**：
+- 你有 10+ 个单用途 Skill 属于同一领域
+- 每个 Skill 的受众和使用场景有明确区分
+- 用户通常会安装你的多个 Skill
+- 需要统一的配置系统和质量标准
+
+---
+
+### 模式 J：嵌套诊断系统（dbs-* Nested Diagnostic System）
+
+**定义**：一个中央路由 Skill + 多个专用诊断 Skill，形成"入口→路由→诊断→存档"闭环。
+
+**dbs-* 系列架构**（22 个 Skill）：
+```
+dbs-orchestrator（总路由中枢）
+  ├─ 执行力诊断: dbs-action
+  ├─ 目标审计: dbs-goal
+  ├─ 决策系统: dbs-decision
+  ├─ 概念拆解: dbs-deconstruct
+  ├─ 好问题生成: dbs-good-question
+  ├─ 慢方法诊断: dbs-slowisfast
+  ├─ 学习系统: dbs-learning
+  ├─ AI写作检测: dbs-ai-check
+  ├─ 聊天室: dbs-chatroom / dbs-chatroom-austrian
+  ├─ 内容系统: dbs-content / dbs-content-system
+  ├─ 小红书标题: dbs-xhs-title
+  ├─ 诊断存档: dbs-save / dbs-restore
+  ├─ 报告生成: dbs-report
+  ├─ Agent迁移: dbs-agent-migration / dbs-agent-mesh
+  ├─ 基准评测: dbs-benchmark
+  └─ Hook优化: dbs-hook
+```
+
+**与工具集生态的本质区别**：
+| 维度 | baoyu-* 工具集生态 | dbs-* 嵌套诊断系统 |
+|------|-------------------|-------------------|
+| 触发方式 | 各自独立触发 | 经 orchestrator 路由或直接触发 |
+| 相互关系 | 无依赖，独立使用 | 有上下游关系（save→restore, orchestrator→各诊断） |
+| 状态管理 | 无状态 | 有状态（dbs-save/dbs-restore 持久化诊断结论） |
+| 用户体验 | 用户知道要用哪个 | 用户可能不知道要用哪个→orchestrator 决策 |
+| 核心 Skill | 无中心 | dbs-orchestrator 是总路由 |
+| 适合场景 | 明确的任务（"压缩图片"） | 模糊的需求（"帮我分析为什么做事拖延"） |
+
+**orchestrator 路由逻辑**（dbs-orchestrator 的核心价值）：
+```
+用户输入 → 意图识别 → 匹配诊断 Skill → 路由执行 → 存档 → 可选报告
+```
+不需要用户知道 22 个 Skill 分别做什么——orchestrator 自动路由。
+
+**嵌套系统的设计约束**：
+- orchestrator 必须极轻（否则自身成为瓶颈）
+- 每个子 Skill 必须可独立使用（不能强制经 orchestrator）
+- 状态持久化必须有清理机制（dbs-save 存了什么、何时过期）
+- 子 Skill 之间的数据格式必须兼容（save 的存档能被 restore 读取）
+
+**何时采用嵌套诊断系统模式**：
+- 你的 Skill 之间存在"入口→路由→执行"的层级关系
+- 用户的需求描述通常是模糊的（需要先诊断再定位）
+- 需要在 Skill 之间传递状态（上一步的输出是下一步的输入）
+- 你有一个明确的"总入口"场景
+
+---
+
+### 两种模式的融合：混合架构
+
+**实战案例** — 内容创作工作流中的 Skill 组织：
+```
+content-pipeline-orchestrator（嵌套系统的 orchestrator）
+  ├─ humanizer-zh（独立可触发，工具集模式）
+  ├─ traffic-engineering（独立可触发，工具集模式）
+  ├─ viral-writer（独立可触发，工具集模式）
+  ├─ wewrite（独立可触发，工具集模式）
+  └─ crosspost（独立可触发，工具集模式）
+```
+
+每个子 Skill 可独立使用（工具集模式），也可通过 orchestrator 串联（嵌套系统模式）。
+
+---
+
+### 组织模式决策表
+
+| 你的情况 | 推荐模式 |
+|---------|---------|
+| 10+ 单用途独立 Skill，同一品牌 | 工具集生态（baoyu-* 模式） |
+| Skill 有上下游依赖，需路由 | 嵌套诊断系统（dbs-* 模式） |
+| 两者兼有 | 混合架构（orchestrator + 独立可触发） |
+| 3-5 个相关但不依赖的 Skill | 不需要组织模式，各自独立即可 |
+| 1-2 个复杂 Skill | 不需要组织模式，专注单个 Skill 质量 |
+
+---
+
+> 数据来源: C:\Users\董辉\.codex\skills\ (355 Skill) + C:\Users\董辉\.agents\skills\
+> baoyu-* 采样: compress-image(2.5KB) + post-to-wechat(14.4KB) — 共 22 个 Skill
+> dbs-* 采样: orchestrator + content — 共 22 个 Skill
+> 混合架构: content-pipeline-orchestrator(2.2KB)
+> 理论来源: SkillOpt (Microsoft) + ECC AGENTS.md
