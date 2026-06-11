@@ -114,3 +114,61 @@ Processing CH08_first-principles.md...
 [22:03:34] SYNCED: CH07_problem-solving.md - 296 blocks (16272 chars)
 [22:03:34] SYNCED: CH08_first-principles.md - 317 blocks (16123 chars)
 [22:03:34] Total: 9/9 docs synced
+[22:20:23] Auth OK, token: t-g1046bmlNRBPZSL2HK...
+[22:20:23] 
+Processing PREFACE.md...
+[22:20:23]   Read 3929 chars
+[22:20:25]   Clear: deleted 55 blocks
+[22:20:29]   SYNCED: 57 blocks
+[22:20:30] 
+Processing CH01_meta-abilities.md...
+[22:20:30]   Read 2533 chars
+[22:20:32]   Clear: deleted 56 blocks
+[22:20:36]   SYNCED: 55 blocks
+[22:20:37] 
+Processing CH02_mental-health.md...
+[22:20:37]   Read 16084 chars
+[22:20:39]   Clear: deleted 194 blocks
+[22:20:46]   SYNCED: 193 blocks
+[22:20:47] 
+Processing CH03_physical-health.md...
+[22:20:47]   Read 16941 chars
+[22:20:49]   Clear: deleted 288 blocks
+[22:20:59]   SYNCED: 287 blocks
+[22:21:00] 
+Processing CH04_wealth-business.md...
+[22:21:00]   Read 20106 chars
+[22:21:02]   Clear: deleted 318 blocks
+[22:21:14]   SYNCED: 317 blocks
+[22:21:15] 
+Processing CH05_relationships.md...
+[22:21:15]   Read 17626 chars
+[22:21:17]   Clear: deleted 304 blocks
+[22:21:28]   SYNCED: 303 blocks
+[22:21:29] 
+Processing CH06_top-humans.md...
+[22:21:29]   Read 18351 chars
+[22:21:31]   Clear: deleted 345 blocks
+[22:21:43]   SYNCED: 344 blocks
+[22:21:44] 
+Processing CH07_problem-solving.md...
+[22:21:44]   Read 16272 chars
+[22:21:46]   Clear: deleted 297 blocks
+[22:21:56]   SYNCED: 296 blocks
+[22:21:57] 
+Processing CH08_first-principles.md...
+[22:21:57]   Read 16123 chars
+[22:21:58]   Clear: deleted 318 blocks
+[22:22:10]   SYNCED: 317 blocks
+[22:22:11] 
+=== SYNC SUMMARY ===
+[22:22:11] SYNCED: PREFACE.md - 57 blocks (3929 chars)
+[22:22:11] SYNCED: CH01_meta-abilities.md - 55 blocks (2533 chars)
+[22:22:11] SYNCED: CH02_mental-health.md - 193 blocks (16084 chars)
+[22:22:11] SYNCED: CH03_physical-health.md - 287 blocks (16941 chars)
+[22:22:11] SYNCED: CH04_wealth-business.md - 317 blocks (20106 chars)
+[22:22:11] SYNCED: CH05_relationships.md - 303 blocks (17626 chars)
+[22:22:11] SYNCED: CH06_top-humans.md - 344 blocks (18351 chars)
+[22:22:11] SYNCED: CH07_problem-solving.md - 296 blocks (16272 chars)
+[22:22:11] SYNCED: CH08_first-principles.md - 317 blocks (16123 chars)
+[22:22:11] Total: 9/9 docs synced
