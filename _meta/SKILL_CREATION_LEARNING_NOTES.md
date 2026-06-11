@@ -1162,3 +1162,185 @@ tmux 窗格 = Agent 实例
 > 原型采样: skill-forge(4.6KB) + viral-writer + humanizer-zh + deep-research + agent-reach(3.5KB) + dmux-workflows + feishu + x-api + crosspost + brand-voice
 > 理论来源: SkillOpt (Microsoft) + ECC AGENTS.md + skill-creator/skill-review/skill-installer/skill-scout/skill-stocktake
 > 理论来源: SkillOpt (Microsoft) + ECC AGENTS.md + skill-creator/skill-review/skill-installer/skill-scout/skill-stocktake
+
+
+## 十三、Skill 调试与故障排除（7 类常见故障 + 诊断→修复路径）
+
+> 来源：15 轮实战中遇到的 skill 触发失败、输出偏差、上下文污染等问题
+
+### 故障 1：Skill 不触发（漏触发）
+
+**症状**：用户说了明确触发词，但模型选择了其他 skill 或直接回答。
+
+**诊断步骤**：
+1. 检查 description 是否含该触发词
+2. 检查是否有语义重叠 skill 抢触发
+3. 检查 description 长度（超过 200 字符时模型可能只读前 100 字符）
+
+**修复方案**：
+| 原因 | 修法 |
+|------|------|
+| description 缺触发词 | 追加触发词（至少 5 个），含中文/英文/命令式 |
+| 语义重叠 | 加"不适用场景"段，明确排除条件 |
+| description 太长 | 前 100 字符放最高频触发词+一句话定义 |
+| 路径错误 | 确认 dir 名与 name 字段一致 |
+
+---
+
+### 故障 2：Skill 误触发
+
+**症状**：模型在不合适场景调用了 skill。
+
+**修复**：追加"不适用场景"（至少 3 条），每条标注"→重定向到 X skill"；删除过于泛化的触发词；追加反例。
+
+---
+
+### 故障 3：Skill 输出偏差
+
+**症状**：Skill 被触发但输出质量差或遗漏关键步骤。
+
+**修复**（content-pipeline-orchestrator 模式）：
+```
+Step 1 → 门禁(0禁用词+5/6PASS) → 不通过→回Step1
+Step 2 → 门禁(≥75分) → 不通过→回Step2
+```
+每步输出必须过门禁才进下一步。
+
+**quality-gatekeeper 轻量方案**：3 关布尔判定（语言质量→任务完成度→发布就绪），每关只判 ✅/❌。
+
+---
+
+### 故障 4：上下文污染
+
+**症状**：连续使用多个 skill 后输出混入前面 skill 的规则。
+
+**修复**：
+- body 过长（>8KB）→ 拆分 references/
+- 连续使用 ≥3 个 skill 后调用 `headroom_compress`
+- DS v4 Pro 专属：单 skill 输出 >3000 字符立即压缩
+
+---
+
+### 故障 5：版本混乱
+
+**症状**：同一 skill 有多个版本分散在不同目录。
+
+**诊断**：
+```powershell
+Get-ChildItem -Recurse -Filter "SKILL.md" |
+  Where-Object { (Get-Content $_.FullName -Raw) -match "name: skill-name" }
+```
+
+**修复**：统一 frontmatter `version` 字段格式；旧版本移入 `.archived/`。
+
+---
+
+### 故障 6：Token 超支
+
+**症状**：skill body >10KB，挤占任务上下文。
+
+**humanizer-zh 实战**：28.5KB 单一文件 → 8.2KB body + 18KB references/blacklist.md。
+
+**拆分原则**：body 保留核心定义+工作流+门禁+失败兜底（≤8KB）；references/ 存放长内容。
+
+---
+
+### 故障 7：失败无兜底
+
+**症状**：Skill 失败后无降级方案，卡死。
+
+**compile-and-verify 的 5 种失败处方**：
+| 场景 | 兜底 |
+|------|------|
+| 需求模糊/矛盾 | 标记"致命歧义"，只问 1-2 个关键点 |
+| 编译假设错误 | 回退 Phase 1，更新假设 |
+| 质检致命问题 | 修复循环（最多 3 轮） |
+| 3 轮未通过 | 输出剩余失败项+尝试记录，请求用户 |
+| 工具链不满足 | 标注"环境依赖待确认"，建议替代 |
+
+---
+
+### 调试速查表
+
+| 症状 | 最可能原因 | 第一动作 |
+|------|-----------|---------|
+| Skill 完全不触发 | description 缺触发词 | 追加 3+ 中文触发词 |
+| 偶尔触发偶尔不触发 | 语义重叠被抢 | 加"不适用场景"段 |
+| 触发了但输出不对 | body 缺验证清单 | 每步加 `- [ ]` 验证 |
+| 输出格式不稳定 | 无输出模板 | 加固定格式模板 |
+| 前几步对后几步错 | DS 漏步 | 每步加门禁阻断 |
+| 不同 skill 输出混在一起 | 上下文污染 | 拆分 references+headroom 压缩 |
+| Skill 越用越慢 | Token 膨胀 | 检查 size，拆 references |
+
+---
+
+## 十四、Skill 版本管理与演进追踪
+
+> 来源：skill-review-master 的 version 字段规范 + quality-gatekeeper 的 merge-history + skill-forge 的 incubation tracking
+
+### 14.1 版本号规范
+
+**格式**：`"<主版本>.<次版本>.<修订> | R<迭代轮次>: <日期> | model: <模型名>"`
+
+**示例**：`"3.0.0 | R3: 2026-06-08 | model: DeepSeek v4 Pro"`
+
+| 字段 | 含义 | 更新时机 |
+|------|------|---------|
+| 主版本 | 结构大改 | 新增/删除核心流程阶段 |
+| 次版本 | 规则增删(≤3条) | 每次 SkillOpt 优化循环后 |
+| 修订号 | 格式修正/错字 | 非功能性改动 |
+| R 轮次 | SkillOpt 迭代轮次 | 每完成一轮 rollout→reflection→edit→validation |
+| 日期 | 最后修改日期 | 每次修改 |
+| model | 适配的模型 | 模型切换时更新 |
+
+### 14.2 演进历史记录
+
+**方案 A：merge-history**（quality-gatekeeper 使用）
+```yaml
+merge-history: |
+  2026-06-11: absorbed content-auditor (dedup)
+  2026-06-08: created from humanizer-zh+compile-and-verify synthesis
+```
+
+**方案 B：incubated from**（skill-forge 使用）
+```yaml
+version: "1.0.0 | R1: 2026-06-08 | incubated from: 8x R3 optimization patterns"
+```
+
+### 14.3 目录结构
+
+```
+skills/
+  my-skill/
+    SKILL.md           # 当前活跃版本
+    SKILL.md.bak       # 上一版本备份
+    references/        # 长内容分离
+  .archived/           # 旧版归档（无触发）
+    my-skill-v1/SKILL.md
+```
+
+### 14.4 多仓库同步
+
+**优先级**：
+1. `~/.agents/skills/` — 用户自定义（最高优先）
+2. `<workspace>/.agents/skills/` — 项目级
+3. `~/.codex/skills/` — 系统级
+4. `D:\_ai\skills\` — 开发备份（只读参考）
+
+### 14.5 版本回滚 + Rejected Buffer
+
+**回滚条件**：validation 未提升效果 / 引入误触发 / Token 超支。
+
+**步骤**：确认 `.bak` 存在 → `git diff HEAD~1` → 退化则回滚 → 记录 rejected buffer。
+
+**Rejected Buffer**（SkillOpt 核心机制）：
+- 被否改动不丢弃，记录到 `REJECTED_BUFFER.md`
+- 内容：改动描述+被否原因+日期
+- 目的：避免不同轮次重复提出相同被否改动
+- 跨轮 slow update 时重新评估
+
+---
+
+> 数据来源: C:\Users\董辉\.codex\skills\ (355 Skill) + D:\_ai\skills\skill-review\ + 15 轮实战
+> 元 Skill 采样: skill-review-master(8.6KB) + skill-stocktake + skill-distiller + content-pipeline-orchestrator(2.2KB) + quality-gatekeeper(2.1KB)
+> 理论来源: SkillOpt (Microsoft) + ECC AGENTS.md
