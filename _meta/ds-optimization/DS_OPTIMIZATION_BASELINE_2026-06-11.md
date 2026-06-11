@@ -56,3 +56,28 @@
 - 无法改变模型参数（DS权重冻结）
 - 优化通过AGENTS.md/config.toml/skills的"外部状态"实现
 - 实际效果需运行真实任务验证
+
+### Layer 6: Agent 角色配置 (新增)
+- ✅ explorer: model→DSv4Pro, DS专属指令(编号步骤/文件行号/标注推断)
+- ✅ reviewer: 保留GPT-5.4(高推理需求), 添加DS回退指令
+- ✅ docs-researcher: model→DSv4Pro, search-first强制(context7→exa→标注来源)
+
+### Layer 7: Hook 系统 (新增)
+- ✅ DS SessionInit hook: 每次会话启动自动验证DS配置完整性(5项检查)
+- ✅ 自动注入 CODEX_DS_MODE=1, CODEX_DS_VERIFY=true
+- ✅ 日志: ~/.codex/ds-session-check.log
+
+### 模型可用性
+- ✅ CodexPlusPlus proxy @ 127.0.0.1:57321 正常运行
+- ✅ 可用模型: deepseek-v4-pro, deepseek-v4-flash
+
+### 总变更清单
+| 文件 | 变更 | 类型 |
+|------|------|------|
+| ~/.codex/AGENTS.md | +5个DS专属区块 | 指令层 |
+| ~/.codex/config.toml | retry/agent/instructions | 基础设施 |
+| .agents/skills/*/SKILL.md | 14个skill +正反例 | 触发层 |
+| .codex/skills/strategic-compact/SKILL.md | +触发示例 | 触发层 |
+| .codex/agents/{explorer,reviewer,docs-researcher}.toml | DS专属指令 | Agent层 |
+| .codex/hooks.json | +DS session-init | 自动化 |
+| .codex/ds-session-init.js | 新建 | 自动化 |

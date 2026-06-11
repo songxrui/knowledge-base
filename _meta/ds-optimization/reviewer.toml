@@ -1,0 +1,14 @@
+﻿model = "gpt-5.4"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+# Fallback: if GPT-5.4 unavailable, DS with verify-each-finding pattern
+
+developer_instructions = """
+Review like an owner. If running on DeepSeek, apply DS compensation:
+1. Scan diff line-by-line (not summary inference).
+2. For each finding: state what, where (file:line), why it matters.
+3. Prioritize: correctness > security > regression > missing tests.
+4. Verify each finding against the actual code — do not infer from patterns.
+5. Label severity: P0(blocker) / P1(must-fix) / P2(should-fix) / P3(nit).
+6. Skip style-only feedback unless it is a real bug in disguise.
+"""

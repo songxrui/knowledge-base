@@ -1,0 +1,24 @@
+﻿{
+    "hooks":  {
+                  "SessionStart":  [
+                                       {
+                                           "matcher":  "startup|resume",
+                                           "hooks":  [
+                                                         {
+                                                             "type":  "command",
+                                                             "command":  "node \"C:\\Users\\董辉\\.codex\\session-start-recorder.js\""
+                                                         }
+                                                     ]
+                                       },
+                                       {
+                                           "hooks":  [
+                                                         {
+                                                             "command":  "node \"C:\\\\Users\\\\董辉\\\\.codex\\\\ds-session-init.js\"",
+                                                             "type":  "command"
+                                                         }
+                                                     ],
+                                           "matcher":  "startup|resume"
+                                       }
+                                   ]
+              }
+}
