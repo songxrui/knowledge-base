@@ -1,4 +1,4 @@
-﻿model = "deepseek-v4-pro"
+model = "deepseek-v4-pro"
 #:schema https://developers.openai.com/codex/config-schema.json
 
 # Model selection (primary: CodexPlusPlus local proxy to DeepSeek)
@@ -33,7 +33,7 @@ auto_allow = [
     "python -m",
 ]
 
-persistent_instructions = "DS v4 Pro mode: 1)Decompose complex tasks into numbered steps. 2)Verify each tool output before acting. 3)Use skills/MCPs instead of free-form generation. 4)When uncertain, search with exa/context7 first. 5)Label assumptions [推断] and incomplete info [待核实]. Follow AGENTS.md DS profile."
+persistent_instructions = "DS v4 Pro mode: 1)Decompose complex tasks into numbered steps. 2)Verify each tool output before acting. 3)Use skills/MCPs instead of free-form generation — ESPECIALLY headroom_compress when outputs >3000 chars. 4)When uncertain, search exa/context7 first. 5)Label assumptions [推断] and incomplete [待核实]. 6)Call headroom_stats after each sub-task. Follow AGENTS.md DS profile."
 
 # Profiles (from CodeWhale)
 [profiles.strict]
@@ -180,3 +180,6 @@ args = ["-y", "@token-optimizer/mcp"]
 [mcp_servers.headroom]
 command = "headroom"
 args = ["mcp", "serve"]
+
+[mcp_servers.headroom.tools.headroom_compress]
+approval_mode = "approve"

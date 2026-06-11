@@ -318,3 +318,12 @@ DS在长上下文中精度下降。headroom自动压缩 + 手动触发strategic-
 - 对话超过30轮 → 触发strategic-compact压缩历史
 - 单次工具输出超过5000字符 → 触发headroom_compress
 - 文件读取后立即总结关键点,不保留原始全文
+
+
+### 模式6：headroom上下文压缩（DS强制）
+DS在长上下文中精度衰减比GPT-5.5更快。以下场景必须调用headroom：
+- 单次工具输出 >3000字符 → `headroom_compress` 压缩后再分析
+- 对话超过20轮 → `headroom_stats` 检查token使用,必要时压缩历史
+- 读取大文件(>500行) → 压缩后再处理,不要保留原文全量
+- 批量搜索结果(>5条) → 压缩为摘要,标注hash供检索
+- 每完成一个子任务 → 调用`headroom_stats`确认token预算健康
