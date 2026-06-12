@@ -89,4 +89,49 @@
 
 ---
 
-> 提示: 使用 `load_skill` 加载任一技能 | 运行 `ecc doctor` 查看 ECC 技能健康状态
+---
+
+## Skill 元数据标准化状态
+
+| 指标 | 数据 | 状态 |
+|------|------|------|
+| 用户级技能总数 | 89 | ✅ |
+| 有 `name:` 字段 | 88/88（其中44个已统一修复） | ✅ |
+| 有 `description:` 字段 | 88/88 | ✅ |
+| 有 `version:` 字段 | 88/88（44个本次补全） | ✅ |
+| 标准格式 | `name` + `description` + `version` + `trigger` | ✅ |
+
+---
+
+## 反向索引：KB 内容所用 Skill（used_in）
+
+> **当前状态**: 知识库内容与 skill 之间尚无关联标注。
+> **本轮新增**: `_content-system/MAPPING_INDEX.md` 建立了内容结构化系统 ↔ 01_Projects 的映射。
+> **约定（新内容）**: 每篇新内容末尾标注 skill 链：
+> ```markdown
+> ---
+> skill: weread-skills → dbs-content-system → khazix-writer → humanizer-zh
+> ```
+
+### 内容 ↔ Skill 映射（逐步完善）
+
+| Skill | 用于产出了哪些 KB 内容 | 状态 |
+|-------|----------------------|------|
+| think-then-act | KB 结构清理（本会话） | ✅ 已记录 |
+| (更多待标注...) | | ⏳ |
+
+---
+
+## 知识库索引交叉引用
+
+| 索引文件 | 作用 | 关联 |
+|---------|------|------|
+| `KNOWLEDGE_MAP.md` | 知识库主地图（目录/质量/管线） | ← 本索引 |
+| `SKILL_INDEX.md` | **你在这里** — 全量技能索引 | → KNOWLEDGE_MAP |
+| `_content-system/MAPPING_INDEX.md` | 内容结构化系统 ↔ PARA 映射 | ← NEW |
+| `SKILL_INDEX.md` | 全量技能索引 | → load_skill |
+| `HOME.md` | 仪表盘入口 | → KNOWLEDGE_MAP |
+
+---
+
+> 提示: 使用 `load_skill` 加载任一技能 | 运行 `ecc doctor` 查看 ECC 技能健康状态 | 新内容请标注 `skill:` 字段以逐步建立反向索引
