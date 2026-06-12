@@ -1,6 +1,6 @@
 ﻿# 🗺️ 知识库地图 | Knowledge Base Map
 
-> **更新时间**: 2026-06-10 00:06 | **文件**: 1,644 .md | **大小**: 12.03 MB | **断链**: 0
+> **更新时间**: 2026-06-12 | **文件**: ~1,520 .md | **大小**: ~11 MB | **状态**: ✅ 知识库清理完成
 
 ---
 
@@ -10,7 +10,7 @@
 |------|--------|------|
 | 📝 内容产出 | 142 | 长文/拆书/认知/健康/财富/自媒体/关系/心理 |
 | 🃏 深度卡 | 77 | 35张主体卡 + 42张主题卡 |
-| 📚 旗舰作品 | 159 | 答案之书 v2→v6 + 英文版 (6版本) |
+| 📚 旗舰作品 | 107 | 答案之书 v6 + v7 + 英文版 (3版本活跃，v2-v5已归档) |
 | 🚀 R系列长文 | 8 | 公众号发布级长文（59篇W + 110篇D → 8篇R） |
 | 📡 W系列素材 | 235 | dbs原始推文/短内容素材 |
 | 🏗️ 内容系统 | 120 | QST/CON/OPI/CAS/SOL 单元化工程 |
@@ -28,10 +28,9 @@ D:\KnowledgeBase\
 ├── HOME.md              ← 🏠 主入口（Obsidian仪表盘）
 ├── _MOC_Cards.md        ← 🃏 深度卡索引（77张卡）
 ├── _MOC_Content.md      ← 📝 内容产出索引（15分类）
-├── _MOC_Flagship.md     ← 📚 旗舰作品索引（6版本）
+├── _MOC_Flagship.md     ← 📚 旗舰作品索引（v6 / v7 / 英文版）
 ├── INDEX.md             ← 📋 全量文件导航
 │
-├── 00_Inbox/            ← 📥 收件箱（待处理笔记）
 ├── 01_Projects/         ← 🚀 项目（内容创作管线）
 │   └── content-creation/
 │       ├── cognition/      22篇 认知与思维框架
@@ -51,6 +50,7 @@ D:\KnowledgeBase\
 │
 ├── 02_Areas/            ← 📂 领域（飞书配置/协作）
 ├── 03_Resources/        ← 📚 资源
+│   ├── 素材库/              5篇 内容素材（金句/概念/笔记/体系）
 │   ├── weread/             21篇 微信读书导出/划线
 │   ├── traffic-engineering/ 5篇 流量工程（平台规则+注意力）
 │   └── feishu-dontbesilent/ 1篇 DBS社群笔记入口
@@ -59,19 +59,17 @@ D:\KnowledgeBase\
 │   ├── cs-alchemist-backup/ 48篇 Codex炼金工坊备份
 │   ├── logs/               17篇 旧日志
 │   ├── G-clusters/         13篇 主题簇归档
-│   └── flagship-drafts/     3篇 旗舰草稿
+│   ├── flagship-drafts/     3篇 旗舰草稿
+│   └── book-v2-v5-archive.zip  1.03MB 答案之书旧版归档
 │
 ├── cards/               ← 🃏 深度卡（77张，按簇组织）
 │   ├── C1-C7/             35张 主体卡（7簇×5张）
 │   └── topics/            42张 主题卡（T1-T10簇）
 │
 ├── media/               ← 🎬 媒体产出
-│   ├── flagship/         159篇 答案之书（6版本）
-│   │   ├── book-v2/          15篇 基线版
-│   │   ├── book-v3/          28篇 存在性审计版
-│   │   ├── book-v4/          34篇 证据验真版
-│   │   ├── book-v5/          34篇 拆脚手架版
+│   ├── flagship/         107篇 答案之书（3版本活跃）
 │   │   ├── book-v6/          34篇 自然协调版
+│   │   ├── book-v7/          59篇 ✅ 当前最完整版（含完整文稿+审计+证据）
 │   │   └── book-of-life-answers/ 14篇 英文版
 │   ├── wechat_reconstructed/ 9篇 R系列重构长文
 │   ├── wechat_2026-06-07/  294篇 W系列原始素材
@@ -93,7 +91,7 @@ D:\KnowledgeBase\
 │   ├── 08-学习序列/        17篇 学习路径
 │   └── 09-技能增强/         9篇 技能增强模块
 │
-├── _logs/               ← 📊 日志
+├── _logs/               ← 📊 日志（仅 .md 报告，脚本已迁移至 scripts/）
 │   ├── reports/            68篇 分析报告
 │   ├── skill-reports/      12篇 技能评测报告
 │   ├── verification/        9篇 验证记录
@@ -101,18 +99,17 @@ D:\KnowledgeBase\
 │   ├── ledger/              5篇 工具调用账本
 │   └── deep-think/          2篇 深度思考记录
 │
-├── _meta/               ← ⚙️ 元数据
+├── _meta/               ← ⚙️ 元数据（仅 .md 文档，脚本已迁移至 scripts/）
 │   ├── inventory/           5篇 素材盘点
 │   ├── prompts/             4篇 提示词库
 │   └── planning/            2篇 规划文档
 │
-├── scripts/             ← 🔧 工具脚本
+├── scripts/             ← 🔧 工具脚本（9 .ps1 + 72 .py = 81个脚本）
 │   ├── analyze_vault_v3.ps1  vault分析器
 │   ├── rebuild_mocs.ps1     MOC重建器
 │   ├── scan_low_quality.ps1 低质扫描器
 │   ├── cleanup_entropy.ps1  去重清理器
-│   ├── weekly-review.ps1    周回顾脚本
-│   └── ...
+│   └── 72个 .py 脚本       分析/验证/增强/清理/迁移工具（原在 _logs/ 和 _meta/）
 │
 ├── .codex/skills/       ← 🎯 Codex Skill配置
 │   └── knowledge-base/     knowledge-base skill v4.1
@@ -184,15 +181,16 @@ R系列公众号长文 (8篇, 发布级)
 
 ---
 
-## 五、答案之书质量演进（6版本）
+## 五、答案之书质量演进（3版本活跃 + 4版本已归档）
 
 | 版本 | 文件数 | 状态 | 核心改进 | 关键交付物 |
 |------|--------|------|---------|-----------|
-| **book-v2** | 15 | 基线 | 8章初稿 | FULL_MANUSCRIPT |
-| **book-v3** | 28 | ✅ 存在性审计 | S/A/B/C证据+11反共识+8章行动系统 | EVIDENCE_LEDGER, CONCEPT_MAP, CUT_LOG |
-| **book-v4** | 34 | ✅ 验真通过 | 证据坐实+贯通验真+原创标注 | EVIDENCE_LEDGER, ORIGINALITY_LOG, CONCEPT_MAP |
-| **book-v5** | 34 | ✅ 拆脚手架 | 去模板化+接缝隐形 | CUT_LOG, DELETION_LEDGER |
-| **book-v6** | 34 | ✅ 自然协调 | 节奏变奏+场景补全+言行一致 | FULL_MANUSCRIPT (当前最新) |
+| ~~book-v2~~ | 15 | 📦 已归档 | 8章初稿 | FULL_MANUSCRIPT |
+| ~~book-v3~~ | 28 | 📦 已归档 | S/A/B/C证据+11反共识+8章行动系统 | EVIDENCE_LEDGER, CONCEPT_MAP, CUT_LOG |
+| ~~book-v4~~ | 34 | 📦 已归档 | 证据坐实+贯通验真+原创标注 | EVIDENCE_LEDGER, ORIGINALITY_LOG, CONCEPT_MAP |
+| ~~book-v5~~ | 34 | 📦 已归档 | 去模板化+接缝隐形 | CUT_LOG, DELETION_LEDGER |
+| **book-v6** | 34 | ✅ 自然协调 | 节奏变奏+场景补全+言行一致 | FULL_MANUSCRIPT |
+| **book-v7** | 59 | ✅ **当前最完整版** | 证据增强+去AI味+风格手册+Skill全场标注 | FULL_MANUSCRIPT, EVIDENCE_LEDGER, STYLE_GUIDE |
 | **book-of-life-answers** | 14 | ✅ 英文版 | 9章完整英文版 | CH01-CH09 + APPENDIX |
 
 ### 每版本8章体系
@@ -279,11 +277,10 @@ graph TB
     end
 
     subgraph 旗舰作品
-        R --> V3["book-v3 存在性审计"]
-        V3 --> V4["book-v4 验真"]
-        V4 --> V5["book-v5 拆脚手架"]
-        V5 --> V6["book-v6 自然协调"]
-        V6 --> EN["book-of-life-answers 英文版"]
+        R --> V6["book-v6 自然协调"]
+        R --> V7["book-v7 当前最完整"]
+        R --> EN["book-of-life-answers 英文版"]
+        style V7 fill:#90ee90
     end
 
     subgraph 发布平台
@@ -304,7 +301,7 @@ graph TB
 | scripts/rebuild_mocs.ps1 | 重建MOC索引文件 | ✅ |
 | scripts/scan_low_quality.ps1 | 低质内容扫描器 | ✅ |
 | scripts/cleanup_entropy.ps1 | 去重清理器 | ✅ |
-| scripts/weekly-review.ps1 | 周回顾脚本 | ✅ |
+| scripts/*.py（72个） | 分析/验证/增强/清理/迁移工具（原在 _logs/ 和 _meta/） | ✅ |
 | .codex/skills/knowledge-base/SKILL.md | 知识库skill v4.1 | ✅ |
 
 ---
@@ -316,10 +313,10 @@ graph TB
 | 全库总览 | [[HOME]] |
 | 深度卡全部 | [[_MOC_Cards]] |
 | 长文按分类 | [[_MOC_Content]] |
-| 答案之书全部版本 | [[_MOC_Flagship]] |
+| 答案之书活跃版本 | [[_MOC_Flagship]] |
 | R系列发布级长文 | media/wechat_reconstructed/ |
 | 3核心选题 | 选题管理/compressed/ |
-| 最新旗舰 | media/flagship/book-v6/ |
+| 最新旗舰（v7） | media/flagship/book-v7/ |
 | 流量平台规则 |  3_Resources/traffic-engineering/ |
 | 微信读书素材 |  3_Resources/weread/ |
 | DBS社群笔记 |  3_Resources/feishu-dontbesilent/ |
@@ -328,4 +325,4 @@ graph TB
 
 ---
 
-> **最新审计**: 2026-06-09 | 1,644 .md | 390 Wiki链接 | 0断链 | 12.03 MB | _alchemist已归零
+> **最新审计**: 2026-06-12 | ✅ 知识库清理完成 | 空目录/漂浮文件/空壳已清理 | book-v2~v5已归档 | 72个脚本已迁移至 scripts/ | 结构归一为 PARA 英文体系

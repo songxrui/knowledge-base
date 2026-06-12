@@ -1,4 +1,4 @@
-﻿# 知识库主索引 — 全量导航
+# 知识库主索引 — 全量导航
 
 > 12轮工作 · 31 Skill · 14次提交 · 2026-06-11  
 > 本地: D:\KnowledgeBase\ | GitHub: songxrui/knowledge-base | 飞书: jcn1crrvstv9
