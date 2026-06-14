@@ -16,7 +16,7 @@
 | 🏗️ 内容系统 | 120 | QST/CON/OPI/CAS/SOL 单元化工程 |
 | 📊 日志报告 | 276 | 心跳日志/技能报告/交付审计（7天TTL ✓ 已执行） |
 | 📥 Notion导出 | 155 | 原始笔记迁移（私人与共享空间） |
-| 📦 归档 | 81+3zips | 旧版备份+book-v2-v5(1.03MB)+content-system-v2(89KB)+其它 |
+| 📦 归档 | 81+3zips | 旧版备份+book-v2-v5(1.03MB)+book-v6(34篇)+content-system-v2(89KB)+其它 |
 | 🔧 工具配置 | 36 | skill配置/飞书配置/脚本/模板 |
 
 ---
@@ -60,17 +60,18 @@ D:\KnowledgeBase\
 │   ├── logs/               17篇 旧日志
 │   ├── G-clusters/         13篇 主题簇归档
 │   ├── flagship-drafts/     3篇 旗舰草稿
-│   └── book-v2-v5-archive.zip  1.03MB 答案之书旧版归档
+│   ├── book-v2-v5-archive.zip  1.03MB 答案之书旧版归档
+│   └── book-v6/            34篇 自然协调版（2026-06-15归档，被book-v7取代）
 │
 ├── cards/               ← 🃏 深度卡（77张，按簇组织）
 │   ├── C1-C7/             35张 主体卡（7簇×5张）
 │   └── topics/            42张 主题卡（T1-T10簇）
 │
 ├── media/               ← 🎬 媒体产出
-│   ├── flagship/         107篇 答案之书（3版本活跃）
-│   │   ├── book-v6/          34篇 自然协调版
-│   │   ├── book-v7/          59篇 ✅ 当前最完整版（含完整文稿+审计+证据）
+│   ├── flagship/         73篇 答案之书（2版本活跃）
+│   │   ├── book-v7/          59篇 ✅ 现行版（含完整文稿+审计+证据）
 │   │   └── book-of-life-answers/ 14篇 英文版
+│   │   （注：book-v6 已归档至 04_Archive/book-v6/）
 │   ├── wechat_reconstructed/ 9篇 R系列重构长文
 │   ├── wechat_2026-06-07/  294篇 W系列原始素材
 │   ├── wechat_2026-06-07_dbs/ 110篇 D系列处理版
@@ -181,7 +182,7 @@ R系列公众号长文 (8篇, 发布级)
 
 ---
 
-## 五、答案之书质量演进（3版本活跃 + 4版本已归档）
+## 五、答案之书质量演进（2版本活跃 + 5版本已归档）
 
 | 版本 | 文件数 | 状态 | 核心改进 | 关键交付物 |
 |------|--------|------|---------|-----------|
@@ -189,8 +190,8 @@ R系列公众号长文 (8篇, 发布级)
 | ~~book-v3~~ | 28 | 📦 已归档 | S/A/B/C证据+11反共识+8章行动系统 | EVIDENCE_LEDGER, CONCEPT_MAP, CUT_LOG |
 | ~~book-v4~~ | 34 | 📦 已归档 | 证据坐实+贯通验真+原创标注 | EVIDENCE_LEDGER, ORIGINALITY_LOG, CONCEPT_MAP |
 | ~~book-v5~~ | 34 | 📦 已归档 | 去模板化+接缝隐形 | CUT_LOG, DELETION_LEDGER |
-| **book-v6** | 34 | ✅ 自然协调 | 节奏变奏+场景补全+言行一致 | FULL_MANUSCRIPT |
-| **book-v7** | 59 | ✅ **当前最完整版** | 证据增强+去AI味+风格手册+Skill全场标注 | FULL_MANUSCRIPT, EVIDENCE_LEDGER, STYLE_GUIDE |
+| ~~book-v6~~ | 34 | 📦 已归档(04_Archive) | 节奏变奏+场景补全+言行一致（2026-06-15归档，被v7取代） | FULL_MANUSCRIPT |
+| **book-v7** | 59 | ✅ **现行版** | 证据增强+去AI味+风格手册+Skill全场标注 | FULL_MANUSCRIPT, EVIDENCE_LEDGER, STYLE_GUIDE |
 | **book-of-life-answers** | 14 | ✅ 英文版 | 9章完整英文版 | CH01-CH09 + APPENDIX |
 
 ### 每版本8章体系
@@ -277,8 +278,7 @@ graph TB
     end
 
     subgraph 旗舰作品
-        R --> V6["book-v6 自然协调"]
-        R --> V7["book-v7 当前最完整"]
+        R --> V7["book-v7 现行版"]
         R --> EN["book-of-life-answers 英文版"]
         style V7 fill:#90ee90
     end

@@ -118,8 +118,8 @@ powershell -ExecutionPolicy Bypass -File "D:\KnowledgeBase\scripts\rebuild_mocs.
 | ~~book-v3~~ | 28 | 📦 已归档至 04_Archive | S/A/B/C证据标记+11反共识+8章行动系统 |
 | ~~book-v4~~ | 34 | 📦 已归档至 04_Archive | 证据坐实+贯通验真+原创标注 |
 | ~~book-v5~~ | 34 | 📦 已归档至 04_Archive | 去模板化+自然行文+接缝隐形 |
-| **book-v6** | 34 | ✅ 自然协调 | 节奏变奏+场景补全+言行一致 |
-| **book-v7** | 59 | ✅ 当前最完整版 | 证据增强+去AI味+风格手册+Skill全场标注 |
+| ~~book-v6~~ | 34 | 📦 已归档至 04_Archive (2026-06-15) | 节奏变奏+场景补全+言行一致（被v7取代） |
+| **book-v7** | 59 | ✅ 现行版 | 证据增强+去AI味+风格手册+Skill全场标注 |
 | **book-of-life-answers** | 14 | ✅ 英文版 | 9章完整英文版 |
 
 ### 质量升级五杠杆
