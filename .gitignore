@@ -17,3 +17,14 @@ _alchemist/
 # Large archive files (use local backup)
 *.zip
 .git-rewrite/
+
+# Large media files (keep KB lean - store externally)
+*.mp4
+*.mp3
+*.flv
+*.mov
+*.avi
+*.baiduyun.p.downloading
+*.downloading
+
+
