@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #fdfae7; }
+    body { font-family: "Inter", sans-serif; }
+    .hf-clip { position: absolute; width: 1080px; height: 1920px; overflow: hidden; }
+    
+    /* Blue Professional design tokens */
+    .bg { background-color: #fdfae7; }
+    .text-primary { color: #111111; }
+    .text-muted { color: #6b6b6b; }
+    .text-light { color: #9a9a9a; }
+    .accent { color: #1e2bfa; }
+    .accent-bg { background-color: #1e2bfa; }
+    .card-bg { background-color: rgba(30,43,250,0.04); }
+    .card-border { border: 1px solid rgba(30,43,250,0.2); border-radius: 14px; }
+    .pill { border-radius: 100px; }
+    
+    .display-font { font-family: "Space Grotesk", sans-serif; }
+    .body-font { font-family: "Inter", sans-serif; }
+    
+    .number-large { font-family: "Space Grotesk", sans-serif; font-weight: 700; color: #1e2bfa; }
+    .eyebrow { font-family: "Space Grotesk", sans-serif; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #1e2bfa; font-size: 20px; }
+    
+    /* Data visualization helpers */
+    .k-curve { position: relative; }
+    .k-arm-up { position: absolute; width: 4px; height: 200px; background: #1e2bfa; border-radius: 2px; transform-origin: bottom center; }
+    .k-arm-down { position: absolute; width: 4px; height: 120px; background: #dc2626; border-radius: 2px; transform-origin: top center; }
+    
+    .progress-bar { height: 3px; background: rgba(30,43,250,0.15); border-radius: 2px; }
+    .progress-fill { height: 100%; background: #1e2bfa; border-radius: 2px; }
+    
+    /* Tag badge */
+    .tag { display: inline-block; padding: 4px 12px; background: rgba(30,43,250,0.08); border-radius: 100px; font-family: "Space Grotesk", sans-serif; font-size: 12px; font-weight: 500; color: #1e2bfa; }
+  </style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="117" data-width="1080" data-height="1920" style="position:relative;">
+
+  <!-- ========== FRAME 1: 数据冲击 (0-18s) ========== -->
+  <div id="frame-1" class="hf-clip clip bg" data-start="0" data-duration="18">
+    <div style="padding: 240px 60px 0; text-align: center;">
+      <div class="tag" style="margin-bottom: 40px;">趋势报告</div>
+      <div class="number-large" style="font-size: 160px; line-height: 1;" id="num-3-2">3.2亿</div>
+      <div style="font-size: 24px; color: #6b6b6b; margin-top: 20px; font-weight: 300;">灵活就业人口</div>
+      <div style="display: flex; justify-content: center; gap: 30px; margin-top: 60px;">
+        <div style="text-align: center;">
+          <div class="number-large" style="font-size: 40px;">2亿</div>
+          <div style="font-size: 14px; color: #9a9a9a;">2021年</div>
+        </div>
+        <div style="width: 40px; height: 2px; background: rgba(30,43,250,0.3); margin-top: 25px;"></div>
+        <div style="text-align: center;">
+          <div class="number-large" style="font-size: 40px;">2.4亿</div>
+          <div style="font-size: 14px; color: #9a9a9a;">2024年</div>
+        </div>
+        <div style="width: 40px; height: 2px; background: rgba(30,43,250,0.3); margin-top: 25px;"></div>
+        <div style="text-align: center;">
+          <div class="number-large" style="font-size: 40px;">3.2亿</div>
+          <div style="font-size: 14px; color: #9a9a9a;">2025年</div>
+        </div>
+      </div>
+      <div style="background: rgba(30,43,250,0.08); border-radius: 14px; padding: 20px; margin-top: 50px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 28px; color: #111; line-height: 1.6;" id="f1-text">
+          我们真的要提前想想出路了。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FRAME 2: K型分布概念 (18-33s) ========== -->
+  <div id="frame-2" class="hf-clip clip bg" data-start="18" data-duration="15" >
+    <div style="padding: 240px 60px 0;">
+      <div class="tag" style="margin-bottom: 30px;">经济概念</div>
+      <div class="number-large" style="font-size: 72px; margin-bottom: 10px;">K型分布</div>
+      <div style="font-size: 24px; color: #6b6b6b; line-height: 1.6; margin-top: 30px;">
+        经济不再一起涨一起跌
+      </div>
+      <div style="display: flex; justify-content: center; gap: 100px; margin-top: 80px;">
+        <div style="text-align: center;">
+          <div style="width: 80px; height: 4px; background: #1e2bfa; margin: 0 auto 10px; border-radius: 2px;"></div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #1e2bfa;">K 上臂</div>
+          <div style="font-size: 18px; color: #6b6b6b; margin-top: 8px;">越来越好</div>
+        </div>
+        <div style="width: 2px; height: 60px; background: #d1d5db; margin-top: 15px;"></div>
+        <div style="text-align: center;">
+          <div style="width: 80px; height: 4px; background: #dc2626; margin: 0 auto 10px; border-radius: 2px;"></div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; color: #dc2626;">K 下臂</div>
+          <div style="font-size: 18px; color: #6b6b6b; margin-top: 8px;">往下滑落</div>
+        </div>
+      </div>
+      <div style="background: rgba(30,43,250,0.04); border: 1px solid rgba(30,43,250,0.2); border-radius: 14px; padding: 24px; margin-top: 60px;">
+        <div style="font-size: 22px; color: #6b6b6b; text-align: center;">中间那波人越来越少——</div>
+        <div style="font-size: 28px; color: #111; font-weight: 600; text-align: center; margin-top: 8px;">"消失的中产"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FRAME 3: 新旧动能对比 (33-50s) ========== -->
+  <div id="frame-3" class="hf-clip clip bg" data-start="33" data-duration="17" >
+    <div style="padding: 200px 60px 0;">
+      <div class="tag" style="margin-bottom: 30px;">转型原因</div>
+      <div style="font-size: 40px; font-weight: 700; color: #111; margin-bottom: 40px;">旧动能 vs 新动能</div>
+      <div style="display: flex; gap: 24px;">
+        <div style="flex: 1; background: rgba(220,38,38,0.04); border: 1px solid rgba(220,38,38,0.2); border-radius: 14px; padding: 30px 20px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: #dc2626; margin-bottom: 15px;">旧动能</div>
+          <div style="font-size: 16px; color: #6b6b6b; line-height: 1.8;">房地产</div>
+          <div style="font-size: 16px; color: #6b6b6b; line-height: 1.8;">低端制造</div>
+          <div style="font-size: 16px; color: #6b6b6b; line-height: 1.8;">基建</div>
+          <div style="background: rgba(220,38,38,0.08); border-radius: 8px; padding: 10px; margin-top: 20px; text-align: center;">
+            <span style="font-size: 14px; font-weight: 600; color: #dc2626;">劳动密集型 · 养人</span>
+          </div>
+        </div>
+        <div style="flex: 1; background: rgba(30,43,250,0.04); border: 1px solid rgba(30,43,250,0.2); border-radius: 14px; padding: 30px 20px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: #1e2bfa; margin-bottom: 15px;">新动能</div>
+          <div style="font-size: 16px; color: #6b6b6b; line-height: 1.8;">人工智能</div>
+          <div style="font-size: 16px; color: #6b6b6b; line-height: 1.8;">新能源</div>
+          <div style="font-size: 16px; color: #6b6b6b; line-height: 1.8;">半导体</div>
+          <div style="background: rgba(30,43,250,0.08); border-radius: 8px; padding: 10px; margin-top: 20px; text-align: center;">
+            <span style="font-size: 14px; font-weight: 600; color: #1e2bfa;">技术密集型 · 不养人</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FRAME 4: 寒武纪数据 (50-66s) ========== -->
+  <div id="frame-4" class="hf-clip clip bg" data-start="50" data-duration="16" >
+    <div style="padding: 220px 60px 0; text-align: center;">
+      <div class="tag" style="margin-bottom: 30px;">数据案例</div>
+      <div style="font-size: 28px; font-weight: 600; color: #111; margin-bottom: 40px;">寒武纪</div>
+      <div style="display: flex; justify-content: center; gap: 60px;">
+        <div>
+          <div class="number-large" style="font-size: 72px;">6000亿</div>
+          <div style="font-size: 16px; color: #9a9a9a; margin-top: 8px;">市值</div>
+        </div>
+        <div style="width: 2px; background: rgba(30,43,250,0.2);"></div>
+        <div>
+          <div class="number-large" style="font-size: 72px;">1000+</div>
+          <div style="font-size: 16px; color: #9a9a9a; margin-top: 8px;">员工</div>
+        </div>
+      </div>
+      <div style="background: rgba(30,43,250,0.08); border-radius: 14px; padding: 16px 24px; margin: 40px auto 0; display: inline-block;">
+        <div class="number-large" style="font-size: 36px;">人均 5亿+ 市值</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FRAME 5: 美国对照 (66-82s) ========== -->
+  <div id="frame-5" class="hf-clip clip bg" data-start="66" data-duration="16" >
+    <div style="padding: 200px 60px 0;">
+      <div class="tag" style="margin-bottom: 30px;">历史对照</div>
+      <div style="font-size: 36px; font-weight: 700; color: #111; margin-bottom: 30px;">美国 1970s</div>
+      <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+        <div style="flex:1; background: rgba(220,38,38,0.04); border-radius: 12px; padding: 15px;">
+          <div style="font-size: 16px; color: #6b6b6b;">汽车·钢铁·纺织</div>
+          <div style="font-size: 14px; color: #dc2626; margin-top: 5px;">↓ 工厂关停</div>
+        </div>
+        <div style="font-size: 28px; color: #9a9a9a; line-height: 60px;">→</div>
+        <div style="flex:1; background: rgba(30,43,250,0.04); border-radius: 12px; padding: 15px;">
+          <div style="font-size: 16px; color: #6b6b6b;">硅谷·华尔街</div>
+          <div style="font-size: 14px; color: #1e2bfa; margin-top: 5px;">↑ 新经济崛起</div>
+        </div>
+      </div>
+      <div style="background: rgba(30,43,250,0.04); border: 1px solid rgba(30,43,250,0.2); border-radius: 14px; padding: 20px;">
+        <div style="font-size: 20px; color: #111; text-align: center;">代价：蓝领变K下臂 → 贫富差距拉大</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FRAME 6: 解题思路 (82-94s) ========== -->
+  <div id="frame-6" class="hf-clip clip bg" data-start="82" data-duration="12" >
+    <div style="padding: 220px 60px 0; text-align: center;">
+      <div class="tag" style="margin-bottom: 30px;">怎么办</div>
+      <div style="font-size: 44px; font-weight: 700; color: #111; margin-bottom: 20px;">怎么跟上？</div>
+      <div style="font-size: 22px; color: #6b6b6b; margin-bottom: 50px;">你不需要学编程</div>
+      <div style="display: flex; justify-content: center; gap: 100px;">
+        <div style="text-align: center;">
+          <div style="width: 100px; height: 60px; background: rgba(30,43,250,0.08); border-radius: 12px; margin: 0 auto 10px; line-height: 60px;">
+            <span class="number-large" style="font-size: 24px;">1%</span>
+          </div>
+          <div style="font-size: 14px; color: #6b6b6b;">创造技术</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="width: 100px; height: 60px; background: #1e2bfa; border-radius: 12px; margin: 0 auto 10px; line-height: 60px;">
+            <span style="font-size: 24px; font-weight: 700; color: #fff;">99%</span>
+          </div>
+          <div style="font-size: 14px; color: #1e2bfa; font-weight: 600;">使用技术</div>
+        </div>
+      </div>
+      <div style="font-size: 22px; color: #111; margin-top: 40px;">做好使用者就够了</div>
+    </div>
+  </div>
+
+  <!-- ========== FRAME 7: 三点建议 (94-107s) ========== -->
+  <div id="frame-7" class="hf-clip clip bg" data-start="94" data-duration="13" >
+    <div style="padding: 180px 60px 0;">
+      <div class="tag" style="margin-bottom: 30px;">具体行动</div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="card-bg card-border" style="padding: 20px 24px; display: flex; align-items: center; gap: 20px;">
+          <div style="width: 40px; height: 40px; background: #1e2bfa; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <span style="color: #fff; font-weight: 700; font-size: 18px;">1</span>
+          </div>
+          <div>
+            <div style="font-size: 20px; font-weight: 600; color: #111;">技能 + AI</div>
+            <div style="font-size: 14px; color: #6b6b6b;">把手头技能跟AI结合</div>
+          </div>
+        </div>
+        <div class="card-bg card-border" style="padding: 20px 24px; display: flex; align-items: center; gap: 20px;">
+          <div style="width: 40px; height: 40px; background: #1e2bfa; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <span style="color: #fff; font-weight: 700; font-size: 18px;">2</span>
+          </div>
+          <div>
+            <div style="font-size: 20px; font-weight: 600; color: #111;">卖自己</div>
+            <div style="font-size: 14px; color: #6b6b6b;">别再卖产品，卖你这个人</div>
+          </div>
+        </div>
+        <div class="card-bg card-border" style="padding: 20px 24px; display: flex; align-items: center; gap: 20px;">
+          <div style="width: 40px; height: 40px; background: #1e2bfa; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <span style="color: #fff; font-weight: 700; font-size: 18px;">3</span>
+          </div>
+          <div>
+            <div style="font-size: 20px; font-weight: 600; color: #111;">做内容</div>
+            <div style="font-size: 14px; color: #6b6b6b;">从一千人里筛出十个相信你的人</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FRAME 8: 结尾 (107-117s) ========== -->
+  <div id="frame-8" class="hf-clip clip bg" data-start="107" data-duration="10" >
+    <div style="padding: 280px 60px 0; text-align: center;">
+      <div class="tag" style="margin-bottom: 30px;">关于我</div>
+      <div style="font-size: 32px; color: #111; line-height: 1.6; margin-bottom: 40px;">
+        我就是一个灵活就业者<br>
+        <span style="font-size: 24px; color: #6b6b6b;">靠AI和做内容养活自己</span>
+      </div>
+      <div style="width: 80px; height: 3px; background: #1e2bfa; margin: 0 auto 30px;"></div>
+      <div style="font-size: 26px; color: #1e2bfa; font-weight: 600;">
+        与其被动等待
+      </div>
+      <div style="font-size: 32px; color: #111; font-weight: 700;">
+        不如从现在开始准备
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  var tl = gsap.timeline({ paused: true });
+
+  // F1: 数据冲击 (0-18s)
+  tl.from("#frame-1 .number-large", { scale: 0.3, opacity: 0, duration: 1.2, ease: "back.out(1.7)" }, 0.5);
+  tl.from("#frame-1 .tag", { y: -20, opacity: 0, duration: 0.6 }, 0);
+  tl.from("#frame-1 .card-bg", { y: 30, opacity: 0, duration: 0.8 }, 1.5);
+
+  // F2: K型分布 (18-33s)
+  tl.from("#frame-2 .tag", { y: -20, opacity: 0, duration: 0.6 }, 18);
+  tl.from("#frame-2 .number-large", { scale: 0.5, opacity: 0, duration: 1, ease: "back.out(1.5)" }, 18.5);
+  tl.from("#frame-2 .card-bg", { y: 40, opacity: 0, duration: 0.8 }, 19.5);
+
+  // F3: 新旧动能 (33-50s)
+  tl.from("#frame-3 .tag", { y: -20, opacity: 0, duration: 0.6 }, 33);
+  tl.from("#frame-3 .card-bg", { x: -30, opacity: 0, duration: 0.8 }, 33.5);
+  tl.fromTo("#frame-3 .card-bg:last-child", { x: 30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8 }, 34);
+
+  // F4: 寒武纪 (50-66s)
+  tl.from("#frame-4 .tag", { y: -20, opacity: 0, duration: 0.6 }, 50);
+  tl.fromTo("#frame-4 .number-large", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2, ease: "back.out(1.7)" }, 50.5);
+
+  // F5: 美国对照 (66-82s)
+  tl.from("#frame-5 .tag", { y: -20, opacity: 0, duration: 0.6 }, 66);
+  tl.from("#frame-5 .card-bg", { x: -30, opacity: 0, duration: 0.8 }, 66.5);
+  tl.from("#frame-5 .card-bg:last-child", { y: 30, opacity: 0, duration: 0.8 }, 67.5);
+
+  // F6: 解题思路 (82-94s)
+  tl.from("#frame-6 .tag", { y: -20, opacity: 0, duration: 0.6 }, 82);
+  tl.from("#frame-6 .number-large", { scale: 0.5, opacity: 0, duration: 0.8 }, 82.5);
+
+  // F7: 三点建议 (94-107s)
+  tl.from("#frame-7 .tag", { y: -20, opacity: 0, duration: 0.6 }, 94);
+  tl.from("#frame-7 .card-bg:first-child", { x: -40, opacity: 0, duration: 0.6 }, 94.5);
+  tl.from("#frame-7 .card-bg:nth-child(2)", { x: -40, opacity: 0, duration: 0.6 }, 95.3);
+  tl.from("#frame-7 .card-bg:nth-child(3)", { x: -40, opacity: 0, duration: 0.6 }, 96.1);
+
+  // F8: 结尾 (107-117s)
+  tl.from("#frame-8 .tag", { y: -20, opacity: 0, duration: 0.6 }, 107);
+  tl.from("#frame-8 .card-bg", { y: 30, opacity: 0, duration: 0.8 }, 107.5);
+
+  window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

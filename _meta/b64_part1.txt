@@ -1,0 +1,10 @@
+﻿python :   File "<string>", line 4
+At line:2 char:1
++ python -c "
++ ~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  File "<string>", line 4:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    text = '''# ����ű� �� ��3�ڵ�1�� (12��)
+           ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 15)

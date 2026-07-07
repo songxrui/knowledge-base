@@ -66,8 +66,8 @@ $home += @"
 
 - [[INDEX]] — 全量文件列表
 - [[SKILL_INDEX]] — Skill 索引
-- [[_content-system/03-内容单元/|内容单元库]]
-- [[_content-system/04-主题地图/|主题地图]]
+- [[structured-content/02-内容单元库/|内容单元库 (v2)]]
+- [[structured-content/05-主题地图/|主题地图 (v2)]]
 - [[_meta/|元数据]]
 "@
 

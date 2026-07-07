@@ -21,7 +21,7 @@ if os.path.exists(wechat_dir):
                 wechat_files.append(os.path.join(root, f))
 
 # Audit 3: DBS content system
-dbs_dir = os.path.join(KB, "_content-system")
+dbs_dir = os.path.join(KB, "structured-content")  # v2 (v1 archived to 04_Archive/)
 dbs_files = []
 if os.path.exists(dbs_dir):
     for root, dirs, files in os.walk(dbs_dir):

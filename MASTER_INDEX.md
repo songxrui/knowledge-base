@@ -56,11 +56,12 @@
 
 ### DBS内容系统
 
-**路径**: `_content-system` | **文件数**: 177
+**路径**: `structured-content` (v2) | **文件数**: 2,156 (1,543单元)
+> ⚠️ `_content-system` v1 已归档至 `04_Archive/deprecated-content-system-v1/`
 
-- 235源→1,543内容单元
-- 305装配稿 + 8主题地图
-- 1,720条显式关联
+- 1,543标准内容单元 (QST/CON/OPI/CAS/SOL)
+- 完整 JS 工具链 (8脚本)
+- 4类关系 + 4类去重规则
 
 ### 飞书同步
 

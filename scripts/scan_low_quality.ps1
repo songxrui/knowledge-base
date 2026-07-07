@@ -61,7 +61,7 @@ Get-ChildItem "$vault\tmp" -Recurse -Name 2>$null | Select-Object -First 20
 
 # 6. 根目录异常文件夹
 Write-Host "`n【6. 根目录非标准文件夹】" -ForegroundColor Yellow
-$standard = @(".codex",".dbs",".obsidian","00_Inbox","01_Projects","02_Areas","03_Resources","04_Archive","assets","cards","media","notion","scripts","SOURCES","tmp","zettel","_alchemist","_content-system","_logs","_meta","选题管理")
+$standard = @(".codex",".dbs",".obsidian","00_Inbox","01_Projects","02_Areas","03_Resources","04_Archive","assets","cards","media","notion","scripts","SOURCES","tmp","zettel","_alchemist","_content-system","structured-content","_logs","_meta","选题管理")
 Get-ChildItem $vault -Directory | Where-Object { $_.Name -notin $standard } | ForEach-Object { Write-Host "  $($_.Name) ($((Get-ChildItem $_.FullName -Recurse).Count) items)" }
 
 Write-Host "`n========== 扫描完成 ==========" -ForegroundColor Cyan

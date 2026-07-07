@@ -109,7 +109,7 @@ Write-Host ""
 # 7. 非标准目录文件
 Write-Host "【根目录裸露文件（未归类）】" -ForegroundColor Magenta
 $rootFiles = Get-ChildItem -Path $vault -Filter "*.md" -File | Select-Object -ExpandProperty Name
-$standardDirs = @("00_Inbox","01_Projects","02_Areas","03_Resources","04_Archive","media","cards","assets","notion","tmp","zettel","scripts","SOURCES","选题管理","_alchemist","_content-system","_logs","_meta",".obsidian",".dbs",".codex")
+$standardDirs = @("00_Inbox","01_Projects","02_Areas","03_Resources","04_Archive","media","cards","assets","notion","tmp","zettel","scripts","SOURCES","选题管理","_alchemist","_content-system","structured-content","_logs","_meta",".obsidian",".dbs",".codex")
 foreach ($f in $rootFiles) {
     Write-Host "  (root)/$f"
 }

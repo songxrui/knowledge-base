@@ -1,0 +1,39 @@
+﻿*** Begin Patch
+*** Update File: C:\Users\董辉\.agents\skills\dbs-save\SKILL.md
+@@ ---
+ name: dbs-save
+ description: "诊断存档工具。把当前对话里诊断出的关键结论、用户已否决的方向、推荐的下一步写成结构化markdown文件存到本地。不替代诊断，只做记录。与dbs-restore配对使用。触发词：/dbs-save、存档、保存诊断、记住这个结论、存下来。不适用场景：首次诊断→用对应诊断skill; 恢复存档→dbs-restore。正例：'把这次诊断结论存下来'→触发; '/dbs-save 卖什么没想清楚'→触发。反例：'帮我诊断商业模式'→不触发→dbs-diagnosis; '恢复上次的存档'→不触发→dbs-restore。"
+-version: "3.0.0 | R3: 2026-06-08 | methodology: SkillOpt R3 深度重写 | model: DeepSeek v4 Pro"
++disable-model-invocation: true
++version: "2.0.0 | R2: mattpocock alignment | 2026-07-06"
+ ---
+
+-# dbs-save R3 — 诊断存档。
++# **save** — dbs-save R3 诊断存档
+@@
+ ## 验证清单
+
+ - [ ] frontmatter 完整（status/title/source_skill/next_skill）
+ - [ ] 原始问题已记录
+ - [ ] 诊断结论 ≥ 1 条
+ - [ ] 已否决方向已标注
+ - [ ] 下一步已推荐
+ - [ ] 文件落盘正确
++
++## 完成标准
++
++| 步骤 | 完成标准 |
++|------|---------|
++| 提取标题 | 标题 ≤15 字，从用户问题中提取核心关键词 |
++| 记录诊断 | source_skill 非空，结论 1-3 条，每条 ≤80 字 |
++| 标注否决 | 已否决方向字段非空或明确标注"无" |
++| 推荐下一步 | next_skill 非空，与 source_skill 不同 |
++| 落盘 | 文件存在于 `~/.dbs/sessions/{项目名}/{YYYY-MM-DD}_{标题slug}.md` |
+@@
+ | G5 失败兜底 | ✅ | 失败自动重试 + 兜底方案
++| G5 失败兜底 | ✅ | ≥2 失败模式
+@@
+ ---
++
++*version: 2.0.0 | leading word: save | ref: mattpocock/skills*
+*** End Patch

@@ -1,0 +1,28 @@
+{
+  "v": 2,
+  "creation": {
+    "activeId": "thread-bb230bbe-9844-4604-82bb-c020105904a1",
+    "threads": [
+      {
+        "id": "thread-bb230bbe-9844-4604-82bb-c020105904a1",
+        "title": "",
+        "createdAt": 1782219701768,
+        "updatedAt": 1782219701768,
+        "messages": []
+      }
+    ]
+  },
+  "generation": {
+    "activeId": "thread-4e99683e-f7e6-43bc-a413-941d1b8a4606",
+    "threads": [
+      {
+        "id": "thread-4e99683e-f7e6-43bc-a413-941d1b8a4606",
+        "title": "",
+        "createdAt": 1782219701768,
+        "updatedAt": 1782219701768,
+        "messages": []
+      }
+    ]
+  },
+  "committedProposal": null
+}

@@ -106,7 +106,7 @@
 ## 反向索引：KB 内容所用 Skill（used_in）
 
 > **当前状态**: 知识库内容与 skill 之间尚无关联标注。
-> **本轮新增**: `_content-system/MAPPING_INDEX.md` 建立了内容结构化系统 ↔ 01_Projects 的映射。
+> **2026-06-20 更新**: `_content-system/` v1 已归档至 `04_Archive/`，当前权威系统为 `structured-content/` v2。
 > **约定（新内容）**: 每篇新内容末尾标注 skill 链：
 > ```markdown
 > ---
@@ -128,7 +128,7 @@
 |---------|------|------|
 | `KNOWLEDGE_MAP.md` | 知识库主地图（目录/质量/管线） | ← 本索引 |
 | `SKILL_INDEX.md` | **你在这里** — 全量技能索引 | → KNOWLEDGE_MAP |
-| `_content-system/MAPPING_INDEX.md` | 内容结构化系统 ↔ PARA 映射 | ← NEW |
+| `_content-system/REDIRECT.md` | v1→v2 重定向 | ⚠️ v1已废弃 |
 | `SKILL_INDEX.md` | 全量技能索引 | → load_skill |
 | `HOME.md` | 仪表盘入口 | → KNOWLEDGE_MAP |
 

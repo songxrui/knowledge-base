@@ -1,105 +1,98 @@
-# 知识库主索引 — 全量导航
+# 📌 知识库主索引
 
-> 12轮工作 · 31 Skill · 14次提交 · 2026-06-11  
-> 本地: D:\KnowledgeBase\ | GitHub: songxrui/knowledge-base | 飞书: jcn1crrvstv9
-
----
-
-## 一、旗舰内容：答案之书 v7
-
-| 文件 | 说明 |
-|------|------|
-| [FULL_MANUSCRIPT.md](media/flagship/book-v7/FULL_MANUSCRIPT.md) | 全稿 300KB |
-| [PREFACE.md](media/flagship/book-v7/PREFACE.md) | 序言+情绪锚点 |
-| [CH01-CH08](media/flagship/book-v7/) | 八章正文 |
-
-### 平台适配
-| 平台 | 文件 |
-|------|------|
-| 公众号 | [platforms/wechat.md](media/flagship/book-v7/platforms/wechat.md) |
-| 小红书 | [platforms/xiaohongshu.md](media/flagship/book-v7/platforms/xiaohongshu.md) |
-| 知乎 | [platforms/zhihu.md](media/flagship/book-v7/platforms/zhihu.md) |
-| HTML | [platforms/answer_book_v7.html](media/flagship/book-v7/platforms/answer_book_v7.html) |
-
-### 视觉资产
-| 类型 | 文件 |
-|------|------|
-| 架构图SVG | [ARCHITECTURE_DIAGRAM_v7.svg](media/flagship/book-v7/ARCHITECTURE_DIAGRAM_v7.svg) |
-| 封面Prompt | [platforms/cover_prompt.md](media/flagship/book-v7/platforms/cover_prompt.md) |
-| 配图Prompt | [platforms/xhs_image_prompts.md](media/flagship/book-v7/platforms/xhs_image_prompts.md) |
-| 卡片规格 | [platforms/image_card_spec.md](media/flagship/book-v7/platforms/image_card_spec.md) |
-| 配图方案 | [ILLUSTRATION_PLAN.md](media/flagship/book-v7/ILLUSTRATION_PLAN.md) |
-| 幻灯片 | [SLIDE_DECK_OUTLINE.md](media/flagship/book-v7/SLIDE_DECK_OUTLINE.md) |
+> **知识库**: `D:\KnowledgeBase`  
+> **文件**: 2,741 个 · **目录**: 278 个 · **体积**: ~250 MB  
+> **整理日期**: 2026-06-30  
+> **权威地图**: 见 [KNOWLEDGE_MAP.md](KNOWLEDGE_MAP.md)（最详细索引）  
+> **仪表盘**: 见 [HOME.md](HOME.md)（快速导航）
 
 ---
 
-## 二、诊断与报告
+## 一、内容创作核心
 
-| 文件 | 内容 |
+| 目录 | 文件数 | 说明 |
+|------|--------|------|
+| `01-内容生产/姜胡说（每天更新）` | 513 | 姜胡说抖音转写/逐字稿 |
+| `01-内容生产/dontbesilent 聊赚钱（每天更新）` | 210 | dontbesilent 聊赚钱逐字稿 |
+| `01-内容生产/姜胡说之书` | 17 | 姜胡说体系化整理 |
+| `01-内容生产/dontbesilent之书` | 17 | dontbesilent 体系化整理 |
+| `01-内容生产/内容体系/` | 351 | 结构化内容单元（主题地图/选题装配/规则等） |
+| `01-内容生产/进行中` | 43 | 正在处理的草稿/半成品 |
+| `01-知识项目/content-creation/` | 146 | 认知/健康/财富/自媒体等项目文件 |
+
+## 二、旗舰 & 媒体资产
+
+| 目录 | 文件数 | 说明 |
+|------|--------|------|
+| `media/wechat_2026-06-07/` | 425 | 微信文章抓取（含 _dbs 合并） |
+| `media/flagship/book-v7/` | 41 | **答案之书 v7** — 旗舰作品全稿 260KB |
+| `media/flagship/`（其他） | 46 | 旗舰相关支撑材料 |
+| `media/xiaohongshu/` | 22 | 小红书内容 |
+| `media/douyin/` | 4 | 抖音内容 |
+| `media/threads/` | 1 | Threads 内容 |
+| `cards/topics/` | 85 | 深度知识卡（77张主体+主题卡） |
+| `07-已发布/` | 18 | 已公开发布的内容聚合 |
+
+## 三、知识库基础设施
+
+| 目录 | 文件数 | 说明 |
+|------|--------|------|
+| `03-资源库/` | 81 | 微信读书萃取(68)、流量工程(6)、素材库(5)、飞书(1) |
+| `04-方法论沉淀/` | 2 | KBLoop 工程方法论 / 心跳 |
+| `04_Archive/` | 94 | 旧版备份(zip)、废弃内容系统v1、book-v2-v6 |
+| `zettel/` | 11 | 原子笔记（认知/健康/财富/关系等 8 领域） |
+| `_alchemist/` | 6 | 内容增强产出（流量的本质/纳瓦尔/多巴胺增强版） |
+| `topic-management/` | 4 | TOPIC 选题记录与执行系统 |
+| `_meta/` | 85 | 元报告、审计、工作记录、技能评测 |
+| `_logs/` | 2 | 工作日志 |
+| `05-数据统计/` | 1 | 数据统计表 CSV |
+
+## 四、系统配置 & 工具
+
+| 目录 | 文件数 | 说明 |
+|------|--------|------|
+| `_system/notion-archive/` | 162 | Notion 导出归档（原始笔记迁移） |
+| `_system/reasonix/` | 33 | Reasonix 配置 |
+| `_system/baoyu-skills/` | 10 | 宝育图文卡片技能 |
+| `_system/nomi/` | 3 | Nomi 配置 |
+| `scripts/` | 93 | 自动化维护脚本（扫描/修复/导出等） |
+| `assets/` | 18 | 图片/设计资产（53 MB） |
+| `SOURCES/` | 21 | 外部来源记录 |
+| `.codex/` / `.dbs/` / `.obsidian/` | 配置 | Codex CLI / DBSkill / Obsidian 配置 |
+
+## 五、快捷入口
+
+| 链接 | 说明 |
 |------|------|
-| [TRAFFIC_DIAGNOSIS.md](media/flagship/book-v7/TRAFFIC_DIAGNOSIS.md) | 传播力 82/100 A级 |
-| [CONTENT_REVERSE_CH02.md](media/flagship/book-v7/CONTENT_REVERSE_CH02.md) | 10维逆向拆解 |
-| [CROSSPOST_CONFIG.md](media/flagship/book-v7/CROSSPOST_CONFIG.md) | 三平台分发配置 |
-| [DEEP_RESEARCH_PLAN.md](media/flagship/book-v7/DEEP_RESEARCH_PLAN.md) | 研究增强计划 |
-| [CONTENT_HASH_INDEX.md](media/flagship/book-v7/CONTENT_HASH_INDEX.md) | SHA-256完整性 |
-| [LAUNCH_KIT.md](media/flagship/book-v7/LAUNCH_KIT.md) | 发布启动包 |
-
----
-
-## 三、元报告
-
-| 文件 | 内容 |
-|------|------|
-| [MEGA_DELIVERY_FINAL_2026-06-11.md](_meta/MEGA_DELIVERY_FINAL_2026-06-11.md) | 终极交付报告 |
-| [SKILL_REVIEW_CONTENT_2026-06-11.md](_meta/SKILL_REVIEW_CONTENT_2026-06-11.md) | 8Skill 10维评测 |
-| [SKILL_OPTIMIZATION_SYNTHESIS.md](_meta/SKILL_OPTIMIZATION_SYNTHESIS.md) | 优化合成方案 |
-| [CONTENT_SYSTEM_AUDIT.md](_meta/CONTENT_SYSTEM_AUDIT.md) | 2156文件审计 |
-| [CONTENT_SYSTEM_MERMAID.md](_meta/CONTENT_SYSTEM_MERMAID.md) | Mermaid连接图 |
-| [V2_V7_BRIDGE.md](_meta/V2_V7_BRIDGE.md) | v2→v7映射 |
-
----
-
-## 四、内容系统
-
-| 目录 | 规模 |
-|------|------|
-| [内容结构化系统/](内容结构化系统/) | 2,156文件 (1,543单元+305装配稿) |
-| [_content-system/](_content-system/) | 177文件 (v2: 120文件) |
-| [cards/](cards/) | 35张深度卡 (97.1%清洁率) |
-| [media/wechat_2026-06-07/](media/wechat_2026-06-07/) | 156篇公众号文章 |
-| [zettel/](zettel/) | 11条原子笔记 (100%清洁) |
-
----
-
-## 五、新孵化Skill
-
-| Skill | 位置 |
-|-------|------|
-| content-pipeline-orchestrator | ~/.agents/skills/content-pipeline-orchestrator/SKILL.md |
-| 归档副本 | [_meta/skill-content-pipeline-orchestrator.md](_meta/skill-content-pipeline-orchestrator.md) |
-
----
+| [答案之书 v7 全稿](media/flagship/book-v7/FULL_MANUSCRIPT.md) | 260KB，8章整合稿 |
+| [答案之书 架构图](media/flagship/book-v7/ARCHITECTURE_DIAGRAM.svg) | SVG 架构总图 |
+| [答案之书 发布清单](media/flagship/book-v7/PUBLISH_CHECKLIST.md) | 23项发布前检查 |
+| [知识地图（全量）](KNOWLEDGE_MAP.md) | 330行权威索引 |
+| [优化报告](_OPTIMIZATION_REPORT.md) | 2026-06-30 清理/重组记录 |
+| [Agent 指令](AGENTS.md) | AI Agent 工作手册 |
+| [事实来源](SOURCE_OF_TRUTH.md) | 版本与事实来源 |
 
 ## 六、质量基线
 
-| 指标 | 终值 |
-|------|------|
-| 全库清洁率 | 93.6% (4,008文件) |
-| 核心区清洁率 | ~100% |
-| 答案之书 Proof:Adj | 19:1 |
-| 传播力 | 82/100 A级 |
-| AI味 | 5/6 PASS |
-| 飞书同步 | 9/9 文档 |
+| 指标 | 当前值 |
+|------|--------|
+| 文件总数 | 2,741 |
+| 目录总数 | 278 |
+| AI 空模板 | **0** ✅（已全部清除） |
+| 临时/垃圾文件 | **0** ✅（已清理） |
+| 目录命名规范 | **95%+** ✅（中文编号统一） |
+| 根目录整洁度 | **干净** ✅ |
+
+## 七、索引关系
+
+```
+HOME.md（仪表盘）
+  └─→ KNOWLEDGE_MAP.md（最详细权威索引，330行）
+      └─→ INDEX.md（← 你在这里：结构导航索引）
+          └─→ MASTER_INDEX.md（技术/工具状态索引）
+      └─→ _MOC_Cards.md / _MOC_Content.md / _MOC_Flagship.md（各模块MOC）
+```
 
 ---
 
-## 七、待推送
-
-本地2次提交待网络恢复后推送:
-`powershell
-cd D:\KnowledgeBase; git push origin master
-`
-
----
-
-> 生成: 2026-06-11 | Codex CLI + DeepSeek v4 Pro | 12轮连续工作
+> 最后更新: 2026-06-30 | 匹配优化后目录结构 | 旧版 INDEX.md 已被替换

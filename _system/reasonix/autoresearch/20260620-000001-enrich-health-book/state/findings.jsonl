@@ -1,0 +1,16 @@
+{"iteration": 1, "timestamp": "2026-06-20T00:01:00Z", "direction": "ai-taste-check-diagnosis", "findings": {
+  "病征1_排比": {"rating": "⚠️", "locations": ["line 3: 不是...而是", "line 11: 不是...而是 (x2 in same paragraph)", "line 85: 不只是"], "action": "rewrite negative-parallel structures"},
+  "病征2_升华": {"rating": "✅", "note": "ending is disclaimer, not empty升华"},
+  "病征3_中立": {"rating": "⚠️", "note": "some hedging exists but appropriate for medical content; one unnecessary 但 in line 65"},
+  "病征4_废话": {"rating": "✅", "note": "high information density"},
+  "病征5_具体": {"rating": "✅", "note": "very concrete: 19 citations, specific numbers, institutions, years"},
+  "病征6_伪个人化": {"rating": "✅", "note": "no fake personal stories"},
+  "structural_gaps": [
+    "missing 伴读引导 section (project convention for health content)",
+    "missing origin story (why was this book written?)",
+    "missing FAQ / common objections",
+    "missing practical tools (habit tracker, checklist)",
+    "opening could be stronger hook per article-writing skill",
+    "no personal voice - purely encyclopedic tone"
+  ]
+}}
