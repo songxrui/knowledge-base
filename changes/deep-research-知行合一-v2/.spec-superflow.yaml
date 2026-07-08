@@ -1,0 +1,40 @@
+# .spec-superflow.yaml — lightweight state machine
+# Derived data. Always rebuildable from artifacts. Lost/corrupt → fall back to content-level detection.
+
+# === Core state ===
+state: exploring
+workflow: auto
+
+# === Hashes (fast staleness detection) ===
+artifacts_hash: null
+contract_hash: null
+
+# === Execution progress ===
+execution_mode: null
+batches_completed: 0
+test_result: null
+
+# === Metadata ===
+change_name: deep-research-知行合一-v2
+last_transition: 2026-07-08T14:33:02.303Z
+last_transition_from: null
+last_transition_to: null
+
+# === Decision points ===
+dp_0_decisions: 深度研究知行合一：不以本地知识库为主信源，从本地+网络选取最相关信源，产出深度研究文档
+dp_0_confirmed: true
+dp_0_timestamp: 2026-07-08T22:33:22Z
+dp_1_result: confirmed: 个体层面知行合一，网络为主+本地补充，覆盖认知科学+行为心理学+实践方法论，排除纯哲学/组织/灵修
+dp_1_timestamp: 2026-07-08T22:33:38Z
+dp_2_result: approved: 5维度框架+网络为主信源+4批次搜索任务
+dp_2_timestamp: 2026-07-08T22:34:42Z
+dp_3_result: null
+dp_3_timestamp: null
+dp_4_result: null
+dp_4_timestamp: null
+dp_5_result: null
+dp_5_timestamp: null
+dp_6_result: null
+dp_6_timestamp: null
+dp_7_result: completed: 29KB深度研究文档，6/6 spec通过
+dp_7_timestamp: 2026-07-08T22:40:17Z
