@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     一键发布公众号文章：输入文章md → 自动转HTML + 生成配图提示词 + 记录CSV
 .DESCRIPTION
@@ -9,7 +9,7 @@
     文章 Markdown 文件路径。文件编码需为 UTF-8。
     第一行 # 标题 自动识别为文章标题。
 .PARAMETER OutputDir
-    HTML 输出目录。默认: D:\KnowledgeBase\01-内容生产\进行中\html-output
+    HTML 输出目录。默认: D:\KnowledgeBase\05-内容生产\进行中\html-output
 .PARAMETER Style
     配图风格。可选值: cognitive (理性认知类,默认), story (故事经历类), data (数据方法类)
 .PARAMETER NoCsv
@@ -17,7 +17,7 @@
 .PARAMETER OpenHtml
     生成后自动用默认浏览器打开 HTML 预览
 .EXAMPLE
-    .\new-wechat.ps1 -ArticlePath "D:\KnowledgeBase\01-内容生产\进行中\公众号文章_杠铃策略深度版.md"
+    .\new-wechat.ps1 -ArticlePath "D:\KnowledgeBase\05-内容生产\进行中\公众号文章_杠铃策略深度版.md"
     默认设置: 认知类配图 + 记录CSV
 .EXAMPLE
     .\new-wechat.ps1 -ArticlePath ".\article.md" -Style story -OpenHtml
@@ -37,7 +37,7 @@ param(
     [string]$ArticlePath,
 
     [Parameter(HelpMessage = "HTML 输出目录")]
-    [string]$OutputDir = "D:\KnowledgeBase\01-内容生产\进行中\html-output",
+    [string]$OutputDir = "D:\KnowledgeBase\05-内容生产\进行中\html-output",
 
     [Parameter(HelpMessage = "配图风格")]
     [ValidateSet("cognitive", "story", "data")]
@@ -54,8 +54,8 @@ param(
 # 配置区
 # ============================================================
 $ErrorActionPreference = "Stop"
-$CsvPath = "D:\KnowledgeBase\05-数据统计\数据统计表.csv"
-$CoverPromptOutput = "D:\KnowledgeBase\01-内容生产\进行中\配图提示词_自动生成.md"
+$CsvPath = "D:\KnowledgeBase\05-内容生产\运营与发布\数据\数据统计表.csv"
+$CoverPromptOutput = "D:\KnowledgeBase\05-内容生产\进行中\配图提示词_自动生成.md"
 $DateStr = Get-Date -Format "yyyy-MM-dd"
 $TimeStr = Get-Date -Format "HH:mm"
 $ArticleName = [System.IO.Path]::GetFileNameWithoutExtension($ArticlePath)
@@ -415,5 +415,5 @@ Write-Host "    1. 复制 HTML 到公众号编辑器 (Ctrl+A → Ctrl+C → 粘�
 Write-Host "    2. 用即梦/豆包生成底图 → Canva 加文字 → 上传封面"
 Write-Host "    3. 在公众号后台设置摘要、作者、原创声明"
 Write-Host "    4. 发布后 1h/24h/7d 更新 CSV 数据"
-Write-Host "    5. 将文稿移至 07-已发布/"
+Write-Host "    5. 将文稿移至 05-内容生产/运营与发布/已发布/"
 Write-Host ""

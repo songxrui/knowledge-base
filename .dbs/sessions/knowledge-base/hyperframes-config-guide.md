@@ -1,4 +1,4 @@
-﻿# HyperFrames 不露脸知识口播实操配置手册
+# HyperFrames 不露脸知识口播实操配置手册
 
 > 适用场景：董辉抖音口播，脚本 → HyperFrames → 不露脸知识视频
 > 对标风格：dontbesilent（白板/简洁/知识讲解型）
@@ -26,10 +26,10 @@ npx hyperframes doctor --json
 
 `powershell
 # 方式1：从零创建项目
-npx hyperframes init "videos/<项目名>" --non-interactive --example=blank
+npx hyperframes init "08-媒体与产品/视频/<项目名>" --non-interactive --example=blank
 
 # 方式2：从 URL 捕获（不适用于口播场景，口播用方式1）
-# npx hyperframes capture <url> --output "videos/<项目名>"
+# npx hyperframes capture <url> --output "08-媒体与产品/视频/<项目名>"
 `
 
 > **项目命名规范**：使用 kebab-case，如 shangye-siwei-jinjiemoshi，不要用日期或中文命名。
@@ -49,7 +49,7 @@ npx hyperframes init "videos/<项目名>" --non-interactive --example=blank
 | 命令 | 用途 | 使用时机 |
 |------|------|---------|
 | 
-px hyperframes init "videos/<name>" | 创建项目 | 每个新视频开始 |
+px hyperframes init "08-媒体与产品/视频/<name>" | 创建项目 | 每个新视频开始 |
 | 
 px hyperframes lint | 静态语法检查 | 每次修改 HTML 后 |
 | 
@@ -227,7 +227,7 @@ npx hyperframes render --quality high --output renders/video.mp4 -- --width=1080
 ### 批量生产文件夹组织
 
 `
-D:\videos\douyin\
+D:\KnowledgeBase\08-媒体与产品\视频\douyin\
 ├── templates\                    # 模板库（一次创建，反复使用）
 │   ├── template-a-baiban\       # 模板A：白板讲解型
 │   │   ├── hyperframes.json
@@ -255,7 +255,7 @@ D:\videos\douyin\
 │   ├── 2026-07-03-xxxxx\
 │   └── ...
 │
-├── scripts\                      # 本地辅助脚本
+├── 99-系统\脚本\                      # 本地辅助脚本
 │   ├── batch-init.ps1            # 批量初始化项目
 │   ├── copy-template.ps1         # 从模板复制设计系统
 │   └── batch-render.ps1          # 批量渲染（适合 overnight）
@@ -400,15 +400,15 @@ npx hyperframes inspect     # 视觉：文字溢出、motion 意图校验
 npx hyperframes doctor --json
 
 # Step 1: 创建项目
-npx hyperframes init "videos/douyin/<项目名>" --non-interactive --example=blank
+npx hyperframes init "08-媒体与产品/视频/douyin/<项目名>" --non-interactive --example=blank
 
 # Step 2: 放入脚本
 # 将脚本全文写入 capture/extracted/visible-text.txt
 # 编辑 capture/extracted/tokens.json（标题/描述）
 
 # Step 3: 从模板复制设计系统
-Copy-Item "D:\videos\douyin\templates\template-a-baiban\frame.md" 
-          "videos/douyin/<项目名>\frame.md"
+Copy-Item "D:\KnowledgeBase\08-媒体与产品\视频\douyin\templates\template-a-baiban\frame.md"
+          "08-媒体与产品/视频/douyin/<项目名>\frame.md"
 
 # Step 4: 编写 STORYBOARD.md 和 SCRIPT.md
 # 按照 faceless-explainer skill 规范编写分帧脚本
@@ -481,7 +481,7 @@ npx hyperframes render --skill=faceless-explainer --quality high
 
 `powershell
 # 1. 进入工作目录
-cd D:\videos\douyin
+cd D:\KnowledgeBase\08-媒体与产品\视频\douyin
 
 # 2. 初始化第一个项目
 npx hyperframes init "projects/2026-07-02-ceshi" --non-interactive --example=blank

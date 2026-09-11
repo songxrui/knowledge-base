@@ -1,4 +1,4 @@
-﻿# 董辉个人 DBS 知识系统 — 使用指南
+# 董辉个人 DBS 知识系统 — 使用指南
 
 > 版本：v1.0 | 更新：2026-07-02 | 面向：董辉本人
 > 这是一份给真人用的操作手册，不是给 AI 读的规格文档。
@@ -32,7 +32,7 @@
 
 ### 3.1 打开选题池
 
-选题池在 `01-内容生产/选题管理/00-选题记录.md`。如果选题池空了，去 `topic-maps/` 找灵感。
+选题池在 `05-内容生产/选题管理/00-选题记录.md`。如果选题池空了，去 `topic-maps/` 找灵感。
 
 ### 3.2 选一条，推进装配管线
 
@@ -229,7 +229,7 @@
 
 ### 8.1 追加数据统计表 CSV
 
-**路径**：`D:\KnowledgeBase\05-数据统计\数据统计表.csv`
+**路径**：`D:\KnowledgeBase\05-内容生产\运营与发布\数据\数据统计表.csv`
 
 **公众号追加字段**：日期 / 标题 / 主题代码 / 选题ID / 阅读量 / 点赞 / 在看 / 评论 / 转发 / 新增关注
 
@@ -237,9 +237,9 @@
 
 ⏰ **时间线**：发布后 24 小时内记录初始数据，T+7 天更新最终数据。
 
-### 8.2 归档到 07-已发布/
+### 8.2 归档到 05-内容生产/运营与发布/已发布/
 
-将草稿从 `01-内容生产/进行中/` 移动到 `07-已发布/`，保持目录干净。
+将草稿从 `05-内容生产/进行中/` 移动到 `05-内容生产/运营与发布/已发布/`，保持目录干净。
 
 ### 8.3 复盘选题效果
 
@@ -321,7 +321,7 @@
 # 模板: D:\KnowledgeBase\.dbs\templates\06-公众号文章模板.md
 
 # HyperFrames 视频制作
-npx hyperframes init "videos/{项目名}"
+npx hyperframes init "08-媒体与产品/视频/{项目名}"
 npx hyperframes preview
 npx hyperframes render --quality high
 
@@ -336,7 +336,7 @@ rg "{关键词}" D:\KnowledgeBase\structured-content\02-内容单元库\
 # 打开: D:\KnowledgeBase\.dbs\assembly\wechat\_queue.md
 
 # 查看所有 draft 状态内容
-rg -l "status: draft" D:\KnowledgeBase\01-内容生产\
+rg -l "status: draft" D:\KnowledgeBase\05-内容生产\
 ```
 
 ---

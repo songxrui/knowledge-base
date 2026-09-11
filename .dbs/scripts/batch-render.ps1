@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     批量渲染：扫描文件夹内所有txt脚本 → 逐一渲染为抖音视频
 .DESCRIPTION
@@ -6,7 +6,7 @@
     逐一调用 HyperFrames 渲染为不露脸知识口播视频。
     支持断点续传、并行渲染、失败重试。
 .PARAMETER InputDir
-    脚本文件夹路径。默认: D:\KnowledgeBase\01-内容生产\进行中
+    脚本文件夹路径。默认: D:\KnowledgeBase\05-内容生产\进行中
 .PARAMETER Filter
     文件名过滤模式（支持通配符）。默认: "抖音脚本_*.md"
     示例: "第1期_*.md" / "day*.txt" / "*"
@@ -15,7 +15,7 @@
 .PARAMETER Quality
     渲染质量。可选值: draft (快速预览), high (最终发布)。批量建议用 draft
 .PARAMETER OutputDir
-    视频输出目录。默认: D:\videos\douyin\renders
+    视频输出目录。默认: D:\KnowledgeBase\08-媒体与产品\视频\douyin\renders
 .PARAMETER Parallel
     并行渲染数量。默认: 1 (HyperFrames 建议串行以避免资源争抢)
 .PARAMETER MaxRetries
@@ -47,7 +47,7 @@
 param(
     [Parameter(HelpMessage = "脚本文件夹路径")]
     [ValidateScript({ Test-Path $_ -PathType Container })]
-    [string]$InputDir = "D:\KnowledgeBase\01-内容生产\进行中",
+    [string]$InputDir = "D:\KnowledgeBase\05-内容生产\进行中",
 
     [Parameter(HelpMessage = "文件名过滤模式")]
     [string]$Filter = "抖音脚本_*.md",
@@ -61,7 +61,7 @@ param(
     [string]$Quality = "draft",
 
     [Parameter(HelpMessage = "视频输出目录")]
-    [string]$OutputDir = "D:\videos\douyin\renders",
+    [string]$OutputDir = "D:\KnowledgeBase\08-媒体与产品\视频\douyin\renders",
 
     [Parameter(HelpMessage = "并行渲染数量")]
     [ValidateRange(1, 4)]
@@ -82,8 +82,8 @@ param(
 # 配置区
 # ============================================================
 $ErrorActionPreference = "Continue"
-$ScriptBaseDir = "D:\videos\douyin\projects"
-$ReportPath = "D:\KnowledgeBase\.dbs\scripts\batch-render-report.md"
+$ScriptBaseDir = "D:\KnowledgeBase\08-媒体与产品\视频\douyin\projects"
+$ReportPath = "D:\KnowledgeBase\.dbs\99-系统\脚本\batch-render-report.md"
 $DateStr = Get-Date -Format "yyyyMMdd"
 $StartTime = Get-Date
 

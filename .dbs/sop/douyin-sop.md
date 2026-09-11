@@ -14,9 +14,9 @@
 
 ## Stage 3: HyperFrames制作 (10分钟)
 - [ ] 保存脚本到 capture/extracted/visible-text.txt
-- [ ] 运行 `npx hyperframes init "videos/{项目名}"`
+- [ ] 运行 `npx hyperframes init "08-媒体与产品/视频/{项目名}"`
 - [ ] 生成STORYBOARD.md + SCRIPT.md
-- [ ] 运行音频: `node scripts/audio.mjs --request audio_request.json`
+- [ ] 运行音频: `node 99-系统/脚本/audio.mjs --request audio_request.json`
 - [ ] 如果需要封面图: 触发 baoyu-cover-image (9:16竖版)
 
 ## Stage 4: 质检 (5分钟)

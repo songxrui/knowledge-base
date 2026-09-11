@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     一键发布抖音视频：输入脚本txt → 自动生成视频 + 封面提示词 + 记录CSV
 .DESCRIPTION
@@ -14,11 +14,11 @@
 .PARAMETER SkipRender
     跳过渲染步骤，仅做质检和CSV记录（用于预检）
 .PARAMETER OutputDir
-    视频输出目录。默认: D:\videos\douyin\renders
+    视频输出目录。默认: D:\KnowledgeBase\08-媒体与产品\视频\douyin\renders
 .PARAMETER NoCsv
     跳过CSV记录步骤
 .EXAMPLE
-    .\new-douyin.ps1 -ScriptPath "D:\KnowledgeBase\01-内容生产\进行中\抖音脚本_第1批_3条.md"
+    .\new-douyin.ps1 -ScriptPath "D:\KnowledgeBase\05-内容生产\进行中\抖音脚本_第1批_3条.md"
     用默认设置（白板+draft）生成视频
 .EXAMPLE
     .\new-douyin.ps1 -ScriptPath ".\script.txt" -Style narrative-dark -Quality high
@@ -49,7 +49,7 @@ param(
     [switch]$SkipRender,
 
     [Parameter(HelpMessage = "视频输出目录")]
-    [string]$OutputDir = "D:\videos\douyin\renders",
+    [string]$OutputDir = "D:\KnowledgeBase\08-媒体与产品\视频\douyin\renders",
 
     [Parameter(HelpMessage = "跳过CSV记录")]
     [switch]$NoCsv
@@ -59,9 +59,9 @@ param(
 # 配置区
 # ============================================================
 $ErrorActionPreference = "Stop"
-$ScriptBaseDir = "D:\videos\douyin\projects"
-$CsvPath = "D:\KnowledgeBase\05-数据统计\数据统计表.csv"
-$CoverPromptOutput = "D:\KnowledgeBase\01-内容生产\进行中\封面提示词_自动生成.md"
+$ScriptBaseDir = "D:\KnowledgeBase\08-媒体与产品\视频\douyin\projects"
+$CsvPath = "D:\KnowledgeBase\05-内容生产\运营与发布\数据\数据统计表.csv"
+$CoverPromptOutput = "D:\KnowledgeBase\05-内容生产\进行中\封面提示词_自动生成.md"
 $DateStr = Get-Date -Format "yyyyMMdd"
 $TimeStr = Get-Date -Format "HH:mm"
 $ProjectDate = Get-Date -Format "yyyy-MM-dd"
@@ -437,5 +437,5 @@ Write-Host "  下一步:" -ForegroundColor Yellow
 Write-Host "    1. 在 Canva 中打开封面模板, 用上面的提示词生成底图"
 Write-Host "    2. npx hyperframes preview (在 $ProjectDir 下) 审查视频"
 Write-Host "    3. 发布后 1h/24h/7d 更新 CSV 数据"
-Write-Host "    4. 将文稿移至 07-已发布/"
+Write-Host "    4. 将文稿移至 05-内容生产/运营与发布/已发布/"
 Write-Host ""

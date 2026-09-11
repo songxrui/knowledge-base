@@ -1,4 +1,4 @@
-﻿# HyperFrames 工具链验证清单
+# HyperFrames 工具链验证清单
 
 > 在发布第一条视频之前，先把工具链跑通
 > 目标：从文稿到可发布视频，全流程无卡点
@@ -86,16 +86,16 @@ colors:
 
 ### 4.1 单条生产
 ```powershell
-# 1. 写脚本 → scripts/day01.txt
+# 1. 写脚本 → 99-系统/脚本/day01.txt
 # 2. 生成视频
-npx hyperframes render -s faceless-explainer -i scripts/day01.txt -o output/day01.mp4
+npx hyperframes render -s faceless-explainer -i 99-系统/脚本/day01.txt -o output/day01.mp4
 # 3. 检查 → 发布
 ```
 
 ### 4.2 批量生产（5条一批）
 ```powershell
 # PowerShell 脚本
-$scripts = Get-ChildItem "scripts/day*.txt" | Sort-Object Name
+$scripts = Get-ChildItem "99-系统/脚本/day*.txt" | Sort-Object Name
 foreach ($s in $scripts) {
     $out = "output/" + $s.BaseName + ".mp4"
     Write-Output "Rendering: $($s.Name) -> $out"

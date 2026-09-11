@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     周报生成器：自动读取CSV → 生成本周数据报告
 .DESCRIPTION
@@ -6,9 +6,9 @@
     按平台分组统计，生成六格复盘 + Top/Bottom 分析，
     输出 Markdown 格式的完整周报。
 .PARAMETER CsvPath
-    数据统计CSV路径。默认: D:\KnowledgeBase\05-数据统计\数据统计表.csv
+    数据统计CSV路径。默认: D:\KnowledgeBase\05-内容生产\运营与发布\数据\数据统计表.csv
 .PARAMETER OutputPath
-    周报输出路径。默认: D:\KnowledgeBase\04-方法论沉淀\周报\
+    周报输出路径。默认: D:\KnowledgeBase\04-知识/方法论\周报\
 .PARAMETER WeekOffset
     周偏移: 0=本周, 1=上周, 2=上上周。默认: 0
 .PARAMETER StartDate
@@ -34,10 +34,10 @@
 
 param(
     [Parameter(HelpMessage = "CSV文件路径")]
-    [string]$CsvPath = "D:\KnowledgeBase\05-数据统计\数据统计表.csv",
+    [string]$CsvPath = "D:\KnowledgeBase\05-内容生产\运营与发布\数据\数据统计表.csv",
 
     [Parameter(HelpMessage = "报告输出目录")]
-    [string]$OutputDir = "D:\KnowledgeBase\04-方法论沉淀\周报",
+    [string]$OutputDir = "D:\KnowledgeBase\04-知识/方法论\周报",
 
     [Parameter(HelpMessage = "周偏移 (0=本周,1=上周)")]
     [ValidateRange(0, 4)]
