@@ -1,0 +1,310 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceManifest": "a55d9e8da3cb6caf157d4b97f0b185da9f70026ba651b440051dc672e431e3db",
+  "policy": {
+    "formalWrites": false,
+    "autoDelete": false,
+    "autoPublish": false,
+    "evidencePromotion": false
+  },
+  "summary": {
+    "semanticFixes": 29,
+    "duplicateGroups": 0,
+    "blocked": 0
+  },
+  "semanticFixes": [
+    {
+      "id": "b60afbdc1101c344",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 17,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-001",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "1955ae3538c19346",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 18,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-002",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "d9f7ffc644c50365",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 19,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-003",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "62781d83a66f1160",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 20,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-004",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "952464d2b5144816",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 21,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-005",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "633a71bfee5186e5",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 22,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-006",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "4b22105cf33c34b4",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 23,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-007",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "f41761101f26ef69",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 24,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-008",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "5e21ba23bf931afa",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 25,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-009",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "a54ce4e10953398f",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 26,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: DK-010",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "78f69348b7ba0045",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 32,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: NT-001",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "9b59ef70a8aaf230",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 33,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: NT-002",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "4edc870d956f1bac",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 34,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: NT-003",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "b971b8845eb814d8",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 35,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: NT-004",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "2c28fd7c59be448e",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 36,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: NT-005",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "74e2b8c42a7a44f7",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 37,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: NT-006",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "dea93abd58be1e46",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 38,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: NT-007",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "f945732405bf3b0d",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 39,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: NT-008",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "aefe4eb7b89e8d02",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 45,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: LS-001",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "693a6c335d9d667e",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 46,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: LS-002",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "428e73c9f2290347",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 47,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: LS-003",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "a710620ecd4de825",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 48,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: LS-004",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "f0c4d8f05937b512",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 49,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: LS-005",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "33c9af4a3dde166d",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 60,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: PB-006",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "1769712ddf47a09f",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 67,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: BL-001",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "22fa8f9b6d273050",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 68,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: BL-002",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "15f51fbf20c3c696",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 69,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: BL-003",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "1d098c07c7631206",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 70,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: BL-004",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    },
+    {
+      "id": "99296e3cd676844a",
+      "rule": "claim-orphan",
+      "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+      "line": 71,
+      "severity": "info",
+      "message": "Claim is not referenced outside the ledger: BL-005",
+      "requiredEvidence": "Confirm usage location or add an explicit claim_id reference.",
+      "promotion": "candidate-only"
+    }
+  ],
+  "duplicateGroups": [],
+  "blocked": [],
+  "fingerprint": "e77f12cc12b6305473c56098fb33a5cc1c311a568a0a71831074ecfd86746646"
+}
