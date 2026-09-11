@@ -347,7 +347,24 @@ AI 保持整理、检索、装配、门禁执行；目标取舍、第一人称�
 
 **当日核实结论：** ① KBLoop_STATE 记录的 10 篇文章在库内无落盘文件（仅状态表与工程文档提及标题）→ 登记失实，待从状态表移除；② 媒体区非旗舰部分实际干净：`媒体/创作者书稿/` 仅剩 README（正文已在 90-归档，与 SOT 一致）、`媒体/threads/` 为空目录、`媒体/学习资料/` 仅 2 个 PDF；③ 待核实：`flagship/book-of-life-answers/` 仅 1 个交付状态文件、`flagship/最强人类认知-v1/` 均未在 SOT 登记；④ `05-内容生产/进行中/` 出现 4 个空目录（cognitive-os、dopamine-choice、game-skills、six-grid-review），无内容，暂不动。
 
-**下一步队列：** ① Wave 1 迁移对账与检查点提交（git 安全网，优先）；② Batch 2 = L5/L6 重复合并（topics 卡 3 对 + weread 7 对哈希比对）；③ N1/N2：`_pipeline-status.md`、`KBLoop_STATE.md` historical 化；④ SOT 补登 book-of-life-answers 与 最强人类认知-v1 的状态；⑤ 后悔期 2026-10-11 到期后处置 C 档候选。
+**下一步队列：** ① Wave 1 迁移对账与检查点提交（git 安全网，优先）；② Batch 2 = L5/L6 重复合并（topics 卡 3 对 + weread 7 对哈希比对）；③ N1/N2：`_pipeline-status.md`、`KBLoop_STATE.md` historical 化；④ SOT 补登 book-of-answers 与 最强人类认知-v1 的状态；⑤ 后悔期 2026-10-11 到期后处置 C 档候选。
+
+### R2-8 Wave 1 执行记录（2026-09-11 深夜，作者批准+提供推送凭据）
+
+| 步骤 | 结果 |
+|---|---|
+| Batch 2 重复核验 | 11 对（卡 3 + weread 8）哈希**全部不同**，零合并、全部双保留；台账 `99-系统/元数据/inventory/DUPLICATE_PAIRS_LEDGER_2026-09-11.md` |
+| 过期仪表盘 historical 化 | `KBLoop_STATE.md`（含"10 篇未落盘"勘误）、`.dbs/assembly/_pipeline-status.md`（发现正文内嵌 ANSI 转义序列，待 Wave 6 修复） |
+| SOT 升版 | `v2026-09-11.2`：补登低质处置归档区、重复对台账、book-of-life-answers、最强人类认知-v1 |
+| gitignore 加固 | +8 条：运行缓存（.pnpm-store/.playwright-mcp/.reasonix）、嵌套仓库（alchemist）、.gradle、四境守心 tmp、视频 renders |
+| 迁移对账证据 | 3,120 条旧路径删除 → **1,592 对精确哈希配对**（104 多候选）、1,637 条未匹配（提交后可自父历史找回）；产物在 `repair-baseline-2026-09-11/migration-reconciliation/` |
+| 检查点提交 | **13 个分层提交**（cb249192..adda4a7b）：忽略规则/权威入口/资源/知识/内容/媒体/归档/系统/.dbs/.agents/项目文字层（含书系草稿）/删除对账/运行时。Git 状态行 **7,962 → 955** |
+| 项目层边界 | 代码项目（静观-人生回合 383MB 构建产物、super-individual-os 347MB 等 10 个）**缓提**，尊重项目区冻结；文字型研究项目与书系已入库 |
+| 推送 | 凭据由作者会话内提供（fine-grained PAT），仅一次性内存使用，未写入任何文件与 .git/config；**推送后应立即轮换该 PAT** |
+
+**残留 955 条状态的性质：** 缓提代码项目的未跟踪文件（933）+ 幽灵目录 3 + 根目录散落 PNG/webm 约 14（W4-04，项目区解冻后处置）+ 嵌套仓库边界 2。零"无法解释"删除。
+
+**下一步队列（更新）：** ① 项目区解冻后：缓提项目入库 + 根目录散落物归位（W4-04/05）+ 幽灵目录图像比对；② Wave 2 其余生成根出库；③ Wave 3 主张级审计（65 风险卡）；④ Wave 5 缓冲区 TTL 与 version family；⑤ Wave 6 脚本治理（rebuild_mocs.ps1 补 BOM）；⑥ Wave 7 发布闭环 3 轮（含确认包工作流）。
 
 ---
 

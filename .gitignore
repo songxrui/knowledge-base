@@ -62,3 +62,6 @@ videos/k-shaped-economy/assets/models/
 local.properties
 01-项目/四境守心/tmp/
 08-媒体与产品/视频/**/renders/
+
+# northstar 嵌套测试仓库转自管（N4 边界）
+99-系统/00-缓冲区/northstar-*/
