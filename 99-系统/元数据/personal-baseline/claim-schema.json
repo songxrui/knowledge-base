@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "ledgerFile": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+  "idPattern": "^(DK|NT|LS|PB|BL)-\\d{3}$",
+  "idPrefixes": [
+    "DK",
+    "NT",
+    "LS",
+    "PB",
+    "BL"
+  ],
+  "evidenceLevels": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+  ],
+  "allowedStatuses": [
+    "research-supported",
+    "author-method",
+    "author-attribution",
+    "historical-description",
+    "product-hypothesis",
+    "blocked"
+  ],
+  "requireLocatorForPrefixes": [
+    "DK",
+    "NT",
+    "LS"
+  ],
+  "neverAutoPromote": [
+    "E3",
+    "E4",
+    "E5"
+  ]
+}

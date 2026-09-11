@@ -1,0 +1,219 @@
+import {
+  Button,
+  EmptyState,
+  Field,
+  FormGrid,
+  InlineNotice,
+} from "@northstar/design-system";
+import { createStableId, toUtcTimestamp, type WorkUnit } from "@northstar/domain";
+import { useCallback, useEffect, useState, type FormEvent } from "react";
+
+import type { ProductServices } from "../bootstrap.js";
+
+interface WorkUnitPanelProps {
+  readonly core: ProductServices["core"];
+  readonly snapshotReady: boolean;
+  readonly onError: (error: unknown) => void;
+  readonly onChanged: () => Promise<void>;
+}
+
+function value(data: FormData, key: string): string {
+  const entry = data.get(key);
+  return typeof entry === "string" ? entry.trim() : "";
+}
+
+function optionalList(data: FormData, key: string): string[] {
+  const entry = value(data, key);
+  return entry ? [entry] : [];
+}
+
+function optionalValue(data: FormData, key: string): string | null {
+  return value(data, key) || null;
+}
+
+export function WorkUnitPanel({ core, snapshotReady, onError, onChanged }: WorkUnitPanelProps) {
+  const [workUnits, setWorkUnits] = useState<readonly WorkUnit[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [busy, setBusy] = useState(false);
+  const [planOpen, setPlanOpen] = useState(false);
+  const [finishOpen, setFinishOpen] = useState(false);
+
+  const refresh = useCallback(async () => {
+    try {
+      setWorkUnits(await core.listWorkUnits());
+    } finally {
+      setLoading(false);
+    }
+  }, [core]);
+
+  useEffect(() => {
+    refresh().catch(onError);
+  }, [onError, refresh]);
+
+  const run = async (operation: () => Promise<unknown>, onSuccess?: () => void) => {
+    setBusy(true);
+    try {
+      await operation();
+      await Promise.all([refresh(), onChanged()]);
+      onSuccess?.();
+    } catch (error) {
+      onError(error);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const plan = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const timestamp = toUtcTimestamp(new Date());
+    void run(async () => {
+      await core.planWorkUnit({
+        id: createStableId("work-unit", [timestamp, value(data, "deliverable")]),
+        schemaVersion: 1,
+        timestamp,
+        primaryDeliverable: value(data, "deliverable"),
+        completionCriteria: [value(data, "completionCriteria")],
+        nextAction: value(data, "nextAction"),
+        capacityLimitHours: Number(value(data, "capacityLimitHours")),
+        stopSignals: [value(data, "stopSignal")],
+      });
+      form.reset();
+    }, () => setPlanOpen(false));
+  };
+
+  const active = workUnits.find((unit) => unit.status === "active") ?? null;
+  const planned = workUnits.filter((unit) => unit.status === "planned");
+  const nextPlanned = planned[0] ?? null;
+  const queued = planned.slice(1);
+  const recent = workUnits.filter((unit) => unit.status === "completed" || unit.status === "stopped").slice(0, 5);
+
+  return (
+    <section className="today-primary-panel" aria-labelledby="today-work-title">
+      <div className="today-panel-heading">
+        <div>
+          <span className="today-kicker">主要交付</span>
+          <h2 id="today-work-title">现在推进什么</h2>
+          <p>一次只保留一个进行中的工作单元。</p>
+        </div>
+        {!active && !planOpen && planned.length > 0 ? <Button onPress={() => setPlanOpen(true)}>再安排一项</Button> : null}
+      </div>
+
+      {loading ? <div className="today-loading">正在读取工作单元。</div> : null}
+
+      {!loading && active ? (
+        <article className="today-active-work">
+          <div className="today-work-heading">
+            <div><span className="today-kicker">当前交付</span><h3>{active.primaryDeliverable}</h3></div>
+            <span className="product-status">正在推进</span>
+          </div>
+          <div className="today-next-action">
+            <span>下一步</span>
+            <strong>{active.nextAction}</strong>
+          </div>
+          <dl className="today-work-meta">
+            <div><dt>完成标准</dt><dd>{active.completionCriteria.join("；")}</dd></div>
+            <div><dt>容量上限</dt><dd>{active.capacityLimitHours} 小时</dd></div>
+            <div><dt>停止信号</dt><dd>{active.stopSignals.join("；")}</dd></div>
+          </dl>
+          <div className="today-work-actions">
+            <Button tone="primary" aria-expanded={finishOpen} onPress={() => setFinishOpen((open) => !open)}>{finishOpen ? "收起" : "收尾"}</Button>
+          </div>
+        </article>
+      ) : null}
+
+      {!loading && !active && nextPlanned ? (
+        <article className="today-planned-work">
+          <div className="today-work-heading">
+            <div><span className="today-kicker">下一项</span><h3>{nextPlanned.primaryDeliverable}</h3></div>
+            <span className="product-status">待开始</span>
+          </div>
+          <p className="today-planned-work__next">{nextPlanned.nextAction}</p>
+          <div className="today-work-actions">
+            <Button
+              tone="primary"
+              isDisabled={busy || !snapshotReady}
+              onPress={() => void run(() => core.startPlannedWorkUnit(nextPlanned.id, toUtcTimestamp(new Date())))}
+            >开始推进</Button>
+          </div>
+          {!snapshotReady ? <InlineNotice tone="warning" title="先确认运行边界" detail="运行边界完成后，这项交付才能开始。" /> : null}
+        </article>
+      ) : null}
+
+      {!loading && !active && !nextPlanned && !planOpen ? (
+        <EmptyState
+          title="还没有安排交付"
+          detail="先写一个可以检查的结果，再决定下一步。"
+          action={<Button tone="primary" onPress={() => setPlanOpen(true)}>安排一项交付</Button>}
+        />
+      ) : null}
+
+      {finishOpen && active ? (
+        <div className="today-work-composer" role="region" aria-label="收尾当前交付">
+          <div className="today-composer-heading"><h3>记录实际结果</h3><p>只记录已经发生的输出、消耗和残留负荷。</p></div>
+          <form onSubmit={(event) => {
+            event.preventDefault();
+            const data = new FormData(event.currentTarget);
+            void run(() => core.finishActiveWorkUnit(active.id, {
+              timestamp: toUtcTimestamp(new Date()),
+              outcome: value(data, "outcome") as "completed" | "stopped",
+              actualOutputs: optionalList(data, "actualOutput"),
+              energyCost: optionalValue(data, "energyCost"),
+              residualLoad: optionalValue(data, "residualLoad"),
+              recoveryActions: optionalList(data, "recoveryAction"),
+            }), () => setFinishOpen(false));
+          }}>
+            <FormGrid>
+              <label className="product-select-field"><span>收尾结果</span><select className="ns-input" name="outcome" defaultValue="completed"><option value="completed">完成</option><option value="stopped">停止</option></select></label>
+              <Field name="actualOutput" label="实际输出" description="没有形成输出时可以留空。" />
+              <Field name="energyCost" label="主要消耗" description="没有观察到时可以留空。" />
+              <Field name="residualLoad" label="残留负荷" description="没有残留负荷时可以留空。" />
+              <Field name="recoveryAction" label="恢复或收口动作" description="不需要额外动作时可以留空。" />
+            </FormGrid>
+            <div className="today-composer-actions"><Button type="button" tone="quiet" onPress={() => setFinishOpen(false)}>取消</Button><Button type="submit" tone="primary" isDisabled={busy}>保存收尾</Button></div>
+          </form>
+        </div>
+      ) : null}
+
+      {planOpen && !active ? (
+        <div className="today-work-composer" role="region" aria-label="安排工作单元">
+          <div className="today-composer-heading"><h3>安排一项交付</h3><p>完成标准和停止信号在开始前写清。</p></div>
+          <form onSubmit={plan}>
+            <FormGrid>
+              <Field name="deliverable" label="主要交付" isRequired />
+              <Field name="completionCriteria" label="完成标准" isRequired />
+              <Field name="nextAction" label="下一步动作" isRequired />
+              <Field name="capacityLimitHours" label="容量上限（小时）" type="number" inputMode="decimal" isRequired />
+              <Field name="stopSignal" label="停止信号" isRequired />
+            </FormGrid>
+            <div className="today-composer-actions"><Button type="button" tone="quiet" onPress={() => setPlanOpen(false)}>取消</Button><Button type="submit" tone="primary" isDisabled={busy}>保存到队列</Button></div>
+          </form>
+        </div>
+      ) : null}
+
+      {!active && queued.length > 0 ? (
+        <details className="today-work-details">
+          <summary>队列里还有 {queued.length} 项</summary>
+          <div className="today-work-queue">
+            {queued.map((unit) => (
+              <div key={unit.id}>
+                <div><strong>{unit.primaryDeliverable}</strong><span>{unit.nextAction}</span></div>
+                <Button tone="quiet" isDisabled={busy || !snapshotReady} onPress={() => void run(() => core.startPlannedWorkUnit(unit.id, toUtcTimestamp(new Date())))}>开始</Button>
+              </div>
+            ))}
+          </div>
+        </details>
+      ) : null}
+
+      {recent.length > 0 ? (
+        <details className="today-work-details">
+          <summary>最近收尾 · {recent.length}</summary>
+          <div className="product-compact-list">
+            {recent.map((unit) => <div key={unit.id}><strong>{unit.primaryDeliverable}</strong><span>{unit.status === "completed" ? "完成" : "停止"} · {unit.actualOutputs.join("；") || "未记录输出"}</span></div>)}
+          </div>
+        </details>
+      ) : null}
+    </section>
+  );
+}

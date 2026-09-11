@@ -1,0 +1,177 @@
+import { Button, EmptyState, Field, FormGrid, InlineNotice } from "@northstar/design-system";
+import { createStableId, toUtcTimestamp, type Commitment } from "@northstar/domain";
+import { useCallback, useEffect, useState, type FormEvent } from "react";
+
+import type { ProductServices } from "../bootstrap.js";
+
+type DailyArea = "body" | "connection" | "enjoyment";
+
+interface DailyContractPanelProps {
+  readonly operations: ProductServices["operations"];
+  readonly onError: (error: unknown) => void;
+}
+
+const areaLabels: Record<DailyArea, string> = {
+  body: "维护身体",
+  connection: "连接世界",
+  enjoyment: "允许享受",
+};
+
+const areaFields: Record<DailyArea, string> = {
+  body: "bodyAction",
+  connection: "connectionAction",
+  enjoyment: "enjoymentAction",
+};
+
+function localDateKey(date = new Date()): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function areaId(area: DailyArea, dateKey: string): string {
+  return createStableId("daily-contract", [dateKey, area]);
+}
+
+function formValue(data: FormData, key: string): string {
+  const entry = data.get(key);
+  return typeof entry === "string" ? entry.trim() : "";
+}
+
+function findArea(commitments: readonly Commitment[], area: DailyArea, dateKey: string): Commitment | null {
+  return commitments.find((commitment) => commitment.id === areaId(area, dateKey)) ?? null;
+}
+
+export function DailyContractPanel({ operations, onError }: DailyContractPanelProps) {
+  const [commitments, setCommitments] = useState<readonly Commitment[]>([]);
+  const [composerOpen, setComposerOpen] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const todayKey = localDateKey();
+
+  const refresh = useCallback(async () => {
+    const allCommitments = await operations.listCommitments();
+    setCommitments(allCommitments.filter((commitment) => commitment.dueCondition === todayKey && commitment.scope.includes("daily-contract")));
+  }, [operations, todayKey]);
+
+  useEffect(() => {
+    refresh().catch(onError);
+  }, [onError, refresh]);
+
+  const run = async (operation: () => Promise<unknown>, onSuccess?: () => void) => {
+    setBusy(true);
+    try {
+      await operation();
+      await refresh();
+      onSuccess?.();
+    } catch (error) {
+      onError(error);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const saveContract = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    void run(async () => {
+      for (const area of Object.keys(areaLabels) as DailyArea[]) {
+        if (findArea(commitments, area, todayKey)) continue;
+        const timestamp = toUtcTimestamp(new Date());
+        const id = areaId(area, todayKey);
+        const action = formValue(data, areaFields[area]);
+        await operations.addCommitment({
+          id,
+          schemaVersion: 1,
+          timestamp,
+          title: action,
+          scope: ["daily-contract", `area:${area}`],
+          responsiblePartyIds: ["self"],
+          dueCondition: todayKey,
+          nextAction: action,
+        });
+        await operations.changeCommitmentStatus(id, {
+          nextStatus: "accepted",
+          timestamp: toUtcTimestamp(new Date()),
+          reason: "daily-contract-confirmed",
+        });
+      }
+      form.reset();
+    }, () => setComposerOpen(false));
+  };
+
+  const advance = (commitment: Commitment) => {
+    const nextStatus = commitment.status === "accepted"
+      ? "in-progress"
+      : commitment.status === "in-progress" || commitment.status === "waiting"
+        ? "completed"
+        : null;
+    if (nextStatus === null) return;
+    void run(() => operations.changeCommitmentStatus(commitment.id, {
+      nextStatus,
+      timestamp: toUtcTimestamp(new Date()),
+      reason: nextStatus === "completed" ? "daily-contract-completed" : "daily-contract-started",
+    }));
+  };
+
+  const areas = (Object.keys(areaLabels) as DailyArea[]).map((area) => ({
+    area,
+    commitment: findArea(commitments, area, todayKey),
+  }));
+  const hasContract = areas.some(({ commitment }) => commitment !== null);
+
+  return (
+    <section className="today-contract-panel" aria-labelledby="today-contract-title">
+      <div className="today-panel-heading">
+        <div>
+          <span className="today-kicker">现实契约</span>
+          <h2 id="today-contract-title">今天如何生活</h2>
+          <p>身体、连接和享受各留一个明确位置。</p>
+        </div>
+        {!composerOpen && !hasContract ? <Button onPress={() => setComposerOpen(true)}>设置今日契约</Button> : null}
+      </div>
+
+      {!hasContract && !composerOpen ? (
+        <EmptyState
+          title="今天还没有现实契约"
+          detail="不追求填满一天，只保护三件容易被主线挤掉的事。"
+          action={<Button tone="primary" onPress={() => setComposerOpen(true)}>设置今日契约</Button>}
+        />
+      ) : null}
+
+      {hasContract ? (
+        <div className="today-contract-list">
+          {areas.map(({ area, commitment }) => (
+            <article key={area}>
+              <div>
+                <span>{areaLabels[area]}</span>
+                <strong>{commitment?.title ?? "今天未设置"}</strong>
+              </div>
+              {commitment ? (
+                commitment.status === "completed"
+                  ? <span className="product-status">已完成</span>
+                  : <Button tone="quiet" isDisabled={busy} onPress={() => advance(commitment)}>{commitment.status === "accepted" ? "开始" : "完成"}</Button>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      ) : null}
+
+      {composerOpen ? (
+        <div className="today-work-composer" role="region" aria-label="设置今日现实契约">
+          <div className="today-composer-heading"><h3>今天保留什么</h3><p>写具体动作或时间窗口，不写抽象目标。</p></div>
+          <form onSubmit={saveContract}>
+            <FormGrid>
+              <Field name="bodyAction" label="维护身体" description="例如：下午完成45分钟力量训练。" isRequired />
+              <Field name="connectionAction" label="连接世界" description="例如：晚饭后与朋友散步。" isRequired />
+              <Field name="enjoymentAction" label="允许享受" description="例如：21:00–22:30自由游戏。" isRequired />
+            </FormGrid>
+            <InlineNotice title="主线单独管理" detail="唯一关键创造任务在下方的主要交付中安排。" />
+            <div className="today-composer-actions"><Button type="button" tone="quiet" onPress={() => setComposerOpen(false)}>取消</Button><Button type="submit" tone="primary" isDisabled={busy}>确认今日契约</Button></div>
+          </form>
+        </div>
+      ) : null}
+    </section>
+  );
+}

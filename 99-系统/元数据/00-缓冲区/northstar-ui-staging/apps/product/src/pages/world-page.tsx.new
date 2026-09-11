@@ -1,0 +1,174 @@
+import { Button, ErrorPanel, InlineNotice, PageHeader, Section } from "@northstar/design-system";
+import { DomainError, type Asset, type Commitment, type Experiment, type Project, type RelationshipEvent, type RiskEvent, type TodayWorkspaceState, type WorkUnit } from "@northstar/domain";
+import { getDomainErrorCopy } from "@northstar/methodology";
+import { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import { useProduct } from "../providers.js";
+
+interface WorldData {
+  readonly workspace: TodayWorkspaceState;
+  readonly projects: readonly Project[];
+  readonly assets: readonly Asset[];
+  readonly commitments: readonly Commitment[];
+  readonly experiments: readonly Experiment[];
+  readonly risks: readonly RiskEvent[];
+  readonly relationships: readonly RelationshipEvent[];
+  readonly workUnits: readonly WorkUnit[];
+}
+
+const bottleneckLabels = {
+  state: "状态",
+  attention: "注意力",
+  problem: "问题",
+  expression: "表达",
+  trust: "信任",
+  sales: "销售",
+  delivery: "交付",
+  cash: "现金",
+  platform: "平台",
+} as const;
+
+function describeError(error: unknown) {
+  if (error instanceof DomainError) return getDomainErrorCopy(error.code);
+  return { title: "读取没有完成", detail: error instanceof Error ? error.message : "未能读取错误信息。", action: "重新读取。" };
+}
+
+export function WorldPage() {
+  const { services } = useProduct();
+  const [data, setData] = useState<WorldData | null>(null);
+  const [error, setError] = useState<unknown>(null);
+
+  const refresh = useCallback(async () => {
+    setError(null);
+    try {
+      const [workspace, projects, assets, commitments, experiments, risks, relationships, workUnits] = await Promise.all([
+        services.core.getTodayWorkspaceState(),
+        services.operations.listProjects(),
+        services.operations.listAssets(),
+        services.operations.listCommitments(),
+        services.core.listExperiments(),
+        services.core.listRisks(),
+        services.operations.listAllRelationshipEvents(),
+        services.core.listWorkUnits(),
+      ]);
+      setData({ workspace, projects, assets, commitments, experiments, risks, relationships, workUnits });
+    } catch (caught) {
+      setError(caught);
+    }
+  }, [services]);
+
+  useEffect(() => {
+    void refresh();
+  }, [refresh]);
+
+  const errorMessage = error ? describeError(error) : null;
+  if (data === null) {
+    return (
+      <>
+        <PageHeader meta="World" title="现实世界" description="正在读取五个领域的现实证据。" />
+        {errorMessage ? <ErrorPanel whatHappened={`${errorMessage.title}：${errorMessage.detail}`} affectedData="本地记录没有变化。" nextAction={<Button onPress={() => void refresh()}>重新读取</Button>} /> : <div className="today-loading">正在建立现实世界镜像。</div>}
+      </>
+    );
+  }
+
+  const activeAssets = data.assets.filter((asset) => asset.status !== "retired");
+  const skillAssets = activeAssets.filter((asset) => asset.kind === "skill");
+  const creationAssets = activeAssets.filter((asset) => ["content", "product", "system", "reputation"].includes(asset.kind));
+  const relationshipAssets = activeAssets.filter((asset) => asset.kind === "relationship");
+  const activeProjects = data.projects.filter((project) => project.status === "active");
+  const completedWorkUnits = data.workUnits.filter((unit) => unit.status === "completed");
+  const livedCommitments = data.commitments.filter((commitment) => commitment.scope.includes("daily-contract") && commitment.status === "completed");
+  const activeExperiment = data.experiments.find((experiment) => experiment.status === "active") ?? null;
+  const activeRisks = data.risks.filter((risk) => risk.status !== "recovered");
+  const snapshot = data.workspace.snapshot;
+  const currentBottleneck = data.workspace.bottleneck ? bottleneckLabels[data.workspace.bottleneck.primary] : "尚未选择";
+
+  const domains = [
+    {
+      key: "body",
+      name: "身体",
+      state: snapshot?.status === "complete" ? snapshot.healthConstraints[0] ?? "健康边界已确认" : "运行边界尚未建立",
+      evidence: snapshot?.status === "complete" ? `每周可用容量 ${snapshot.weeklyCapacityHours} 小时；恢复边界：${snapshot.recoveryConstraints[0]}` : "目前没有足够的身体与恢复证据。",
+      bottleneck: data.workspace.bottleneck?.primary === "state" ? "当前主瓶颈落在状态" : "当前没有单独标记身体瓶颈",
+      experiment: activeExperiment?.contract.primaryBottleneck === "state" ? activeExperiment.contract.hypothesis ?? "状态实验正在进行" : "没有进行中的身体实验",
+      nextDecision: snapshot?.status === "complete" ? "当前容量是否需要减载" : "先建立现金、恢复和容量边界",
+    },
+    {
+      key: "capability",
+      name: "能力",
+      state: skillAssets.length > 0 ? `${skillAssets.length} 项能力资产仍在维护` : "还没有可核验的能力资产",
+      evidence: skillAssets[0] ? `${skillAssets[0].name}；最近复用 ${skillAssets[0].reuseHistory.length} 次` : "只有形成作品或复用记录后，能力才进入这里。",
+      bottleneck: data.workspace.bottleneck?.primary === "expression" ? "当前瓶颈与能力表达有关" : "尚未发现专属能力瓶颈",
+      experiment: activeExperiment?.contract.primaryBottleneck === "expression" ? activeExperiment.contract.hypothesis ?? "表达实验正在进行" : "没有进行中的能力实验",
+      nextDecision: skillAssets.length > 0 ? "下一次用什么作品证明能力" : "选择一项能力并定义现实证据",
+    },
+    {
+      key: "creation",
+      name: "创造",
+      state: activeProjects.length > 0 ? `${activeProjects.length} 个项目正在建设` : "当前没有活跃创造项目",
+      evidence: completedWorkUnits.length > 0 ? `已完成 ${completedWorkUnits.length} 个工作单元，留下 ${creationAssets.length} 项创造资产` : "还没有形成可检查的完成记录。",
+      bottleneck: ["problem", "expression", "delivery"].includes(data.workspace.bottleneck?.primary ?? "") ? `当前主瓶颈：${currentBottleneck}` : "当前主瓶颈不在创造链条",
+      experiment: activeExperiment ? activeExperiment.contract.hypothesis ?? "实验正在进行" : "没有进行中的创造实验",
+      nextDecision: activeProjects[0]?.admission.nextAction ?? "确定一个最小作品和发布日期",
+    },
+    {
+      key: "relationship",
+      name: "关系",
+      state: data.relationships.length > 0 ? `${data.relationships.length} 条关系事件已经记录` : "重要关系还没有进入现实记录",
+      evidence: relationshipAssets.length > 0 ? `${relationshipAssets.length} 项关系资产仍在维护` : "尚未形成关系资产或复盘证据。",
+      bottleneck: data.workspace.bottleneck?.primary === "trust" ? "当前主瓶颈落在信任" : "当前没有单独标记关系瓶颈",
+      experiment: activeExperiment?.contract.primaryBottleneck === "trust" ? activeExperiment.contract.hypothesis ?? "信任实验正在进行" : "没有进行中的关系实验",
+      nextDecision: "本周要保护哪一段真实连接",
+    },
+    {
+      key: "experience",
+      name: "体验",
+      state: livedCommitments.length > 0 ? `${livedCommitments.length} 项现实契约已经完成` : "娱乐和体验尚未形成可回忆的记录",
+      evidence: livedCommitments[0]?.title ?? "当前只有时间消耗记录，没有完整体验证据。",
+      bottleneck: data.workspace.bottleneck?.primary === "attention" ? "注意力可能正在把主动体验变成重复刺激" : "当前没有单独标记体验瓶颈",
+      experiment: activeExperiment?.contract.primaryBottleneck === "attention" ? activeExperiment.contract.hypothesis ?? "注意力实验正在进行" : "没有进行中的体验实验",
+      nextDecision: "下一次主动选择什么值得期待的体验",
+    },
+  ] as const;
+
+  return (
+    <>
+      <PageHeader meta="World" title="现实世界" description="五个领域只显示当前状态、证据和下一次关键决定。" action={<Button tone="quiet" onPress={() => void refresh()}>刷新证据</Button>} />
+      {errorMessage ? <ErrorPanel whatHappened={`${errorMessage.title}：${errorMessage.detail}`} affectedData="已保存记录没有变化。" nextAction={<Button onPress={() => setError(null)}>{errorMessage.action}</Button>} /> : null}
+
+      <div className="world-domain-list">
+        {domains.map((domain) => (
+          <article className="world-domain" key={domain.key}>
+            <div className="world-domain__title"><span className="today-kicker">领域</span><h2>{domain.name}</h2></div>
+            <div className="world-domain__state"><span>当前状态</span><strong>{domain.state}</strong></div>
+            <dl>
+              <div><dt>最近证据</dt><dd>{domain.evidence}</dd></div>
+              <div><dt>最大瓶颈</dt><dd>{domain.bottleneck}</dd></div>
+              <div><dt>正在进行的实验</dt><dd>{domain.experiment}</dd></div>
+              <div><dt>下一次关键决定</dt><dd>{domain.nextDecision}</dd></div>
+            </dl>
+          </article>
+        ))}
+      </div>
+
+      <Section title="实验与风险" description="只保留会改变下一步的异常。">
+        <div className="world-support-grid">
+          <div>
+            <span className="today-kicker">当前实验</span>
+            <h3>{activeExperiment?.contract.hypothesis ?? "没有进行中的实验"}</h3>
+            <p>{activeExperiment?.contract.minimumAction ?? "从当前最大瓶颈建立一个可证伪实验。"}</p>
+            <Link className="product-text-link" to="/experiments">查看实验</Link>
+          </div>
+          <div>
+            <span className="today-kicker">活动风险</span>
+            <h3>{activeRisks.length > 0 ? `${activeRisks.length} 项需要处理` : "当前没有活动风险"}</h3>
+            <p>{activeRisks[0]?.facts.join("；") ?? "风险记录只在会改变行动时出现。"}</p>
+            <Link className="product-text-link" to="/risks">查看风险记录</Link>
+          </div>
+        </div>
+        {activeRisks.some((risk) => risk.severity === "urgent") ? <InlineNotice tone="danger" title="存在紧急风险" detail="先处理不可逆后果，再继续扩张。" /> : null}
+      </Section>
+    </>
+  );
+}

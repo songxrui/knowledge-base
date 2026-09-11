@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "canonicalFile": "08-媒体与产品/产品/个人基线/03-实践协议/00-接口选择表.md",
+  "templateFile": "08-媒体与产品/产品/个人基线/04-运行记录/00-回填模板.md",
+  "requiredFields": [
+    "contract_version",
+    "target_decision",
+    "state_vector",
+    "focus_state",
+    "activity_type",
+    "unique_activity",
+    "planned_context",
+    "start_definition",
+    "completion_evidence",
+    "contact_mode",
+    "result_space",
+    "timebox_minutes",
+    "expected_opportunities",
+    "risk_cap_and_third_party",
+    "stop_condition",
+    "supporter",
+    "update_threshold",
+    "leading_hypothesis",
+    "competing_explanation",
+    "review_date"
+  ],
+  "runMetadataFields": [
+    "run_id",
+    "status",
+    "start_date"
+  ],
+  "stateKeys": [
+    "K",
+    "A",
+    "P",
+    "R",
+    "E",
+    "F",
+    "Q",
+    "H"
+  ],
+  "stateValues": [
+    "未知",
+    "暂不足",
+    "当前足够"
+  ],
+  "activityTypes": [
+    "探索",
+    "有界学习",
+    "基础设施",
+    "约束测试",
+    "可撤回进展"
+  ],
+  "contactModes": [
+    "direct",
+    "simulated",
+    "supervised"
+  ],
+  "nextDecisions": [
+    "保持",
+    "修订",
+    "有界学习",
+    "补资源",
+    "修测量",
+    "退出",
+    "寻求支持"
+  ],
+  "runStatuses": [
+    "planned",
+    "running",
+    "completed",
+    "stopped",
+    "invalid"
+  ]
+}

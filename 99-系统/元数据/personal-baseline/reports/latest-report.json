@@ -1,0 +1,386 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-16T03:26:22.3338846+08:00",
+  "mode": "full-local",
+  "status": "pass",
+  "productVersion": "0.2.1-alpha",
+  "contentFingerprint": "a55d9e8da3cb6caf157d4b97f0b185da9f70026ba651b440051dc672e431e3db",
+  "audit": {
+    "checks": [
+      {
+        "check": "markdown-structure",
+        "summary": {
+          "errors": 0,
+          "warnings": 0,
+          "info": 0,
+          "total": 0
+        },
+        "issues": []
+      },
+      {
+        "check": "local-references",
+        "summary": {
+          "errors": 0,
+          "warnings": 0,
+          "info": 0,
+          "total": 0
+        },
+        "issues": []
+      },
+      {
+        "check": "claim-ledger",
+        "summary": {
+          "errors": 0,
+          "warnings": 0,
+          "info": 29,
+          "total": 29
+        },
+        "issues": [
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 17,
+            "message": "Claim is not referenced outside the ledger: DK-001",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 18,
+            "message": "Claim is not referenced outside the ledger: DK-002",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 19,
+            "message": "Claim is not referenced outside the ledger: DK-003",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 20,
+            "message": "Claim is not referenced outside the ledger: DK-004",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 21,
+            "message": "Claim is not referenced outside the ledger: DK-005",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 22,
+            "message": "Claim is not referenced outside the ledger: DK-006",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 23,
+            "message": "Claim is not referenced outside the ledger: DK-007",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 24,
+            "message": "Claim is not referenced outside the ledger: DK-008",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 25,
+            "message": "Claim is not referenced outside the ledger: DK-009",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 26,
+            "message": "Claim is not referenced outside the ledger: DK-010",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 32,
+            "message": "Claim is not referenced outside the ledger: NT-001",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 33,
+            "message": "Claim is not referenced outside the ledger: NT-002",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 34,
+            "message": "Claim is not referenced outside the ledger: NT-003",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 35,
+            "message": "Claim is not referenced outside the ledger: NT-004",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 36,
+            "message": "Claim is not referenced outside the ledger: NT-005",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 37,
+            "message": "Claim is not referenced outside the ledger: NT-006",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 38,
+            "message": "Claim is not referenced outside the ledger: NT-007",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 39,
+            "message": "Claim is not referenced outside the ledger: NT-008",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 45,
+            "message": "Claim is not referenced outside the ledger: LS-001",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 46,
+            "message": "Claim is not referenced outside the ledger: LS-002",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 47,
+            "message": "Claim is not referenced outside the ledger: LS-003",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 48,
+            "message": "Claim is not referenced outside the ledger: LS-004",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 49,
+            "message": "Claim is not referenced outside the ledger: LS-005",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 60,
+            "message": "Claim is not referenced outside the ledger: PB-006",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 67,
+            "message": "Claim is not referenced outside the ledger: BL-001",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 68,
+            "message": "Claim is not referenced outside the ledger: BL-002",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 69,
+            "message": "Claim is not referenced outside the ledger: BL-003",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 70,
+            "message": "Claim is not referenced outside the ledger: BL-004",
+            "action": "candidate"
+          },
+          {
+            "severity": "info",
+            "rule": "claim-orphan",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 71,
+            "message": "Claim is not referenced outside the ledger: BL-005",
+            "action": "candidate"
+          }
+        ]
+      },
+      {
+        "check": "contract-schema",
+        "summary": {
+          "errors": 0,
+          "warnings": 0,
+          "info": 0,
+          "total": 0
+        },
+        "issues": []
+      },
+      {
+        "check": "content-quality",
+        "summary": {
+          "errors": 0,
+          "warnings": 0,
+          "info": 0,
+          "total": 0
+        },
+        "issues": []
+      },
+      {
+        "check": "external-sources",
+        "summary": {
+          "errors": 0,
+          "warnings": 2,
+          "info": 4,
+          "total": 6
+        },
+        "issues": [
+          {
+            "severity": "info",
+            "rule": "external-access-restricted",
+            "path": "08-媒体与产品/产品/个人基线/04-来源地图.md",
+            "line": 51,
+            "message": "External source returned HTTP 403: https://doi.org/10.1111/j.1467-9280.2006.01693.x",
+            "action": "none"
+          },
+          {
+            "severity": "info",
+            "rule": "external-access-restricted",
+            "path": "08-媒体与产品/产品/个人基线/04-来源地图.md",
+            "line": 52,
+            "message": "External source returned HTTP 403: https://doi.org/10.1207/s15516709cog1302_1",
+            "action": "none"
+          },
+          {
+            "severity": "info",
+            "rule": "external-access-restricted",
+            "path": "08-媒体与产品/产品/个人基线/05-研究与信源/02-学习笔记方法论研究.md",
+            "line": 134,
+            "message": "External source returned HTTP 403: https://doi.org/10.1037/0278-7393.4.6.592",
+            "action": "none"
+          },
+          {
+            "severity": "info",
+            "rule": "external-access-restricted",
+            "path": "08-媒体与产品/产品/个人基线/90-内部治理/01-主张与来源台账.md",
+            "line": 46,
+            "message": "External source returned HTTP 403: https://doi.org/10.1126/science.1199327",
+            "action": "none"
+          },
+          {
+            "severity": "warning",
+            "rule": "external-timeout",
+            "path": "08-媒体与产品/产品/个人基线/04-来源地图.md",
+            "line": 48,
+            "message": "External source timed out and was not classified as dead: https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-to-master-the-seven-step-problem-solving-process",
+            "action": "none"
+          },
+          {
+            "severity": "warning",
+            "rule": "external-timeout",
+            "path": "08-媒体与产品/产品/个人基线/04-来源地图.md",
+            "line": 49,
+            "message": "External source timed out and was not classified as dead: https://www.mckinsey.com/alumni/news-and-events/global-news/alumni-news/barbara-minto-mece-i-invented-it-so-i-get-to-say-how-to-pronounce-it",
+            "action": "none"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "errors": 0,
+      "warnings": 2,
+      "info": 33,
+      "total": 35
+    }
+  },
+  "baseline": {
+    "baselineFingerprint": "a55d9e8da3cb6caf157d4b97f0b185da9f70026ba651b440051dc672e431e3db",
+    "currentFingerprint": "a55d9e8da3cb6caf157d4b97f0b185da9f70026ba651b440051dc672e431e3db",
+    "sameFingerprint": true,
+    "ratios": {
+      "characters": 1.0,
+      "paragraphs": 1.0
+    },
+    "issues": []
+  },
+  "operations": {
+    "safeFixApplied": false,
+    "safeFixRolledBack": false,
+    "safeFixChanges": 0,
+    "semanticCandidates": 29,
+    "duplicateCandidates": 0,
+    "blockedCandidates": 0,
+    "candidateFingerprint": "e77f12cc12b6305473c56098fb33a5cc1c311a568a0a71831074ecfd86746646"
+  },
+  "boundaries": {
+    "externalWrite": false,
+    "delete": false,
+    "publish": false,
+    "pricing": false,
+    "evidencePromotion": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "readRoots": [
+    "08-媒体与产品/产品/个人基线",
+    "03-资源/创作者素材/Dan-Koe",
+    "01-项目/知行转化研究"
+  ],
+  "safeFixRoots": [
+    "08-媒体与产品/产品/个人基线"
+  ],
+  "generatedWriteRoots": [
+    "99-系统/元数据/personal-baseline",
+    "08-媒体与产品/产品/个人基线/00-缓冲区/自动化候选"
+  ],
+  "externalWriteAllowed": false
+}

@@ -1,0 +1,52 @@
+import { AppShell as Shell, Button } from "@northstar/design-system";
+import { NavLink, Outlet } from "react-router-dom";
+
+import { useProduct } from "../providers.js";
+
+const navigationGroups = [
+  {
+    label: "推进",
+    items: [["/", "今日"], ["/projects", "项目"], ["/experiments", "实验"]],
+  },
+  {
+    label: "回看",
+    items: [["/reviews", "复盘"], ["/business", "经营"], ["/risks", "风险"]],
+  },
+  {
+    label: "资料",
+    items: [["/assets", "资产"]],
+  },
+  {
+    label: "系统",
+    items: [["/settings", "设置"]],
+  },
+] as const;
+
+export function ProductAppShell() {
+  const { services, theme, setTheme } = useProduct();
+  return (
+    <Shell
+      navigation={
+        <div className="product-navigation">
+          <div className="product-brand"><span aria-hidden="true">N</span><strong>Northstar</strong></div>
+          <nav aria-label="主要导航">
+            {navigationGroups.map((group) => (
+              <div className="product-navigation__group" key={group.label}>
+                <span className="product-navigation__label">{group.label}</span>
+                {group.items.map(([to, label]) => <NavLink key={to} to={to} end={to === "/"}>{label}</NavLink>)}
+              </div>
+            ))}
+          </nav>
+        </div>
+      }
+      header={
+        <div className="product-topbar">
+          <span>本地工作区 · {services.platform.kind === "pwa" ? "浏览器" : services.platform.kind === "tauri-android" ? "Android" : "Windows"}</span>
+          <Button tone="quiet" onPress={() => setTheme(theme === "light" ? "dark" : "light")}>{theme === "light" ? "切换深色" : "切换浅色"}</Button>
+        </div>
+      }
+    >
+      <Outlet />
+    </Shell>
+  );
+}

@@ -1,0 +1,279 @@
+diff --git a/apps/product/src/bootstrap.ts b/apps/product/src/bootstrap.ts
+index fc49b83..6a7f3a2 100644
+--- a/apps/product/src/bootstrap.ts
++++ b/apps/product/src/bootstrap.ts
+@@ -24,6 +24,7 @@ import {
+   resumePausedExperiment,
+   reviseExperiment,
+   reviseLatestSnapshot,
++  saveDirectionFrame,
+   saveCompletedSnapshot,
+   selectBottleneck,
+   setNorthStarConstraint,
+@@ -81,6 +82,7 @@ export function createProductServices() {
+       listRisks: () => risks.listRisks(),
+       createSnapshot: bindFirst(createSnapshot, workspace),
+       reviseLatestSnapshot: bindFirst(reviseLatestSnapshot, workspace),
++      saveDirectionFrame: bindFirst(saveDirectionFrame, workspace),
+       completeLatestSnapshot: bindFirst(completeLatestSnapshot, workspace),
+       saveCompletedSnapshot: bindFirst(saveCompletedSnapshot, workspace),
+       setNorthStarConstraint: bindFirst(setNorthStarConstraint, workspace),
+diff --git a/apps/product/src/pages/today-page.tsx b/apps/product/src/pages/today-page.tsx
+index 9c661c7..b431170 100644
+--- a/apps/product/src/pages/today-page.tsx
++++ b/apps/product/src/pages/today-page.tsx
+@@ -67,7 +67,7 @@ const riskLabels: Record<RiskEvent["category"], string> = {
+   legal: "法律",
+ };
+ 
+-type TodayEditor = "snapshot" | "bottleneck" | NorthStarKind;
++type TodayEditor = "snapshot" | "bottleneck" | "direction" | NorthStarKind;
+ 
+ function value(data: FormData, key: string): string {
+   const entry = data.get(key);
+@@ -202,6 +202,19 @@ export function TodayPage() {
+     }]), () => setEditor(null));
+   };
+ 
++  const saveDirection = (event: FormEvent<HTMLFormElement>) => {
++    event.preventDefault();
++    const data = new FormData(event.currentTarget);
++    const timestamp = toUtcTimestamp(new Date());
++    void run(() => services.core.saveDirectionFrame({
++      id: state.snapshot?.id ?? createStableId("workspace-snapshot", [timestamp]),
++      schemaVersion: 1,
++      timestamp,
++      antiVision: value(data, "antiVision"),
++      vision: value(data, "vision"),
++    }), () => setEditor(null));
++  };
++
+   const saveBottleneck = (event: FormEvent<HTMLFormElement>) => {
+     event.preventDefault();
+     const data = new FormData(event.currentTarget);
+@@ -326,6 +339,19 @@ export function TodayPage() {
+ 
+       <details className="today-system-details">
+         <summary>方向约束</summary>
++        <Section
++          className="today-north-star-section"
++          title="方向框架"
++          description="先写清不想重复的未来，再写当前想靠近的方向。它只筛选行动，不阻止开始。"
++          action={<Button tone="quiet" onPress={() => openEditor("direction")}>{state.snapshot?.vision ? "编辑" : "设置"}</Button>}
++        >
++          <article className="today-north-star today-direction-frame">
++            {state.snapshot?.vision && state.snapshot.antiVision ? <dl>
++              <div><dt>想靠近</dt><dd>{state.snapshot.vision}</dd></div>
++              <div><dt>不再重复</dt><dd>{state.snapshot.antiVision}</dd></div>
++            </dl> : <p className="today-muted">还没有方向框架。可以先行动，遇到选择冲突时再补。</p>}
++          </article>
++        </Section>
+         <Section
+           className="today-north-star-section"
+           title="三项北极星"
+@@ -361,7 +387,7 @@ export function TodayPage() {
+               <div>
+                 <span className="today-kicker">按需编辑</span>
+                 <h2 id="today-editor-title">
+-                  {editor === "snapshot" ? "运行边界" : editor === "bottleneck" ? "当前主瓶颈" : northStarLabels[editor]}
++                  {editor === "snapshot" ? "运行边界" : editor === "bottleneck" ? "当前主瓶颈" : editor === "direction" ? "方向框架" : northStarLabels[editor]}
+                 </h2>
+               </div>
+               <Button tone="quiet" aria-label="关闭编辑面板" onPress={() => setEditor(null)}>关闭</Button>
+@@ -432,6 +458,17 @@ export function TodayPage() {
+                 </form>
+               ) : null}
+ 
++              {editor === "direction" ? (
++                <form className="today-drawer-form" onSubmit={saveDirection}>
++                  <p className="today-editor-intro">不用写终极答案，只写当前足以筛选行动的两个方向。</p>
++                  <FormGrid>
++                    <Field name="antiVision" label="不想重复的未来" description="哪些工作和生活状态，你不愿再经历一次？" defaultValue={state.snapshot?.antiVision ?? ""} multiline isRequired />
++                    <Field name="vision" label="想靠近的未来" description="未来一段时间，你希望工作和生活更接近什么状态？" defaultValue={state.snapshot?.vision ?? ""} multiline isRequired />
++                  </FormGrid>
++                  <div className="today-drawer__footer"><span /><Button type="submit" tone="primary" isDisabled={busy}>保存方向框架</Button></div>
++                </form>
++              ) : null}
++
+               {editor && isNorthStarKind(editor) ? (
+                 <form className="today-drawer-form" onSubmit={(event) => saveNorthStar(event, editor)}>
+                   <p className="today-editor-intro">{northStarQuestions[editor]}</p>
+diff --git a/changes/northstar-next/DAN_KOE_DIRECTION_FRAME_SPEC.md b/changes/northstar-next/DAN_KOE_DIRECTION_FRAME_SPEC.md
+new file mode 100644
+index 0000000..00450bd
+--- /dev/null
++++ b/changes/northstar-next/DAN_KOE_DIRECTION_FRAME_SPEC.md
+@@ -0,0 +1,42 @@
++# Northstar Direction Frame 规格
++
++## 目标
++
++把 Dan Koe 公开文章中的“反愿景 → 愿景 → 日常行动框架”转化为一个轻量、可跳过的产品能力：
++
++`不想重复的未来 → 想靠近的未来 → 筛选今天的行动`
++
++方向框架不是人生问卷，不要求长期承诺，也不阻塞首次工作单元。
++
++## P0 需求
++
++### DK-D-01 可选方向记录
++
++- 只记录两项：不想重复的未来、当前想靠近的未来。
++- 两项都填写后才保存；用户可以完全跳过。
++- 没有运行边界时允许单独保存方向框架。
++
++### DK-D-02 保持行动优先
++
++- Today 首屏不增加必填项或新的主按钮。
++- 方向框架只出现在折叠的“方向约束”区域。
++- 保存方向框架不得把已完成运行边界降回草稿。
++
++### DK-D-03 本地兼容
++
++- 方向字段存入现有 Workspace Snapshot。
++- 旧快照缺失字段时读取为 `null`。
++- 导出、导入和本地优先边界保持不变。
++
++## 非目标
++
++- 不评分行动是否符合愿景。
++- 不自动生成愿景、建议或人生答案。
++- 不增加 AI 教练、提醒打卡、公开分享或云同步。
++
++## 验收
++
++- 空数据状态可以直接开始工作，也可以单独保存方向框架。
++- 完整快照保存方向后仍保持 `complete`。
++- 刷新后方向仍显示，旧快照能正常读取。
++- Desktop 和 393×852 无横向溢出，抽屉可用键盘关闭。
+\ No newline at end of file
+diff --git a/packages/application/src/use-cases/core-loop.ts b/packages/application/src/use-cases/core-loop.ts
+index 5971096..6c4eb17 100644
+--- a/packages/application/src/use-cases/core-loop.ts
++++ b/packages/application/src/use-cases/core-loop.ts
+@@ -22,6 +22,7 @@ import {
+   resumeExperiment,
+   reviseExperimentDraft,
+   reviseWorkspaceSnapshot,
++  setWorkspaceDirectionFrame,
+   startWorkUnit,
+   stopExperiment,
+   completeWorkspaceSnapshot,
+@@ -101,6 +102,24 @@ export async function reviseLatestSnapshot(
+   });
+ }
+ 
++export async function saveDirectionFrame(
++  repository: WorkspaceRepository,
++  input: CreateWorkspaceSnapshotInput & { readonly vision: string; readonly antiVision: string },
++): Promise<WorkspaceSnapshot> {
++  return repository.withWriteLock(async () => {
++    const current = await repository.getLatestSnapshot();
++    const updated = current === null
++      ? createWorkspaceSnapshot(input)
++      : setWorkspaceDirectionFrame(current, {
++        vision: input.vision,
++        antiVision: input.antiVision,
++        timestamp: input.timestamp,
++      });
++    await repository.saveSnapshot(updated);
++    return updated;
++  });
++}
++
+ export async function completeLatestSnapshot(
+   repository: WorkspaceRepository,
+   timestamp: UtcTimestamp,
+diff --git a/packages/domain/src/workspace.ts b/packages/domain/src/workspace.ts
+index 6bcbb18..08374dc 100644
+--- a/packages/domain/src/workspace.ts
++++ b/packages/domain/src/workspace.ts
+@@ -41,6 +41,8 @@ export const WorkspaceSnapshotStatusSchema = z.enum(["draft", "complete"]);
+ export const WorkspaceSnapshotSchema = DomainRecordSchema.extend({
+   revision: z.number().int().positive(),
+   status: WorkspaceSnapshotStatusSchema,
++  vision: NonEmptyStringSchema.nullable().default(null),
++  antiVision: NonEmptyStringSchema.nullable().default(null),
+   cashBufferAmount: z.number().nonnegative().nullable(),
+   fixedMonthlyCosts: z.number().nonnegative().nullable(),
+   healthConstraints: z.array(NonJudgmentalFactSchema),
+@@ -60,6 +62,8 @@ export const WorkspaceSnapshotSchema = DomainRecordSchema.extend({
+ export type WorkspaceSnapshot = z.infer<typeof WorkspaceSnapshotSchema>;
+ 
+ export interface CreateWorkspaceSnapshotInput extends RecordFactoryFields {
++  readonly vision?: string | null;
++  readonly antiVision?: string | null;
+   readonly cashBufferAmount?: number | null;
+   readonly fixedMonthlyCosts?: number | null;
+   readonly healthConstraints?: readonly string[];
+@@ -81,6 +85,8 @@ export function createWorkspaceSnapshot(input: CreateWorkspaceSnapshotInput): Wo
+     ...recordFields(input),
+     revision: 1,
+     status: "draft",
++    vision: input.vision ?? null,
++    antiVision: input.antiVision ?? null,
+     cashBufferAmount: input.cashBufferAmount ?? null,
+     fixedMonthlyCosts: input.fixedMonthlyCosts ?? null,
+     healthConstraints: input.healthConstraints ?? [],
+@@ -98,6 +104,25 @@ export function createWorkspaceSnapshot(input: CreateWorkspaceSnapshotInput): Wo
+   });
+ }
+ 
++export interface SetWorkspaceDirectionFrameInput {
++  readonly vision: string;
++  readonly antiVision: string;
++  readonly timestamp: UtcTimestamp;
++}
++
++export function setWorkspaceDirectionFrame(
++  snapshot: WorkspaceSnapshot,
++  input: SetWorkspaceDirectionFrameInput,
++): WorkspaceSnapshot {
++  return WorkspaceSnapshotSchema.parse({
++    ...snapshot,
++    vision: input.vision,
++    antiVision: input.antiVision,
++    revision: snapshot.revision + 1,
++    updatedAt: input.timestamp,
++  });
++}
++
+ export function reviseWorkspaceSnapshot(
+   snapshot: WorkspaceSnapshot,
+   changes: Partial<Omit<WorkspaceSnapshot, keyof ReturnType<typeof recordFields> | "revision">>,
+diff --git a/packages/storage/src/repositories/workspace-repository.ts b/packages/storage/src/repositories/workspace-repository.ts
+index 27b5511..270416d 100644
+--- a/packages/storage/src/repositories/workspace-repository.ts
++++ b/packages/storage/src/repositories/workspace-repository.ts
+@@ -1,12 +1,13 @@
+ import type {
+   WorkspaceRepository as WorkspaceRepositoryPort,
+ } from "@northstar/application";
+-import type {
+-  BottleneckSelection,
+-  DomainId,
+-  NorthStarConstraint,
+-  WorkUnit,
+-  WorkspaceSnapshot,
++import {
++  WorkspaceSnapshotSchema,
++  type BottleneckSelection,
++  type DomainId,
++  type NorthStarConstraint,
++  type WorkUnit,
++  type WorkspaceSnapshot,
+ } from "@northstar/domain";
+ 
+ import { runRead, runWrite, type NorthstarDatabase } from "../database.js";
+@@ -49,8 +50,9 @@ export class WorkspaceRepository implements WorkspaceRepositoryPort {
+   getLatestSnapshot(): Promise<WorkspaceSnapshot | null> {
+     return runRead(this.database, [this.database.snapshots], async () => {
+       const snapshots = await this.database.snapshots.toArray();
+-      snapshots.sort((left, right) => right.revision - left.revision || compareNewest(left, right));
+-      return snapshots[0] ?? null;
++      const normalized = snapshots.map((snapshot) => WorkspaceSnapshotSchema.parse(snapshot));
++      normalized.sort((left, right) => right.revision - left.revision || compareNewest(left, right));
++      return normalized[0] ?? null;
+     });
+   }
+ 

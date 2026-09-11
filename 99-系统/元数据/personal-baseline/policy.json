@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "defaultMode": "audit",
+  "productRoot": "08-媒体与产品/产品/个人基线",
+  "sourceRoots": [
+    "03-资源/创作者素材/Dan-Koe"
+  ],
+  "auditRoots": [
+    "08-媒体与产品/产品/个人基线",
+    "03-资源/创作者素材/Dan-Koe"
+  ],
+  "bufferRoot": "08-媒体与产品/产品/个人基线/00-缓冲区/自动化候选",
+  "metadataRoot": "99-系统/元数据/personal-baseline",
+  "reportsRoot": "99-系统/元数据/personal-baseline/reports",
+  "allowedExtensions": [
+    ".md",
+    ".json"
+  ],
+  "maxFilesPerBatch": 20,
+  "maxCharacterChangeRatio": 0.1,
+  "networkTimeoutSeconds": 20,
+  "excludeDirectoryNames": [
+    "00-缓冲区",
+    ".git",
+    ".obsidian"
+  ],
+  "qualityScanExcludeFiles": [
+    "08-媒体与产品/产品/个人基线/90-内部治理/04-自动化优化与质量重构计划.md"
+  ],
+  "generatedFiles": [
+    "99-系统/元数据/personal-baseline/current-manifest.json",
+    "99-系统/元数据/personal-baseline/reports/latest-report.json",
+    "99-系统/元数据/personal-baseline/reports/latest-report.md",
+    "08-媒体与产品/产品/个人基线/00-缓冲区/自动化候选/review-manifest.json"
+  ]
+}

@@ -1,0 +1,2 @@
+"finding_id","priority","rule","category","path","line","evidence","disposition","owner","blocker","due_date","release_gate","status"
+"P1-0001","P1-high","blocked-product-hypothesis","blocked-product","05-内容生产/进行中/199社群产品设计文档_v2.md","2","status: blocked","accept-blocked-until-real-validation","董辉（产品验证）","缺少真实付款、付费用户、访谈、留存、退款和收入原始记录","2026-08-15","禁止发布、营销或写入事实台账","accepted-blocked"

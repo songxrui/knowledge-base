@@ -1,0 +1,429 @@
+import {
+  Button,
+  ErrorPanel,
+  Field,
+  FormGrid,
+  InlineNotice,
+  PageHeader,
+  RiskBanner,
+  Section,
+} from "@northstar/design-system";
+import {
+  createStableId,
+  DomainError,
+  toUtcTimestamp,
+  type BottleneckKind,
+  type NorthStarKind,
+  type RiskEvent,
+  type TodayWorkspaceState,
+} from "@northstar/domain";
+import { getDomainErrorCopy } from "@northstar/methodology";
+import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
+
+import { WorkUnitPanel } from "../features/work-unit-panel.js";
+import { useProduct } from "../providers.js";
+
+const northStarKinds: readonly NorthStarKind[] = [
+  "sustainable-agency",
+  "compounding-assets",
+  "personal-monopoly",
+];
+
+const northStarLabels: Record<NorthStarKind, string> = {
+  "sustainable-agency": "可持续心力",
+  "compounding-assets": "复利资产",
+  "personal-monopoly": "个人垄断",
+};
+
+const northStarQuestions: Record<NorthStarKind, string> = {
+  "sustainable-agency": "这件事能否在不透支恢复的前提下继续？",
+  "compounding-assets": "这次投入会留下可重复使用的东西吗？",
+  "personal-monopoly": "这件事是否在积累只有你能持续提供的能力？",
+};
+
+const bottleneckLabels: Record<BottleneckKind, string> = {
+  state: "状态",
+  attention: "注意力",
+  problem: "问题",
+  expression: "表达",
+  trust: "信任",
+  sales: "销售",
+  delivery: "交付",
+  cash: "现金",
+  platform: "平台",
+};
+
+const riskLabels: Record<RiskEvent["category"], string> = {
+  health: "健康",
+  safety: "安全",
+  cash: "现金",
+  customer: "客户",
+  platform: "平台",
+  data: "数据",
+  legal: "法律",
+};
+
+type TodayEditor = "snapshot" | "bottleneck" | NorthStarKind;
+
+function value(data: FormData, key: string): string {
+  const entry = data.get(key);
+  return typeof entry === "string" ? entry.trim() : "";
+}
+
+function lineValues(data: FormData, key: string): string[] {
+  return value(data, key).split(/[\r\n,，]+/u).map((item) => item.trim()).filter(Boolean);
+}
+
+function describeError(error: unknown) {
+  if (error instanceof DomainError) return getDomainErrorCopy(error.code);
+  return { title: "操作没有完成", detail: error instanceof Error ? error.message : "未能读取错误信息。", action: "检查当前输入后重试。" };
+}
+
+function formatMoney(amount: number | null): string {
+  return amount === null ? "未记录" : `${new Intl.NumberFormat("zh-CN").format(amount)} 元`;
+}
+
+function isNorthStarKind(editor: TodayEditor): editor is NorthStarKind {
+  return northStarKinds.includes(editor as NorthStarKind);
+}
+
+export function TodayPage() {
+  const { services } = useProduct();
+  const [state, setState] = useState<TodayWorkspaceState | null>(null);
+  const [risks, setRisks] = useState<readonly RiskEvent[]>([]);
+  const [operatingSummary, setOperatingSummary] = useState({ activeProjects: 0, reusableAssets: 0, validatedProblems: 0, quotableOffers: 0, adoptedDeliveries: 0 });
+  const [editor, setEditor] = useState<TodayEditor | null>(null);
+  const [snapshotStep, setSnapshotStep] = useState(1);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<unknown>(null);
+  const snapshotFormRef = useRef<HTMLFormElement>(null);
+
+  const refresh = useCallback(async () => {
+    const [nextState, nextRisks, nextOperatingSummary] = await Promise.all([
+      services.core.getTodayWorkspaceState(),
+      services.core.listRisks(),
+      services.operations.getSummary(),
+    ]);
+    setState(nextState);
+    setRisks(nextRisks.filter((risk) => risk.status !== "recovered"));
+    setOperatingSummary(nextOperatingSummary);
+  }, [services]);
+
+  useEffect(() => {
+    refresh().catch(setError);
+  }, [refresh]);
+
+  useEffect(() => {
+    if (editor === null) return undefined;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setEditor(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [editor]);
+
+  const run = async (operation: () => Promise<unknown>, onSuccess?: () => void) => {
+    setBusy(true);
+    setError(null);
+    try {
+      await operation();
+      await refresh();
+      onSuccess?.();
+    } catch (caught) {
+      setError(caught);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const openEditor = (nextEditor: TodayEditor) => {
+    if (nextEditor === "snapshot") setSnapshotStep(1);
+    setError(null);
+    setEditor(nextEditor);
+  };
+
+  const advanceSnapshotStep = () => {
+    const currentStep = snapshotFormRef.current?.querySelector<HTMLElement>(`[data-snapshot-step="${snapshotStep}"]`);
+    const fields = currentStep?.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>("input, textarea, select") ?? [];
+    if (Array.from(fields).every((field) => field.reportValidity())) {
+      setSnapshotStep((current) => Math.min(3, current + 1));
+    }
+  };
+
+  const saveSnapshot = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const timestamp = toUtcTimestamp(new Date());
+    const changes = {
+      cashBufferAmount: Number(value(data, "cashBufferAmount")),
+      fixedMonthlyCosts: Number(value(data, "fixedMonthlyCosts")),
+      healthConstraints: [value(data, "healthConstraint")],
+      recoveryConstraints: [value(data, "recoveryConstraint")],
+      weeklyCapacityHours: Number(value(data, "weeklyCapacityHours")),
+      capacityAllocation: {
+        body: Number(value(data, "capacityBody")),
+        responsibilities: Number(value(data, "capacityResponsibilities")),
+        building: Number(value(data, "capacityBuilding")),
+        relationships: Number(value(data, "capacityRelationships")),
+        reserve: Number(value(data, "capacityReserve")),
+      },
+      recentWork: value(data, "recentWork") ? [value(data, "recentWork")] : [],
+      platformBoundaries: [value(data, "platformBoundary")],
+      dataBoundaries: [value(data, "dataBoundary")],
+      stopConditions: [value(data, "stopCondition")],
+    };
+    void run(() => services.core.saveCompletedSnapshot({
+      id: state?.snapshot?.id ?? createStableId("workspace-snapshot", [timestamp]),
+      schemaVersion: 1,
+      timestamp,
+      ...changes,
+    }), () => setEditor(null));
+  };
+
+  const saveNorthStar = (event: FormEvent<HTMLFormElement>, kind: NorthStarKind) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const timestamp = toUtcTimestamp(new Date());
+    void run(() => services.core.setNorthStarConstraints([{
+      id: createStableId("north-star", [kind, timestamp]),
+      schemaVersion: 1,
+      timestamp,
+      kind,
+      observedFacts: [value(data, "northStarFact")],
+      userFloor: value(data, "northStarFloor"),
+      affectedActivityIds: lineValues(data, "northStarActivities"),
+    }]), () => setEditor(null));
+  };
+
+  const saveBottleneck = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const timestamp = toUtcTimestamp(new Date());
+    const secondary = value(data, "secondaryConstraint");
+    void run(() => services.core.selectBottleneck({
+      id: createStableId("bottleneck", [timestamp, value(data, "primary")]),
+      schemaVersion: 1,
+      timestamp,
+      primary: value(data, "primary") as BottleneckKind,
+      secondaryConstraint: secondary ? secondary as BottleneckKind : null,
+      selectionFacts: [value(data, "selectionFact")],
+    }), () => setEditor(null));
+  };
+
+  const currentNorthStars = state?.northStarConstraints.filter((item) => item.effectiveTo === null) ?? [];
+  const snapshotReady = state?.snapshot?.status === "complete";
+  const errorMessage = error ? describeError(error) : null;
+
+  if (state === null) {
+    return (
+      <>
+        <PageHeader meta="今日工作台" title="今天只推进一件事" description="正在读取这台设备上的记录。" />
+        {errorMessage ? <ErrorPanel whatHappened={`${errorMessage.title}：${errorMessage.detail}`} affectedData="本地记录没有变化。" nextAction={<Button onPress={() => void refresh()}>重新读取</Button>} /> : <div className="today-loading">正在读取今天的状态。</div>}
+      </>
+    );
+  }
+
+  const editorNorthStar = editor && isNorthStarKind(editor)
+    ? currentNorthStars.find((item) => item.kind === editor) ?? null
+    : null;
+
+  return (
+    <>
+      <PageHeader
+        meta="今日工作台"
+        title="今天只推进一件事"
+        description="把今天的容量交给一个可检查的结果。"
+        action={<Button tone="quiet" onPress={() => void refresh()}>刷新状态</Button>}
+      />
+
+      {errorMessage ? <ErrorPanel whatHappened={`${errorMessage.title}：${errorMessage.detail}`} affectedData="已保存记录没有变化。" nextAction={<Button onPress={() => setError(null)}>{errorMessage.action}</Button>} /> : null}
+
+      {risks.map((risk) => (
+        <RiskBanner
+          key={risk.id}
+          title={`${riskLabels[risk.category]}风险 · ${risk.status === "active" ? "处理中" : "观察中"}`}
+          detail={`${risk.facts.join("；")} 当前动作：${risk.immediateActions.join("；")}`}
+        />
+      ))}
+
+      <div className="today-cockpit">
+        <WorkUnitPanel core={services.core} snapshotReady={snapshotReady} onError={setError} onChanged={refresh} />
+
+        <aside className="today-rail" aria-label="当前运行状态">
+          <section className="today-rail-card" aria-labelledby="today-boundary-title">
+            <div className="today-rail-card__header">
+              <div><span className="today-kicker">运行边界</span><h2 id="today-boundary-title">这周能承受多少</h2></div>
+              {state.snapshot ? <Button tone="quiet" aria-label="更新运行边界" onPress={() => openEditor("snapshot")}>更新</Button> : null}
+            </div>
+            {snapshotReady && state.snapshot ? (
+              <dl className="today-boundary-list">
+                <div><dt>现金缓冲</dt><dd>{formatMoney(state.snapshot.cashBufferAmount)}</dd></div>
+                <div><dt>每周容量</dt><dd>{state.snapshot.weeklyCapacityHours} 小时</dd></div>
+                <div><dt>健康边界</dt><dd>{state.snapshot.healthConstraints[0]}</dd></div>
+                <div><dt>停止条件</dt><dd>{state.snapshot.stopConditions[0]}</dd></div>
+              </dl>
+            ) : (
+              <InlineNotice
+                tone="warning"
+                title="还没有运行边界"
+                detail="确认现金、恢复和容量后，才能开始工作单元。"
+                action={<Button tone="primary" onPress={() => openEditor("snapshot")}>建立运行边界</Button>}
+              />
+            )}
+          </section>
+
+          <section className="today-rail-card" aria-labelledby="today-bottleneck-title">
+            <div className="today-rail-card__header">
+              <div><span className="today-kicker">当前瓶颈</span><h2 id="today-bottleneck-title">什么最限制结果</h2></div>
+              {state.bottleneck ? <Button tone="quiet" aria-label="调整主瓶颈" onPress={() => openEditor("bottleneck")}>调整</Button> : null}
+            </div>
+            {state.bottleneck ? (
+              <div className="today-bottleneck-summary">
+                <strong>主瓶颈：{bottleneckLabels[state.bottleneck.primary]}</strong>
+                <p>{state.bottleneck.selectionFacts.join("；")}</p>
+                {state.bottleneck.secondaryConstraint ? <span>次级约束：{bottleneckLabels[state.bottleneck.secondaryConstraint]}</span> : null}
+              </div>
+            ) : (
+              <InlineNotice
+                title="还没有选择主瓶颈"
+                detail="只记录当前最限制结果的一项。"
+                action={<Button onPress={() => openEditor("bottleneck")}>选择主瓶颈</Button>}
+              />
+            )}
+          </section>
+        </aside>
+      </div>
+
+      <Section
+        className="today-north-star-section"
+        title="三项北极星"
+        description="用事实和底线约束选择，不把三项合成一个分数。"
+      >
+        <div className="today-north-star-grid">
+          {northStarKinds.map((kind) => {
+            const current = currentNorthStars.find((item) => item.kind === kind);
+            return (
+              <article className="today-north-star" key={kind}>
+                <div className="today-north-star__header">
+                  <div><span className="today-kicker">{current ? "已设置" : "未设置"}</span><h3>{northStarLabels[kind]}</h3></div>
+                  <Button tone="quiet" aria-label={`${current ? "编辑" : "设置"}${northStarLabels[kind]}`} onPress={() => openEditor(kind)}>{current ? "编辑" : "设置"}</Button>
+                </div>
+                <p className="today-north-star__question">{northStarQuestions[kind]}</p>
+                {current ? (
+                  <dl>
+                    <div><dt>最近事实</dt><dd>{current.observedFacts[0]}</dd></div>
+                    <div><dt>不可突破</dt><dd>{current.userFloor}</dd></div>
+                  </dl>
+                ) : <p className="today-muted">还没有事实和底线记录。</p>}
+              </article>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section className="today-operating-section" title="经营信号" description="只显示已经保存的事实。">
+        <dl className="today-metrics">
+          <div><dt>活跃项目</dt><dd>{operatingSummary.activeProjects}</dd></div>
+          <div><dt>未淘汰资产</dt><dd>{operatingSummary.reusableAssets}</dd></div>
+          <div><dt>已核验问题</dt><dd>{operatingSummary.validatedProblems}</dd></div>
+          <div><dt>可报价约定</dt><dd>{operatingSummary.quotableOffers}</dd></div>
+          <div><dt>已采用交付</dt><dd>{operatingSummary.adoptedDeliveries}</dd></div>
+        </dl>
+      </Section>
+
+      {editor ? (
+        <div className="today-drawer-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) setEditor(null); }}>
+          <aside className="today-drawer" role="dialog" aria-modal="true" aria-labelledby="today-editor-title">
+            <div className="today-drawer__header">
+              <div>
+                <span className="today-kicker">按需编辑</span>
+                <h2 id="today-editor-title">
+                  {editor === "snapshot" ? "运行边界" : editor === "bottleneck" ? "当前主瓶颈" : northStarLabels[editor]}
+                </h2>
+              </div>
+              <Button tone="quiet" aria-label="关闭编辑面板" onPress={() => setEditor(null)}>关闭</Button>
+            </div>
+
+            <div className="today-drawer__body">
+              {errorMessage ? <InlineNotice tone="danger" title={errorMessage.title} detail={errorMessage.detail} /> : null}
+
+              {editor === "snapshot" ? (
+                <form ref={snapshotFormRef} className="today-drawer-form" onSubmit={saveSnapshot}>
+                  <div className="today-stepper" aria-label="运行边界设置进度">
+                    {[1, 2, 3].map((step) => <span key={step} aria-current={snapshotStep === step ? "step" : undefined}>{step}</span>)}
+                  </div>
+
+                  <section className="today-form-step" data-snapshot-step="1" hidden={snapshotStep !== 1}>
+                    <h3>现金与总容量</h3>
+                    <p>先确认现实上限，不做乐观估算。</p>
+                    <FormGrid>
+                      <Field name="cashBufferAmount" label="可用现金缓冲（元）" type="number" inputMode="decimal" defaultValue={state.snapshot?.cashBufferAmount === null || state.snapshot?.cashBufferAmount === undefined ? "" : String(state.snapshot.cashBufferAmount)} isRequired />
+                      <Field name="fixedMonthlyCosts" label="固定月支出（元）" type="number" inputMode="decimal" defaultValue={state.snapshot?.fixedMonthlyCosts === null || state.snapshot?.fixedMonthlyCosts === undefined ? "" : String(state.snapshot.fixedMonthlyCosts)} isRequired />
+                      <Field name="weeklyCapacityHours" label="每周可用容量（小时）" type="number" inputMode="decimal" defaultValue={state.snapshot?.weeklyCapacityHours === null || state.snapshot?.weeklyCapacityHours === undefined ? "" : String(state.snapshot.weeklyCapacityHours)} isRequired />
+                    </FormGrid>
+                  </section>
+
+                  <section className="today-form-step" data-snapshot-step="2" hidden={snapshotStep !== 2}>
+                    <h3>保护边界</h3>
+                    <p>写清什么时候减载、停下或换方法。</p>
+                    <FormGrid>
+                      <Field name="healthConstraint" label="健康约束" defaultValue={state.snapshot?.healthConstraints[0] ?? ""} isRequired />
+                      <Field name="recoveryConstraint" label="恢复约束" defaultValue={state.snapshot?.recoveryConstraints[0] ?? ""} isRequired />
+                      <Field name="platformBoundary" label="平台边界" defaultValue={state.snapshot?.platformBoundaries[0] ?? ""} isRequired />
+                      <Field name="dataBoundary" label="数据边界" defaultValue={state.snapshot?.dataBoundaries[0] ?? ""} isRequired />
+                      <Field name="stopCondition" label="停止条件" defaultValue={state.snapshot?.stopConditions[0] ?? ""} isRequired />
+                    </FormGrid>
+                  </section>
+
+                  <section className="today-form-step" data-snapshot-step="3" hidden={snapshotStep !== 3}>
+                    <h3>容量分配</h3>
+                    <p>各项合计不能超过每周可用容量。</p>
+                    <FormGrid>
+                      <Field name="capacityBody" label="身体与恢复（小时）" type="number" inputMode="decimal" defaultValue={String(state.snapshot?.capacityAllocation?.body ?? 0)} isRequired />
+                      <Field name="capacityResponsibilities" label="必要责任（小时）" type="number" inputMode="decimal" defaultValue={String(state.snapshot?.capacityAllocation?.responsibilities ?? 0)} isRequired />
+                      <Field name="capacityBuilding" label="建设投入（小时）" type="number" inputMode="decimal" defaultValue={String(state.snapshot?.capacityAllocation?.building ?? 0)} isRequired />
+                      <Field name="capacityRelationships" label="关系维护（小时）" type="number" inputMode="decimal" defaultValue={String(state.snapshot?.capacityAllocation?.relationships ?? 0)} isRequired />
+                      <Field name="capacityReserve" label="预留（小时）" type="number" inputMode="decimal" defaultValue={String(state.snapshot?.capacityAllocation?.reserve ?? 0)} isRequired />
+                      <Field name="recentWork" label="近期已发生的工作" defaultValue={state.snapshot?.recentWork[0] ?? ""} />
+                    </FormGrid>
+                  </section>
+
+                  <div className="today-drawer__footer">
+                    {snapshotStep > 1 ? <Button type="button" tone="quiet" onPress={() => setSnapshotStep((current) => Math.max(1, current - 1))}>上一步</Button> : <span />}
+                    {snapshotStep < 3
+                      ? <Button type="button" tone="primary" onPress={advanceSnapshotStep}>下一步</Button>
+                      : <Button type="submit" tone="primary" isDisabled={busy}>保存运行边界</Button>}
+                  </div>
+                </form>
+              ) : null}
+
+              {editor === "bottleneck" ? (
+                <form className="today-drawer-form" onSubmit={saveBottleneck}>
+                  <p className="today-editor-intro">只选择当前最限制结果的一项，并写下一条可以核对的事实。</p>
+                  <FormGrid>
+                    <label className="product-select-field"><span>主瓶颈</span><select className="ns-input" name="primary" defaultValue={state.bottleneck?.primary ?? "state"}>{Object.entries(bottleneckLabels).map(([key, label]) => <option key={key} value={key}>{label}</option>)}</select></label>
+                    <label className="product-select-field"><span>次级约束（可选）</span><select className="ns-input" name="secondaryConstraint" defaultValue={state.bottleneck?.secondaryConstraint ?? ""}><option value="">不设置</option>{Object.entries(bottleneckLabels).map(([key, label]) => <option key={key} value={key}>{label}</option>)}</select></label>
+                    <Field name="selectionFact" label="选择依据" defaultValue={state.bottleneck?.selectionFacts[0] ?? ""} isRequired />
+                  </FormGrid>
+                  <div className="today-drawer__footer"><span /><Button type="submit" tone="primary" isDisabled={busy}>保存主瓶颈</Button></div>
+                </form>
+              ) : null}
+
+              {editor && isNorthStarKind(editor) ? (
+                <form className="today-drawer-form" onSubmit={(event) => saveNorthStar(event, editor)}>
+                  <p className="today-editor-intro">{northStarQuestions[editor]}</p>
+                  <FormGrid>
+                    <Field name="northStarFact" label="观察事实" defaultValue={editorNorthStar?.observedFacts[0] ?? ""} isRequired />
+                    <Field name="northStarFloor" label="不可突破的底线" defaultValue={editorNorthStar?.userFloor ?? ""} isRequired />
+                    <Field name="northStarActivities" label="受影响活动 ID" description="一行一个工作单元、项目或实验 ID；没有时留空。" defaultValue={editorNorthStar?.affectedActivityIds.join("\n") ?? ""} multiline />
+                  </FormGrid>
+                  <div className="today-drawer__footer"><span /><Button type="submit" tone="primary" isDisabled={busy}>保存{northStarLabels[editor]}</Button></div>
+                </form>
+              ) : null}
+            </div>
+          </aside>
+        </div>
+      ) : null}
+    </>
+  );
+}

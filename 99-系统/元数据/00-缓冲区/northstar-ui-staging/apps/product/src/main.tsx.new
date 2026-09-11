@@ -1,0 +1,19 @@
+import "@northstar/design-system/global.css";
+import "./styles/product.css";
+import "./styles/today.css";
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import { App } from "./app.js";
+import { createProductServices } from "./bootstrap.js";
+
+const root = document.getElementById("root");
+if (!root) throw new Error("PRODUCT_ROOT_NOT_FOUND");
+const services = createProductServices();
+
+createRoot(root).render(
+  <StrictMode>
+    <App services={services} />
+  </StrictMode>,
+);

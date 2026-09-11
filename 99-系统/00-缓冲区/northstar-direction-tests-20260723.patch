@@ -1,0 +1,109 @@
+diff --git a/apps/product/e2e/accessibility-and-copy.spec.ts b/apps/product/e2e/accessibility-and-copy.spec.ts
+index e72f477..d6c4348 100644
+--- a/apps/product/e2e/accessibility-and-copy.spec.ts
++++ b/apps/product/e2e/accessibility-and-copy.spec.ts
+@@ -117,3 +117,25 @@ test("starts the first work unit before completing the full profile", async ({ p
+   await expect(page.getByText("正在推进").first()).toBeVisible();
+   await expect(page.getByText("列出最近遇到的三个重复问题")).toBeVisible();
+ });
++test("saves an optional direction frame without blocking the first action", async ({ page }, testInfo) => {
++  test.skip(testInfo.project.name !== "desktop", "The direction write path runs once on desktop Chromium.");
++  await page.goto("/");
++
++  await expect(page.getByRole("button", { name: "确定今天的一件事" })).toBeVisible();
++  await page.getByText("方向约束", { exact: true }).click();
++  const directionSection = page.locator(".today-north-star-section").filter({
++    has: page.getByRole("heading", { name: "方向框架", exact: true }),
++  });
++  await directionSection.getByRole("button", { name: "设置方向框架" }).click();
++  await page.getByLabel("不想重复的未来").fill("不再靠持续加班维持进度");
++  await page.getByLabel("想靠近的未来").fill("用可复用作品支持稳定而自主的生活");
++  await page.getByRole("button", { name: "保存方向框架" }).click();
++
++  await expect(directionSection.getByText("用可复用作品支持稳定而自主的生活")).toBeVisible();
++  await expect(page.getByRole("button", { name: "确定今天的一件事" })).toBeVisible();
++
++  await page.reload();
++  await page.getByText("方向约束", { exact: true }).click();
++  await expect(page.getByText("不再靠持续加班维持进度", { exact: true })).toBeVisible();
++  await expect(page.getByText("用可复用作品支持稳定而自主的生活", { exact: true })).toBeVisible();
++});
+\ No newline at end of file
+diff --git a/apps/product/src/pages/today-page.tsx b/apps/product/src/pages/today-page.tsx
+index b431170..03000ce 100644
+--- a/apps/product/src/pages/today-page.tsx
++++ b/apps/product/src/pages/today-page.tsx
+@@ -343,7 +343,7 @@ export function TodayPage() {
+           className="today-north-star-section"
+           title="方向框架"
+           description="先写清不想重复的未来，再写当前想靠近的方向。它只筛选行动，不阻止开始。"
+-          action={<Button tone="quiet" onPress={() => openEditor("direction")}>{state.snapshot?.vision ? "编辑" : "设置"}</Button>}
++          action={<Button tone="quiet" aria-label={`${state.snapshot?.vision ? "编辑" : "设置"}方向框架`} onPress={() => openEditor("direction")}>{state.snapshot?.vision ? "编辑" : "设置"}</Button>}
+         >
+           <article className="today-north-star today-direction-frame">
+             {state.snapshot?.vision && state.snapshot.antiVision ? <dl>
+diff --git a/packages/storage/src/__tests__/portability.test.ts b/packages/storage/src/__tests__/portability.test.ts
+index 7cb5257..6c17191 100644
+--- a/packages/storage/src/__tests__/portability.test.ts
++++ b/packages/storage/src/__tests__/portability.test.ts
+@@ -1,8 +1,9 @@
+ import "fake-indexeddb/auto";
+ 
+-import { changeProjectStatusWithRiskGate, startPlannedWorkUnit } from "@northstar/application";
++import { changeProjectStatusWithRiskGate, saveDirectionFrame, startPlannedWorkUnit } from "@northstar/application";
+ import {
+   activateProject,
++  completeWorkspaceSnapshot,
+   createCommitment,
+   createContentAsset,
+   createOffer,
+@@ -11,6 +12,7 @@ import {
+   createRiskEvent,
+   createWorkUnit,
+   createWorkspaceSnapshot,
++  type WorkspaceSnapshot,
+ } from "@northstar/domain";
+ import { afterEach, describe, expect, it } from "vitest";
+ 
+@@ -93,6 +95,41 @@ describe("local data portability", () => {
+     expect(await service.listCheckpoints()).toHaveLength(0);
+   });
+ 
++  it("normalizes legacy direction fields and preserves a complete boundary", async () => {
++    const database = createDatabase("direction-frame");
++    const repository = new WorkspaceRepository(database);
++    const completed = completeWorkspaceSnapshot(createWorkspaceSnapshot({
++      id: "snapshot-direction",
++      schemaVersion: 1,
++      timestamp: "2026-07-12T00:00:00.000Z",
++      cashBufferAmount: 20_000,
++      fixedMonthlyCosts: 2_500,
++      healthConstraints: ["连续工作两小时后离开屏幕"],
++      recoveryConstraints: ["每天保留八小时睡眠窗口"],
++      weeklyCapacityHours: 40,
++      capacityAllocation: { body: 8, responsibilities: 6, building: 18, relationships: 4, reserve: 4 },
++      platformBoundaries: ["发布前核对平台规则"],
++      dataBoundaries: ["客户材料只保存在本地"],
++      stopConditions: ["连续两天睡眠不足就减载"],
++    }), "2026-07-12T01:00:00.000Z");
++    const { vision: _vision, antiVision: _antiVision, ...legacySnapshot } = completed;
++    await database.snapshots.add(legacySnapshot as WorkspaceSnapshot);
++
++    await expect(repository.getLatestSnapshot()).resolves.toMatchObject({ vision: null, antiVision: null });
++    await expect(saveDirectionFrame(repository, {
++      id: completed.id,
++      schemaVersion: 1,
++      timestamp: "2026-07-12T02:00:00.000Z",
++      antiVision: "不再靠持续加班维持进度",
++      vision: "用可复用作品支持稳定而自主的生活",
++    })).resolves.toMatchObject({
++      status: "complete",
++      revision: 2,
++      antiVision: "不再靠持续加班维持进度",
++      vision: "用可复用作品支持稳定而自主的生活",
++    });
++  });
++
+   it("keeps a planned work unit inside a known draft capacity", async () => {
+     const database = createDatabase("draft-capacity");
+     const repository = new WorkspaceRepository(database);
