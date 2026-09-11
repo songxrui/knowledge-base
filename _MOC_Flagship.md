@@ -1,78 +1,103 @@
 ﻿# 旗舰作品索引 (Map of Content - Flagship)
 
-> 重建于 2026-06-15 | 健康审计后修正：仅保留实际存在的版本
-> 现行版本: **book-v7** | 归档: book-v6 (04_Archive/) | 已删除: v2/v3/v4/v5
+> 自动生成于 2026-09-11 23:05 | 当前阅读版: book-v8 | 冻结来源版: book-v7
 
-## book-v7 — 现行版本 (48篇)
-- [[media/flagship/book-v7/FULL_MANUSCRIPT]]
-- [[media/flagship/book-v7/PREFACE]]
-- [[media/flagship/book-v7/CH01_meta-abilities]]
-- [[media/flagship/book-v7/CH02_mental-health]]
-- [[media/flagship/book-v7/CH03_physical-health]]
-- [[media/flagship/book-v7/CH04_wealth-business]]
-- [[media/flagship/book-v7/CH05_relationships]]
-- [[media/flagship/book-v7/CH06_top-humans]]
-- [[media/flagship/book-v7/CH07_problem-solving]]
-- [[media/flagship/book-v7/CH08_first-principles]]
-- [[media/flagship/book-v7/EPILOGUE]]
-- [[media/flagship/book-v7/EIGHT_CHAPTERS]]
-- [[media/flagship/book-v7/ARCHITECTURE_DIAGRAM]]
-- [[media/flagship/book-v7/CONCEPT_MAP]]
-- [[media/flagship/book-v7/CONTENT_HASH_INDEX]]
-- [[media/flagship/book-v7/CONTENT_REVERSE_CH02]]
-- [[media/flagship/book-v7/CONTENT_ROADMAP]]
-- [[media/flagship/book-v7/CROSSPOST_CONFIG]]
-- [[media/flagship/book-v7/CROSS_CHAPTER_INDEX]]
-- [[media/flagship/book-v7/CUT_LOG]]
-- [[media/flagship/book-v7/DEEP_RESEARCH_PLAN]]
-- [[media/flagship/book-v7/DELETION_LEDGER]]
-- [[media/flagship/book-v7/DOD_AUDIT]]
-- [[media/flagship/book-v7/ENGLISH_ABSTRACTS]]
-- [[media/flagship/book-v7/EVIDENCE_AUDIT]]
-- [[media/flagship/book-v7/EVIDENCE_AUDIT_V2]]
-- [[media/flagship/book-v7/EVIDENCE_LEDGER]]
-- [[media/flagship/book-v7/FEISHU_DOC_MAP]]
-- [[media/flagship/book-v7/FRAMEWORK_MAP]]
-- [[media/flagship/book-v7/GIT_TIME_LOG]]
-- [[media/flagship/book-v7/HEALTH_CHECK]]
-- [[media/flagship/book-v7/ILLUSTRATION_PLAN]]
-- [[media/flagship/book-v7/KEYWORD_INDEX]]
-- [[media/flagship/book-v7/LAUNCH_KIT]]
-- [[media/flagship/book-v7/LEVER_C_D_REPORT]]
-- [[media/flagship/book-v7/METHODOLOGY_LOCK]]
-- [[media/flagship/book-v7/ORIGINALITY_LOG]]
-- [[media/flagship/book-v7/PUBLISH_CHECKLIST]]
-- [[media/flagship/book-v7/R30_DELIVERY_REPORT]]
-- [[media/flagship/book-v7/REJECT_LOG]]
-- [[media/flagship/book-v7/SELF_ASSESSMENT]]
-- [[media/flagship/book-v7/SLIDE_DECK_OUTLINE]]
-- [[media/flagship/book-v7/SOURCE_LEDGER]]
-- [[media/flagship/book-v7/TRAFFIC_DIAGNOSIS]]
-- [[media/flagship/book-v7/v4_HEARTBEAT_LOG]]
-- [[media/flagship/book-v7/v7_HEARTBEAT_LOG]]
-- [[media/flagship/book-v7/_feishu_chapter_links]]
-- [[media/flagship/book-v7/30DAY_PLAN]]
-- [[media/flagship/book-v7/ACTION_MASTERLIST]]
+## 可验证的AI知识生产-v1 (3篇)
+- [[08-媒体与产品/媒体/flagship/可验证的AI知识生产-v1/90-来源与维护]]
+- [[08-媒体与产品/媒体/flagship/可验证的AI知识生产-v1/可验证的AI知识生产-v1]]
+- [[08-媒体与产品/媒体/flagship/可验证的AI知识生产-v1/README]]
 
-## book-of-life-answers — 早期版本 (14篇)
-- [[media/flagship/book-of-life-answers/00_READER_GUIDE]]
-- [[media/flagship/book-of-life-answers/00_START_LOG]]
-- [[media/flagship/book-of-life-answers/CH01_META_ABILITIES]]
-- [[media/flagship/book-of-life-answers/CH02_ANTIFRAGILE_PSYCHE]]
-- [[media/flagship/book-of-life-answers/CH03_BODY_PEAK]]
-- [[media/flagship/book-of-life-answers/CH04_WEALTH_AI_ERA]]
-- [[media/flagship/book-of-life-answers/CH05_RELATIONSHIPS]]
-- [[media/flagship/book-of-life-answers/CH06_ELITE_ALGORITHM]]
-- [[media/flagship/book-of-life-answers/CH07_PROBLEM_SOLVING]]
-- [[media/flagship/book-of-life-answers/CH08_MODELS_MAP]]
-- [[media/flagship/book-of-life-answers/CH09_APPENDIX]]
-- [[media/flagship/book-of-life-answers/CONNECTION_MATRIX]]
-- [[media/flagship/book-of-life-answers/FINAL_DELIVERY_STATUS]]
-- [[media/flagship/book-of-life-answers/OUTLINE]]
+## 可验证的AI知识生产-v2 (2篇)
+- [[08-媒体与产品/媒体/flagship/可验证的AI知识生产-v2/可验证的AI知识生产-v2]]
+- [[08-媒体与产品/媒体/flagship/可验证的AI知识生产-v2/README]]
 
-## book-v6 — 已归档 (34篇)
-> 位置: `04_Archive/book-v6/` | 被 book-v7 取代（21个元数据文件 hash 相同）
+## 青年健康执行手册-v1 (3篇)
+- [[08-媒体与产品/媒体/flagship/青年健康执行手册-v1/90-来源与维护]]
+- [[08-媒体与产品/媒体/flagship/青年健康执行手册-v1/青年健康执行手册-v1]]
+- [[08-媒体与产品/媒体/flagship/青年健康执行手册-v1/README]]
 
-## 已删除的历史版本
-> book-v2 / book-v3 / book-v4 / book-v5 已在早期清理中删除。
-> 历史快照见 git log；如需恢复某版本，从 git 历史检出。
+## 青年健康执行手册-v2 (2篇)
+- [[08-媒体与产品/媒体/flagship/青年健康执行手册-v2/青年健康执行手册-v2]]
+- [[08-媒体与产品/媒体/flagship/青年健康执行手册-v2/README]]
+
+## 人生操作系统-v1 (3篇)
+- [[08-媒体与产品/媒体/flagship/人生操作系统-v1/90-来源与维护]]
+- [[08-媒体与产品/媒体/flagship/人生操作系统-v1/人生操作系统-v1]]
+- [[08-媒体与产品/媒体/flagship/人生操作系统-v1/README]]
+
+## 人生操作系统-v2 (2篇)
+- [[08-媒体与产品/媒体/flagship/人生操作系统-v2/人生操作系统-v2]]
+- [[08-媒体与产品/媒体/flagship/人生操作系统-v2/README]]
+
+## 受限起点-v1 (3篇)
+- [[08-媒体与产品/媒体/flagship/受限起点-v1/90-来源与维护]]
+- [[08-媒体与产品/媒体/flagship/受限起点-v1/受限起点-v1]]
+- [[08-媒体与产品/媒体/flagship/受限起点-v1/README]]
+
+## 受限起点-v2 (2篇)
+- [[08-媒体与产品/媒体/flagship/受限起点-v2/受限起点-v2]]
+- [[08-媒体与产品/媒体/flagship/受限起点-v2/README]]
+
+## 一人事业的内在秩序-v1 (3篇)
+- [[08-媒体与产品/媒体/flagship/一人事业的内在秩序-v1/90-来源与维护]]
+- [[08-媒体与产品/媒体/flagship/一人事业的内在秩序-v1/一人事业的内在秩序-v1]]
+- [[08-媒体与产品/媒体/flagship/一人事业的内在秩序-v1/README]]
+
+## 一人事业的内在秩序-v2 (3篇)
+- [[08-媒体与产品/媒体/flagship/一人事业的内在秩序-v2/90-设计说明（内部）]]
+- [[08-媒体与产品/媒体/flagship/一人事业的内在秩序-v2/一人事业的内在秩序-v2]]
+- [[08-媒体与产品/媒体/flagship/一人事业的内在秩序-v2/README]]
+
+## 最强人类认知-v1 (1篇)
+- [[08-媒体与产品/媒体/flagship/最强人类认知-v1/最强人类认知-v1]]
+
+## book-of-life-answers (1篇)
+- [[08-媒体与产品/媒体/flagship/book-of-life-answers/FINAL_DELIVERY_STATUS]]
+
+## book-v7 (39篇)
+- [[08-媒体与产品/媒体/flagship/book-v7/_feishu_chapter_links]]
+- [[08-媒体与产品/媒体/flagship/book-v7/30DAY_PLAN]]
+- [[08-媒体与产品/媒体/flagship/book-v7/答案之书_理论版]]
+- [[08-媒体与产品/媒体/flagship/book-v7/答案之书_实践版]]
+- [[08-媒体与产品/媒体/flagship/book-v7/ACTION_MASTERLIST]]
+- [[08-媒体与产品/媒体/flagship/book-v7/ARCHITECTURE_DIAGRAM]]
+- [[08-媒体与产品/媒体/flagship/book-v7/booknote-认知觉醒-v3]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CH01_meta-abilities]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CH02_mental-health]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CH03_physical-health]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CH04_wealth-business]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CH05_relationships]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CH06_top-humans]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CH07_problem-solving]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CH08_first-principles]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CONCEPT_MAP]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CONTENT_REVERSE_CH02]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CONTENT_ROADMAP]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CROSS_CHAPTER_INDEX]]
+- [[08-媒体与产品/媒体/flagship/book-v7/CROSSPOST_CONFIG]]
+- [[08-媒体与产品/媒体/flagship/book-v7/DELETION_LEDGER]]
+- [[08-媒体与产品/媒体/flagship/book-v7/EIGHT_CHAPTERS]]
+- [[08-媒体与产品/媒体/flagship/book-v7/ENGLISH_ABSTRACTS]]
+- [[08-媒体与产品/媒体/flagship/book-v7/EPILOGUE]]
+- [[08-媒体与产品/媒体/flagship/book-v7/EVIDENCE_LEDGER]]
+- [[08-媒体与产品/媒体/flagship/book-v7/faith-skill-family-analysis]]
+- [[08-媒体与产品/媒体/flagship/book-v7/FEISHU_DOC_MAP]]
+- [[08-媒体与产品/媒体/flagship/book-v7/FRAMEWORK_MAP]]
+- [[08-媒体与产品/媒体/flagship/book-v7/FULL_MANUSCRIPT]]
+- [[08-媒体与产品/媒体/flagship/book-v7/HEALTH_CHECK]]
+- [[08-媒体与产品/媒体/flagship/book-v7/ILLUSTRATION_PLAN]]
+- [[08-媒体与产品/媒体/flagship/book-v7/KEYWORD_INDEX]]
+- [[08-媒体与产品/媒体/flagship/book-v7/LAUNCH_KIT]]
+- [[08-媒体与产品/媒体/flagship/book-v7/PREFACE]]
+- [[08-媒体与产品/媒体/flagship/book-v7/SELF_ASSESSMENT]]
+- [[08-媒体与产品/媒体/flagship/book-v7/SLIDE_DECK_OUTLINE]]
+- [[08-媒体与产品/媒体/flagship/book-v7/SOURCE_LEDGER]]
+- [[08-媒体与产品/媒体/flagship/book-v7/STYLE_GUIDE]]
+- [[08-媒体与产品/媒体/flagship/book-v7/TRAFFIC_DIAGNOSIS]]
+
+## book-v8 (5篇)
+- [[08-媒体与产品/媒体/flagship/book-v8/00-阅读说明]]
+- [[08-媒体与产品/媒体/flagship/book-v8/01-答案之书_理论版]]
+- [[08-媒体与产品/媒体/flagship/book-v8/02-答案之书_实践版]]
+- [[08-媒体与产品/媒体/flagship/book-v8/03-身体健康]]
+- [[08-媒体与产品/媒体/flagship/book-v8/90-证据台账]]
