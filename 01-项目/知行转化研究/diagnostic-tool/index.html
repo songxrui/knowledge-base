@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    >
+    <meta name="color-scheme" content="light">
+    <title>下一步路由器</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+    <script src="logic.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="#top" aria-label="回到页面顶部">
+          <span class="brand__mark" aria-hidden="true">N</span>
+          <span>下一步路由器</span>
+        </a>
+        <button class="button button--quiet" id="clear-data" type="button">清除本地数据</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="intro page-shell" aria-labelledby="page-title">
+        <p class="eyebrow">一个目标 · 一个窗口 · 多条合法路线</p>
+        <h1 id="page-title">下一步路由器</h1>
+        <p class="intro__lead">
+          检查一个具体目标在未来 7 天的当前瓶颈。结果描述的是目标情境，不判断你是什么样的人。
+        </p>
+        <div class="boundary" role="note">
+          <strong>使用边界</strong>
+          <span>本工具不提供医学判断，也不替代专业支持。退出目标、有界学习、争取权限和暂不测试都是合法路线。</span>
+        </div>
+      </section>
+
+      <form id="router-form" novalidate>
+        <section class="scope-band" aria-labelledby="scope-title">
+          <div class="page-shell">
+            <div class="section-heading">
+              <p class="eyebrow">目标范围</p>
+              <h2 id="scope-title">只处理一件事</h2>
+            </div>
+
+            <div class="scope-grid">
+              <label class="field field--wide" for="goal">
+                <span class="field__label">未来 7 天想推进的具体目标</span>
+                <input
+                  id="goal"
+                  name="goal"
+                  type="text"
+                  maxlength="160"
+                  autocomplete="off"
+                  required
+                  placeholder="例如：向 3 位目标用户展示可点击原型"
+                >
+                <span class="field__meta"><span id="goal-count">0</span>/160</span>
+              </label>
+
+              <label class="field" for="purpose">
+                <span class="field__label">这次活动的性质</span>
+                <select id="purpose" name="purpose">
+                  <option value="committed_goal">承诺目标</option>
+                  <option value="exploration">探索、审美或好奇</option>
+                </select>
+              </label>
+
+              <label class="field" for="context">
+                <span class="field__label">必要背景（可选）</span>
+                <textarea
+                  id="context"
+                  name="context"
+                  maxlength="240"
+                  rows="3"
+                  placeholder="只写会改变判断的现实条件"
+                ></textarea>
+                <span class="field__meta"><span id="context-count">0</span>/240</span>
+              </label>
+            </div>
+            <p class="storage-note" id="storage-status" aria-live="polite">
+              普通回答保存在当前浏览器；基本安全和支持路由回答不会自动写入本地草稿。
+            </p>
+          </div>
+        </section>
+
+        <div id="questionnaire" aria-label="路由问题"></div>
+
+        <section class="submit-band">
+          <div class="page-shell submit-band__inner">
+            <div>
+              <h2>生成当前路线</h2>
+              <p>没有填写的问题按“不确定”处理，不会默认当成“否”。</p>
+            </div>
+            <button class="button button--primary button--large" type="submit">查看路由结果</button>
+          </div>
+        </section>
+      </form>
+
+      <section class="results page-shell" id="results" aria-labelledby="results-title" aria-live="polite" hidden>
+        <div class="results__heading">
+          <div>
+            <p class="eyebrow">当前结果</p>
+            <h2 id="results-title">从这里开始</h2>
+          </div>
+          <div class="results__actions">
+            <button class="button button--quiet" id="edit-answers" type="button">修改回答</button>
+            <button class="button button--secondary" id="export-result" type="button">导出结果</button>
+          </div>
+        </div>
+
+        <div id="route-result"></div>
+        <div id="risk-result"></div>
+        <div id="finding-summary"></div>
+        <div class="finding-grid" id="finding-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="page-shell footer__inner">
+        <span>本地运行 · 无联网请求</span>
+        <span>规则版本 1.0</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+node --test 00-缓冲区/prototype/tests.mjs

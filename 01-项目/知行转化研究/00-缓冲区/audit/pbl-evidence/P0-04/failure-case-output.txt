@@ -1,0 +1,579 @@
+{
+  "command": "node 00-缓冲区/audit/prototype-smoke-v2.mjs",
+  "screenshots": [
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\goal-320.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\contract-stage-1-1024.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\observation-1024.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\ledger-1024.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\ledger-all-history-390.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\history-320.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\history-390.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\history-735.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\history-1024.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\history-1440.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\history-dark-390.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\history-high-contrast-390.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\history-reduced-motion-390.png",
+    "D:\\KnowledgeBase\\01-项目\\知行转化研究\\00-缓冲区\\audit\\v2-screenshots\\recovery-390.png"
+  ],
+  "states": [
+    {
+      "name": "empty",
+      "health": {
+        "workspace": "goal",
+        "visibleSections": [
+          "goal-section"
+        ],
+        "visibleForms": [
+          "goal-form"
+        ],
+        "primaryButtons": [
+          "确认目标"
+        ],
+        "globalPrimaryButtons": [
+          "确认目标"
+        ],
+        "currentStep": "step-goal",
+        "width": 320,
+        "documentWidth": 320,
+        "overflow": 0,
+        "ledgerCards": 0,
+        "ledgerRows": 0,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "goal-field-error",
+      "detail": {
+        "invalid": "true",
+        "describedBy": "goal-title-error",
+        "error": "请先填写一个具体目标。",
+        "focused": "goal-title"
+      }
+    },
+    {
+      "name": "contract-stage-1",
+      "health": {
+        "workspace": "contract",
+        "visibleSections": [
+          "contract-section"
+        ],
+        "visibleForms": [
+          "contract-form"
+        ],
+        "primaryButtons": [
+          "contract-next-button"
+        ],
+        "globalPrimaryButtons": [
+          "contract-next-button"
+        ],
+        "currentStep": "step-contract",
+        "width": 1024,
+        "documentWidth": 1024,
+        "overflow": 0,
+        "ledgerCards": 0,
+        "ledgerRows": 0,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "contract-field-error",
+      "detail": {
+        "invalid": "true",
+        "focused": "contract-activity",
+        "error": "请先写下这一版唯一要做的活动。"
+      }
+    },
+    {
+      "name": "observation",
+      "health": {
+        "workspace": "observation",
+        "visibleSections": [
+          "observation-section"
+        ],
+        "visibleForms": [
+          "observation-form"
+        ],
+        "primaryButtons": [
+          "保存观察"
+        ],
+        "globalPrimaryButtons": [
+          "保存观察"
+        ],
+        "currentStep": "step-observation",
+        "width": 1024,
+        "documentWidth": 1024,
+        "overflow": 0,
+        "ledgerCards": 0,
+        "ledgerRows": 0,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "empty-ledger",
+      "detail": {
+        "health": {
+          "workspace": "ledger",
+          "visibleSections": [
+            "ledger-section"
+          ]
+        },
+        "emptyText": "尚无观察记录",
+        "emptyVisible": true
+      }
+    },
+    {
+      "name": "ledger-current",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 1024,
+        "documentWidth": 1024,
+        "overflow": 0,
+        "ledgerCards": 1,
+        "ledgerRows": 1,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "cancel-revision-preserves-v1",
+      "detail": {
+        "unchanged": true,
+        "workspace": "observation",
+        "version": "v1 已锁定"
+      }
+    },
+    {
+      "name": "ledger-all-history-390",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "history-320",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 320,
+        "documentWidth": 320,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "history-390",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "history-735",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 735,
+        "documentWidth": 735,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "history-1024",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 1024,
+        "documentWidth": 1024,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "history-1440",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 1440,
+        "documentWidth": 1440,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "name": "invalid-import-and-focus-return",
+      "detail": {
+        "open": false,
+        "invalid": "true",
+        "error": "导入被拒绝：Expected property name or '}' in JSON at position 1 (line 1 column 2)。现有数据未改变。",
+        "rowsPreserved": 2,
+        "focused": "import-button"
+      }
+    },
+    {
+      "name": "high-ri<redacted>",
+      "detail": {
+        "stage": "2",
+        "mode": "direct",
+        "invalid": "true",
+        "activityPreserved": "仅做有界模拟",
+        "safetyVisible": true
+      }
+    },
+    {
+      "name": "cross-tab-conflict",
+      "detail": {
+        "message": "另一标签页已经更新本地数据。本页在刷新前不会覆盖该变化。",
+        "preserved": true,
+        "before": "{\n  \"app\": \"next-evidence\",\n  \"schemaVersion\": 1,\n  \"createdAt\": \"2026-07-19T19:04:56.533Z\",\n  \"updatedAt\": \"2026-07-19T19:04:57.473Z\",\n  \"goal\": {\n    \"id\": \"goal_5cf93bcc-e961-48cb-bc69-fe6da1315394\",\n    \"title\": \"高风险模拟检查\",\n    \"why\": \"\",\n    \"riskLevel\": \"high\",\n    \"createdAt\": \"2026-07-19T19:04:56.996Z\",\n    \"status\": \"active\"\n  },\n  \"contracts\": [\n    {\n      \"id\": \"contract_54c805c3-9121-4843-82fd-735cad362fc9\",\n      \"goalId\": \"goal_5cf93bcc-e961-48cb-bc69-fe6da1315394\",\n      \"version\": 1,\n      \"status\": \"locked\",\n      \"riskLevel\": \"high\",\n      \"lockedAt\": \"2026-07-19T19:04:57.473Z\",\n      \"activity\": \"仅做有界模拟\",\n      \"evidence\": \"保留模拟输出\",\n      \"dueDate\": \"2099-12-31\",\n      \"timeboxMinutes\": 10,\n      \"contactMode\": \"simulation\",\n      \"decisionRule\": \"输出可复述就保持，否则退出。\",\n      \"metrics\": [\n        {\n          \"id\": \"metric_5b9e7ac5-2225-4a37-b860-a87c10f6a352\",\n          \"name\": \"模拟输出\",\n          \"unit\": \"\"\n        }\n      ]\n    }\n  ],\n  \"observations\": []\n}"
+      }
+    },
+    {
+      "name": "clear-cancel-preserves-data",
+      "detail": {
+        "unchanged": true,
+        "goalStatus": "进行中"
+      }
+    },
+    {
+      "name": "exit-cancel-preserves-data",
+      "detail": {
+        "unchanged": true,
+        "workspace": "observation"
+      }
+    },
+    {
+      "name": "exit-success",
+      "detail": {
+        "workspace": "ledger",
+        "goalStatus": "已退出",
+        "visibleSections": [
+          "ledger-section"
+        ]
+      }
+    },
+    {
+      "name": "keyboard-tab-shift-tab-enter-space",
+      "detail": {
+        "focusBeforeTab": "ledger-current-button",
+        "focusAfterTab": "ledger-all-button",
+        "focusAfterShiftTab": "step-ledger",
+        "enterActivated": "true",
+        "spaceActivated": "true"
+      }
+    },
+    {
+      "name": "recovery",
+      "health": {
+        "workspace": "recovery",
+        "visibleSections": [
+          "recovery-panel"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": null,
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": 0,
+        "ledgerCards": 0,
+        "ledgerRows": 0,
+        "stage": "1"
+      }
+    }
+  ],
+  "preferenceChecks": [
+    {
+      "type": "device-scale-factor",
+      "scale": 1,
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 1024,
+        "documentWidth": 1024,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "type": "device-scale-factor",
+      "scale": 1.25,
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 1024,
+        "documentWidth": 1024,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "type": "device-scale-factor",
+      "scale": 1.5,
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 1024,
+        "documentWidth": 1024,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "type": "device-scale-factor",
+      "scale": 2,
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 1024,
+        "documentWidth": 1024,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "type": "dark",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "type": "dark-computed-style",
+      "styleProbe": {
+        "buttonColor": "rgb(16, 32, 23)",
+        "buttonBackground": "rgb(165, 231, 196)",
+        "buttonMinHeight": "44px",
+        "buttonRadius": "8px",
+        "labelColor": "rgb(237, 243, 238)",
+        "statusColor": "rgb(237, 243, 238)",
+        "statusRadius": "999px",
+        "opportunityColor": "rgb(165, 231, 196)",
+        "opportunityBackground": "rgb(31, 59, 44)",
+        "opportunityMinHeight": "44px",
+        "subgridBackground": "rgb(34, 44, 38)"
+      }
+    },
+    {
+      "type": "high-contrast",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "type": "reduced-motion",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    },
+    {
+      "type": "reduced-transparency-fallback",
+      "health": {
+        "workspace": "ledger",
+        "visibleSections": [
+          "ledger-section"
+        ],
+        "visibleForms": [],
+        "primaryButtons": [],
+        "globalPrimaryButtons": [
+          "next-action-button"
+        ],
+        "currentStep": "step-ledger",
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": 0,
+        "ledgerCards": 2,
+        "ledgerRows": 2,
+        "stage": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "index.html": "CD240ACDEF3BA53242D76EDF2B9B1A001636F0E2D3F53F2BC8E8A3B85DB5FB75",
+    "styles.css": "89A5D729E0A54E194597952624B35E0A5413F9E0D7DB001E79D0D1E6404BC72E",
+    "app.js": "33148D9CF9717098E37936553D74D99181B193F4830F6F07C3CBF9221C7840FB",
+    "logic.js": "1E22C4CECB7D389A6C767BD2F559A76EF50ED292EE4DAF5431381BC544A5B5AE",
+    "ui-state.js": "F5A7F03FF5B751EE9E8BF9B930C96AD5626DF7B614CA100F6457FB15B8EDF781",
+    "tests.mjs": "00C40AE547926A7AB04FD0BC2EC8C84BF4732A81467C49FE83DBC54D87828625",
+    "prototype-smoke-v2.mjs": "66B3CFCA1013F1D757D27D0EBAFD2CC4C572F9235DB3516D3A62999C07BD7446"
+  },
+  "screenshotHashes": {
+    "goal-320.png": "942C4919443505FD2A3EFED791EB2FC7415BE9D3088389D7C68A615E15631333",
+    "contract-stage-1-1024.png": "1A78BF23C7F44E2F842FD1A82277BBF6BD9277BC9647B8A88ADE73A274ECA83E",
+    "observation-1024.png": "567915179EB97F51040B0101E8A533F726319D4AAB439AB923C7995EEBAF9E18",
+    "ledger-1024.png": "8A7C481F915BE3117BAF8326D3B96E86B84A6ED3FBCE34CA8FD818DDD013F77E",
+    "ledger-all-history-390.png": "373A5AAA050FFDCE5E07ADBA0C1A5ADF3A9CB8992BF3A00FB3D3AA9B40487D02",
+    "history-320.png": "06EA7B788810C2E6A16E7E47D179C892C99DB2C23B697684C6215923E4AEE29E",
+    "history-390.png": "3AD13FFCFB0212F3142AFC8DE1C4D2E48384C3B4E14E1697587E56C3BEAB3687",
+    "history-735.png": "4A3529E35954AACC20E827D66FD3EBF31F3E1FEC98E849BDB88F91BA79268309",
+    "history-1024.png": "9F1148A9C3998655F0DBCFDDB4BAE76A2609322794E8213EAAB201672A5DECF4",
+    "history-1440.png": "44F01F64129B29DED407E0D2E99AB970D4AAC8649D42C5921388244B80B999E1",
+    "history-dark-390.png": "BDE4A26A5B577BDFDDB52201FC9520D00FFB6938A46EC78E497528F3E49C742D",
+    "history-high-contrast-390.png": "1CB71677DECF320DB23AC2B78CA45050BB7B8B83E15FD185B55C56A11D235917",
+    "history-reduced-motion-390.png": "A41305A94A06AE309D0164B8088619CA40AA2B25D9DE7030FF7853B27C40A28B",
+    "recovery-390.png": "41FCF239414D57D404F1839FAD9B87784434B6D2E5FD6D28BBE3FBF9726C083A"
+  }
+}

@@ -1,0 +1,155 @@
+TAP version 13
+# Subtest: locking a revision creates a new version without rewriting version one
+ok 1 - locking a revision creates a new version without rewriting version one
+  ---
+  duration_ms: 10.7444
+  ...
+# Subtest: ECR excludes noOpportunity observations from its denominator
+ok 2 - ECR excludes noOpportunity observations from its denominator
+  ---
+  duration_ms: 1.7997
+  ...
+# Subtest: import rejects non-boolean evidence without changing ECR
+ok 3 - import rejects non-boolean evidence without changing ECR
+  ---
+  duration_ms: 2.5143
+  ...
+# Subtest: import rejects evidence fields added to a noOpportunity record
+ok 4 - import rejects evidence fields added to a noOpportunity record
+  ---
+  duration_ms: 1.452
+  ...
+# Subtest: noOpportunity requires an objective reason in new and imported records
+ok 5 - noOpportunity requires an objective reason in new and imported records
+  ---
+  duration_ms: 1.2151
+  ...
+# Subtest: schema rejection returns the exact existing data unchanged
+ok 6 - schema rejection returns the exact existing data unchanged
+  ---
+  duration_ms: 0.7402
+  ...
+# Subtest: an observation with an unknown metric is rejected without data loss
+ok 7 - an observation with an unknown metric is rejected without data loss
+  ---
+  duration_ms: 0.8223
+  ...
+# Subtest: malformed JSON never replaces current data
+ok 8 - malformed JSON never replaces current data
+  ---
+  duration_ms: 0.5075
+  ...
+# Subtest: high-risk goals cannot lock a direct constraint test
+ok 9 - high-risk goals cannot lock a direct constraint test
+  ---
+  duration_ms: 0.6942
+  ...
+# Subtest: high-risk goals may lock a bounded simulation contract
+ok 10 - high-risk goals may lock a bounded simulation contract
+  ---
+  duration_ms: 1.0387
+  ...
+# Subtest: import rejects a contract risk snapshot that disagrees with its goal
+ok 11 - import rejects a contract risk snapshot that disagrees with its goal
+  ---
+  duration_ms: 0.615
+  ...
+# Subtest: import rejects an inverted contract version timeline
+ok 12 - import rejects an inverted contract version timeline
+  ---
+  duration_ms: 0.658
+  ...
+# Subtest: one contract contains one or two metrics, never zero or three
+ok 13 - one contract contains one or two metrics, never zero or three
+  ---
+  duration_ms: 0.2629
+  ...
+# Subtest: daily observation time cannot exceed twenty minutes
+ok 14 - daily observation time cannot exceed twenty minutes
+  ---
+  duration_ms: 0.3101
+  ...
+# Subtest: import rejects a daily total above twenty minutes
+ok 15 - import rejects a daily total above twenty minutes
+  ---
+  duration_ms: 0.5454
+  ...
+# Subtest: all supported decisions can be recorded without a score
+ok 16 - all supported decisions can be recorded without a score
+  ---
+  duration_ms: 0.1403
+  ...
+# Subtest: revision stays explicit and ECR remains isolated by contract version
+ok 17 - revision stays explicit and ECR remains isolated by contract version
+  ---
+  duration_ms: 0.4496
+  ...
+# Subtest: the exit decision closes the active contract and goal
+ok 18 - the exit decision closes the active contract and goal
+  ---
+  duration_ms: 0.3646
+  ...
+# Subtest: import rejects an exit decision that remains active
+ok 19 - import rejects an exit decision that remains active
+  ---
+  duration_ms: 0.6874
+  ...
+# Subtest: legacy diagnostic JSON creates a reviewable suggestion without replacing state
+ok 20 - legacy diagnostic JSON creates a reviewable suggestion without replacing state
+  ---
+  duration_ms: 0.4771
+  ...
+# Subtest: real diagnostic export imports only goal and safe route instruction
+ok 21 - real diagnostic export imports only goal and safe route instruction
+  ---
+  duration_ms: 0.2783
+  ...
+# Subtest: urgent real diagnostic export refuses productivity prefill and preserves state
+ok 22 - urgent real diagnostic export refuses productivity prefill and preserves state
+  ---
+  duration_ms: 0.4576
+  ...
+# Subtest: exported state round-trips through validated import
+ok 23 - exported state round-trips through validated import
+  ---
+  duration_ms: 0.4281
+  ...
+# Subtest: v1 export keeps the exact business shape and excludes interface state
+ok 24 - v1 export keeps the exact business shape and excludes interface state
+  ---
+  duration_ms: 0.436
+  ...
+# Subtest: v1 import rejects unknown interface fields without replacing current data
+ok 25 - v1 import rejects unknown interface fields without replacing current data
+  ---
+  duration_ms: 0.4947
+  ...
+# Subtest: v1 import rejects unknown nested fields without propagating them
+ok 26 - v1 import rejects unknown nested fields without propagating them
+  ---
+  duration_ms: 0.6907
+  ...
+# Subtest: primary workspace follows the business-state matrix
+ok 27 - primary workspace follows the business-state matrix
+  ---
+  duration_ms: 0.5647
+  ...
+# Subtest: ledger scope defaults to the active or most recently closed contract
+ok 28 - ledger scope defaults to the active or most recently closed contract
+  ---
+  duration_ms: 0.5008
+  ...
+# Subtest: clear removes the goal, contracts, and observations
+ok 29 - clear removes the goal, contracts, and observations
+  ---
+  duration_ms: 0.3679
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 286.8951
