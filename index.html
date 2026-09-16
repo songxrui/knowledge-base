@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark" data-field="webgl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hui · 把现实编译成作品</title>
+    <meta name="description" content="22 岁，本科在读。两年把知识库做到 1,131 万字、写完五本书、造了五个自己用的工具——公开登记的发布稿是 0 篇。这座站点用来结束这件事。" />
+    <meta name="theme-color" content="#0c0f14" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0f14'/%3E%3Cg fill='none' stroke='%2331d0c6' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M11 8v16M11 8h10M11 16h7'/%3E%3C/g%3E%3C/svg%3E" />
+    <link rel="preload" as="style" href="assets/fonts/misans/MiSans-Regular.min.css" />
+    <link rel="stylesheet" href="assets/fonts/misans/MiSans-Regular.min.css" />
+    <link rel="stylesheet" href="assets/fonts/misans/MiSans-Medium.min.css" />
+    <link rel="stylesheet" href="assets/fonts/misans/MiSans-Demibold.min.css" />
+    <script>document.documentElement.classList.add("js")</script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="is-loading">
+    <a class="skip" href="#main">跳到主要内容</a>
+
+    <!--ART:defs:s--><!-- 美术定义：粗糙滤镜 / 纸纹 / 半调网点 / 排线 / 暗角（由 tools/art.mjs 生成） -->
+    <svg class="art-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+      <defs>
+        <filter id="art-rough" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.022 0.028" numOctaves="3" seed="7" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="art-rough-soft" x="-7%" y="-7%" width="114%" height="114%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.013 0.017" numOctaves="2" seed="19" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="art-paper" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" seed="5" result="g" />
+          <feColorMatrix in="g" type="saturate" values="0" result="gs" />
+          <feComponentTransfer in="gs">
+            <feFuncA type="linear" slope="0.5" intercept="0" />
+          </feComponentTransfer>
+        </filter>
+        <pattern id="pat-halftone" width="7" height="7" patternUnits="userSpaceOnUse">
+          <circle cx="1.6" cy="1.6" r="1.15" fill="var(--art-dot)" />
+        </pattern>
+        <pattern id="pat-rule" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-32)">
+          <line x1="0" y1="0" x2="0" y2="9" stroke="var(--art-rule)" stroke-width="1.2" />
+        </pattern>
+        <radialGradient id="art-vignette" cx="50%" cy="40%" r="74%">
+          <stop offset="55%" stop-color="transparent" />
+          <stop offset="100%" stop-color="var(--art-vignette)" />
+        </radialGradient>
+      </defs>
+    </svg><!--ART:defs:e-->
+
+
+
+
+
+
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="field-fallback" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- 装载：竖条量规（真实等待字体与着色器编译，不装样子） -->
+    <div class="loader" id="loader" role="status" aria-live="polite">
+      <div class="loader__gauge" aria-hidden="true">
+        <span class="loader__track"></span>
+        <span class="loader__fill" id="loader-fill"></span>
+      </div>
+      <div class="loader__meta">
+        <span class="loader__what" id="loader-what">装配中</span>
+        <span class="loader__num" id="loader-num">000</span>
+      </div>
+    </div>
+
+    <!-- 入口：一个门槛，按下去才开始（也用来取得音频许可） -->
+    <div class="gate" id="gate" hidden>
+      <div class="gate__inner">
+        <p class="gate__line">你手上有东西，两年没交出去。</p>
+        <button class="btn3" id="enter" type="button" data-cursor="进入">
+          <span class="btn3__block" aria-hidden="true"></span>
+          <span class="btn3__ink" aria-hidden="true"><span class="btn3__hatch"></span></span>
+          <span class="btn3__label">进入</span>
+        </button>
+        <p class="gate__note">建议开声音 · 全程可关</p>
+      </div>
+    </div>
+
+    <svg class="halftone" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#pat-halftone)" /></svg>
+
+<!-- 光标：150px，带状态与文字（拖拽 / 长按 / 点击） -->
+    <div class="cursor" id="cursor" aria-hidden="true">
+      <span class="cursor__h"></span>
+      <span class="cursor__v"></span>
+      <span class="cursor__label" id="cursor-label"></span>
+      <span class="cursor__read" id="cursor-read">0,0</span>
+    </div>
+
+    <!-- 声音：合成环境音，无音频文件 -->
+    <button class="audio" id="audio" type="button" aria-label="打开声音" aria-pressed="false" data-cursor="声音">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M4 9.5h3.2L12 5.5v13L7.2 14.5H4z" />
+          <path class="audio__wave" d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11" />
+          <path class="audio__mute" d="M16 9.5l5 5M21 9.5l-5 5" />
+        </g>
+      </svg>
+    </button>
+
+    <header class="rail">
+      <div class="rail__inner">
+        <a class="brand" href="#top" data-cursor="回到开头">
+          <svg class="brand__mark" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M11 7v18M11 7h10M11 16h7" />
+            </g>
+          </svg>
+          <span class="brand__name">hui</span>
+          <span class="brand__role">写作者 · 后端开发</span>
+        </a>
+
+        <nav class="rail__nav" aria-label="章节">
+          <a href="#top"><i>00</i>位置</a>
+          <a href="#book"><i>01</i>书</a>
+          <a href="#ledger"><i>02</i>知识库</a>
+          <a href="#tools"><i>03</i>工具</a>
+          <a href="#contact"><i>04</i>联系</a>
+          <span class="rail__marker" id="nav-marker" aria-hidden="true"></span>
+        </nav>
+
+        <div class="rail__tools">
+          <span class="live" title="本页无网络请求">
+            <i aria-hidden="true"></i>
+            <span class="live__text">本地运行</span>
+          </span>
+          <button class="iconbtn" id="theme" type="button" aria-label="切换明暗" data-cursor="明暗">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                <path class="i-moon" d="M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5Z" />
+                <path class="i-sun" d="M12 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM12 3.5v2M12 18.5v2M3.5 12h2M18.5 12h2M6 6l1.4 1.4M16.6 16.6 18 18M18 6l-1.4 1.4M7.4 16.6 6 18" />
+              </g>
+            </svg>
+          </button>
+          <time class="clock" id="clock" aria-label="本地时间">--:--:--</time>
+        </div>
+      </div>
+      <div class="rail__progress" aria-hidden="true"><span id="progress"></span></div>
+      <div class="rail__chapters" aria-hidden="true">
+        <span data-chapter-dot="top"></span>
+        <span data-chapter-dot="book"></span>
+        <span data-chapter-dot="ledger"></span>
+        <span data-chapter-dot="tools"></span>
+        <span data-chapter-dot="contact"></span>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- 00 · 位置 ---------------------------------------------------------- -->
+      <section class="panel panel--hero" id="top">
+        <div class="hero-layers" aria-hidden="true">
+          <!--ART:ridges:s--><!-- 山脊：三层手绘线，随滚动视差（由 tools/art.mjs 生成） -->
+          <svg class="hero-layers__ridges" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMax slice" focusable="false" aria-hidden="true">
+            <g data-depth="0.06">
+              <path class="ridge__fill ridge__fill--far" d="M0,111.35L40,106.85L80,105.07L120,105.58L160,106.21L200,107.21L240,105.58L280,105.25L320,104.57L360,104.22L400,105.1L440,105.32L480,104.52L520,102.81L560,100.41L600,100.07L640,99L680,99.87L720,97.58L760,98.08L800,100.15L840,100.51L880,101.52L920,102.46L960,100.92L1000,102.03L1040,101.13L1080,100.02L1120,99.95L1160,99.19L1200,96.96L1200,240L0,240Z" />
+              <path class="ridge__line" d="M0,111.35L40,106.85L80,105.07L120,105.58L160,106.21L200,107.21L240,105.58L280,105.25L320,104.57L360,104.22L400,105.1L440,105.32L480,104.52L520,102.81L560,100.41L600,100.07L640,99L680,99.87L720,97.58L760,98.08L800,100.15L840,100.51L880,101.52L920,102.46L960,100.92L1000,102.03L1040,101.13L1080,100.02L1120,99.95L1160,99.19L1200,96.96" />
+            </g>
+            <g data-depth="0.16">
+              <path class="ridge__fill ridge__fill--mid" d="M0,156.34L50,156.66L100,156.77L150,155.6L200,155.12L250,156.13L300,153.82L350,156.35L400,154.81L450,155.64L500,157.44L550,156.93L600,156.34L650,158.11L700,156.27L750,157.6L800,155.71L850,157.14L900,155L950,153.7L1000,153.46L1050,154.78L1100,155.16L1150,156.52L1200,160.55L1200,240L0,240Z" />
+              <path class="ridge__line" d="M0,156.34L50,156.66L100,156.77L150,155.6L200,155.12L250,156.13L300,153.82L350,156.35L400,154.81L450,155.64L500,157.44L550,156.93L600,156.34L650,158.11L700,156.27L750,157.6L800,155.71L850,157.14L900,155L950,153.7L1000,153.46L1050,154.78L1100,155.16L1150,156.52L1200,160.55" />
+            </g>
+            <g data-depth="0.3">
+              <path class="ridge__fill ridge__fill--near" d="M0,197.48L66.67,197L133.33,196.62L200,199.14L266.67,199.45L333.33,200.42L400,200.48L466.67,200.87L533.33,200.41L600,201.49L666.67,201.39L733.33,201.83L800,202.44L866.67,202.49L933.33,201.18L1000,200.86L1066.67,200.03L1133.33,200.83L1200,201.17L1200,240L0,240Z" />
+              <path class="ridge__line" d="M0,197.48L66.67,197L133.33,196.62L200,199.14L266.67,199.45L333.33,200.42L400,200.48L466.67,200.87L533.33,200.41L600,201.49L666.67,201.39L733.33,201.83L800,202.44L866.67,202.49L933.33,201.18L1000,200.86L1066.67,200.03L1133.33,200.83L1200,201.17" />
+            </g>
+          </svg><!--ART:ridges:e-->
+        </div>
+        <div class="panel__rail">
+          <span class="idx">00</span>
+          <span class="lab">位置</span>
+          <span class="rule" aria-hidden="true"></span>
+          <span class="panel__meta" id="scroll-read">000</span>
+        </div>
+        <div class="panel__body">
+          <p class="kicker">
+            <span>hui</span><span>22 岁 · 本科</span><span>湖南长沙</span><span>滴滴 · 后端开发实习</span>
+          </p>
+
+          <h1 class="kinetic" aria-label="把现实编译成作品" data-kinetic="把现实|编译成作品">
+            <span class="kinetic__src" aria-hidden="true">把现实编译成作品</span>
+          </h1>
+
+          <p class="lead">
+            两年里，我把一个知识库做到 <b>1,131 万字</b>，写完 <b>五本书</b>，造了 <b>五个自己每天用的工具</b>。
+            公开登记的发布稿：<b class="lead__zero">0 篇</b>。
+          </p>
+          <p class="lead lead--tight">
+            这座站点就是为了结束这件事。往下走，每一步都要你亲手推一下。
+          </p>
+
+          <div class="triple">
+            <div><b data-count="1131">1,131</b><span>万字知识库</span></div>
+            <div><b data-count="5">5</b><span>本写完的书稿</span></div>
+            <div><b class="triple__zero">0</b><span>篇公开发布</span></div>
+          </div>
+
+          <p class="cta">
+            <a class="btn3" id="magnet" href="#book" data-cursor="开始">
+              <span class="btn3__block" aria-hidden="true"></span>
+          <span class="btn3__ink" aria-hidden="true"><span class="btn3__hatch"></span></span>
+          <span class="btn3__label">开始</span>
+            </a>
+            <span class="cta__hint" aria-hidden="true">背景参数 · 近 7 天提交 43 次</span>
+          </p>
+
+          <dl class="method-strip">
+            <div><dt>创造技术</dt><dd>pi · DeepSeek 4.1 · GPT-6</dd></div>
+            <div><dt>分工</dt><dd>AI 起草与执行，判决和责任在我</dd></div>
+            <div><dt>底线</dt><dd>AI 只能提议；规则、判决、来源必须可复核</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 01 · 书（长按解锁） ------------------------------------------------ -->
+      <section class="panel chapter" id="book" data-chapter="book" data-gesture="hold">
+        <div class="panel__rail">
+          <span class="idx">01</span>
+          <span class="lab">书</span>
+          <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="panel__body">
+          <!--ART:medal-book:s--><!-- 徽章 medal-book：双环 + 场景 + 纸纹 + 套色错位（由 tools/art.mjs 生成） -->
+          <figure class="medal">
+            <svg viewBox="0 0 200 200" role="img" aria-label="一枚按下印章的书稿：五本写完，一本没发">
+              <clipPath id="clip-medal-book"><circle cx="100" cy="100" r="86" /></clipPath>
+              <circle class="medal__ghost" cx="102.5" cy="102.5" r="86" />
+              <g clip-path="url(#clip-medal-book)">
+                <circle class="medal__fill" cx="100" cy="100" r="86" />
+                <rect class="medal__paper" x="0" y="0" width="200" height="200" />
+                <g class="medal__scene ink-stroke">
+      <g class="ink-stroke">
+        
+        <rect class="ink-fill" x="28" y="116" width="132" height="20" rx="2" transform="rotate(-2 100 126)" />
+        <line class="ink-rule" x1="38" y1="122" x2="144" y2="122" /><line class="ink-rule" x1="38" y1="126" x2="150" y2="126" /><line class="ink-rule" x1="38" y1="130" x2="156" y2="130" />
+        
+        <rect class="ink-fill" x="32" y="94" width="124" height="20" rx="2" transform="rotate(-2 100 104)" />
+        <line class="ink-rule" x1="42" y1="100" x2="140" y2="100" /><line class="ink-rule" x1="42" y1="104" x2="146" y2="104" /><line class="ink-rule" x1="42" y1="108" x2="152" y2="108" />
+        
+        <rect class="ink-fill" x="36" y="72" width="116" height="20" rx="2" transform="rotate(-2 100 82)" />
+        <line class="ink-rule" x1="46" y1="78" x2="136" y2="78" /><line class="ink-rule" x1="46" y1="82" x2="142" y2="82" /><line class="ink-rule" x1="46" y1="86" x2="148" y2="86" />
+        <path class="ink-fill" d="M52 58h96v10H52z" />
+      </g>
+      <circle class="teal-fill ink-stroke" cx="132" cy="86" r="17" />
+      <path class="paper-line" d="M125 86l5 5.5 9-12" /></g>
+              </g>
+              <g class="ink-stroke">
+                <circle class="medal__ring" cx="100" cy="100" r="86" />
+                <circle class="medal__ring medal__ring--thin" cx="100" cy="100" r="79" />
+              </g>
+              <circle class="medal__ring medal__ring--outer" cx="100" cy="100" r="94" />
+            </svg>
+          </figure><!--ART:medal-book:e-->
+          <h2>我写的第一条判断：可撤回的工作，等于没有工作</h2>
+          <p class="lead lead--tight">
+            五本书稿都完成了，不是计划。它们都从同一个自我诊断开始。
+          </p>
+
+          <figure class="preview preview--locked" data-locked="1">
+            <figcaption>
+              <span class="preview__src">08-媒体与产品/媒体/flagship/一人事业的内在秩序-v2 · 序言</span>
+              <span class="preview__badge">v2 重写稿 · 未出版</span>
+            </figcaption>
+            <blockquote class="quote" data-hold="1">
+              <p data-line="1">我的硬盘上有一个知识库。它有 868 份原始资料、77 张深度卡片、43 个内容单元、五本写完的书稿。它每天自动重建目录，比大多数公司的内部文档更完整。</p>
+              <p class="quote__pull" data-line="2">公开登记的发布稿是 0 篇。</p>
+              <p data-line="3">这不是懒惰的故事。过去两年，我几乎每天都在工作。这份档案唯一的问题不在它本身，而在我做过的每一件事都可以撤回：计划可以重写，系统可以升级，草稿可以删除，项目可以改名。没有任何一步必须经过另一个人。这种工作给我一种真实的进展感。它是拖延最体面的版本。</p>
+              <p class="quote__pull" data-line="4">可撤回的工作让你免于失败，也免于形成。</p>
+              <p data-line="5">方向不是被找到的，是被承担出来的。它只在一种情况下出现：你交出了某样东西，它经过别人的拒绝、使用、误解或沉默之后，仍然存在。</p>
+            </blockquote>
+            <div class="gesture" data-gesture-card="hold">
+              <!--ART:cartel:s--><!-- 手绘卡框（由 tools/art.mjs 生成） -->
+              <svg class="gesture__frame" aria-hidden="true" preserveAspectRatio="none" focusable="false" viewBox="0 0 300 64">
+                <path class="cartel__paper" d="M0,0.57L7,-0.15L14,-0.96L21,0.7L28,1.08L35,-0.19L42,-0.25L49,-1.17L56,-0.36L63,0.76L70,0.74L77,-0.46L84,-1.25L91,-0.07L98,-0.28L105,-0.34L112,-0.52L119,0.18L126,1.66L133,0.01L140,-0.67L147,-0.02L154,-0.5L161,-0.93L168,-0.66L175,-0.49L182,0.76L189,0.82L196,-0.43L203,-1.21L210,-0.12L217,-0.38L224,0.55L231,1.02L238,0.96L245,0.28L252,-0.2L259,-1.15L266,-1.11L273,-0.17L280,0.23L287,-0.34L294,0.17L299.58,0L300.32,7L301.6,14L299.86,21L299.42,28L299.96,35L299.6,42L299.23,49L299.48,56L299.56,63L300,63.32L293,63.99L286,64.51L279,65.14L272,64.86L265,63.82L258,63.69L251,63.01L244,63.84L237,63.86L230,64.98L223,65.27L216,65.34L209,65.1L202,65.44L195,64.95L188,64.89L181,64.44L174,63.74L167,63.33L160,63.53L153,63.71L146,64.71L139,65.17L132,65.05L125,64.55L118,63.3L111,62.48L104,63.88L97,64.29L90,63.39L83,64.39L76,63.52L69,64.08L62,63.86L55,62.89L48,62.73L41,63.74L34,64.07L27,64.75L20,64.98L13,64.68L6,64.03L1.17,64L1.05,57L0.55,50L-0.7,43L-1.52,36L-0.12,29L0.29,22L-0.61,15L0.39,8L-0.48,1Z" />
+                <path class="cartel__edge" d="M0,0.57L7,-0.15L14,-0.96L21,0.7L28,1.08L35,-0.19L42,-0.25L49,-1.17L56,-0.36L63,0.76L70,0.74L77,-0.46L84,-1.25L91,-0.07L98,-0.28L105,-0.34L112,-0.52L119,0.18L126,1.66L133,0.01L140,-0.67L147,-0.02L154,-0.5L161,-0.93L168,-0.66L175,-0.49L182,0.76L189,0.82L196,-0.43L203,-1.21L210,-0.12L217,-0.38L224,0.55L231,1.02L238,0.96L245,0.28L252,-0.2L259,-1.15L266,-1.11L273,-0.17L280,0.23L287,-0.34L294,0.17L299.58,0L300.32,7L301.6,14L299.86,21L299.42,28L299.96,35L299.6,42L299.23,49L299.48,56L299.56,63L300,63.32L293,63.99L286,64.51L279,65.14L272,64.86L265,63.82L258,63.69L251,63.01L244,63.84L237,63.86L230,64.98L223,65.27L216,65.34L209,65.1L202,65.44L195,64.95L188,64.89L181,64.44L174,63.74L167,63.33L160,63.53L153,63.71L146,64.71L139,65.17L132,65.05L125,64.55L118,63.3L111,62.48L104,63.88L97,64.29L90,63.39L83,64.39L76,63.52L69,64.08L62,63.86L55,62.89L48,62.73L41,63.74L34,64.07L27,64.75L20,64.98L13,64.68L6,64.03L1.17,64L1.05,57L0.55,50L-0.7,43L-1.52,36L-0.12,29L0.29,22L-0.61,15L0.39,8L-0.48,1Z" />
+              </svg><!--ART:cartel:e-->
+              <svg class="gesture__picto" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <path d="M9 11V5.6a1.6 1.6 0 0 1 3.2 0V11" />
+                  <path d="M12.2 11V9.4a1.5 1.5 0 0 1 3 0V11" />
+                  <path d="M15.2 11.4v-.9a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.2a5 5 0 0 1-4.2-2.3L5 15.6a1.6 1.6 0 0 1 2.7-1.7l1.3 1.8" />
+                </g>
+              </svg>
+              <span class="gesture__text">按住不放 · 序言逐句浮现</span>
+              <span class="gesture__track" aria-hidden="true"><i></i></span>
+            </div>
+          </figure>
+
+          <ul class="minor minor--books">
+            <li><b>《可验证的 AI 知识生产》</b><span>知道你知道什么，也知道你不知道什么</span></li>
+            <li><b>《人生操作系统》</b><span>意志力不是杠杆，系统才是</span></li>
+            <li><b>《青年健康执行手册》</b><span>先处理欠账，再谈优化 · 待医学审读</span></li>
+            <li><b>《受限起点》</b><span>目标不是勇气，是可承担的行动</span></li>
+            <li><b>《答案之书》v8</b><span>理论版立边界，实践版给动作，证据台账定强度</span></li>
+          </ul>
+          <p class="minor__note">每本只有一条判断，一条能被反驳的判断。五本都在等第一批能挑错的试读人。</p>
+
+          <p class="advance">
+            <a class="btn3 btn3--sm" href="#ledger" data-cursor="下一章">
+              <span class="btn3__block" aria-hidden="true"></span>
+          <span class="btn3__ink" aria-hidden="true"><span class="btn3__hatch"></span></span>
+          <span class="btn3__label">下一章</span>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- 02 · 知识库（拖拽扫描） -------------------------------------------- -->
+      <section class="panel chapter" id="ledger" data-chapter="ledger" data-gesture="drag">
+        <div class="panel__rail">
+          <span class="idx">02</span>
+          <span class="lab">知识库</span>
+          <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="panel__body">
+          <!--ART:medal-ledger:s--><!-- 徽章 medal-ledger：双环 + 场景 + 纸纹 + 套色错位（由 tools/art.mjs 生成） -->
+          <figure class="medal">
+            <svg viewBox="0 0 200 200" role="img" aria-label="一叠抽出来的卡片，角落一枚青色登记点">
+              <clipPath id="clip-medal-ledger"><circle cx="100" cy="100" r="86" /></clipPath>
+              <circle class="medal__ghost" cx="102.5" cy="102.5" r="86" />
+              <g clip-path="url(#clip-medal-ledger)">
+                <circle class="medal__fill" cx="100" cy="100" r="86" />
+                <rect class="medal__paper" x="0" y="0" width="200" height="200" />
+                <g class="medal__scene ink-stroke">
+      
+      <g transform="rotate(-8 100 100)" class="ink-stroke">
+        <rect class="ink-fill" x="50" y="64" width="86" height="58" rx="3" />
+        <line class="ink-rule" x1="59" y1="77" x2="125" y2="77" /><line class="ink-rule" x1="59" y1="87" x2="125" y2="87" /><line class="ink-rule" x1="59" y1="97" x2="125" y2="97" /><line class="ink-rule" x1="59" y1="107" x2="93" y2="107" />
+      </g>
+      
+      <g transform="rotate(-2 100 100)" class="ink-stroke">
+        <rect class="ink-fill" x="58" y="73" width="86" height="58" rx="3" />
+        <line class="ink-rule" x1="67" y1="86" x2="133" y2="86" /><line class="ink-rule" x1="67" y1="96" x2="133" y2="96" /><line class="ink-rule" x1="67" y1="106" x2="133" y2="106" /><line class="ink-rule" x1="67" y1="116" x2="101" y2="116" />
+      </g>
+      
+      <g transform="rotate(5 100 100)" class="ink-stroke">
+        <rect class="ink-fill" x="66" y="82" width="86" height="58" rx="3" />
+        <line class="ink-rule" x1="75" y1="95" x2="141" y2="95" /><line class="ink-rule" x1="75" y1="105" x2="141" y2="105" /><line class="ink-rule" x1="75" y1="115" x2="141" y2="115" /><line class="ink-rule" x1="75" y1="125" x2="109" y2="125" />
+      </g>
+      <circle class="teal-fill ink-stroke" cx="140" cy="70" r="11" />
+      <path class="ink-stroke" d="M133 70h14M140 63v14" /></g>
+              </g>
+              <g class="ink-stroke">
+                <circle class="medal__ring" cx="100" cy="100" r="86" />
+                <circle class="medal__ring medal__ring--thin" cx="100" cy="100" r="79" />
+              </g>
+              <circle class="medal__ring medal__ring--outer" cx="100" cy="100" r="94" />
+            </svg>
+          </figure><!--ART:medal-ledger:e-->
+          <h2>1,131 万字里，最值钱的是那条纪律</h2>
+          <p class="lead lead--tight">
+            知识库不是仓库，是一条规则：<b>没有来源的东西不进库，连我自己写的也算。</b>
+            所以 77 张卡片至今全部标着 <code>unverified</code>。
+          </p>
+
+          <figure class="preview preview--artifact preview--locked" data-locked="1">
+            <figcaption>
+              <span class="preview__src">04-知识/卡片/topics/T1-01_多巴胺不是快乐分子.md</span>
+              <span class="preview__badge">真实卡片 · 未删改</span>
+            </figcaption>
+            <pre class="artifact" aria-label="卡片元数据" data-scan="1">---
+type: knowledge
+status: provisional
+canonical: false
+risk: health
+evidence_level: unverified
+sources: []
+reviewed_on: ""
+---</pre>
+            <blockquote class="quote">
+              <p>多巴胺被大众误解为「快乐物质」，但其真正功能是驱动渴望和动机：它让你想要，而不是让你喜欢。反复用高强度刺激激活多巴胺系统时，大脑的保护性反应是下调受体敏感度，于是需要越来越大剂量。</p>
+              <p class="quote__pull">它不是知识，它是一条待验证的假设。</p>
+            </blockquote>
+            <div class="gesture" data-gesture-card="drag">
+              <!--ART:cartel:s--><!-- 手绘卡框（由 tools/art.mjs 生成） -->
+              <svg class="gesture__frame" aria-hidden="true" preserveAspectRatio="none" focusable="false" viewBox="0 0 300 64">
+                <path class="cartel__paper" d="M0,0.57L7,-0.15L14,-0.96L21,0.7L28,1.08L35,-0.19L42,-0.25L49,-1.17L56,-0.36L63,0.76L70,0.74L77,-0.46L84,-1.25L91,-0.07L98,-0.28L105,-0.34L112,-0.52L119,0.18L126,1.66L133,0.01L140,-0.67L147,-0.02L154,-0.5L161,-0.93L168,-0.66L175,-0.49L182,0.76L189,0.82L196,-0.43L203,-1.21L210,-0.12L217,-0.38L224,0.55L231,1.02L238,0.96L245,0.28L252,-0.2L259,-1.15L266,-1.11L273,-0.17L280,0.23L287,-0.34L294,0.17L299.58,0L300.32,7L301.6,14L299.86,21L299.42,28L299.96,35L299.6,42L299.23,49L299.48,56L299.56,63L300,63.32L293,63.99L286,64.51L279,65.14L272,64.86L265,63.82L258,63.69L251,63.01L244,63.84L237,63.86L230,64.98L223,65.27L216,65.34L209,65.1L202,65.44L195,64.95L188,64.89L181,64.44L174,63.74L167,63.33L160,63.53L153,63.71L146,64.71L139,65.17L132,65.05L125,64.55L118,63.3L111,62.48L104,63.88L97,64.29L90,63.39L83,64.39L76,63.52L69,64.08L62,63.86L55,62.89L48,62.73L41,63.74L34,64.07L27,64.75L20,64.98L13,64.68L6,64.03L1.17,64L1.05,57L0.55,50L-0.7,43L-1.52,36L-0.12,29L0.29,22L-0.61,15L0.39,8L-0.48,1Z" />
+                <path class="cartel__edge" d="M0,0.57L7,-0.15L14,-0.96L21,0.7L28,1.08L35,-0.19L42,-0.25L49,-1.17L56,-0.36L63,0.76L70,0.74L77,-0.46L84,-1.25L91,-0.07L98,-0.28L105,-0.34L112,-0.52L119,0.18L126,1.66L133,0.01L140,-0.67L147,-0.02L154,-0.5L161,-0.93L168,-0.66L175,-0.49L182,0.76L189,0.82L196,-0.43L203,-1.21L210,-0.12L217,-0.38L224,0.55L231,1.02L238,0.96L245,0.28L252,-0.2L259,-1.15L266,-1.11L273,-0.17L280,0.23L287,-0.34L294,0.17L299.58,0L300.32,7L301.6,14L299.86,21L299.42,28L299.96,35L299.6,42L299.23,49L299.48,56L299.56,63L300,63.32L293,63.99L286,64.51L279,65.14L272,64.86L265,63.82L258,63.69L251,63.01L244,63.84L237,63.86L230,64.98L223,65.27L216,65.34L209,65.1L202,65.44L195,64.95L188,64.89L181,64.44L174,63.74L167,63.33L160,63.53L153,63.71L146,64.71L139,65.17L132,65.05L125,64.55L118,63.3L111,62.48L104,63.88L97,64.29L90,63.39L83,64.39L76,63.52L69,64.08L62,63.86L55,62.89L48,62.73L41,63.74L34,64.07L27,64.75L20,64.98L13,64.68L6,64.03L1.17,64L1.05,57L0.55,50L-0.7,43L-1.52,36L-0.12,29L0.29,22L-0.61,15L0.39,8L-0.48,1Z" />
+              </svg><!--ART:cartel:e-->
+              <svg class="gesture__picto" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <path d="M8 12h8" /><path d="M5.5 9.5 3 12l2.5 2.5" /><path d="M18.5 9.5 21 12l-2.5 2.5" />
+                  <path d="M12 4.5v3M12 16.5v3" />
+                </g>
+              </svg>
+              <span class="gesture__text">左右拖动 · 扫描十五周的动作节律</span>
+            </div>
+          </figure>
+
+          <figure class="pulse-chart" id="pulse" data-scrub="1">
+            <figcaption>
+              <span class="pulse-chart__title">动作节律 · 15 周</span>
+              <span class="pulse-chart__meta">
+                <span id="pulse-read">拖动查看每周</span>
+              </span>
+            </figcaption>
+            <div class="pulse-chart__bars" role="img" tabindex="0"
+                 aria-label="按周提交数：首周 945 次，第二周 138 次，第三、四周 0 次，第五周 8 次，第六周 3 次，其后八周为 0，本周 43 次">
+              <span data-v="945" data-week="1" style="--h:100" title="第 1 周 · 945 次"></span>
+              <span data-v="138" data-week="2" style="--h:38" title="第 2 周 · 138 次"></span>
+              <span data-v="0" data-week="3" style="--h:2" title="第 3 周 · 0 次"></span>
+              <span data-v="0" data-week="4" style="--h:2" title="第 4 周 · 0 次"></span>
+              <span data-v="8" data-week="5" style="--h:10" title="第 5 周 · 8 次"></span>
+              <span data-v="3" data-week="6" style="--h:6" title="第 6 周 · 3 次"></span>
+              <span data-v="0" data-week="7" style="--h:2" title="第 7 周 · 0 次"></span>
+              <span data-v="0" data-week="8" style="--h:2" title="第 8 周 · 0 次"></span>
+              <span data-v="0" data-week="9" style="--h:2" title="第 9 周 · 0 次"></span>
+              <span data-v="0" data-week="10" style="--h:2" title="第 10 周 · 0 次"></span>
+              <span data-v="0" data-week="11" style="--h:2" title="第 11 周 · 0 次"></span>
+              <span data-v="0" data-week="12" style="--h:2" title="第 12 周 · 0 次"></span>
+              <span data-v="0" data-week="13" style="--h:2" title="第 13 周 · 0 次"></span>
+              <span data-v="0" data-week="14" style="--h:2" title="第 14 周 · 0 次"></span>
+              <span data-v="43" data-week="15" style="--h:21" title="第 15 周 · 43 次"></span>
+              <span class="pulse-chart__head" id="pulse-head" aria-hidden="true"></span>
+            </div>
+          </figure>
+
+          <dl class="readout" id="readout" data-ready="0">
+            <div class="readout__cell"><dt>可读篇目</dt><dd><b data-count="2145">2,145</b><i>篇</i></dd></div>
+            <div class="readout__cell"><dt>自有产出</dt><dd><b data-count="322">322</b><i>万字</i></dd></div>
+            <div class="readout__cell"><dt>来源素材</dt><dd><b data-count="680">680</b><i>万字</i></dd></div>
+            <div class="readout__cell"><dt>提交</dt><dd><b data-count="1137">1,137</b><i>次</i></dd></div>
+          </dl>
+
+          <p class="advance">
+            <a class="btn3 btn3--sm" href="#tools" data-cursor="下一章">
+              <span class="btn3__block" aria-hidden="true"></span>
+          <span class="btn3__ink" aria-hidden="true"><span class="btn3__hatch"></span></span>
+          <span class="btn3__label">下一章</span>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- 03 · 工具（点击运行） ---------------------------------------------- -->
+      <section class="panel chapter" id="tools" data-chapter="tools" data-gesture="tap">
+        <div class="panel__rail">
+          <span class="idx">03</span>
+          <span class="lab">工具</span>
+          <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="panel__body">
+          <!--ART:medal-tools:s--><!-- 徽章 medal-tools：双环 + 场景 + 纸纹 + 套色错位（由 tools/art.mjs 生成） -->
+          <figure class="medal">
+            <svg viewBox="0 0 200 200" role="img" aria-label="一道闸门，加一枚落下的否决章">
+              <clipPath id="clip-medal-tools"><circle cx="100" cy="100" r="86" /></clipPath>
+              <circle class="medal__ghost" cx="102.5" cy="102.5" r="86" />
+              <g clip-path="url(#clip-medal-tools)">
+                <circle class="medal__fill" cx="100" cy="100" r="86" />
+                <rect class="medal__paper" x="0" y="0" width="200" height="200" />
+                <g class="medal__scene ink-stroke">
+      <g class="ink-stroke">
+        <path class="ink-fill" d="M46 50h108v12H46z" />
+        <path class="ink-fill" d="M46 138h108v12H46z" />
+        <path class="ink-fill" d="M46 50h12v100H46z" />
+        <path class="ink-fill" d="M142 50h12v100h-12z" />
+      </g>
+      <g class="ink-stroke">
+        <rect class="teal-fill" x="72" y="70" width="56" height="12" rx="2" transform="rotate(-8 100 76)" />
+        <rect class="teal-fill" x="72" y="86" width="56" height="12" rx="2" transform="rotate(-8 100 92)" />
+        <rect class="teal-fill" x="72" y="102" width="56" height="12" rx="2" transform="rotate(-8 100 108)" />
+      </g>
+      <path class="ink-stroke" d="M58 120 142 60" /></g>
+              </g>
+              <g class="ink-stroke">
+                <circle class="medal__ring" cx="100" cy="100" r="86" />
+                <circle class="medal__ring medal__ring--thin" cx="100" cy="100" r="79" />
+              </g>
+              <circle class="medal__ring medal__ring--outer" cx="100" cy="100" r="94" />
+            </svg>
+          </figure><!--ART:medal-tools:e-->
+          <h2>AI 让所有人更容易多产，稀缺的是确定性否决</h2>
+          <p class="lead lead--tight">
+            所以我的两个主要工具都不产出内容：一个只负责说不，一个只负责给出出口，包括「这件事现在不该做」。
+          </p>
+
+          <figure class="preview preview--artifact preview--locked" data-locked="1">
+            <figcaption>
+              <span class="preview__src">内容红线门 · 对 05-内容生产/进行中 的实测判决</span>
+              <span class="preview__badge">10 红线 + 16 常规 · 14 项测试</span>
+            </figcaption>
+            <pre class="artifact" id="gate-out" aria-label="红线门判决输出" data-run="1">FAIL  05-内容生产/进行中/能力越小，先承担的责任越小-研究扩展稿.md
+      L1  禁「不是…而是…」对仗替代因果    11 处
+      P1  80% 段落应 ≥120 字              25/57 段不足
+
+18 篇 · 通过 1 · 拦截 17 · 红线命中 47</pre>
+            <div class="gesture" data-gesture-card="tap">
+              <!--ART:cartel:s--><!-- 手绘卡框（由 tools/art.mjs 生成） -->
+              <svg class="gesture__frame" aria-hidden="true" preserveAspectRatio="none" focusable="false" viewBox="0 0 300 64">
+                <path class="cartel__paper" d="M0,0.57L7,-0.15L14,-0.96L21,0.7L28,1.08L35,-0.19L42,-0.25L49,-1.17L56,-0.36L63,0.76L70,0.74L77,-0.46L84,-1.25L91,-0.07L98,-0.28L105,-0.34L112,-0.52L119,0.18L126,1.66L133,0.01L140,-0.67L147,-0.02L154,-0.5L161,-0.93L168,-0.66L175,-0.49L182,0.76L189,0.82L196,-0.43L203,-1.21L210,-0.12L217,-0.38L224,0.55L231,1.02L238,0.96L245,0.28L252,-0.2L259,-1.15L266,-1.11L273,-0.17L280,0.23L287,-0.34L294,0.17L299.58,0L300.32,7L301.6,14L299.86,21L299.42,28L299.96,35L299.6,42L299.23,49L299.48,56L299.56,63L300,63.32L293,63.99L286,64.51L279,65.14L272,64.86L265,63.82L258,63.69L251,63.01L244,63.84L237,63.86L230,64.98L223,65.27L216,65.34L209,65.1L202,65.44L195,64.95L188,64.89L181,64.44L174,63.74L167,63.33L160,63.53L153,63.71L146,64.71L139,65.17L132,65.05L125,64.55L118,63.3L111,62.48L104,63.88L97,64.29L90,63.39L83,64.39L76,63.52L69,64.08L62,63.86L55,62.89L48,62.73L41,63.74L34,64.07L27,64.75L20,64.98L13,64.68L6,64.03L1.17,64L1.05,57L0.55,50L-0.7,43L-1.52,36L-0.12,29L0.29,22L-0.61,15L0.39,8L-0.48,1Z" />
+                <path class="cartel__edge" d="M0,0.57L7,-0.15L14,-0.96L21,0.7L28,1.08L35,-0.19L42,-0.25L49,-1.17L56,-0.36L63,0.76L70,0.74L77,-0.46L84,-1.25L91,-0.07L98,-0.28L105,-0.34L112,-0.52L119,0.18L126,1.66L133,0.01L140,-0.67L147,-0.02L154,-0.5L161,-0.93L168,-0.66L175,-0.49L182,0.76L189,0.82L196,-0.43L203,-1.21L210,-0.12L217,-0.38L224,0.55L231,1.02L238,0.96L245,0.28L252,-0.2L259,-1.15L266,-1.11L273,-0.17L280,0.23L287,-0.34L294,0.17L299.58,0L300.32,7L301.6,14L299.86,21L299.42,28L299.96,35L299.6,42L299.23,49L299.48,56L299.56,63L300,63.32L293,63.99L286,64.51L279,65.14L272,64.86L265,63.82L258,63.69L251,63.01L244,63.84L237,63.86L230,64.98L223,65.27L216,65.34L209,65.1L202,65.44L195,64.95L188,64.89L181,64.44L174,63.74L167,63.33L160,63.53L153,63.71L146,64.71L139,65.17L132,65.05L125,64.55L118,63.3L111,62.48L104,63.88L97,64.29L90,63.39L83,64.39L76,63.52L69,64.08L62,63.86L55,62.89L48,62.73L41,63.74L34,64.07L27,64.75L20,64.98L13,64.68L6,64.03L1.17,64L1.05,57L0.55,50L-0.7,43L-1.52,36L-0.12,29L0.29,22L-0.61,15L0.39,8L-0.48,1Z" />
+              </svg><!--ART:cartel:e-->
+              <svg class="gesture__picto" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="3.2" />
+                  <path d="M12 3.5v3.2M12 17.3v3.2M3.5 12h3.2M17.3 12h3.2" />
+                </g>
+              </svg>
+              <span class="gesture__text">点一下 · 跑一遍我这 18 篇的判决</span>
+            </div>
+          </figure>
+
+          <figure class="preview preview--artifact preview--locked" data-locked="1">
+            <figcaption>
+              <span class="preview__src">出口判决器 · 五出口</span>
+              <span class="preview__badge">单窗口无导航 · 全域 32 种输入覆盖</span>
+            </figcaption>
+            <table class="verdicts">
+              <caption class="sr-only">五个出口及其触发条件与最小动作</caption>
+              <tbody>
+                <tr><th scope="row">直接做</th><td>目标清楚、下一步明确、错了回得来</td><td>立刻开始，只做这一件</td></tr>
+                <tr><th scope="row">先查清</th><td>缺的是事实，不是决心</td><td>列出 3 个要查的问题，今天只查第 1 个</td></tr>
+                <tr><th scope="row">先排障</th><td>卡点是工具、权限或资源</td><td>指出唯一阻塞点，只修这一个</td></tr>
+                <tr><th scope="row">找人</th><td>缺的是别人的决定或意愿</td><td>写清要谁做什么决定，一次问清</td></tr>
+                <tr><th scope="row">暂停</th><td>目标不清楚，或代价大且不可逆</td><td>先不动手，设一个复核点</td></tr>
+              </tbody>
+            </table>
+            <blockquote class="quote">
+              <p>五个出口里两个是「暂停」。停止是正常结果：判断一件事现在不该做，比给出一堆动作难得多。</p>
+            </blockquote>
+          </figure>
+
+          <ul class="minor">
+            <li><b>方寸</b><span>Android 器具 · v2.4.0 · 器物回归 31 条全绿 · APK 20.3 MB</span></li>
+            <li><b>一念</b><span>离线知识库 App · 1.5.0-alpha1 · Room 14 · 签名包 4.3 MB</span></li>
+            <li><b>明晰</b><span>行为代价计算器 · v1.4.0 · 行为库 50 项逐条带一手来源</span></li>
+          </ul>
+          <p class="minor__note">都不卖，先给自己用。每个的唯一验收标准：它有没有真的改变我每天做的事。</p>
+
+          <dl class="spec">
+            <div><dt>把审美变成断言</dt><dd>方寸的屏数预算 ≤2.2、命中区 ≥44px、横向溢出 = 0 全部写成回归测试</dd></div>
+            <div><dt>把规则变成纯函数</dt><dd>红线门同一份稿子任何时候跑出的结论一致，可被复核、可被反驳</dd></div>
+            <div><dt>把停止变成一等输出</dt><dd>判决器不接受「信息不足」当结论，也不给「再想想」这种废话</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 04 · 终章与联系 ---------------------------------------------------- -->
+      <section class="panel panel--finale" id="contact">
+        <div class="panel__rail">
+          <span class="idx">04</span>
+          <span class="lab">联系</span>
+          <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="panel__body">
+          <h2 class="finale" data-split="交出去，它才存在" aria-label="交出去，它才存在">
+            <span class="finale__src" aria-hidden="true">交出去，它才存在</span>
+          </h2>
+
+          <ul class="now">
+            <li><span class="now__when">进行中</span><p><b>一念</b>往 2.0 走：导入、分批、复核与撤回要做到零部分写入。</p></li>
+            <li><span class="now__when">这个月</span><p><b>五本书稿</b>在找第一批能挑错的试读人。</p></li>
+            <li><span class="now__when">随时</span><p><b>这座站点</b>手写 HTML、CSS、GLSL 与 SVG，没有框架。</p></li>
+          </ul>
+
+          <h2 class="contact__title">想看看，或者想挑错</h2>
+          <ul class="contact__list">
+            <li><span>邮箱</span><a href="mailto:huidong2737@gmail.com" data-cursor="写信">huidong2737@gmail.com</a></li>
+            <li><span>微信</span><b>hy0828len</b></li>
+            <li><span>城市</span><b>湖南长沙</b></li>
+            <li><span>代码</span><a href="https://github.com/songxrui" rel="me noopener" data-cursor="代码">github.com/songxrui</a></li>
+          </ul>
+
+          <p class="advance">
+            <a class="btn3 btn3--sm" href="#top" data-cursor="回到开头">
+              <span class="btn3__block" aria-hidden="true"></span>
+          <span class="btn3__ink" aria-hidden="true"><span class="btn3__hatch"></span></span>
+          <span class="btn3__label">回到开头</span>
+            </a>
+          </p>
+
+          <p class="minor__note">
+            五本书稿、知识库、以及上面两个工具的判决口径，都可以按需发给愿意认真读的人。站内不放阅读量、粉丝数和收入数字：知识库里还没有这类已发布的事实。
+          </p>
+
+          <footer class="colophon">
+            <p>无框架 · 无跟踪 · 自写 HTML / CSS / GLSL / SVG · 字体 MiSans · 数据只在本机</p>
+            <p class="colophon__meta">
+              <span>© 2026 hui</span>
+              <span>本地时间 <time id="clock-footer">--:--</time></span>
+              <span>口径 2026-09-15</span>
+              <span id="field-status">场 · 自写片元着色器</span>
+            </p>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- 着色器：作者自写，无框架无库 -->
+    <script type="x-shader/x-vertex" id="field-vs">
+      attribute vec2 aPos;
+      void main() { gl_Position = vec4(aPos, 0.0, 1.0); }
+    </script>
+    <script type="x-shader/x-fragment" id="field-fs">
+      precision highp float;
+      uniform vec2  uRes;
+      uniform float uTime;
+      uniform vec2  uPointer;
+      uniform float uScroll;
+      uniform float uHeat;
+      uniform float uLight;
+      uniform float uPulse;
+
+      float hash(vec2 p) {
+        return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+      }
+      float noise(vec2 p) {
+        vec2 i = floor(p), f = fract(p);
+        f = f * f * (3.0 - 2.0 * f);
+        float a = hash(i), b = hash(i + vec2(1.0, 0.0));
+        float c = hash(i + vec2(0.0, 1.0)), d = hash(i + vec2(1.0, 1.0));
+        return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+      }
+      float fbm(vec2 p) {
+        float s = 0.0, a = 0.5;
+        for (int i = 0; i < 5; i++) { s += a * noise(p); p *= 2.03; a *= 0.5; }
+        return s;
+      }
+
+      void main() {
+        vec2 uv = gl_FragCoord.xy / uRes.xy;
+        vec2 p  = (gl_FragCoord.xy - 0.5 * uRes.xy) / uRes.y;
+        vec2 ptr = (uPointer - 0.5 * uRes.xy) / uRes.y;
+
+        float d = length(p - ptr);
+        p += normalize(p - ptr + 1e-4) * (0.05 + 0.09 * uPulse) * exp(-d * 3.8);
+
+        float t = uTime * 0.028;
+        float f = fbm(p * vec2(2.6, 1.5) + vec2(t * 1.15, -t * 0.45));
+        f += 0.32 * fbm(p * vec2(5.4, 3.2) - vec2(t * 0.85, t * 0.6));
+
+        float heat = mix(0.55, 1.0, uHeat);
+        float lines = abs(fract(f * (9.0 + 3.0 * heat) + uScroll * 0.8) - 0.5);
+        float iso = smoothstep(0.5, 0.14, lines);
+        float vgrid = 1.0 - smoothstep(0.0, 0.012, abs(fract(uv.x * 18.0) - 0.5));
+        float scan = exp(-pow((uv.y - fract(uTime * 0.038)) * 9.0, 2.0));
+        float bloom = exp(-d * (8.0 - 3.0 * uPulse));
+
+        vec3 col;
+        if (uLight > 0.5) {
+          vec3 paper = vec3(0.949, 0.945, 0.925);
+          vec3 shade = vec3(0.918, 0.914, 0.894);
+          col = mix(shade, paper, uv.y);
+          col -= vec3(0.055, 0.545, 0.518) * iso * (0.10 + 0.06 * uPulse) * heat;
+          col -= vec3(0.055, 0.545, 0.518) * vgrid * 0.035;
+          col -= vec3(0.055, 0.545, 0.518) * scan * 0.022;
+          col -= vec3(0.055, 0.545, 0.518) * bloom * (0.03 + 0.05 * uPulse);
+        } else {
+          vec3 deep = vec3(0.019, 0.026, 0.036);
+          vec3 ink  = vec3(0.043, 0.055, 0.073);
+          col = mix(deep, ink, uv.y);
+          col += vec3(0.192, 0.816, 0.776) * iso * (0.075 + 0.05 * uPulse) * heat;
+          col += vec3(0.192, 0.816, 0.776) * vgrid * 0.022;
+          col += vec3(0.192, 0.816, 0.776) * scan * 0.028;
+          col += vec3(0.192, 0.816, 0.776) * bloom * (0.06 + 0.10 * uPulse);
+        }
+
+        float dither = hash(gl_FragCoord.xy * 0.731 + uTime) - 0.5;
+        float grain  = hash(gl_FragCoord.xy * 1.117) - 0.5;
+        col += dither * 0.012 + grain * 0.009;
+
+        float vig = smoothstep(1.5, 0.2, length((uv - 0.5) * vec2(1.14, 1.0)));
+        col *= mix(uLight > 0.5 ? 0.965 : 0.62, 1.0, vig);
+
+        gl_FragColor = vec4(col, 1.0);
+      }
+    </script>
+
+    <script src="assets/js/story.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <!-- build:0d4098f6a85a -->
+  </body>
+</html>
